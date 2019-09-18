@@ -1530,8 +1530,6 @@ section.services-section .services-box .services-post:hover .services-content h2
 }
 #contact-form input[type="text"],
 .comment-form input[type="text"],
-#contact-form input[type="email"],
-.comment-form input[type="email"],
 #contact-form textarea,
 .comment-form textarea {
   width: 100%;
@@ -1549,8 +1547,6 @@ section.services-section .services-box .services-post:hover .services-content h2
 }
 #contact-form input[type="text"]:focus,
 .comment-form input[type="text"]:focus,
-#contact-form input[type="email"]:focus,
-.comment-form input[type="email"]:focus,
 #contact-form textarea:focus,
 .comment-form textarea:focus {
   border: 1px solid #ff9000;
