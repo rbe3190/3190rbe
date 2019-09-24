@@ -12,7 +12,8 @@
     var root = (typeof exports === 'undefined' ? window : exports);
     var config = {
         // An option to choose a suffix for 2x images
-        retinaImageSuffix : '@2x',
+        // retinaImageSuffix : '@2x',
+        retinaImageSuffix : '',
 
         // Ensure Content-Type is an image before trying to load @2x image
         // https://github.com/imulus/retinajs/pull/45)
