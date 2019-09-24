@@ -1766,3 +1766,25 @@ footer .contact-info p {
     margin-left: 0;
   }
 }
+
+/* Slider Start */
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000b3; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff9000; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff6500; 
+}
+/* Slider End */
