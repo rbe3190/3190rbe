@@ -3,7 +3,7 @@ layout: post
 title:  "49th Installation of Rotary Bangalore East"
 date:   2019-06-02
 image: /upload/blog/1920rotaryinstalltion.png
-author: Rotaract Bangalore East
+author: rbe
 categories: [Club-Service]
 tags: [participation]
 description: 48th Installation of Rotary Bangalore East

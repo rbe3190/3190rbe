@@ -2,40 +2,47 @@
 layout: default
 ---
 
-		<!-- blog section 
+<!-- blog section 
 			================================================== -->
-		<section class="blog-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="blog-box">
+<section class="blog-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="blog-box">
 
-							<div class="blog-post single-post">
-								<img src="{{site.baseurl}}{{page.image}}" alt="">
-								<div class="post-content-text">
-									<h1>{{page.title}}</h1>
-									<span>{{ page.date | date: '%d %B %Y' }}</span>
-									{{content}}
-								</div>
-							</div>
-							<div class="autor-post">
-								<img src="{{site.baseurl}}/upload/others/logo.png" alt="">
-								<div class="autor-content">
-									<h2>Rotaract Bangalore East</h2>
-									<span>RID 3190</span>
-									<p>We the members of Rotaract Bangalore East (Easterners) shall follow the moto of "Unite to Rise and Empower"</p>
-								</div>
-							</div>
-
-						</div>
-						
-					</div>
-					<div class="col-md-4">
-						<div class="sidebar">
-							{% include sidebar.html %}
+					<div class="blog-post single-post">
+							
+						<img src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="">
+						<div class="post-content-text">
+							<h1>{{page.title}}</h1>
+							<span>{{ page.date | date: '%d %B %Y' }}</span>
+							{{content}}
 						</div>
 					</div>
+					
+					{% assign author = site.data.authors[page.author] %}
+					{% if page.author %}
+					<hr>
+					<div class="autor-post">
+						<img src="{% if author.image %}{% if author.image contains "://" %}{{ author.image }}{% else %}{{ author.image | absolute_url }}{% endif %}{% else %}{{site.baseurl}}/upload/others/logo.png{% endif %}" alt="{{ author.display_name }}">
+						<div class="autor-content">
+							<h2>{{ author.display_name }}</h2>
+							<span>{{ author.tag }}</span>
+							<p>{{author.description}}</p>
+						</div>
+					</div>
+					<hr>
+					{% endif %}
+
+				</div>
+				
+			</div>
+			<div class="col-md-4">
+				<div class="sidebar">
+					{% include sidebar.html %}
 				</div>
 			</div>
-		</section>
-		<!-- End blog section -->
+		</div>
+	</div>
+</section>
+<!-- End blog section -->
