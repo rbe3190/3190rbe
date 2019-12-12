@@ -5,7 +5,7 @@ date:   2019-09-07
 image: /upload/blog/caamingsoon.png
 author: Rotaract Bangalore East
 categories: International-Service
-tags: campaigns
+tags: campaigns,hosting,stand-alone
 description: Caaaming Sooonn!!! is an innovative game of Hextris launched with an aim to promote the social channels of Rotaract Bangalore East.
 ---
 We have received Participation from 28+ Districts, 80+ clubs and 412+ Rotaracts from from across the rotary family. The campaign was launched on 1 August 2019, winners were be announced on 7 September 2019 during OHANA – Charter installation of Rotaract Bangalore East.
