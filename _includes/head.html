@@ -1,6 +1,5 @@
 <head>
-	<title>{% if page.layout == "post" %}{{page.title}} | {% else %}{{page.bannertitle}}  | {% endif %}Rotaract Bangalore East</title>
-
+	<title>{% if page.layout == "post" %}{{page.title}}{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.bannertitle %}{{page.bannertitle}}{% else %}{{ page.title | capitalize | replace: "-"," "}}{% endif %} – {{site.title}}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 

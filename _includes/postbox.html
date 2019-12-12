@@ -1,0 +1,9 @@
+<div class="blog-post">
+    <img src="{{site.baseurl}}{{post.image}}" alt="">
+    <div class="post-content-text">
+        <h2><a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a></h2>
+        <span>{{ post.date | date: '%d %B %Y' }}</span>
+        <p>{{post.description | strip_html | truncate: 235 }}</p>
+        <a href="{{ post.url | prepend: site.baseurl }}">Read More <i class="fa fa-angle-right"></i></a>
+    </div>
+</div>

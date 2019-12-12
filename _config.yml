@@ -1,6 +1,6 @@
 
 # Site settings
-title: Rotaract District 3190
+title: Rotaract Bangalore East
 subtitle: "Unite. Rise. Empower"
 url: "https://3190rbe.org" # the base hostname & protocol for your site
 # baseurl: "/the/subpath/of/your/site" # Set this value to "" if you want your site to be root
@@ -9,7 +9,7 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 # highlighter: rouge
-permalink: blog/:year-:month-:day-:title/
+permalink: blog/:year/:month/:day/:title/
 paginate: 4
 paginate_path: blog/page-:num/
 
@@ -20,6 +20,18 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-archives
+
+# Archives
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    category: '/blog/:name/'
+    year: '/blog/:year/'
+    month: '/blog/:year/:month/'
+    day: '/blog/:year/:month/:day/'
+    tag: '/blog/tag-:name/'
 
 include:
   - _redirects

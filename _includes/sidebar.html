@@ -1,0 +1,57 @@
+<div class="category-widget widget">
+        <h2>Avenues of Serivce</h2>
+        <ul class="category-list">
+                {% assign tags_list = site.categories %}
+                {% if tags_list.first[0] == null %}
+                {% for tag in tags_list %}
+                <li><a href="{{ site.baseurl }}/blog/{{ tag }}">{{ tag | capitalize | replace: "-"," "}} <span>({{ site.tags[tag].size }})</span></a></li>
+                {% endfor %}
+                {% else %}
+                {% for tag in tags_list %}
+                <li><a href="{{ site.baseurl }}/blog/{{ tag[0] }}">{{ tag[0] | capitalize | replace: "-"," "}} <span>({{ tag[1].size }})</span></a></li>
+                {% endfor %}
+                {% endif %}
+                {% assign tags_list = nil %}					
+        </ul>
+    </div>
+
+    <div class="text-widget widget">
+        <h2>Overview</h2>
+        <div class="text-box">
+            <p>Get updated with latest news from Rotaract Bangalore East</p>
+        </div>
+    </div>
+
+    <div class="archieve-widget widget">
+        <h2>archieve</h2>
+        <ul class="archieve-list">
+                {% for post in site.posts %}
+            
+            {% assign currentDate = post.date | date: "%B %Y" %}
+            
+            {% if currentDate != myDate %}
+
+            <li><a href="{{site.baseurl}}/blog/{{ currentDate | date: "%Y/%m" }}">{{ currentDate }}</a></li>            
+                {% assign myDate = currentDate %}
+                {% endif %}
+                {% endfor %}
+        </ul>
+    </div>
+
+    <div class="tags-widget widget">
+        <h2>TAG Widget</h2>
+        <ul class="tags-list">
+                {% assign tags_list = site.tags %}
+                {% if tags_list.first[0] == null %}
+                    {% for tag in tags_list %}
+                        <li><a href="{{site.baseurl}}/blog/tag-{{ tag | slugify }}">{{ tag | capitalize | replace: "-"," "}}</a></li>
+                    {% endfor %}
+                {% else %}
+                    {% for tag in tags_list %}
+                    <li><a href="{{site.baseurl}}/blog/tag-{{ tag[0] | slugify }}">{{ tag[0] | capitalize | replace: "-"," "}}</a></li>
+                    {% endfor %}
+                {% endif %}
+                {% assign tags_list = nil %}
+
+        </ul>
+    </div>
