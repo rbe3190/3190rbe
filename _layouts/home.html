@@ -87,49 +87,32 @@
 				</div>
 				<div class="news-box">
 					<div class="row">
-					
+				
+						{% assign posts = site.posts | sort: 'date' | reverse %}
+						{% for post in posts limit: 3 %}
 						<div class="col-md-4">
 							<div class="news-post">
 								<div class="news-gallery">
-									<img src="{{site.baseurl}}/upload/blog/caamingsoon.png" alt="">
+									<img src="{{site.baseurl}}{{ post.image }}" alt="">
 								</div>
 								<div class="news-content">
-									<h2><a href="{{site.baseurl}}/caaamingsooonn.html">Caaaming Sooonn!!!</a></h2>
-									<span class="date">7 September 2019</span>
-									<a class="comm-number" href="{{site.baseurl}}/caaamingsooonn.html"><i class="fa fa-comments"></i> 0 comments</a>
+									<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
+									<span class="date">{{ post.date | date: '%d %B %Y' }}</span>
+									<a class="comm-number" href="{{ post.url }}"><i class="fa fa-user"></i> {{post.author}}</a>
 								</div>
 							</div>
 						</div>
-					
-						<!-- <div class="col-md-4">
-							<div class="news-post">
-								<div class="news-gallery">
-									<img src="upload/blog/proj-2.jpg" alt="">
-								</div>
-								<div class="news-content">
-									<h2><a href="single-post.html">Donec nec justo eget felis facilisis fermentum. </a></h2>
-									<span class="date">4 jannuary 2016</span>
-									<a class="comm-number" href="#"><i class="fa fa-comments"></i> 4 comments</a>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- <div class="col-md-4">
-							<div class="news-post">
-								<div class="news-gallery">
-									<img src="upload/blog/proj-4.jpg" alt="">
-								</div>
-								<div class="news-content">
-									<h2><a href="single-post.html">Nam dui mi, tincidunt quis, accumsan porttitor.</a></h2>
-									<span class="date">4 jannuary 2016</span>
-									<a class="comm-number" href="#"><i class="fa fa-comments"></i> 4 comments</a>
-								</div>
-							</div>
-						</div> -->
+						{% endfor %}
+						{% assign posts = null %}
 
 					</div>
-
-				</div>
+					<div class="row">
+						<div class="title-section">
+							<h1></h1>
+							<a href="{{site.baseurl}}/blog">Read More</a>
+						</div>
+					</div> 
+				</div> 
 
 			</div>
 		</section>

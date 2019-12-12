@@ -1788,3 +1788,32 @@ footer .contact-info p {
   background: #ff6500; 
 }
 /* Slider End */
+
+
+/* Adding button design in title section */
+
+
+.title-section a {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ff9000;
+  border: 2px solid #ff9000;
+  /* background: #ff9000; */
+  /* border-color: #ff9000; */
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 12px 45px;
+}
+.title-section a:hover {
+  opacity: 0.7;
+}

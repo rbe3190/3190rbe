@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+		<!-- blog section 
+			================================================== -->
+		<section class="blog-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="blog-box">
+
+							<div class="blog-post single-post">
+								<img src="{{site.baseurl}}{{page.image}}" alt="">
+								<div class="post-content-text">
+									<h1>{{page.title}}</h1>
+									<span>{{ page.date | date: '%d %B %Y' }}</span>
+									{{content}}
+								</div>
+							</div>
+							<div class="autor-post">
+								<img src="{{site.baseurl}}/upload/others/logo.png" alt="">
+								<div class="autor-content">
+									<h2>Rotaract Bangalore East</h2>
+									<span>RID 3190</span>
+									<p>We the members of Rotaract Bangalore East (Easterners) shall follow the moto of "Unite to Rise and Empower"</p>
+								</div>
+							</div>
+
+						</div>
+						
+					</div>
+					<div class="col-md-4">
+						<div class="sidebar">
+
+							<div class="category-widget widget">
+								<h2>Avenues of Serivce</h2>
+								<ul class="category-list">
+									<li><a href="#">Club Serive <span>0</span></a></li>
+									<li><a href="#">Community Serivce <span>0</span></a></li>
+									<li><a href="#">International Serivce <span>0</span></a></li>
+									<li><a href="#">Professional Developement <span>0</span></a></li>
+								</ul>
+							</div>
+
+							<div class="text-widget widget">
+								<h2>Overview</h2>
+								<div class="text-box">
+									<p>Get updated with latest news from Rotaract Bangalore East</p>
+								</div>
+							</div>
+
+							<div class="archieve-widget widget">
+								<h2>archieve</h2>
+								<ul class="archieve-list">
+									<li><a href="#">July 2019</a></li>
+								</ul>
+							</div>
+
+							<div class="tags-widget widget">
+								<h2>TAG Widget</h2>
+								<ul class="tags-list">
+									<li><a href="#">campaigns</a></li>
+									<!-- <li><a href="#">Membership</a></li>
+									<li><a href="#">Volunteering</a></li>
+									<li><a href="#">Parent Education</a></li>
+									<li><a href="#">Help Orphans</a></li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End blog section -->

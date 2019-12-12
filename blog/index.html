@@ -1,0 +1,71 @@
+---
+layout: default
+bannertitle: Our Blog
+---
+
+		<!-- blog section 
+			================================================== -->
+		<section class="blog-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="blog-box">
+							{% for post in paginator.posts %}
+							<div class="blog-post">
+								<img src="{{site.baseurl}}{{post.image}}" alt="">
+								<div class="post-content-text">
+									<h2><a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a></h2>
+									<span>{{ post.date | date: '%d %B %Y' }}</span>
+									<p>{{post.description | strip_html | truncate: 235 }}</p>
+									<a href="{{ post.url | prepend: site.baseurl }}">Read More <i class="fa fa-angle-right"></i></a>
+								</div>
+							</div>
+							{% endfor %}
+
+							{% include pagination.html %}
+						</div>
+						
+					</div>
+					<div class="col-md-4">
+						<div class="sidebar">
+
+							<div class="category-widget widget">
+								<h2>Avenues of Serivce</h2>
+								<ul class="category-list">
+									<li><a href="#">Club Serive <span>0</span></a></li>
+									<li><a href="#">Community Serivce <span>0</span></a></li>
+									<li><a href="#">International Serivce <span>1</span></a></li>
+									<li><a href="#">Professional Developement <span>0</span></a></li>
+								</ul>
+							</div>
+
+							<div class="text-widget widget">
+								<h2>Overview</h2>
+								<div class="text-box">
+									<p>Get updated with latest news from Rotaract Bangalore East</p>
+								</div>
+							</div>
+
+							<div class="archieve-widget widget">
+								<h2>archieve</h2>
+								<ul class="archieve-list">
+									<li><a href="#">August 2019</a></li>
+								</ul>
+							</div>
+
+							<div class="tags-widget widget">
+								<h2>TAG Widget</h2>
+								<ul class="tags-list">
+									<li><a href="#">campaigns</a></li>
+									<!-- <li><a href="#">Membership</a></li>
+									<li><a href="#">Volunteering</a></li>
+									<li><a href="#">Parent Education</a></li>
+									<li><a href="#">Help Orphans</a></li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End blog section -->

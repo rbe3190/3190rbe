@@ -4,21 +4,13 @@
                 <div class="container">
                     <div class="testimonial-box">
                         <ul class="bxslider">
+                            {% for testimonial in site.data.testimonial %}
                             <li>
-                                <p>“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. ”</p>
-                                <h2>John Smith</h2>
-                                <span>Menager</span>
+                                <p>“ {{testimonial.message}} ”</p>
+                                <h2>{{testimonial.name}}</h2>
+                                <span>{{testimonial.role}}</span>
                             </li>
-                            <li>
-                                <p>“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. ”</p>
-                                <h2>Larry Jane</h2>
-                                <span>Ceo / Founder</span>
-                            </li>
-                            <li>
-                                <p>“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. ”</p>
-                                <h2>Quan Ngyen</h2>
-                                <span>Developer</span>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
     

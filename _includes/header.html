@@ -56,8 +56,10 @@
                                 <li><a href="{{site.baseurl}}/blog">blog</a></li>
                                 <li><a href="{{site.baseurl}}/contact">Contact</a></li>
                                 <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                                    <form class="form-search">
-                                        <input type="search" placeholder="Search:"/>
+                                    <form class="form-search" action="https://www.google.com/search" method="get" name="searchform" target="_blank">
+                                        <input name="sitesearch" type="hidden" value="3190rbe.org">
+                                        <input type="search" name="q" placeholder="Search in 3190rbe.org" required="required">
+                                        <!-- <input type="search" placeholder="Search:"/> -->
                                         <button type="submit">
                                             <i class="fa fa-search"></i>
                                         </button>
