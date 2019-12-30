@@ -98,7 +98,7 @@
 								<div class="news-content">
 									<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
 									<span class="date">{{ post.date | date: '%d %B %Y' }}</span>
-									<a class="comm-number" href="{{ post.url }}"><i class="fa fa-user"></i> {{post.author}}</a>
+									<a class="comm-number" href="{{ post.url }}"><i class="fa fa-user"></i> {{site.data.authors[post.author].display_name}}</a>
 								</div>
 							</div>
 						</div>
