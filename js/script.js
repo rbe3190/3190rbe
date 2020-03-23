@@ -95,12 +95,11 @@ $(document).ready(function($) {
 	/*-------------------------------------------------*/
 	
 	var searchToggle = $('.open-search'),
-		inputAnime = $(".form-search"),
+		inputAnime = $(".form-search"), 
 		body = $('body');
 
 	searchToggle.on('click', function(event){
 		event.preventDefault();
-
 		if ( !inputAnime.hasClass('active') ) {
 			inputAnime.addClass('active');
 		} else {
