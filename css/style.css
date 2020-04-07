@@ -1531,10 +1531,30 @@ section.services-section .services-box .services-post:hover .services-content h2
 .comment-form {
   margin-bottom: -30px;
 }
-#contact-form input[type="text"],
-.comment-form input[type="text"],
-#contact-form input[type="email"],
-.comment-form input[type="email"],
+
+#contact-form select,
+.comment-form select {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #dedede;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  color: #5a5a5a;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+
+  background: #ffffff;
+  height: 58px;
+  overflow: hidden;
+}
+
+#contact-form input,
+.comment-form input,
 #contact-form textarea,
 .comment-form textarea {
   width: 100%;
@@ -1549,11 +1569,13 @@ section.services-section .services-box .services-post:hover .services-content h2
   color: #5a5a5a;
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;
+
+  height: 58px;
 }
-#contact-form input[type="text"]:focus,
-.comment-form input[type="text"]:focus,
-#contact-form input[type="email"]:focus,
-.comment-form input[type="email"]:focus,
+#contact-form input:focus,
+.comment-form input:focus,
+#contact-form select:focus,
+.comment-form select:focus,
 #contact-form textarea:focus,
 .comment-form textarea:focus {
   border: 1px solid #ff9000;

@@ -1,0 +1,78 @@
+---
+layout: default
+bannertitle: Join Us
+---
+
+
+<!-- contact section 
+			================================================== -->
+<section class="contact-section">
+	<div class="container">
+		<div class="col-md-8">
+			<script type="text/javascript">
+				var submitted = false;
+			</script>
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+				onload="if(submitted)  {window.location='/thankyou/';}"></iframe>
+
+			<form
+				action="https://docs.google.com/forms/d/e/1FAIpQLSeukck0yLWRUanwK1XjL6gBOMDlq0pk4oJ5bRIQ2QYeY7BYvg/formResponse"
+				target="hidden_iframe" onsubmit="submitted=true;" id="contact-form" name="contact" method="POST">
+				<h2>UNITE with us to RISE and EMPOWER the community</h2>
+				<div class="row">
+					<div class="col-md-12">
+						<input name="entry.610221127" id="name" type="text" placeholder="Name" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input name="entry.207513290" id="mail" type="email" placeholder="Email" required>
+					</div>
+					<div class="col-md-6">
+						<input name="entry.557203297" id="tel" pattern="[6-9]{1}[0-9]{9}" type="tel" placeholder="Phone"
+							required>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input name="entry.798190516" id="date" type="date" placeholder="Date" required>
+					</div>
+					<div class="col-md-6">
+						<select name="entry.1887778624" id="gender" required>
+							<option value="" disabled="" selected="" hidden="">Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Prefer not to say">Prefer not to say</option>
+						</select>
+						<!-- <input name="entry.1887778624" id="text" type="text" placeholder="Gender" required> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<input name="entry.2134806077" id="locality" type="text" placeholder="Your Locality" required>
+					</div>
+				</div>
+				<textarea name="entry.64299667" id="whyRotaract" placeholder="Why do you want to join Rotaract?"
+					required></textarea>
+				<input type="submit" value="Submit Request">
+				<!-- <input type="submit" id="submit_contact" value="Send Message"> -->
+				<!-- <div id="msg" class="message"></div> -->
+			</form>
+		</div>
+		<div class="col-md-4">
+			<div class="contact-info">
+				<h2>Contact Info</h2>
+				<p>You can contact or visit us anytime round the week</p>
+				<ul class="information-list">
+					<li><i class="fa fa-map-marker"></i><span>We meet at Indiranagr Club every 3rd Sunday: 11:00 -
+							14:00</span></li>
+					<li><i class="fa fa-phone"></i><span>+91 85537 88515</span><span>+91 90083 11805</span></li>
+					<li><i class="fa fa-envelope-o"></i><a href="mailto:3190rbe@gmail.com"
+							target="_blank">3190rbe@gmail.com</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End contact section -->
