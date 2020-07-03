@@ -2,7 +2,7 @@
 	<title>{% if page.layout == "post" %}{{page.title}}{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.bannertitle %}{{page.bannertitle}}{% else %}{{ page.title | capitalize | replace: "-"," "}}{% endif %} – {{site.title}}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% if page.thank_you == true %}
+	{% if page.noindex == true %}
 	<meta name=”robots” content=”noindex, follow”>
 	{% endif %}
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700' rel='stylesheet' type='text/css'>
