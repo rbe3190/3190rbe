@@ -2,6 +2,8 @@
 layout: default
 bannertitle: 404
 permalink: /404.html
+noindex: true
+redirect_to_home: true
 ---
 
 <div class="container">
@@ -10,7 +12,19 @@ permalink: /404.html
     <h1>Lost?</h1>
     <p><strong>Page not found :(</strong></p>
     <p>The requested page could not be found.</p>
+    <h6 class="text-white">Redirecting to home page ... <span id="countdown">3</span></h6>
     <br>
     <a href="{{site.baseurl}}/">Go back to Home Page</a>
   </div>
 </div>
+
+<!-- Timer -->
+<script>
+  var seconds = 3,
+    $seconds = document.querySelector('#countdown');
+  (function countdown() {
+    $seconds.textContent = seconds + ' second' + (seconds == 1 ? '' : 's')
+    if (seconds-- > 0) setTimeout(countdown, 1000)
+  })();
+</script>
+<!-- End Timer -->
