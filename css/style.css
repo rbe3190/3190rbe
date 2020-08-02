@@ -581,7 +581,7 @@ section.services-section .services-box .services-post:hover .services-content h2
 #statistic-section .statistic-post p {
   margin: 0 0 20px;
 }
-#statistic-section .statistic-post span.timer {
+#statistic-section .statistic-post span{
   color: #ffffff;
   font-size: 48px;
   font-family: 'Montserrat', sans-serif;

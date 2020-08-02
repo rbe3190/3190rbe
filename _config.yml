@@ -23,6 +23,11 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
 
+collections:
+  clubtags:
+    output: true
+    permalink: /:path/
+
 # Archives
 jekyll-archives:
   enabled: all
