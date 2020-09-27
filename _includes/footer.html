@@ -1,13 +1,20 @@
 		<!-- subcribe-section 
 			================================================== -->
+
+<script type="text/javascript">
+    var submission = false;
+  </script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+  onload="if(submission)  {window.location='/thankyou';}"></iframe>
+
             <section class="subcribe-section">
                 <div class="container">
                     <div class="title-section white">
                         <h1>Subscribe to our newsletter</h1>
                     </div>
-                    <form class="subscribe" action="https://3190rbe.substack.com/subscribe" target="_blank">
-                        <!-- <input type="text" name="name-subs" id="name-subs" placeholder="name"/> -->
-                        <!-- <input type="text" name="email-subs" id="email-subs" placeholder="your email address"/> -->
+                    <form class="subscribe" action="https://docs.google.com/forms/d/e/1FAIpQLSf5ddGyszvRC6Mb1VfxbIUWxIe8Sbfht1j7CcDXESQbZYi0Jg/formResponse" target="hidden_iframe" onsubmit="submission=true;" method="POST">
+                        <input type="text" name="entry.825934208" id="name-subs" placeholder="name" required/>
+                        <input type="email" name="entry.1441391045" id="email-subs" placeholder="your email address" required/>
                         <input type="submit" id="submit-subscribe" value="subscribe"/>
                     </form>
                     <p>Hear from us, lets keep in touch.</p>

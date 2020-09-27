@@ -970,6 +970,17 @@ section.services-section .services-box .services-post:hover .services-content h2
   margin: 0 12px;
   width: 220px;
 }
+.subcribe-section form input[type="email"] {
+  outline: none;
+  color: #999999;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  padding: 14px 10px;
+  border: none;
+  margin: 0 12px;
+  width: 220px;
+}
 .subcribe-section form input[type="submit"] {
   border: 1px solid #ffffff;
   background: transparent;
