@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <h1>Event Details</h1>
+        </div>
+    </section>
+
+    {% include breadcrumbs.html %}
+
+    <!-- Sidebar page -->
+    <div class="sidebar-page-container">
+        <div class="container">
+            <div class="row">
+                
+                <!--Content Side / Blogs Classic-->
+                <div class="content-side col-lg-8">
+                    <div class="service-details">
+                        <!--Cause Block-->
+                        <div class="cause-block">
+                            <div class="inner-box">
+                                <figure class="image">
+                                    <img src="{{page.image | relative_url}}" alt="{{page.title}}">
+                                </figure>
+                                <div class="lower-content">
+                                    <h4>{{page.title}}</h4>
+                                    <div class="text">{{page.intro}}</div>
+
+                                    <div class="donate clearfix">
+                                            <li><span class="fa fa-clock" style="color: #ff9000;"></span> Start: {{ page.start | date: '%d %b %Y, %I:%M %p' }}</li>
+                                            {% if page.end %}<li><span class="fa fa-clock" style="color: #ff9000;"></span> End: {{ page.end | date: '%d %b %Y, %I:%M %p' }}</li>{% endif %}
+                                            <li><span class="fa fa-map-marker-alt" style="color: #ff9000;"></span> {{page.location}}</li>
+                                    </div>
+ 
+                                    <div class="clearfix mt-30 post-share-options">
+                                        <div class="float-left"><div class="popup-link"><a href="{% if page.button_url contains "://" %}{{ page.button_url }}{% else %}{{ page.button_url | relative_url }}{% endif %}" class="theme-btn btn-style-two" target="_blank">{{page.button_text}}</a></div></div>
+                                        <div class="float-right">
+                                            <span>Share This</span>
+                                            <ul class="social-icon-three list-inline-item">
+                                                <li class="share"><i class="fa fa-share"></i></li>
+                                                <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;"><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="text-block-three cause_textbox">
+                            {{content}}
+                        </div>
+                    </div>                                             
+                </div>
+                
+                {% include side-bar.html %}
+                
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,200 @@
+email: info@3190rbe.org
+phone: +91 85537 88515
+
+location: Bangalore, India
+
+site_social:
+  facebook: https://www.facebook.com/3190rbe/
+  instagram: https://www.instagram.com/3190rbe/
+  twitter: https://twitter.com/3190rbe
+  linkedin: https://www.linkedin.com/company/3190rbe/
+
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: News
+    url: /news/
+  - title: Causes
+    url: /causes
+  - title: Events
+    url: /events
+  - title: Contact
+    url: /contact
+
+fnav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: News
+    url: /news/
+  - title: Causes
+    url: /causes
+  - title: Events
+    url: /events
+  - title: Join Us
+    url: /join
+
+partners:
+  - type: Our Sponsor Club
+    line_count: 2
+    list:
+      - name: Rotary Bangalore East
+        link: https://goodwillrbe.blogspot.com/
+        img: /images/supporters/rotaryeast.jpg
+
+welcomeSection:
+  - title: UNITE
+    icon: flaticon-profile
+    brief: We are a family and family means no one gets left behind or forgotten.
+    target: /news
+  - title: RISE
+    icon: flaticon-diamond
+    brief: With the Unity we RISE by learning from each other's spirit of Rotaracton.
+    target: /news
+  - title: EMPOWER
+    icon: flaticon-donation
+    brief: With the Unity we Rise and Empower the Community around Us.
+    target: /news
+
+areasoffocus:
+  - title: Peace and Conflict Prevention / Resolution
+    icon: flaticon-support
+    description: 
+  - title: Disease prevention and treatment
+    icon: flaticon-doctor
+    description: 
+  - title: Water and Sanitation
+    icon: flaticon-blood
+    description: 
+  - title: Maternal and Child Health
+    icon: flaticon-favorite
+    description: 
+  - title: Basic Edutcation and Literacy
+    icon: flaticon-agenda
+    description: 
+  - title: Economic and Community Development
+    icon: flaticon-suitcase
+    description: 
+  - title: Supporting the environment
+    icon: flaticon-circle
+    description: 
+    # description: Nostrud exercitation ullamco laboris nisi utm aliquip sed duis aute lorem ipsum.
+
+# stats:
+#   - title: Received Donations
+#     icon: flaticon-donation-1
+#     count: 98520
+#   - title: Received Donations
+#     icon: flaticon-balloon
+#     count: 30682
+#   - title: Our Volunteers
+#     icon: flaticon-shirt
+#     count: 614
+#   - title: Projects Done
+#     icon: flaticon-ecology
+#     count: 14369
+
+# testimonials:
+  # - name: Rtr. ABC
+  #   affiliation: Founder, XYZ
+  #   image: /images/team/zeospec.jpg
+  #   message: We the members of Rotaract Bangalore East (Easterners) follow the motto UNITE to RISE and EMPOWER. 
+
+authors:
+  rbe:
+    display_name: Rotaract Bangalore East
+    image: /images/rbe.png
+    description: We the members of Rotaract Bangalore East (Easterners) follow the motto UNITE to RISE and EMPOWER.
+
+# buttons:
+#   - one
+#   - two
+#   - three
+#   - four
+#   - five
+#   - six
+#   - seven
+#   - eight
+#   - nine
+#   - ten
+#   - eleven
+#   - twelve
+#   - thirteen
+#   - fourteen
+#   - fifteen
+
+# icon_types:
+  # - icon: flaticon-construction
+  # - icon: flaticon-drawing
+  # - icon: flaticon-group
+  # - icon: flaticon-businessman
+  # - icon: flaticon-arrows
+  # - icon: flaticon-arrows-1
+  # - icon: flaticon-left-arrow
+  # - icon: flaticon-arrows-2
+  # - icon: flaticon-layers
+  # - icon: flaticon-arrows-3
+  # - icon: flaticon-arrows-4
+  # - icon: flaticon-left-arrow-1
+  # - icon: flaticon-right-arrow
+  # - icon: flaticon-note
+  # - icon: flaticon-favorite
+  # - icon: flaticon-left
+  # - icon: flaticon-left-quotes-sign
+  # - icon: flaticon-envelope
+  # - icon: flaticon-remove
+  # - icon: flaticon-multimedia
+  # - icon: flaticon-technology
+  # - icon: flaticon-social
+  # - icon: flaticon-edit
+  # - icon: flaticon-signs
+  # - icon: flaticon-can
+  # - icon: flaticon-check
+  # - icon: flaticon-social-1
+  # - icon: flaticon-circle
+  # - icon: flaticon-cross
+  # - icon: flaticon-agenda
+  # - icon: flaticon-business
+  # - icon: flaticon-pencil
+  # - icon: flaticon-construction-1
+  # - icon: flaticon-profile
+  # - icon: flaticon-suitcase
+  # - icon: flaticon-connection
+  # - icon: flaticon-people
+  # - icon: flaticon-travel
+  # - icon: flaticon-people-1
+  # - icon: flaticon-signs-1
+  # - icon: flaticon-location-pin
+  # - icon: flaticon-creative-idea
+  # - icon: flaticon-play-button
+  # - icon: flaticon-diamond
+  # - icon: flaticon-magnifying-glass
+  # - icon: flaticon-play-button-1
+  # - icon: flaticon-play-button-2
+  # - icon: flaticon-quote
+  # - icon: flaticon-right-quote-symbol
+  # - icon: flaticon-add-plus-button
+  # - icon: flaticon-minus
+  # - icon: flaticon-tick
+  # - icon: flaticon-tick-box
+  # - icon: flaticon-donation
+  # - icon: flaticon-button
+  # - icon: flaticon-heart
+  # - icon: flaticon-donation-1
+  # - icon: flaticon-support
+  # - icon: flaticon-lace
+  # - icon: flaticon-shirt
+  # - icon: flaticon-monitor
+  # - icon: flaticon-boy
+  # - icon: flaticon-cancer
+  # - icon: flaticon-love-and-romance
+  # - icon: flaticon-doctor
+  # - icon: flaticon-heart-box
+  # - icon: flaticon-ecology
+  # - icon: flaticon-balloon
+  # - icon: flaticon-blood
+  # - icon: flaticon-two-quotes
+  # - icon: flaticon-quotations  

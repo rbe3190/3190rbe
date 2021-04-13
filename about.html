@@ -1,128 +1,213 @@
 ---
 layout: default
-bannertitle: About Us
+title: About
+permalink: about
 ---
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <h1>About Us</h1>
+        </div>
+    </section>
+    {% include breadcrumbs.html %}
 
-		<!-- about section 
-			================================================== -->
-		<section class="about-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="about-post">
-							<img src="{{site.baseurl}}/upload/others/logo.png" alt="">
-							<h2>UNITE . RISE . EMPOWER</h2>
-							<p>We the members of Rotaract Bangalore East (Easterners) shall follow the motto "Unite to Rise and Empower"</p>
-						</div>
-					</div>
-					<div class="col-md-6">
+    <!-- About Us -->
+    <section class="about-us-two sp-four">
+        <div class="container">
+            <!-- about block -->
+            <div class="about-block-two">
+                <div class="inner-box">
+                    <h4>UNITE . RISE . EMPOWER <span></span></h4>
+                    <h1>About <span class="theme-color">Rotaract Bagalore East</span></h1>
+                    <!-- <h1>Impact of <span class="theme-color">RBE</span></h1> -->
+                    <div class="text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut laboret dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+                    <!-- <div class="author">
+                        <div class="inner-box">
+                            <div class="image"><img src="images/resource/logoSign.png" alt="RBE Logo"></div>
+                            <h5>Team RBE</h5>
+                            <div class="sign"><img src="images/resource/logoSign.png" alt="RBE Logo"></div>
+                        </div>  
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<div class="about-post">
-							<img src="{{site.baseurl}}/upload/others/download.jpeg" alt="">
-							<h2>Joining Hands with our Community</h2>
-							<p>We cheer the joy of helping the community around us. Along with helping each other grow to be a better leaders.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End about section -->
+    {% if site.data.info.stats %}
+    <!-- Fact Counter -->
+    <div class="fact-counter sp-two style-two">
+        <div class="container">
+            <div class="row">
+                {% for fact in site.data.info.stats %}
+                <!--Column-->
+                <article class="column counter-column col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-duration="{% if forloop.first %}900{% else %}{{forloop.index | minus:1 | times:300}}{% endif %}ms">
+                    <div class="item">
+                        <div class="inner-box">
+                            <div class="icon-box"><span class="{{fact.icon}}"></span></div>
+                            <div class="count-outer">
+                                <span>{{fact.count}}</span>
+                                <p>{{fact.title}}</p>
+                            </div>
+                        </div>                                                      
+                    </div>
+                </article>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    {% endif %}
 
-		{% include home-choose-us.html %}
+    <!-- Disaster response -->
+    <section class="disaster-response sp-two" style="background-image: url(images/background/3.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="image mb-30"><img src="images/resource/feature-5.jpeg" alt="Fundrising for Goodness"></div>
+                </div>
+                <div class="col-lg-6 pl-lg-5">
+                    <div class="text-block-one">
+                        <h4>Fundrising for Goodness</h4>
+                        <h1>Quick Community Response</h1>
+                        <div class="text">The support we give to the community is the rent that we pay for our time on Earth. Be part of the change and experience the joy of giving back to the community.</div>
+                        <div class="link-btn"><a href="{{site.baseurl}}/causes" class="theme-btn btn-style-twelve">Our Causes</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- team-section 
-			================================================== -->
-		<!-- <section class="team-section">
-			<div class="container">
+    <!-- Welcome Section -->
+    <section class="welcome-section sp-two">
+        <div class="container">
+            <div class="row justify-content-around">
+                {% for block in site.data.info.welcomeSection %}
+                <!-- services block -->
+                <div class="services-block-one col-lg-4 col-md-6">
+                    <div class="inner-box hvr-float-shadow">
+                        <div class="icon"><span class="{{block.icon}}"></span></div>
+                        <h4><a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}>{{block.title}}</a></h4>
+                        <div class="text">{{block.brief}}</div>
+                        <div class="read-more">
+                            <a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}><span class="flaticon-right-arrow"></span></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
-				<div class="team-box owl-wrapper">
-					<div class="owl-carousel" data-num="3">
+    <!-- Our Team -->
+    <section class="our-team sp-five">
+        <div class="container">
+            <!--Sec Title-->
+            <div class="sec-title centered">
+                <div class="icon-box"><img src="images/icons/sec-title.png" alt=""></div>
+                <h1>Our <span>Team</span></h1>
+                <div class="text">#TeamRBE</div>
+            </div>
+            <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
+                {% for member in site.data.team.members %}
+                <!-- team block -->
+                <div class="team-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="{{member.image | relative_url}}" alt="{{member.name}}">
+                            <div class="overlay-box">
+                                <ul class="social-icon-one">
+                                    {% if member.social.facebook %}
+                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
+                                    {% endif %}
+                                    {% if member.social.instagram %}
+                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                                    {% endif %}
+                                    {% if member.social.twitter %}
+                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                                    {% endif %}
+                                    {% if member.social.linkedin %}
+                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
+                                    {% endif %}
+                                    {% if member.social.email %}
+                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="lower-box">
+                            <div class="designation">{{member.designation}}</div>
+                            <h4><a href="{{member.namelink}}" target="_blank">{{member.name}}</a></h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- end -->
+            </div>
+        </div>
+    </section>
 
-						<div class="item team-post">
-							<div class="gallery-team">
-								<img src="{{site.baseurl}}/upload/team/1.jpg" alt="">
-
-								<ul class="social-list">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-
-							<div class="team-content">
-								<h2>Rtr Spoorthi K S</h2>
-								<span>Charter President</span>
-								<p>Beware of the puns.</p>
-							</div>
-
-						</div>
-
-						<div class="item team-post">
-							<div class="gallery-team">
-								<img src="{{site.baseurl}}/upload/team/2.jpg" alt="">
-
-								<ul class="social-list">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-
-							<div class="team-content">
-								<h2>Rtr Pallavi</h2>
-								<span>Charter Secretary</span>
-								<p>The #aaaawesome</p>
-							</div>
-
-						</div>
-
-						<div class="item team-post">
-							<div class="gallery-team">
-								<img src="upload/team/3.jpg" alt="">
-
-								<ul class="social-list">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-
-							<div class="team-content">
-								<h2>Kenan Januzi</h2>
-								<span>Krye shef</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-
-						</div>
-
-						<div class="item team-post">
-							<div class="gallery-team">
-								<img src="upload/team/4.jpg" alt="">
-
-								<ul class="social-list">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-
-							<div class="team-content">
-								<h2>Pajazit Hallaqi</h2>
-								<span>Puntor shpine</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-									incididunt ut labore et dolore magna aliqua.</p>
-							</div>
-
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</section> -->
-		<!-- End team section -->
+    <!-- Parallax section -->
+    <section class="parallax-section style-two" style="background-image: url(images/background/3.jpg)">
+        <div class="container">
+            <h1>We are Easterners<br>United to Rise and Empower the Community.</h1>
+            <h3>Join us & Become a Rotaractor <span class="border-shape"></span></h3>
+        </div>
+    </section>
+    {% if site.data.info.testimonials.size > 0 %}
+    <!-- Testimonial Section -->
+    <section class="testimonial-section sp-one">
+        <div class="container">
+            <div class="single-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-none">
+                {% for testimonial in site.data.info.testimonials %}
+                <div class="testimonial-block-one">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="{{testimonial.image | relative_url}}" alt="{{testimonial.name}}">
+                        </div>
+                        <div class="text">{{testimonial.message}} </div>
+                        <h3>{{testimonial.name}}  <span>{{testimonial.affiliation}}</span></h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!--End Testimonial Section-->
+    {% endif %}
+    <!-- Feature section -->
+    <!-- <section class="feature-section">
+        <div class="container-fluid">
+            <div class="row m-0">
+                <div class="feature-block col-xl-4 col-lg-6">
+                    <div class="inner-box">
+                        <div class="image"><img src="images/resource/feature-1.jpg" alt=""></div>
+                        <div class="overlay-content">
+                            <h5>Food & Water</h5>
+                            <h4>Benefitting over 800,000 children every year through welfare projects </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-block col-xl-4 col-lg-6">
+                    <div class="inner-box">
+                        <div class="image"><img src="images/resource/feature-2.jpg" alt=""></div>
+                        <div class="overlay-content">
+                            <h5>Get Quick Donations</h5>
+                            <h4>Deploy best possible methodology and technology for achieving ideal</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-block col-xl-4 col-lg-6">
+                    <div class="inner-box">
+                        <div class="image"><img src="images/resource/feature-3.jpg" alt=""></div>
+                        <div class="overlay-content">
+                            <h5>Real Approach</h5> 
+                            <h4>We help donors make safe and easy donations to local organizations</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->

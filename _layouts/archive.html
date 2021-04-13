@@ -2,27 +2,27 @@
 layout: default
 ---
 
-		<!-- blog section 
-			================================================== -->
-		<section class="blog-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<div class="blog-box">
-							{% for post in page.posts %}
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <!-- <h1>{% if page.layout == "post" %}Blog Post{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.bannertitle %}{{page.bannertitle}}{% else %}{{ page.title | capitalize | replace: "-"," "}}{% endif %}</h1> -->
+            <h1>{% if page.layout == "post" %}News Details{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% else %}{% if page.type == "tag" %}Tag: {% endif %}{{ page.title | capitalize | replace: "-"," "}}{% endif %}</h1>
+        </div>
+    </section>
 
-								{% include postbox.html %}
-							
-							{% endfor %}
-						</div>
-							
-					</div>
-					<div class="col-md-4">
-						<div class="sidebar">
-							{% include sidebar.html %}
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End blog section -->
+    {% include breadcrumbs.html %}
+ 
+    <!-- News Section -->
+    <section class="news-section sp-two">
+        <div class="container">
+
+            <div class="row clearfix justify-content-center">
+                {% for post in page.posts %}
+
+                    {% include postbox.html %}
+                
+                {% endfor %}
+            </div>
+            {% include pagination.html %}
+        </div>
+    </section>

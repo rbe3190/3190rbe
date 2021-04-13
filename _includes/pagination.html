@@ -1,29 +1,25 @@
 {% if paginator.total_pages > 1 %}
-<ul class="pagination-list">
-    {% if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path | relative_url }}"
-            class="prev-pag">prev</a></li>
-    {% else %}
-    <li><a class="prev-pag">prev</a></li>
-    {% endif %}
+<ul class="page_pagination_two center mt-40">
+        {% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="tran3s"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        {% else %}
+        <li><a class="tran3s"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <li><a class="active">{{ page }}</a></li>
-    {% elsif page == 1 %}
-    <li><a href="../">{{ page }}</a></li>
-    {% else %}
-    <li><a
-            href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-    </li>
-    {% endif %}
-    {% endfor %}
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <li><a class="active tran3s">{{ page }}</a></li>
+        {% elsif page == 1 %}
+        <li><a href="../" class="tran3s">{{ page }}</a></li>
+        {% else %}
+        <li><a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="tran3s">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
 
-    {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-pag">next</a>
-    </li>
-    {% else %}
-    <li><a class="next-pag">next</a></li>
-    {% endif %}
+        {% if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | relative_url }}" class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        {% else %}
+        <li><a class="tran3s"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        {% endif %}
 </ul>
 {% endif %}

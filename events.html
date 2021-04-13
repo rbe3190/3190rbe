@@ -1,0 +1,72 @@
+---
+layout: default
+title: Events & Activies
+permalink: events
+---
+
+<!--Page title-->
+<section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+    <div class="container">
+        <h1>Our Events & Activies</h1>
+    </div>
+</section>
+{% include breadcrumbs.html %}
+
+<!-- Causes Section -->
+<section class="event-section-two sp-two">
+    <div class="container">
+        <div class="row justify-content-around">
+            {% assign events = site.events | sort: 'start' %}
+            {% capture now %}{{ site.time | date: '%Y%m%d' | plus: 0 }}{%- endcapture %}
+            {% for event in events %}
+            {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
+            {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
+            {% if end >= now or event.end == nil %}
+            <!--Cause Block-->
+            <div class="event-block-two col-lg-6">
+                <div class="inner-box">
+                    <figure class="image">
+                        <img src="{{event.image | relative_url}}" alt="{{event.title}}">
+                        <div class="overlay"><a href="{{event.url}}" class="theme-btn btn-style-eight">Learn More</a>
+                        </div>
+                    </figure>
+                    <div class="lower-content">
+                        <div class="date">{{ event.start | date: '%d' }} <span>{{ event.start | date: '%b' | upcase}}</span></div>
+                        <h4>{{event.title}}</h4>
+                        <div class="text">{{event.intro | truncate: 80}} </div>
+                        <ul class="post-meta">
+                            <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
+                            <li><span class="fa fa-map-marker-alt"></span>{{event.location}}</li>
+                            <li><a href="{{event.url}}" class="theme-btn btn-style-thirteen">Learn More</a></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <section class="about-us-two sp-four">
+            <div class="container">
+                <!-- about block -->
+                <div class="about-block-two">
+                    <div class="inner-box">
+                        <h4>Past Events<span></span></h4>
+                        <div class="text">
+                            {% assign events = site.events | sort: 'end' | reverse %}
+                            {% for event in events %}
+                                {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
+                                {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
+                                {% if end < now and event.end != nil %}
+                                    {% if forloop.first %}<p>{% endif %}<a href="{{event.url}}">{{event.title}}</a>({{ event.start | date: '%d.%m.%Y' }}){% if forloop.last %}</p>{% else %}, {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>
