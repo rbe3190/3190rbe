@@ -1,0 +1,14 @@
+<!--post-share-options-->
+<div class="post-share-options clearfix mb-50">
+    <div class="float-left tags"><span>TAGS </span>{% assign tags_list = page.tags %}{% if tags_list.first[0] == null %}{% for tag in tags_list %}<a href="{{site.baseurl}}/news/tag-{{ tag | slugify }}">{{ tag | capitalize | replace: "-"," "}}</a> {% endfor %}{% else %}{% for tag in tags_list %}<a href="{{site.baseurl}}/news/tag-{{ tag[0] | slugify }}">{{ tag[0] | capitalize | replace: "-"," "}}</a> {% endfor %}{% endif %}{% assign tags_list = nil %}</div>
+    <div class="float-right">
+        <span>Share This</span>
+        <ul class="social-icon-three">
+            <li class="share"><i class="fa fa-share"></i></li>
+
+            <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fab fa-twitter"></i></a></li>
+            <li><a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+    </div>
+</div>

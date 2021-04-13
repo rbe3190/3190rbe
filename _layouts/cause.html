@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <h1>{{page.focus}}</h1>
+        </div>
+    </section>
+
+    {% include breadcrumbs.html %}
+
+    <!-- Sidebar page -->
+    <div class="sidebar-page-container">
+        <div class="container">
+            <div class="row">
+                
+                <!--Content Side / Blogs Classic-->
+                <div class="content-side col-lg-8">
+                    <div class="service-details">
+                        <!--Cause Block-->
+                        <div class="cause-block-two">
+                            <div class="inner-box">
+                                <figure class="image">
+                                    <img src="{{page.image | relative_url}}" alt="{{page.title}}">
+                                </figure>
+                                <div class="lower-content">
+                                    <h4>{{page.title}}</h4>
+                                    <div class="text">{{page.intro}} </div>
+
+                                    <div class="donate clearfix">
+                                        <div class="float-left">
+                                            <span>Deadline: {% if page.due %}{{page.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                        </div>
+                                        <div class="float-right">
+                                            Goal: ₹{{page.goal}}
+                                        </div>
+                                    </div>
+
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+                                                
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="{{page.progress}}"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="clearfix mt-30 post-share-options"> <!-- donate-box-btn -->
+                                        <div class="float-left"><div class="popup-link"><a href="{{page.donation_link}}" target="_blank" class="theme-btn btn-style-two">Contribute</a></div></div>
+                                        <div class="float-right">
+                                            <span>Share This</span>
+                                            <ul class="social-icon-three list-inline-item">
+                                                <li class="share"><i class="fa fa-share"></i></li>
+
+                                                <li><a target="_blank" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a target="_blank" href="https://facebook.com/sharer.php?u={{ page.url | absolute_url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" onclick="window.open(this.href, 'width=550,height=435');return false;"><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="text-block-three cause_textbox">
+                            {{content}}
+                        </div>
+                    </div>                                             
+                </div>
+                
+                {% include side-bar.html %}
+                
+            </div>
+        </div>
+    </div>

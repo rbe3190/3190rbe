@@ -2,11 +2,11 @@
 layout: post
 title:  "Shubhaarambh | Good Beginning"
 date:   2020-07-11
-image: /upload/blog/2021-Shubhaarambh.jpeg
+image: /images/uploads/2021-Shubhaarambh.jpeg
 author: rbe
 categories: [Professional-Development]
 tags: [hosting]
-description: Rotaract Bangalore East had successfully completed its first virtual orientation program "Shubhaarambh" on the 11th of July over Zoom.
+description: Rotaract Bangalore East had successfully completed its first virtual orientation program Shubhaarambh on the 11th of July over Zoom.
 ---
 
 Rotaract Bangalore East had successfully completed its first virtual orientation program "Shubhaarambh" on the 11th of July over Zoom.

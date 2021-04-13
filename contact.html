@@ -1,60 +1,111 @@
 ---
-layout: contact
-bannertitle: Contact Us
+layout: default
+title: Contact
+permalink: contact
 ---
 
+    <!--Page title-->
+    <section class="page-title" style="background-image:url(images/background/5.png)">
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </section>
+    {% include breadcrumbs.html %}
 
-		<!-- contact section 
-			================================================== -->
-		<section class="contact-section">
-			<div class="container">
-				<div class="col-md-8">
+    <!-- map section -->
+    <section class="map-section">
+        <div class="home-google-map">
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124410.28846350599!2d77.678933!3d12.9832651!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6c3c101b0de06586!2sRotaract%20Bangalore%20East!5e0!3m2!1sen!2sin!4v1611615516117!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </section>
 
-					<script type="text/javascript">
-						var submission = false;
-					</script>
-					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-						onload="if(submission)  {window.location='/thankyou/';}"></iframe>
+    <!-- Contact form -->
+    <section class="contact-form-section sp-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mb-30">
+                    <div class="default-form-area">
+                        <h1>Send A Message</h1>
 
-					<form action="https://docs.google.com/forms/d/e/1FAIpQLScWK1k3HYIZMoFWLXx-nkBJ7FbHR42jiJtYdt62U4EnpC3iyQ/formResponse"
-					target="hidden_iframe" onsubmit="submission=true;" id="contact-form" name="contact" method="POST">
-						<h2>Send us a message</h2>
-						<div class="row">
-							<div class="col-md-4">
-								<input name="entry.1155332808" id="name" type="text" placeholder="Name" required>
-							</div>
-							<div class="col-md-4">
-								<input name="entry.535311334" id="mail" type="email" placeholder="Email" required>
-							</div>
-							<div class="col-md-4">
-								<input name="entry.659322169" id="tel-number" type="tel" placeholder="Phone" required>
-							</div>
-						</div>
-						<textarea name="entry.1069201920" id="comment" placeholder="Message" required></textarea>
-						<div class="row">
-							<div class="col-md-6">
-								<hr>
-								<p>What is the sum of 2 + 2?</p>
-								<input name="entry.199032974" type="text" class="form-control" id="honeypot" placeholder="Enter the Answer in digits *">
-								<p>The submission will be rejected if the answer is incorrect.</p>
-							</div>
-						</div>
-						<input type="submit" value="Send Message">
-						<!-- <input type="submit" id="submit_contact" value="Send Message"> -->
-						<!-- <div id="msg" class="message"></div> -->
-					</form>
-				</div>
-				<div class="col-md-4">
-					<div class="contact-info">
-						<h2>Contact Info</h2>
-						<p>You can contact or visit us anytime round the week</p>
-						<ul class="information-list">
-							<li><i class="fa fa-map-marker"></i><span>We meet at Indiranagr Club every 3rd Sunday: 11:00 - 14:00</span></li>
-							<li><i class="fa fa-phone"></i><span>+91 85537 88515</span><span>+91 90083 11805</span></li>
-							<li><i class="fa fa-envelope-o"></i><a href="mailto:info@3190rbe.org" target="_blank">info@3190rbe.org</a></li>
-						</ul>						
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End contact section -->
+                        <script type="text/javascript">
+                            var submission = false;
+                        </script>
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                            onload="if(submission)  {window.location='/thankyou/';}"></iframe>
+
+                        <form action="https://docs.google.com/forms/d/e/1FAIpQLScWK1k3HYIZMoFWLXx-nkBJ7FbHR42jiJtYdt62U4EnpC3iyQ/formResponse"
+                        target="hidden_iframe" onsubmit="submission=true;" id="contact-form" name="contact_form" method="POST" class="contact-form style-five">
+                            <div class="row clearfix">
+                                <div class="col-md-6 column">        
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" name="entry.1155332808" placeholder="" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 column">
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email" name="entry.535311334" class="form-control required email" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <input type="tel" name="entry.659322169" class="form-control" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="">Message</label>
+                                        <textarea name="entry.1069201920" class="form-control textarea required" placeholder="" required></textarea>
+                                    </div>
+                                </div>                                            
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-md-6 column">
+                                    <hr style="border-top: 1px solid #ff9000">
+                                    <div class="form-group">
+                                        <label for="">What is the sum of 2 + 2?</label>
+                                        <input type="text" name="entry.199032974" class="form-control" placeholder="Enter the Answer in digits">
+                                        <p>The submission will be rejected if the answer is incorrect.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-section-btn">
+                                <div class="form-group style-two">
+                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                    <button class="theme-btn btn-style-two" type="submit" data-loading-text="Please wait...">Submit Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-30 pl-lg-5">
+                    <div class="title">
+                        <h4>Contact Information</h4>
+                        <div class="text mb-40">You can contact or visit us anytime round the week.</div>
+                    </div>
+                    <ul class="contact-info-list">
+                        <li><span class="fas fa-map-marker-alt"></span><b>Address</b>{{site.data.info.location}}</li>
+                        <li><span class="fa fa fa-envelope-open"></span><b>Email</b>{{site.data.info.email}}</li>
+                        <li><span class="fa fa-phone"></span><b>Phone</b>{{site.data.info.phone}}</li>
+                    </ul>
+                    <ul class="social-icon-three">
+                    {% for social in site.data.info.site_social %}
+                        {% if social[1] %}
+                        <li><a href="{{ social[1] }}" target="_blank"><i class="fab fa-{{ social[0] }}"></i></a></li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    
+                </div>
+            </div>            
+        </div>
+    </section>

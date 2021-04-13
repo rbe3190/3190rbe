@@ -1,51 +1,118 @@
-		<!-- subcribe-section 
-			================================================== -->
-
-<script type="text/javascript">
-    var submission = false;
-  </script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-  onload="if(submission)  {window.location='/thankyou';}"></iframe>
-
-            <section class="subcribe-section">
-                <div class="container">
-                    <div class="title-section white">
-                        <h1>Subscribe to our newsletter</h1>
-                    </div>
-                    <form class="subscribe" action="https://docs.google.com/forms/d/e/1FAIpQLSf5ddGyszvRC6Mb1VfxbIUWxIe8Sbfht1j7CcDXESQbZYi0Jg/formResponse" target="hidden_iframe" onsubmit="submission=true;" method="POST">
-                        <input type="text" name="entry.825934208" id="name-subs" placeholder="name" required/>
-                        <input type="email" name="entry.1441391045" id="email-subs" placeholder="your email address" required/>
-                        <input type="submit" id="submit-subscribe" value="subscribe"/>
-                    </form>
-                    <p>Hear from us, lets keep in touch.</p>
-                </div>
-            </section>
-            <!-- End subscribe section -->
+  <!-- Main footer -->
+  <footer class="main-footer">
+    <div class="container">
     
-            <!-- footer 
-                ================================================== -->
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="contact-info">
-                                <h2><i class="fa fa-location-arrow"></i> Our Address</h2>
-                                <p>Indiranagar Club,</br>Bangalore, Karnataka, India.</p>
+        <!--Widgets Section-->
+        <div class="widgets-section">
+            <div class="row clearfix">
+                <!--Big Column-->
+                <div class="big-column col-lg-5">
+                    <div class="row clearfix">
+                        
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-7">
+                            <div class="footer-widget about-widget">
+                                <div class="footer-logo">
+                                    <figure>
+                                        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/footer-logo.png" alt=""></a>
+                                    </figure>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="text">Rotaract Bangalore East is a community-based club in Bangalore, established on 17 January 1975 and rechartered in July 2019 follows the theme "UNITE . RISE . EMPOWER".</div>
+                                    <ul class="social-icon-three">
+                                        {% for social in site.data.info.site_social %}
+                                        {% if social[1] %}
+                                        <li><a href="{{ social[1] }}" target="_blank"><span class="fab fa-{{ social[0] }}"></span></a></li>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="contact-info">
-                                <h2><i class="fa fa-envelope-o"></i> Contact Us</h2>
-                                <p>+91 85537 88515 <br> info@3190rbe.org</p>
+                        
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-5">
+                            <div class="footer-widget services-widget">
+                                <h2 class="widget-title">Useful Links</h2>
+                                <div class="widget-content">
+                                    <ul class="list">
+                                        {% for item in site.data.info.fnav %}
+                                        <li><a href="{{item.url}}">{{item.title}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>  
+                        </div>                          
+                    </div>
+                </div>
+                
+                <!--Big Column-->
+                <div class="big-column col-lg-7">
+                    <div class="row clearfix">
+                        
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-7">
+                            <div class="footer-widget posts-widget">
+                                <h2 class="widget-title">Recent News</h2>
+                                <div class="widget-content">
+                                    <div class="posts">
+                                        {% assign posts = site.posts | sort: 'date' | reverse %}
+                                        {% for post in posts limit: 2 %}
+                                        <div class="post">
+                                            <figure class="post-thumb">
+                                                <img src="{{post.image | relative_url}}" alt="{{post.title}}">
+                                                <a href="{{ post.url }}" class="overlay-link">
+                                                    <span class="fa fa-link"></span>
+                                                </a>
+                                            </figure>
+                                            <div class="desc-text">
+                                                <a href="{{ post.url }}">{{post.title}}</a>
+                                            </div>
+                                            <div class="time">{{ post.date | date: '%b %d, %Y' }}</div>
+                                        </div>
+                                        {% endfor %}
+                                        {% assign posts = null %}
+                                    </div>  
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="contact-info">
-                                <h2><i class="fa fa-map-marker"></i> Club Meeting</h2>
-                                <p>Indirangar Club<br> 3rd Sunday: 11:00 - 14:00</p>
+                        
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-5">
+                            <div class="footer-widget contact-widget">
+                                <h2 class="widget-title">Contact</h2>
+                                <div class="widget-content">
+                                    <ul class="contact-info-list">
+                                        <li><i class="fas fa-map-marker-alt"></i>{{site.data.info.location}}</li>
+                                        <li><i class="fas fa-phone"></i>Call: {{site.data.info.phone}}</li>
+                                        <li><i class="fas fa-envelope-open"></i>Email: {{site.data.info.email}}</li>
+                                    </ul>
+                                </div>       
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
-            <!-- End footer -->
+            </div>
+        </div>
+    </div>
+    
+    <!--Footer Bottom-->
+     <div class="footer-bottom">
+        <div class="container">
+            <div class="clearfix">
+                <div class="float-sm-left">
+                    <div class="copyright-text">
+                        <p>Copyrights © 2021 <a href="{{site.baseurl}}/">Rotaract Bangalore East</a>. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="float-sm-right">
+                    <ul>
+                        <li><a href="{{site.baseurl}}/privacy">Privacy Policy</a></li>
+                        <li><a href="{{site.baseurl}}/sitemap.xml">Sitemap</a></li>
+                        <li><a href="{{site.baseurl}}/terms">Terms of Use </a></li>
+                    </ul>
+                </div>
+            </div>   
+        </div>
+    </div>
+</footer>

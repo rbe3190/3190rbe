@@ -1,0 +1,227 @@
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4">
+                    <aside class="sidebar right-sidebar">
+
+                        <!-- Search -->
+                        <div class="sidebar-widget search-box">
+                            <form action="{{ site.baseurl }}/search" method="get">
+                                <div class="form-group">
+                                    <input type="search" name="q" placeholder="Search Here" required>
+                                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Popular Posts-->
+                        <div class="sidebar-widget popular-posts">
+                            <div class="sidebar-title">
+                                <h4>Recent News & Updates</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            {% assign posts = site.posts | sort: 'date' | reverse %}
+                            {% for post in posts limit: 3 %}
+                            <article class="post">
+                                <figure class="post-thumb"><a href="{{ post.url }}"><img src="{{post.image | relative_url}}" alt="{{post.title}}"></a></figure>
+                                <div class="text"><a href="{{ post.url }}">{{post.title}}</a></div>
+                                <div class="post-info">{{ post.date | date: '%B %d, %Y' }}</div>
+                            </article>
+                            {% endfor %}
+                            {% assign posts = null %}
+                        </div>
+                        <!--Category widget-->
+                        <div class="sidebar-widget categories-widget">
+                            <div class="sidebar-title">
+                                <h4>Categories</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            <div class="inner-box">
+                                <ul>
+                                    {% assign tags_list = site.categories %}
+                                    {% if tags_list.first[0] == null %}
+                                    {% for tag in tags_list %}
+                                    <li {% for category in page.categories %}{% if category == tag %}class="active"{% endif %}{% endfor %}><a href="{{ site.baseurl }}/news/{{ tag }}">{{ tag | capitalize | replace: "-"," "}}</a></li>
+                                    {% endfor %}
+                                    {% else %}
+                                    {% for tag in tags_list %}
+                                    <li {% for category in page.categories %}{% if category == tag[0] %}class="active"{% endif %}{% endfor %}><a href="{{ site.baseurl }}/news/{{ tag[0] }}">{{ tag[0] | capitalize | replace: "-"," "}}</a></li>
+                                    {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        {% assign featured_causes = site.causes | where: "featured","true" | sort: 'due' %}
+                        {% assign active_fcauses = 0 %}
+                        {% for cause in featured_causes %}
+                            {% if cause.active %}
+                                {% assign active_fcauses = active_fcauses | plus: 1 %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if active_fcauses.size > 0 %}
+                        <!-- Feature cause -->
+                        <div class="sidebar-widget cause-widget">
+                            <div class="sidebar-title">
+                                <h4>Featured Cause{% if active_fcauses.size > 1 %}s{% endif %}</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            {% assign featuredpost_count = 0 %}
+
+                            {% for cause in featured_causes %}
+                                {% if cause.due and cause.active and featuredpost_count < 2 %}
+                                    {% if featuredpost_count != 0 %}
+                                    <br>
+                                    {% endif %}
+                                <div class="inner-box">
+                                    <figure class="image">
+                                        <img src="{{cause.image | relative_url}}" alt="{{cause.title}}">
+                                        <div class="overlay"><a href="{{cause.url}}" class="theme-btn btn-style-two">Read More</a>
+                                        </div>
+                                    </figure>
+                                    <div class="lower-content">
+                                        <h4>{{cause.title}}</h4>
+                                        <div class="text">{{cause.intro | truncate: 80 }}</div>
+
+                                        <!--Progress Levels-->
+                                        <div class="progress-levels">
+                                                    
+                                            <!--Skill Box-->
+                                            <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                                <div class="inner">
+                                                    <br>
+                                                    <div class="bar">
+                                                        <div class="bar-innner"><div class="bar-fill" data-percent="{{cause.progress}}"><div class="percent"></div></div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="donate clearfix">
+                                            <div class="float-left">
+                                                <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                            </div>
+                                            <div class="float-right">
+                                                Goal: ₹{{cause.goal}}
+                                            </div>
+                                        </div>
+
+                                        <div class="link-btn text-center mt-4"><a href="{{cause.url}}" class="theme-btn btn-style-four">Read More</a></div>
+
+                                    </div>
+                                </div>
+                                {% assign featuredpost_count = featuredpost_count | plus: 1 %}
+                                {% endif %}
+                            {% endfor %}
+
+                            {% for cause in featured_causes %}
+                                {% if cause.due == nil and cause.active and featuredpost_count < 2 %}
+                                {% if featuredpost_count != 0 %}
+                                    <br>
+                                    {% endif %}
+                                <div class="inner-box">
+                                    <figure class="image">
+                                        <img src="{{cause.image | relative_url}}" alt="{{cause.title}}">
+                                        <div class="overlay"><a href="{{cause.url}}" class="theme-btn btn-style-two">Read More</a>
+                                        </div>
+                                    </figure>
+                                    <div class="lower-content">
+                                        <h4>{{cause.title}}</h4>
+                                        <div class="text">{{cause.intro | truncate: 80 }}</div>
+                                        <!--Progress Levels-->
+                                        <div class="progress-levels">
+                                                    
+                                            <!--Skill Box-->
+                                            <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                                <div class="inner">
+                                                    <br>
+                                                    <div class="bar">
+                                                        <div class="bar-innner"><div class="bar-fill" data-percent="{{cause.progress}}"><div class="percent"></div></div></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="donate clearfix">
+                                            <div class="float-left">
+                                                <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                            </div>
+                                            <div class="float-right">
+                                                Goal: ₹{{cause.goal}}
+                                            </div>
+                                        </div>
+
+                                        <div class="link-btn text-center mt-4"><a href="{{cause.url}}" class="theme-btn btn-style-four">Read More</a></div>
+
+                                    </div>
+                                </div>
+                                {% assign featuredpost_count = featuredpost_count | plus: 1 %}
+                                {% endif %}
+                            {% endfor %}
+                            
+                        </div>
+                        {% endif %}
+                        
+                        {% if site.data.info.testimonials.size > 0 %}
+                        <!-- Testimonial -->
+                        <div class="sidebar-widget testimonial-widget">
+                            <div class="sidebar-title">
+                                <h4>Reviews</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            <div class="single-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-none">
+
+                                {% for review in site.data.info.testimonials %}
+                                <div class="inner-box">
+                                    <div class="text">{{review.message}} </div>
+                                    <div class="author">
+                                        <div class="image"><img style="max-width: 60px; max-height: 60px;" src="{{review.image | relative_url}}" alt="{{review.name}}"></div>
+                                        <h3>{{review.name}}</h3>
+                                        <div class="designation">{{review.affiliation}}</div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        <!-- Gallery widget -->
+                        <div class="sidebar-widget instagram-widget">
+                            <div class="sidebar-title">
+                                <h4>Images Gallery</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            <ul id="instafeed">
+
+                            </ul>
+                        </div>
+
+                        <!--Category widget-->
+                        <div class="sidebar-widget categories-widget">
+                            <div class="sidebar-title">
+                                <h4>Archive</h4>
+                                <div class="separator">
+                                </div>
+                            </div>
+                            <div class="inner-box">
+                                <ul>
+                                    {% for post in site.posts %}
+                                    {% assign currentDate = post.date | date: "%B %Y" %}
+                                    {% if currentDate != myDate %}
+                                    <li {% if page.date == post.date %}class="active"{% endif %}><a href="{{site.baseurl}}/news/{{ currentDate | date: "%Y/%m" }}"">{{ currentDate }}</a></li>
+                                    {% assign myDate = currentDate %}
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- end widget -->
+                        
+                    </aside>
+                </div>

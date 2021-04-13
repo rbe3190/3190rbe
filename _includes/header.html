@@ -1,73 +1,130 @@
-		<!-- Header
-		    ================================================== -->
-            <header class="clearfix">
-                <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-                    <div class="top-line">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <ul class="info-list">
-                                        <li>
-                                            <i class="fa fa-globe"></i>
-                                            Language: <span>English</span>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-phone"></i>
-                                            Call us:
-                                            <span>+91 85537 88515</span>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-envelope-o"></i>
-                                            Email us:
-                                            <span>info@3190rbe.org</span>
-                                        </li>
-                                    </ul>
-                                </div>	
-                                <div class="col-md-4">
-                                    <ul class="social-icons">
-                                        <li><a class="facebook" href="https://www.facebook.com/3190rbe/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a class="instagram" href="https://www.instagram.com/3190rbe" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a class="twitter" href="https://twitter.com/3190rbe" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                        <!-- <li><a class="linkedin" href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li> -->
-                                    </ul>
-                                </div>	
-                            </div>
-                        </div>
+<!-- main header -->
+<header class="main-header">
+
+    <!-- header top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="outer-box">
+                <!--Top Left-->
+                <div class="top-left">
+                    <ul class="links-nav clearfix">
+                        <li><i class="fa fa-phone"></i>Call Us Now: <strong>{{site.data.info.phone}}</strong></li>
+                        <li><i class="fa fa-envelope-open"></i>Send Us Email: <strong>{{site.data.info.email}}</strong></li>
+                    </ul>
+                </div>
+
+                <!--Top Right-->
+                <div class="top-right">
+                    <div class="link-btn"><a href="https://blood.rotaract3190.org/" target="_blank" class="theme-btn login-btn"><span
+                                class="fa fa-tint"></span>Blood Donors</a></div>
+                    <div class="social-links clearfix">
+                        {% for social in site.data.info.site_social %}
+                        {% if social[1] %}
+                        <a href="{{ social[1] }}" target="_blank"><span class="fab fa-{{ social[0] }}"></span></a>
+                        {% endif %}
+                        {% endfor %}
                     </div>
-                    <div class="container">
-                        <!-- Brand and toggle get grouped for better mobile display -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Header-Upper-->
+    <div class="header-upper">
+        <div class="container clearfix">
+
+            <div class="float-left logo-outer">
+                <div class="logo"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/logo.png" alt="{{site.title}}" title="{{site.title}}"></a></div>
+            </div>
+
+            <div class="float-right upper-right clearfix">
+
+                <div class="nav-outer clearfix">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-lg">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/logo.png" alt=""></a>
                         </div>
-    
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <!-- <li><a class="active" href="index.html">Home</a></li> -->
-                                <li><a href="{{site.baseurl}}/">Home</a></li>
-                                <li><a href="{{site.baseurl}}/about">About</a></li>
-                                <li><a href="{{site.baseurl}}/caaaming_sooonn">Caaaming Sooonn!!!</a></li>
-                                <li><a href="{{site.baseurl}}/blog">blog</a></li>
-                                <li><a href="{{site.baseurl}}/contact">Contact</a></li>
-                                <li class="search"><a href="#" class="open-search"><i class="fa fa-search"></i></a>
-                                    <form class="form-search" action="{{ site.baseurl }}/search" method="get" name="searchform">
-                                        <!-- <input name="sitesearch" type="hidden" value="3190rbe.org"> -->
-                                        <input type="search" name="q" placeholder="Search in 3190rbe.org" required="required">
-                                        <!-- <input type="search" placeholder="Search:"/> -->
-                                        <button type="submit">
-                                            <i class="fa fa-search"></i>
-                                        </button>
-                                    </form>
-                                </li>
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                            {% for item in site.data.info.nav %}
+                                <li {% if item.url == page.url %}class="current"{% endif %}><a href="{{item.url}}">{{item.title}}</a></li>
+                              {% endfor %}
                             </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-            </header>
-            <!-- End Header -->
+                        </div>
+                    </nav>
+
+                    <!-- Main Menu End-->
+
+                    <!-- Search box -->
+                    <div class="outer-box">
+                        <!--Search outer-->
+                        <div class="search-box-outer">
+                            <div class="dropdown">
+                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                        class="fa fa-search"></span></button>
+                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                    <li class="panel-outer">
+                                        <div class="form-container">
+                                            <form action="{{ site.baseurl }}/search" method="get">
+                                                <div class="form-group">
+                                                    <input type="search" name="q" placeholder="Search Here" required>
+                                                    <button type="submit" class="search-btn"><span
+                                                            class="fa fa-search"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="link-btn"><a href="#" class="theme-btn btn-style-two donate-box-btn">Donate Now</a></div> -->
+                        <div class="link-btn"><a href="{{site.baseurl}}/join" class="theme-btn btn-style-two">Join Us</a></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--End Header Upper-->
+
+    <!--Sticky Header-->
+    <div class="sticky-header">
+        <div class="container">
+            <div class="clearfix">
+                <!--Logo-->
+                <div class="logo float-left">
+                    <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/logo.png" alt="{{site.title}}" title="{{site.title}}"></a>
+                </div>
+
+                <!--Right Col-->
+                <div class="right-col float-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation clearfix">
+                                {% for item in site.data.info.nav %}
+                                <li {% if item.url == page.url %}class="current"{% endif %}><a href="{{item.url}}">{{item.title}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--End Sticky Header-->
+</header>

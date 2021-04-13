@@ -1,29 +1,35 @@
 ---
 layout: default
-bannertitle: Thank You
+title: Thank You
+permalink: thankyou
 noindex: true
 redirect_to_home: true
+rtime: 5
 ---
 
-<div class="container">
-  <div class="title-section">
-    <br>
-    <h1>We have received your Submission!</h1>
-    <p><strong>Happy Rotaraction!</strong></p>
-    <h4>We will contact you shortly 🤝</h4></p>
-    <h6 class="text-white">Redirecting to home page ... <span id="countdown">3</span></h6>
-    <br>
-    <a href="{{site.baseurl}}/">Go back to Home Page</a>
-  </div>
-</div> 
+    <!--Page title-->
+    <section class="page-title" style="background-image:url(images/background/5.png)">
+        <div class="container">
+            <h1>Thank You</h1>
+        </div>
+    </section>
+    {% include breadcrumbs.html %}
 
-<!-- Timer -->
-<script>
-  var seconds = 3,
-    $seconds = document.querySelector('#countdown');
-  (function countdown() {
-    $seconds.textContent = seconds + ' second' + (seconds == 1 ? '' : 's')
-    if (seconds-- > 0) setTimeout(countdown, 1000)
-  })();
-</script>
-<!-- End Timer -->
+        <!-- About Us -->
+        <section class="about-us-two sp-four">
+            <div class="container">
+                <!-- about block -->
+                <div class="about-block-two">
+                    <div class="inner-box">
+                        <h4>We have Received Your Submission!<span></span></h4>
+                        <h1>Happy <span class="theme-color">Rotaraction!</span></h1>
+                        <div class="text">
+                            <p>We will contact you shortly 🤝</p>
+                            <p>Redirecting to home page ...</p>
+                            <a href="{{site.baseurl}}/" class="theme-btn btn-style-four">Go back to Home Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        

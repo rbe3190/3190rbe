@@ -2,7 +2,7 @@
 layout: post
 title:  "49th Installation of Rotary Bangalore East"
 date:   2019-07-02
-image: /upload/blog/1920rotaryinstalltion.png
+image: /images/uploads/1920rotaryinstalltion.png
 author: rbe
 categories: [Club-Service]
 tags: [participation]

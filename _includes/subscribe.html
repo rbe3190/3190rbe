@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    var submission = false;
+  </script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+  onload="if(submission)  {window.location='/thankyou';}"></iframe>
+
+<!-- Call To Action -->
+<section class="subscribe-section" style="background-image: url({{site.baseurl}}/images/background/4.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="title-column col-lg-8">
+                <h2>Subscribe for Updates</h2>
+                <div class="text">Get all the latest updates delivered straight to your inbox.</div>
+            </div>
+            <div class="subscribe-form col-lg-4">
+                <form action="https://docs.google.com/forms/d/e/1FAIpQLSf5ddGyszvRC6Mb1VfxbIUWxIe8Sbfht1j7CcDXESQbZYi0Jg/formResponse" target="hidden_iframe" onsubmit="submission=true;" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="entry.1441391045" value="" placeholder="Your email..." required="">
+                        <button type="submit" class="theme-btn"><span class="fa fa-paper-plane"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>                    
+    </div>
+</section>

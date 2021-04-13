@@ -1,0 +1,28 @@
+---
+layout: default
+title: News & Updates
+---
+
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <h1>News & Updates</h1>
+        </div>
+    </section>
+
+    {% include breadcrumbs.html %}
+ 
+    <!-- News Section -->
+    <section class="news-section sp-two">
+        <div class="container">
+
+            <div class="row clearfix justify-content-center">
+                {% for post in paginator.posts %}
+
+                    {% include postbox.html %}
+                
+                {% endfor %}
+            </div>
+            {% include pagination.html %}
+        </div>
+    </section>

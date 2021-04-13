@@ -1,0 +1,84 @@
+---
+layout: default
+title: Causes
+permalink: causes
+---
+
+    <!--Page title-->
+    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
+        <div class="container">
+            <h1>Our Causes</h1>
+        </div>
+    </section>
+    {% include breadcrumbs.html %}
+
+    <!-- Causes Section -->
+    <section class="causes-section sp-two">
+        <div class="container">
+            <div class="row justify-content-around">
+                {% assign causes = site.causes | sort: 'due' %}
+                {% for cause in causes %}
+                {% if cause.active %}
+                <!--Cause Block-->
+                <div class="cause-block col-lg-4 col-md-6">
+                    <div class="inner-box">
+                        <figure class="image">
+                            <img src="{{cause.image | relative_url}}" alt="{{cause.title}}">
+                            <div class="overlay">
+                            </div>
+                        </figure>
+                        <div class="lower-content">
+                            <h5>{{cause.focus}}</h5>
+                            <h4>{{cause.title}}</h4>
+                            <div class="text">{{cause.intro | truncate: 80}} </div>
+
+
+                            <!--Progress Levels-->
+                            <div class="progress-levels">
+                                        
+                                <!--Skill Box-->
+                                <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                    <div class="inner">
+                                        <div class="bar">
+                                            <div class="bar-innner"><div class="bar-fill" data-percent="{{cause.progress}}"><div class="percent"></div></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="donate clearfix">
+                                <div class="float-left">
+                                    <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                </div>
+                                <div class="float-right">
+                                    Goal: ₹{{cause.goal}}
+                                </div>
+                            </div>
+                            <div class="link-btn"><a href="{{cause.url}}" class="theme-btn btn-style-four">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <section class="about-us-two sp-four">
+                <div class="container">
+                    <!-- about block -->
+                    <div class="about-block-two">
+                        <div class="inner-box">
+                            <h4>Completed Causes<span></span></h4>
+                            <div class="text">
+                                {% assign completed_causes = site.causes | where: "active","false" | sort: 'due' | reverse %}
+                                {% for cause in completed_causes %}
+                                    {% if forloop.first %}<p>{% endif %}<a href="{{cause.url}}">{{cause.title}}</a>({{ cause.focus }}){% if forloop.last %}</p>{% else %}, {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
