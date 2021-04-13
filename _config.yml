@@ -20,7 +20,7 @@ paginate: 10
 paginate_path: news/page-:num/
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+google_tracking_id: "G-LYQWP4N6TE"
 
 plugins:
   - jekyll-sitemap
