@@ -12,8 +12,8 @@
     <meta property="og:country-name" content="INDIA" />
     <meta property="og:site_name" content="{{site.title}}" />
     <meta property="og:image" content="{% if page.image %}{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}{% else %}{{ site.og_img | absolute_url }}{% endif %}" />
-    <meta property="og:image:width" content="630" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates with tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@3190rbe">
