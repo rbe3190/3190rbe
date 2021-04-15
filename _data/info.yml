@@ -34,6 +34,8 @@ fnav:
     url: /causes
   - title: Events
     url: /events
+  - title: Brand Kit
+    url: /brandkit    
   - title: Join Us
     url: /join
 
@@ -60,25 +62,25 @@ welcomeSection:
     target: /news
 
 areasoffocus:
-  - title: Peace and Conflict Prevention / Resolution
+  - title: Promoting peace
     icon: flaticon-support
     description: 
-  - title: Disease prevention and treatment
+  - title: Fighting disease
     icon: flaticon-doctor
     description: 
-  - title: Water and Sanitation
+  - title: Providing clean water, sanitation, and hygiene
     icon: flaticon-blood
     description: 
-  - title: Maternal and Child Health
+  - title: Saving mothers and children
     icon: flaticon-favorite
     description: 
-  - title: Basic Edutcation and Literacy
+  - title: Supporting education
     icon: flaticon-agenda
     description: 
-  - title: Economic and Community Development
+  - title: Growing local economies
     icon: flaticon-suitcase
     description: 
-  - title: Supporting the environment
+  - title: Protecting the environment
     icon: flaticon-circle
     description: 
     # description: Nostrud exercitation ullamco laboris nisi utm aliquip sed duis aute lorem ipsum.
@@ -102,6 +104,124 @@ areasoffocus:
   #   affiliation: Founder, XYZ
   #   image: /images/team/zeospec.jpg
   #   message: We the members of Rotaract Bangalore East (Easterners) follow the motto UNITE to RISE and EMPOWER. 
+
+brandkit:
+  - group_name: Rotaract Bangalore East
+    items_list:
+      - title: Rotaract Bagalore East Logo
+        description: Standard logo of Rotaract Bangalore East
+        preview: /images/brandkit/RBEoriginal.png
+        file: /images/brandkit/RBEoriginal.png
+      - title: Rotaract Bagalore East Logo - Black
+        description: Black version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBEblack.png
+        file: /images/brandkit/RBEblack.png
+      - title: Rotaract Bagalore East Logo - Blue
+        description: Blue version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBEblue.png
+        file: /images/brandkit/RBEblue.png
+      - title: Rotaract Bagalore East Logo - Red
+        description: Red version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBEred.png
+        file: /images/brandkit/RBEred.png
+      - title: Rotaract Bagalore East Logo - White
+        description: White version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBEwhite.png
+        file: /images/brandkit/RBEwhite.png
+  - group_name: Rotaract Masterbrand
+    items_list:
+      - title: Rotaract Masterbrand
+        description: Standard version of Rotaract Masterbrand
+        preview: /images/brandkit/rotaract.png
+        file: /images/brandkit/rotaract.png
+      - title: Rotaract Masterbrand - Black
+        description: Black version of Rotaract Masterbrand
+        preview: /images/brandkit/rotaract_black.png
+        file: /images/brandkit/rotaract_black.png
+      - title: Rotaract Masterbrand - White
+        description: White version of Rotaract Masterbrand
+        preview: /images/brandkit/rotaract_white.png
+        file: /images/brandkit/rotaract_white.png
+  - group_name: Rotaract Masterbrand with RID 3190
+    items_list:
+      - title: Rotaract 3190 Masterbrand
+        description: Standard Version of Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190.png
+        file: /images/brandkit/rotaract3190.png
+      - title: Rotaract 3190 Masterbrand - Black
+        description: Black version of Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190_black.png
+        file: /images/brandkit/rotaract3190_black.png
+      - title: Rotaract 3190 Masterbrand - White
+        description: White version of Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190_white.png
+        file: /images/brandkit/rotaract3190_white.png
+  - group_name: Rotary Mark of Excellence
+    items_list:
+      - title: Rotary Mark of Excellence
+        description: Standard version of Rotary Mark of Excellence
+        preview: /images/brandkit/markofexcellence.png
+        file: /images/brandkit/markofexcellence.png
+      - title: Rotary Mark of Excellence - Azure
+        description: Azure version of Rotary Mark of Excellence
+        preview: /images/brandkit/markofexcellence_azure.png
+        file: /images/brandkit/markofexcellence_azure.png
+      - title: Rotary Mark of Excellence - Black
+        description: Black version of Rotary Mark of Excellence
+        preview: /images/brandkit/markofexcellence_black.png
+        file: /images/brandkit/markofexcellence_black.png
+      - title: Rotary Mark of Excellence - White
+        description: White version of Rotary Mark of Excellence
+        preview: /images/brandkit/markofexcellence_white.png
+        file: /images/brandkit/markofexcellence_white.png
+  - group_name: Rotary International Theme RIY 2020 – 2021
+    items_list:
+      - title: Rotary International Theme
+        description: Standard version of Rotary International Theme for RIY 2020 – 2021
+        preview: /images/brandkit/RotaryTheme2021.png
+        file: /images/brandkit/RotaryTheme2021.png
+      - title: Rotary International Theme - White
+        description: White version of Rotary International Theme for RIY 2020 – 2021
+        preview: /images/brandkit/RotaryTheme2021_white.png
+        file: /images/brandkit/RotaryTheme2021_white.png
+      - title: Rotary International Theme with Masterbrand
+        description: Rotary International Theme logo with Masterbrand
+        preview: /images/brandkit/RotaryTheme2021_masterbrand.png
+        file: /images/brandkit/RotaryTheme2021_masterbrand.png
+      - title: Rotary International Theme with Masterbrand - White
+        description: White Rotary International Theme logo with Masterbrand
+        preview: /images/brandkit/RotaryTheme2021_masterbrandwhite.png
+        file: /images/brandkit/RotaryTheme2021_masterbrandwhite.png
+  - group_name: Rotary Masterbrand
+    items_list:
+      - title: Rotary Masterbrand
+        description: Standard version of Rotary Masterbrand
+        preview: /images/brandkit/rotary.png
+        file: /images/brandkit/rotary.png
+      - title: Rotary Masterbrand - Azure
+        description: Azure version of Rotary Masterbrand
+        preview: /images/brandkit/rotary_azure.png
+        file: /images/brandkit/rotary_azure.png
+      - title: Rotary Masterbrand - Black
+        description: Black version of Rotary Masterbrand
+        preview: /images/brandkit/rotary_black.png
+        file: /images/brandkit/rotary_black.png
+      - title: Rotary Masterbrand - White
+        description: White version of Rotary Masterbrand
+        preview: /images/brandkit/rotary_white.png
+        file: /images/brandkit/rotary_white.png
+      - title: Rotary Masterbrand - White & Gold
+        description: White & Gold version of Rotary Masterbrand
+        preview: /images/brandkit/rotary_white_gold.png
+        file: /images/brandkit/rotary_white_gold.png
+      - title: Rotary Masterbrand - Simple
+        description: Simplified version of Rotary Masterbrand
+        preview: /images/brandkit/rotary_simple.png
+        file: /images/brandkit/rotary_simple.png
+      - title: Rotary Masterbrand - Simple - White & Gold
+        description: White & Gold version Simplified Rotary Masterbrand
+        preview: /images/brandkit/rotary_simple_white_gold.png
+        file: /images/brandkit/rotary_simple_white_gold.png
 
 authors:
   rbe:
