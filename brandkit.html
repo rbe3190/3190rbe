@@ -1,0 +1,67 @@
+---
+layout: default
+title: Brand Kit
+permalink: brandkit
+---
+
+    <!--Page title-->
+    <section class="page-title" style="background-image:url(images/background/5.png)">
+        <div class="container">
+            <h1>Brand Kit</h1>
+        </div>
+    </section>
+    {% include breadcrumbs.html %}
+
+    <section class="contact-form-section sp-two">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="wrapper center-block">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">  
+                {% for item in site.data.info.brandkit %}
+                {% assign index = forloop.index %}
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading{{ index }}">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" href="#collapse{{ index }}" aria-expanded="true"
+                        aria-controls="collapse{{ index }}">
+                        {{ item.group_name }}
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse{{ index }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ index }}">
+                    <div class="panel-body">
+                      {% for item in item.items_list %}
+                      <div class="member-entry">
+                        <a href="{{ item.file | relative_url }}" target="_blank" class="member-img">
+                          <img src="{{ item.preview | relative_url }}" {% if item.white %}style="background-color: gray;"{% endif %} class="img-rounded" alt="{{ item.title }}">
+                          <i class="fa fa-forward"></i>
+                        </a>
+                        <div class="member-details">
+                          <h4><a href="{{ item.file | relative_url }}" target="_blank">{{ item.title }}</a></h4>
+                          <div class="row info-list">
+                            <div class="col-sm-4">
+                              <i class="fa fa-info"></i>
+                              {{ item.description }}
+                            </div>
+                            <div class="col-sm-4">
+                              <i class="fa fa-eye"></i>
+                              <a href="{{ item.file | relative_url }}" target="_blank">View</a>
+                            </div>
+                            <div class="col-sm-4">
+                              <i class="fa fa-download"></i>
+                              <a href="{{ item.file | relative_url }}"
+                                download="{{ item.title }}">Download</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %} 
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
