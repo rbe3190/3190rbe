@@ -6,8 +6,8 @@ image: /images/uploads/1920rotaryinstalltion.png
 author: rbe
 categories: [Club-Service]
 tags: [participation]
-description: 49th Installation of Rotary Bangalore East
+description: The 49th installation of Rotary Bangalore East was held on 02/07/2019 where the then prospective rotaractors of RBE gathered to celebrate the conceptualisation of the club!
 ---
-We from Rotaract Bangalore East attended the Parent Rotary Installation. 14 Rotaractors were present.
+The 49th installation of Rotary Bangalore East was held on 02/07/2019 where the then prospective rotaractors of RBE gathered to celebrate the conceptualisation of the club! 
 
-On this day the Rotaract Bangalore East was officially announced.
+It was a great opportunity for rotaractors to meet and interact with Rotarians of the parent Rotary as well as other Rotarians.
