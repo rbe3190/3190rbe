@@ -16,7 +16,7 @@ og_img: /images/ogimage.png
 markdown: kramdown
 # highlighter: rouge
 permalink: news/:year/:month/:day/:title/
-paginate: 10
+paginate: 9
 paginate_path: news/page-:num/
 
 # Google analytics
