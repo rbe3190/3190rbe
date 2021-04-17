@@ -64,25 +64,25 @@ welcomeSection:
 areasoffocus:
   - title: Promoting peace
     icon: flaticon-support
-    description: 
+    description: Rotary encourages conversations to foster understanding within and across cultures.
   - title: Fighting disease
     icon: flaticon-doctor
-    description: 
+    description: We educate and equip communities to stop the spread of life-threatening diseases.
   - title: Providing clean water, sanitation, and hygiene
     icon: flaticon-blood
-    description: 
+    description: We support local solutions to bring clean water, sanitation, and hygiene to more people every day.
   - title: Saving mothers and children
     icon: flaticon-favorite
-    description: 
+    description: We expand access to quality care, so mothers and their children can live and grow stronger.
   - title: Supporting education
     icon: flaticon-agenda
-    description: 
+    description: We support basic education and literacy, reduce gender disparity in education, and increase adult literacy.
   - title: Growing local economies
     icon: flaticon-suitcase
-    description: 
+    description: We carry out service projects that enhance economic and community development and create opportunities for decent and productive work for young and old.
   - title: Protecting the environment
     icon: flaticon-circle
-    description: 
+    description: We are tackling environmental issues the seriously and working towards betterment of the community around us
     # description: Nostrud exercitation ullamco laboris nisi utm aliquip sed duis aute lorem ipsum.
 
 # stats:
