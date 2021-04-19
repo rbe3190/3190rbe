@@ -307,7 +307,7 @@ layout: default
                         {% for event in events %}
                         {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
                         {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% if end != "" and end >= now and start <= now and event_count < 2 %} 
+                        {% if end != "" and end >= now and event_count < 2 %} 
                             <!-- Event block -->
                             <div class="col-md-6 event-block">
                                 <div class="inner-box">

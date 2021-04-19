@@ -53,14 +53,19 @@ permalink: events
                 <div class="about-block-two">
                     <div class="inner-box">
                         <h4>Past Events<span></span></h4>
-                        <div class="text">
+                        <div class="text">                            
                             {% assign events = site.events | sort: 'end' | reverse %}
+                            {% assign past_events = "" | split: "" %}
                             {% for event in events %}
                                 {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
                                 {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
                                 {% if end < now and event.end != "" %}
-                                    {% if forloop.first %}<p>{% endif %}<a href="{{event.url}}">{{event.title}}</a>({{ event.start | date: '%d.%m.%Y' }}){% if forloop.last %}</p>{% else %}, {% endif %}
+                                {% assign past_events = past_events | push: event %}
                                 {% endif %}
+                            {% endfor %}
+                            
+                            {% for event in past_events %}
+                                    {% if forloop.first %}<p>{% endif %}<a href="{{event.url}}">{{event.title}}</a>{% if forloop.last %}</p>{% else %}, {% endif %}
                             {% endfor %}
                         </div>
                     </div>

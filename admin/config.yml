@@ -44,7 +44,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: "_events"
     create: true # Allow users to create new documents in this collection
     sort: "start:desc"
-    slug: "{{start.year}}-{{slug}}"
+    slug: "{{start}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Event Title", name: "title", widget: "string"}
@@ -63,6 +63,7 @@ collections: # A list of collections the CMS should be able to edit
         format: "YYYY-MM-DD HH:mm"
         picker_utc: false
         required: false
+      - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
       - {label: "Venue", name: "venue", widget: "string"}
       - {label: "Button Text", name: "button_text", widget: "string"}
       - {label: "Button Url", name: "button_url", widget: "string"}
