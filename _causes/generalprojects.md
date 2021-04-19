@@ -3,7 +3,7 @@ layout: cause
 focus: Community Service
 title: General Projects
 image: /images/uploads/general_donation.png
-due:
+due: 2021-05-01
 active: true
 goal: ---
 progress: 0

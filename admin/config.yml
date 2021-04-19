@@ -53,14 +53,14 @@ collections: # A list of collections the CMS should be able to edit
         widget: "datetime"
         date_format: "YYYY-MM-DD" 
         time_format: "HH:MM:SS"
-        format: "LLL"
+        format: "YYYY-MM-DD HH:MM:SS"
         picker_utc: false
       - label: "End time"
         name: "end"
         widget: "datetime"
         date_format: "YYYY-MM-DD" 
         time_format: "HH:MM:SS"
-        format: "LLL"
+        format: "YYYY-MM-DD HH:MM:SS"
         picker_utc: false
         required: false
       - {label: "Venue", name: "venue", widget: "string"}
