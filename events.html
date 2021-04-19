@@ -21,7 +21,7 @@ permalink: events
             {% for event in events %}
             {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
             {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-            {% if end >= now or event.end == nil %}
+            {% if end >= now or event.end == "" %}
             <!--Cause Block-->
             <div class="event-block-two col-lg-6">
                 <div class="inner-box">
@@ -58,7 +58,7 @@ permalink: events
                             {% for event in events %}
                                 {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
                                 {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                                {% if end < now and event.end != nil %}
+                                {% if end < now and event.end != "" %}
                                     {% if forloop.first %}<p>{% endif %}<a href="{{event.url}}">{{event.title}}</a>({{ event.start | date: '%d.%m.%Y' }}){% if forloop.last %}</p>{% else %}, {% endif %}
                                 {% endif %}
                             {% endfor %}

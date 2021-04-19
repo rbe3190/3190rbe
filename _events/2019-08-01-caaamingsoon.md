@@ -1,8 +1,8 @@
 ---
 layout: event
 title: Caaaming Sooon!!!
-start: 2019-08-01 00:00:00
-end:
+start: 2019-08-01 00:00
+end: ""
 author: rbe
 venue: Online
 button_text: Play

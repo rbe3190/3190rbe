@@ -1,8 +1,8 @@
 ---
 layout: event
 title: RotaSambandh
-start: 2021-01-01 23:00:00
-end:
+start: 2021-01-01 23:00
+end: ""
 author: rbe
 venue: Online
 button_text: Apply Now

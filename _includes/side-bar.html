@@ -71,7 +71,7 @@
                             {% assign featuredpost_count = 0 %}
 
                             {% for cause in featured_causes %}
-                                {% if cause.due and cause.active and featuredpost_count < 2 %}
+                                {% if cause.due != "" and cause.active and featuredpost_count < 2 %}
                                     {% if featuredpost_count != 0 %}
                                     <br>
                                     {% endif %}
@@ -102,7 +102,7 @@
 
                                         <div class="donate clearfix">
                                             <div class="float-left">
-                                                <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
                                             </div>
                                             <div class="float-right">
                                                 Goal: ₹{{cause.goal}}
@@ -118,7 +118,7 @@
                             {% endfor %}
 
                             {% for cause in featured_causes %}
-                                {% if cause.due == nil and cause.active and featuredpost_count < 2 %}
+                                {% if cause.due == "" and cause.active and featuredpost_count < 2 %}
                                 {% if featuredpost_count != 0 %}
                                     <br>
                                     {% endif %}
@@ -148,7 +148,7 @@
 
                                         <div class="donate clearfix">
                                             <div class="float-left">
-                                                <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
                                             </div>
                                             <div class="float-right">
                                                 Goal: ₹{{cause.goal}}

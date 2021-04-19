@@ -126,7 +126,7 @@ layout: default
         <div class="row justify-content-around">
     {% assign featuredpost_count = 0 %}   
     {% for cause in featured_causes limit: 3 %}
-        {% if cause.due and cause.active and featuredpost_count < 3 %}
+        {% if cause.due != "" and cause.active and featuredpost_count < 3 %}
         <!--Cause Block-->
         <div class="cause-block col-lg-4 col-md-6">
             <div class="inner-box">
@@ -153,7 +153,7 @@ layout: default
 
                     <div class="donate clearfix">
                         <div class="float-left">
-                            <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                            <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
                         </div>
                         <div class="float-right">
                             Goal: ₹{{cause.goal}}
@@ -168,7 +168,7 @@ layout: default
     {% endfor %}
 
     {% for cause in featured_causes limit: 3 %}
-        {% if cause.due == nil and cause.active and featuredpost_count < 3 %}
+        {% if cause.due == "" and cause.active and featuredpost_count < 3 %}
         <!--Cause Block-->
         <div class="cause-block col-lg-4 col-md-6">
             <div class="inner-box">
@@ -195,7 +195,7 @@ layout: default
 
                     <div class="donate clearfix">
                         <div class="float-left">
-                            <span>Deadline: {% if cause.due %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                            <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
                         </div>
                         <div class="float-right">
                             Goal: ₹{{cause.goal}}
@@ -307,7 +307,7 @@ layout: default
                         {% for event in events %}
                         {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
                         {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% if end > now or start >= now and event_count < 2 %} 
+                        {% if end != "" and end >= now and start <= now and event_count < 2 %} 
                             <!-- Event block -->
                             <div class="col-md-6 event-block">
                                 <div class="inner-box">
@@ -329,7 +329,7 @@ layout: default
 
                         {% for event in events %}
                         {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% if event.end == nil and event_count < 2 %} 
+                        {% if event.end == "" and event_count < 2 %} 
                             <!-- Event block -->
                             <div class="col-md-6 event-block">
                                 <div class="inner-box">

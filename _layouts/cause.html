@@ -31,7 +31,7 @@ layout: default
 
                                     <div class="donate clearfix">
                                         <div class="float-left">
-                                            <span>Deadline: {% if page.due %}{{page.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                            <span>Deadline: {% if page.due != "" %}{{page.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
                                         </div>
                                         <div class="float-right">
                                             Goal: ₹{{page.goal}}
