@@ -1,0 +1,37 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (master by default)
+  squash_merges: true
+
+# This line should *not* be indented
+# publish_mode: editorial_workflow
+
+media_folder: "images/team/" # Folder where user uploaded files should go
+site_url: https://3190rbe.org/
+display_url: 3190rbe.org
+logo_url: https://3190rbe.org/images/rbe.png
+
+collections: # A list of collections the CMS should be able to edit 
+  - label: "Rotaract Bangalore East"
+    name: "rbe"
+    files:
+      - label: "Rotaract Bangalore East | Team"
+        name: "team"
+        file: "_data/team.yml"
+        fields:
+          - label: Team Members
+            name: members
+            fields:
+              - {label: "Name", name: "name", widget: "string", default: ""}
+              - {label: "Role", name: "role", widget: "string", default: ""}              
+              - label: Social Media Links
+                name: social
+                widget: object
+                fields:
+                  - {label: "Linkedin Profile Link", name: "linkedin", widget: "string", default: "", required: false}
+                  - {label: "Twitter Handle Link", name: "twitter", widget: "string", default: "", required: false}
+                  - {label: "Facebook Profile Link", name: "facebook", widget: "string", default: "", required: false}
+                  - {label: "Instagram Profile Link", name: "instagram", widget: "string", default: "", required: false}
+                  - {label: "Email ID", name: "email", widget: "string", default: "", required: false}
+              - {label: "Featured Profile Link", name: "featurelink", widget: "string", default: "", required: false}
+              - {label: "Image", name: "image", widget: "image"}

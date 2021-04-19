@@ -36,7 +36,7 @@ permalink: events
                         <div class="text">{{event.intro | truncate: 80}} </div>
                         <ul class="post-meta">
                             <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                            <li><span class="fa fa-map-marker-alt"></span>{{event.location}}</li>
+                            <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
                             <li><a href="{{event.url}}" class="theme-btn btn-style-thirteen">Learn More</a></li>
                         </ul>
                         

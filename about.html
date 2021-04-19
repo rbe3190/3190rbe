@@ -126,27 +126,27 @@ permalink: about
                             <img src="{{member.image | relative_url}}" alt="{{member.name}}">
                             <div class="overlay-box">
                                 <ul class="social-icon-one">
-                                    {% if member.social.facebook %}
+                                    {% if member.social.facebook != "" %}
                                     <a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-facebook"></span></a><br>
                                     {% endif %}
-                                    {% if member.social.instagram %}
+                                    {% if member.social.instagram != "" %}
                                     <a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-instagram"></span></a><br>
                                     {% endif %}
-                                    {% if member.social.twitter %}
+                                    {% if member.social.twitter != "" %}
                                     <a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-twitter"></span></a><br>
                                     {% endif %}
-                                    {% if member.social.linkedin %}
+                                    {% if member.social.linkedin != "" %}
                                     <a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a><br>
                                     {% endif %}
-                                    {% if member.social.email %}
+                                    {% if member.social.email != "" %}
                                     <a href="{{member.social.linkedin}}" target="_blank"><span class="fas fa-envelope-open"></span></a><br>
                                     {% endif %}
                                 </ul>
                             </div>
                         </div>
                         <div class="lower-box">
-                            <div class="designation">{{member.designation}}</div>
-                            <h4><a href="{{member.namelink}}" target="_blank">{{member.name}}</a></h4>
+                            <div class="designation">{{member.role}}</div>
+                            <h4><a {% if member.featurelink != "" %}href="{{member.featurelink}}" target="_blank"{% endif %}>{{member.name}}</a></h4>
                         </div>
                     </div>
                 </div>

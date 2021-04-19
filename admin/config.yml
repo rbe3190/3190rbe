@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (master by default)
+  squash_merges: true
+
+# This line should *not* be indented
+# publish_mode: editorial_workflow
+
+media_folder: "images/uploads/" # Folder where user uploaded files should go
+site_url: https://3190rbe.org/
+display_url: 3190rbe.org
+logo_url: https://3190rbe.org/images/rbe.png
+
+collections: # A list of collections the CMS should be able to edit 
+  - label: "Causes"
+    name: "causes"
+    folder: "_causes"
+    create: true # Allow users to create new documents in this collection
+    sort: "due:desc"
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "cause"}
+      - {label: "Focus", name: "focus", widget: "string"}
+      - {label: "Cause Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Due Date", name: "due", widget: "date", format: "YYYY-MM-DD", required: false}
+      - {label: "Cause Status: Active?", name: "active", widget: "boolean", default: true}
+      - {label: "Fundraise Goal", name: "goal", widget: "string"}
+      - label: "Fundraise Progress"
+        name: "progress"
+        widget: "number"
+        default: 0
+        value_type: "int"
+        min: 1
+        max: 100
+        step: 1
+      - {label: "Featured Cause?", name: "featured", widget: "boolean", default: false}
+      - {label: "Donation Link", name: "donation_link", widget: "string"}
+      - {label: "Introduction", name: "intro", widget: "markdown"}
+      - {label: "Meta Description", name: "description", widget: "markdown"}
+      - {label: "Cause Details", name: "body", widget: "markdown", required: false}
+  - label: "Events"
+    name: "events"
+    folder: "_events"
+    create: true # Allow users to create new documents in this collection
+    sort: "start:desc"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
+      - {label: "Event Title", name: "title", widget: "string"}
+      - {label: "Event Start", name: "start", widget: "date", format: "YYYY-MM-DD HH:MM:SS"}
+      - {label: "Event End", name: "end", widget: "date", format: "YYYY-MM-DD HH:MM:SS", required: false}
+      - {label: "Venue", name: "venue", widget: "string"}
+      - {label: "Button Text", name: "button_text", widget: "string"}
+      - {label: "Button Url", name: "button_url", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Introduction", name: "intro", widget: "markdown"}
+      - {label: "Meta Description", name: "description", widget: "markdown"}
+      - {label: "Event Details", name: "body", widget: "markdown", required: false}
+  - label: "News"
+    name: "news"
+    folder: "_posts"
+    create: true # Allow users to create new documents in this collection
+    sort: "due:desc"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
+      - label: "Avenues"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options:
+          - { label: "Club Service", value: "Club-Service" }
+          - { label: "Community Service", value: "Community-Service" }
+          - { label: "International Service", value: "International-Service" }
+          - { label: "Professional Development", value: "Professional-Development" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+        default: ["hosting, participating, volunteering"]
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}

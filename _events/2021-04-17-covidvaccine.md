@@ -4,7 +4,7 @@ title: COVIDSHIELD for FREE
 start: 2021-04-13 11:00:00
 end:
 author: rbe
-location: Domlur Senior Citizen Charitable Trust
+venue: Domlur Senior Citizen Charitable Trust
 button_text: Location
 button_url: https://goo.gl/maps/YkDwZGr25CgRLuEK9
 image: /images/uploads/cause_covidvaccine.png

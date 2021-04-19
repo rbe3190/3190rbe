@@ -316,7 +316,7 @@ layout: default
                                     <h4>{{event.title}}</h4>
                                     <ul class="post-meta">
                                         <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                                        <li><span class="fa fa-map-marker-alt"></span>{{event.location}}</li>
+                                        <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
                                         <li><a href="{{event.url}}" class="theme-btn btn-style-three">Learn More</a></li>
                                     </ul>
 
@@ -338,7 +338,7 @@ layout: default
                                     <h4>{{event.title}}</h4>
                                     <ul class="post-meta">
                                         <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                                        <li><span class="fa fa-map-marker-alt"></span>{{event.location}}</li>
+                                        <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
                                         <li><a href="{{event.url}}" class="theme-btn btn-style-three">Learn More</a></li>
                                     </ul>
 
@@ -378,27 +378,27 @@ layout: default
                         <img src="{{member.image | relative_url}}" alt="{{member.name}}">
                         <div class="overlay-box">
                             <ul class="social-icon-one">
-                                {% if member.social.facebook %}
+                                {% if member.social.facebook != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
                                 {% endif %}
-                                {% if member.social.instagram %}
+                                {% if member.social.instagram != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
                                 {% endif %}
-                                {% if member.social.twitter %}
+                                {% if member.social.twitter != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
                                 {% endif %}
-                                {% if member.social.linkedin %}
+                                {% if member.social.linkedin != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
                                 {% endif %}
-                                {% if member.social.email %}
+                                {% if member.social.email != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
                                 {% endif %}
                             </ul>
                         </div>
                     </div>
                     <div class="lower-box">
-                        <div class="designation">{{member.designation}}</div>
-                        <h4><a href="{{member.namelink}}" target="_blank">{{member.name}}</a></h4>
+                        <div class="designation">{{member.role}}</div>
+                        <h4><a {% if member.featurelink != "" %}href="{{member.featurelink}}" target="_blank"{% endif %}>{{member.name}}</a></h4>
                     </div>
                 </div>
             </div>

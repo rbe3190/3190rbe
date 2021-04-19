@@ -1,171 +1,172 @@
-members:
-  - name: Rtr. Rakshith Purushothaman
-    designation: President
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/rakshith.png
-  - name: Rtr. Spoorthi K S
-    designation: Charter President
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/spoorthi.png
-  - name: Rtr. Muhsin M P
-    designation: Secretary
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/muhsin.png
-  - name: Rtr. Goutham Dixith S N
-    designation: Treasurer
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/goutham.png
-  - name: Rtr. Padmanesar R
-    designation: Sergeant-at-Arms
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/padmanesar.png
-  - name: Rtr. Abhishek Raj
-    designation: Club Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/abhishek.png
-  - name: Rtr. Anurag Dolai
-    designation: Co-Club Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/anurag.png
-  - name: Rtr. Pavithra Purushothaman
-    designation: International Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/pavithra.png
-  - name: Rtr. Anirjit Ghosh
-    designation: Co-International Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/anirjit.png
-  - name: Rtr. Nikhila P
-    designation: Professional Development Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/nikhila.png
-  - name: Rtr. Deepak Balasubramanin
-    designation: Co-Professional Development Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/deepak.png
-  - name: Rtr. Ragesh C R
-    designation: Community Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/ragesh.png
-  - name: Rtr. Samiha Isbath A S
-    designation: Co-Community Service Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/samiha.png
-  - name: Rtr. Sunkara Gnanateja
-    designation: Public Relations Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/sunkara.png
-  - name: Rtr. Rahul S
-    designation: Co-Public Relations Director
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/rahul.png
-  - name: Rtr. Pranav Bhat
-    designation: Editor
-    social:
-      linkedin: 
-      twitter: 
-      facebook: 
-      instagram: 
-      email: 
-    namelink: 
-    image: /images/team/pranav.png
   # - name: Rtr. Arun Teja Godavarthi
-  #   designation: Member
+  #   role: Member
   #   social:
   #     linkedin: https://www.linkedin.com/in/zeospec/
   #     twitter: https://twitter.com/ZeoSpec
   #     facebook: https://www.facebook.com/zeospec/
   #     instagram: https://www.instagram.com/ZeoSpec/
   #     email: hi@zeospec.com
-  #   namelink: https://zeospec.com
+  #   featurelink: https://zeospec.com
   #   image: /images/team/zeospec.jpg
+
+members:
+  - name: Rtr. Rakshith Purushothaman
+    role: President
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/rakshith.png
+  - name: Rtr. Spoorthi K S
+    role: Charter President
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: "" 
+    image: /images/team/spoorthi.png
+  - name: Rtr. Muhsin M P
+    role: Secretary
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/muhsin.png
+  - name: Rtr. Goutham Dixith S N
+    role: Treasurer
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/goutham.png
+  - name: Rtr. Padmanesar R
+    role: Sergeant-at-Arms
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/padmanesar.png
+  - name: Rtr. Abhishek Raj
+    role: Club Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/abhishek.png
+  - name: Rtr. Anurag Dolai
+    role: Co-Club Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/anurag.png
+  - name: Rtr. Pavithra Purushothaman
+    role: International Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/pavithra.png
+  - name: Rtr. Anirjit Ghosh
+    role: Co-International Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/anirjit.png
+  - name: Rtr. Nikhila P
+    role: Professional Development Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/nikhila.png
+  - name: Rtr. Deepak Balasubramanin
+    role: Co-Professional Development Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/deepak.png
+  - name: Rtr. Ragesh C R
+    role: Community Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/ragesh.png
+  - name: Rtr. Samiha Isbath A S
+    role: Co-Community Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/samiha.png
+  - name: Rtr. Sunkara Gnanateja
+    role: Public Relations Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/sunkara.png
+  - name: Rtr. Rahul S
+    role: Co-Public Relations Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/rahul.png
+  - name: Rtr. Pranav Bhat
+    role: Editor
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/pranav.png
