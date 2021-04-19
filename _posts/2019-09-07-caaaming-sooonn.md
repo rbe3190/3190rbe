@@ -2,7 +2,7 @@
 layout: post
 title:  "CAAAMING SOOONN!!!"
 date:   2019-09-07
-image: /images/uploads/caamingsoon.png
+image: /images/uploads/event_caamingsoon.png
 author: rbe
 categories: [International-Service]
 tags: [campaigns, hosting]

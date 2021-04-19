@@ -2,7 +2,7 @@
 layout: post
 title:  "Shubhaarambh | Good Beginning"
 date:   2020-07-11
-image: /images/uploads/2021-Shubhaarambh.jpeg
+image: /images/uploads/2021-Shubhaarambh.png
 author: rbe
 categories: [Professional-Development]
 tags: [hosting]
