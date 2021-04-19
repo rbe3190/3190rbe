@@ -44,12 +44,25 @@ collections: # A list of collections the CMS should be able to edit
     folder: "_events"
     create: true # Allow users to create new documents in this collection
     sort: "start:desc"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{start.year}}-{{start.month}}-{{start.day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Event Title", name: "title", widget: "string"}
-      - {label: "Event Start", name: "start", widget: "date", format: "YYYY-MM-DD HH:MM:SS"}
-      - {label: "Event End", name: "end", widget: "date", format: "YYYY-MM-DD HH:MM:SS", required: false}
+      - label: "Start time"
+        name: "start"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD" 
+        time_format: "HH:MM:SS"
+        format: "LLL"
+        picker_utc: false
+      - label: "End time"
+        name: "end"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD" 
+        time_format: "HH:MM:SS"
+        format: "LLL"
+        picker_utc: false
+        required: false
       - {label: "Venue", name: "venue", widget: "string"}
       - {label: "Button Text", name: "button_text", widget: "string"}
       - {label: "Button Url", name: "button_url", widget: "string"}
@@ -61,7 +74,7 @@ collections: # A list of collections the CMS should be able to edit
     name: "news"
     folder: "_posts"
     create: true # Allow users to create new documents in this collection
-    sort: "due:desc"
+    sort: "date:desc"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}

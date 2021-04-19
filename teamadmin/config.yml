@@ -21,6 +21,7 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - label: Team Members
             name: members
+            widget: list
             fields:
               - {label: "Name", name: "name", widget: "string", default: ""}
               - {label: "Role", name: "role", widget: "string", default: ""}              
