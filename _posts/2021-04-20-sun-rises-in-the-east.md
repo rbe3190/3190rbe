@@ -45,12 +45,14 @@ The list items that were donated are as follows:
 
 ![Sun Rises in East](/images/uploads/2021sunrisesineast5.jpeg "Sun Rises in East")
 
-It was a great opportunity to work with our partner clubs, Rotaract Club of Guwahati East and Rotaract Club of East Calcutta.
+It was a great opportunity to work with our partner clubs, **Rotaract Club of Guwahati East** and **Rotaract Club of East Calcutta**.
 
-We also thank the following Rotaract Clubs of RID 3190 who supported the cause:
+Rotaract Clubs of RID 3190 who supported the cause:
 
 * Rotaract Club of K.G.F. Community
 * Rotaract Club of Symbiosis School for Media Communication
 * Rotaract Club of GEMS B School
 * Rotaract Club of Mount Carmel College
 * Rotaract Club of Chimney Hills
+
+We also thank all the supporting Rotaract Clubs from across South Asia.
