@@ -110,189 +110,237 @@ brandkit:
     items_list:
       - title: Rotaract Bagalore East Logo
         description: Standard logo of Rotaract Bangalore East
-        preview: /images/brandkit/RBEoriginal.png
-        file: /images/brandkit/RBEoriginal.png
+        preview: /images/brandkit/RBE/RBEoriginal.png
+        file: /images/brandkit/RBE/RBEoriginal.png
       - title: Rotaract Bagalore East Logo - Black
         description: Black version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBEblack.png
-        file: /images/brandkit/RBEblack.png
+        preview: /images/brandkit/RBE/RBEblack.png
+        file: /images/brandkit/RBE/RBEblack.png
       - title: Rotaract Bagalore East Logo - Blue
         description: Blue version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBEblue.png
-        file: /images/brandkit/RBEblue.png
+        preview: /images/brandkit/RBE/RBEblue.png
+        file: /images/brandkit/RBE/RBEblue.png
       - title: Rotaract Bagalore East Logo - Red
         description: Red version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBEred.png
-        file: /images/brandkit/RBEred.png
+        preview: /images/brandkit/RBE/RBEred.png
+        file: /images/brandkit/RBE/RBEred.png
       - title: Rotaract Bagalore East Logo - White
         description: White version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBEwhite.png
-        file: /images/brandkit/RBEwhite.png
+        preview: /images/brandkit/RBE/RBEwhite.png
+        file: /images/brandkit/RBE/RBEwhite.png
         white: true
   - group_name: RBE - UNITE RISE EMPOWER
     items_list:
       - title: RBE - UNITE RISE EMPOWER
         description: Standard version of RBE - UNITE RISE EMPOWER
-        preview: /images/brandkit/RBEUniteRiseEmpower.png
-        file: /images/brandkit/RBEUniteRiseEmpower.png
+        preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
+        file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
       - title: RBE - UNITE RISE EMPOWER - White Text
         description: Standard version of RBE - UNITE RISE EMPOWER with white text
-        preview: /images/brandkit/RBEUniteRiseEmpowerWhitetext.png
-        file: /images/brandkit/RBEUniteRiseEmpowerWhitetext.png
+        preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
+        file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
         white: true
       - title: RBE - UNITE RISE EMPOWER - Black
         description: Black version of RBE - UNITE RISE EMPOWER
-        preview: /images/brandkit/RBEUniteRiseEmpowerBlack.png
-        file: /images/brandkit/RBEUniteRiseEmpowerBlack.png
+        preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
+        file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
       - title: RBE - UNITE RISE EMPOWER - Grey
         description: Grey version of RBE - UNITE RISE EMPOWER
-        preview: /images/brandkit/RBEUniteRiseEmpowerGrey.png
-        file: /images/brandkit/RBEUniteRiseEmpowerGrey.png
+        preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
+        file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
       - title: RBE - UNITE RISE EMPOWER - White
         description: White version of RBE - UNITE RISE EMPOWER
-        preview: /images/brandkit/RBEUniteRiseEmpowerWhite.png
-        file: /images/brandkit/RBEUniteRiseEmpowerWhite.png
+        preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
+        file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
         white: true
   - group_name: RBE - Rotaract Masterbrand
     items_list:
       - title: RBE - Rotaract Masterbrand
         description: Standard version of RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrand.png
-        file: /images/brandkit/RBE_masterbrand.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrand.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrand.png
       - title: RBE - Rotaract Masterbrand - Black
         description: Black version of RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrandBlack.png
-        file: /images/brandkit/RBE_masterbrandBlack.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrandBlack.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrandBlack.png
       - title: RBE - Rotaract Masterbrand - White
         description: White version of RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrandWhite.png
-        file: /images/brandkit/RBE_masterbrandWhite.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrandWhite.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrandWhite.png
         white: true
       - title: RBE - Rotaract Masterbrand Simplified
         description: Simplified standard version of RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrandSimple.png
-        file: /images/brandkit/RBE_masterbrandSimple.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrandSimple.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrandSimple.png
       - title: RBE - Rotaract Masterbrand Simplified - Black
         description: Black version of simplified RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrandBlackSimple.png
-        file: /images/brandkit/RBE_masterbrandBlackSimple.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrandBlackSimple.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrandBlackSimple.png
       - title: RBE - Rotaract Masterbrand Simplified - White
         description: White version of simplified RBE - Rotaract Masterbrand
-        preview: /images/brandkit/RBE_masterbrandWhiteSimple.png
-        file: /images/brandkit/RBE_masterbrandWhiteSimple.png
+        preview: /images/brandkit/RBEmasterbrand/RBE_masterbrandWhiteSimple.png
+        file: /images/brandkit/RBEmasterbrand/RBE_masterbrandWhiteSimple.png
         white: true
   - group_name: RotaSambandh
     items_list:
       - title: RotaSambandh Primary Logo
         description: Standard version of RotaSambandh Logo
-        preview: /images/brandkit/rotasambandh.png
-        file: /images/brandkit/rotasambandh.png
+        preview: /images/brandkit/rotasambandh/rotasambandh.png
+        file: /images/brandkit/rotasambandh/rotasambandh.png
       - title: RotaSambandh Logo Icon
         description: Standard version of RotaSambandh Logo Icon
-        preview: /images/brandkit/rotasambandh_icon.png
-        file: /images/brandkit/rotasambandh_icon.png
-
+        preview: /images/brandkit/rotasambandh/rotasambandh_icon.png
+        file: /images/brandkit/rotasambandh/rotasambandh_icon.png
   - group_name: Rotaract Masterbrand
     items_list:
       - title: Rotaract Masterbrand
         description: Standard version of Rotaract Masterbrand
-        preview: /images/brandkit/rotaract.png
-        file: /images/brandkit/rotaract.png
+        preview: /images/brandkit/rotaract/rotaract.png
+        file: /images/brandkit/rotaract/rotaract.png
       - title: Rotaract Masterbrand - Black
         description: Black version of Rotaract Masterbrand
-        preview: /images/brandkit/rotaract_black.png
-        file: /images/brandkit/rotaract_black.png
+        preview: /images/brandkit/rotaract/rotaract_black.png
+        file: /images/brandkit/rotaract/rotaract_black.png
       - title: Rotaract Masterbrand - White
         description: White version of Rotaract Masterbrand
-        preview: /images/brandkit/rotaract_white.png
-        file: /images/brandkit/rotaract_white.png
+        preview: /images/brandkit/rotaract/rotaract_white.png
+        file: /images/brandkit/rotaract/rotaract_white.png
         white: true
   - group_name: Rotaract Masterbrand with RID 3190
     items_list:
       - title: Rotaract 3190 Masterbrand
         description: Standard Version of Rotaract 3190 Masterbrand
-        preview: /images/brandkit/rotaract3190.png
-        file: /images/brandkit/rotaract3190.png
+        preview: /images/brandkit/rotaract3190/rotaract3190.png
+        file: /images/brandkit/rotaract3190/rotaract3190.png
       - title: Rotaract 3190 Masterbrand - Black
         description: Black version of Rotaract 3190 Masterbrand
-        preview: /images/brandkit/rotaract3190_black.png
-        file: /images/brandkit/rotaract3190_black.png
+        preview: /images/brandkit/rotaract3190/rotaract3190_Black.png
+        file: /images/brandkit/rotaract3190/rotaract3190_Black.png
       - title: Rotaract 3190 Masterbrand - White
         description: White version of Rotaract 3190 Masterbrand
-        preview: /images/brandkit/rotaract3190_white.png
-        file: /images/brandkit/rotaract3190_white.png
+        preview: /images/brandkit/rotaract3190/rotaract3190_White.png
+        file: /images/brandkit/rotaract3190/rotaract3190_White.png
+        white: true
+      - title: Rotaract 3190 Masterbrand Simplified
+        description: Simplified standard Version of Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190/rotaract3190_Simplified.png
+        file: /images/brandkit/rotaract3190/rotaract3190_Simplified.png
+      - title: Rotaract 3190 Masterbrand Simplified - Black
+        description: Black version of simplified Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190/rotaract3190_Simplified_Black.png
+        file: /images/brandkit/rotaract3190/rotaract3190_Simplified_Black.png
+      - title: Rotaract 3190 Masterbrand Simplified - White
+        description: White version of simplified Rotaract 3190 Masterbrand
+        preview: /images/brandkit/rotaract3190/rotaract3190_Simplified_White.png
+        file: /images/brandkit/rotaract3190/rotaract3190_Simplified_White.png
+        white: true
+  - group_name: Rotary Bangalore East
+    items_list:
+      - title: Rotary Bangalore East
+        description: Standard version of Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East.png
+      - title: Rotary Bangalore East - Azure Blue
+        description: Azure Blue version of Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_AzureBlue.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_AzureBlue.png
+      - title: Rotary Bangalore East - Black
+        description: Black version of Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Black.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Black.png
+      - title: Rotary Bangalore East - White
+        description: White version of Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_White.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_White.png
+        white: true
+      - title: Rotary Bangalore East Simplified
+        description: Simplified standard version of Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified.png
+      - title: Rotary Bangalore East Simplified - Azure Blue
+        description: Azure Blue version of simplified Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_AzureBlue.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_AzureBlue.png
+      - title: Rotary Bangalore East Simplified - Black
+        description: Black version of simplified Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_Black.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_Black.png
+      - title: Rotary Bangalore East Simplified - White
+        description: White version of simplified Rotary Bangalore East Masterbrand
+        preview: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_White.png
+        file: /images/brandkit/RotaryBangaloreEast/Rotary_Bangalore_East_Simplified_White.png
         white: true
   - group_name: Rotary Mark of Excellence
     items_list:
       - title: Rotary Mark of Excellence
         description: Standard version of Rotary Mark of Excellence
-        preview: /images/brandkit/markofexcellence.png
-        file: /images/brandkit/markofexcellence.png
+        preview: /images/brandkit/markofexcellence/markofexcellence.png
+        file: /images/brandkit/markofexcellence/markofexcellence.png
       - title: Rotary Mark of Excellence - Azure
         description: Azure version of Rotary Mark of Excellence
-        preview: /images/brandkit/markofexcellence_azure.png
-        file: /images/brandkit/markofexcellence_azure.png
+        preview: /images/brandkit/markofexcellence/markofexcellence_azure.png
+        file: /images/brandkit/markofexcellence/markofexcellence_azure.png
       - title: Rotary Mark of Excellence - Black
         description: Black version of Rotary Mark of Excellence
-        preview: /images/brandkit/markofexcellence_black.png
-        file: /images/brandkit/markofexcellence_black.png
+        preview: /images/brandkit/markofexcellence/markofexcellence_black.png
+        file: /images/brandkit/markofexcellence/markofexcellence_black.png
       - title: Rotary Mark of Excellence - White
         description: White version of Rotary Mark of Excellence
-        preview: /images/brandkit/markofexcellence_white.png
-        file: /images/brandkit/markofexcellence_white.png
+        preview: /images/brandkit/markofexcellence/markofexcellence_white.png
+        file: /images/brandkit/markofexcellence/markofexcellence_white.png
         white: true
   - group_name: Rotary International Theme RIY 2020 – 2021
     items_list:
       - title: Rotary International Theme
         description: Standard version of Rotary International Theme for RIY 2020 – 2021
-        preview: /images/brandkit/RotaryTheme2021.png
-        file: /images/brandkit/RotaryTheme2021.png
+        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021.png
+        file: /images/brandkit/rotarytheme2021/RotaryTheme2021.png
       - title: Rotary International Theme - White
         description: White version of Rotary International Theme for RIY 2020 – 2021
-        preview: /images/brandkit/RotaryTheme2021_white.png
-        file: /images/brandkit/RotaryTheme2021_white.png
+        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_white.png
+        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_white.png
         white: true
       - title: Rotary International Theme with Masterbrand
         description: Rotary International Theme logo with Masterbrand
-        preview: /images/brandkit/RotaryTheme2021_masterbrand.png
-        file: /images/brandkit/RotaryTheme2021_masterbrand.png
+        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrand.png
+        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrand.png
       - title: Rotary International Theme with Masterbrand - White
         description: White Rotary International Theme logo with Masterbrand
-        preview: /images/brandkit/RotaryTheme2021_masterbrandwhite.png
-        file: /images/brandkit/RotaryTheme2021_masterbrandwhite.png
+        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrandwhite.png
+        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrandwhite.png
         white: true
   - group_name: Rotary Masterbrand
     items_list:
       - title: Rotary Masterbrand
         description: Standard version of Rotary Masterbrand
-        preview: /images/brandkit/rotary.png
-        file: /images/brandkit/rotary.png
+        preview: /images/brandkit/rotary/rotary.png
+        file: /images/brandkit/rotary/rotary.png
       - title: Rotary Masterbrand - Azure
         description: Azure version of Rotary Masterbrand
-        preview: /images/brandkit/rotary_azure.png
-        file: /images/brandkit/rotary_azure.png
+        preview: /images/brandkit/rotary/rotary_azure.png
+        file: /images/brandkit/rotary/rotary_azure.png
       - title: Rotary Masterbrand - Black
         description: Black version of Rotary Masterbrand
-        preview: /images/brandkit/rotary_black.png
-        file: /images/brandkit/rotary_black.png
+        preview: /images/brandkit/rotary/rotary_black.png
+        file: /images/brandkit/rotary/rotary_black.png
       - title: Rotary Masterbrand - White
         description: White version of Rotary Masterbrand
-        preview: /images/brandkit/rotary_white.png
-        file: /images/brandkit/rotary_white.png
+        preview: /images/brandkit/rotary/rotary_white.png
+        file: /images/brandkit/rotary/rotary_white.png
         white: true
       - title: Rotary Masterbrand - White & Gold
         description: White & Gold version of Rotary Masterbrand
-        preview: /images/brandkit/rotary_white_gold.png
-        file: /images/brandkit/rotary_white_gold.png
+        preview: /images/brandkit/rotary/rotary_white_gold.png
+        file: /images/brandkit/rotary/rotary_white_gold.png
         white: true
       - title: Rotary Masterbrand - Simple
         description: Simplified version of Rotary Masterbrand
-        preview: /images/brandkit/rotary_simple.png
-        file: /images/brandkit/rotary_simple.png
+        preview: /images/brandkit/rotary/rotary_simple.png
+        file: /images/brandkit/rotary/rotary_simple.png
       - title: Rotary Masterbrand - Simple - White & Gold
         description: White & Gold version Simplified Rotary Masterbrand
-        preview: /images/brandkit/rotary_simple_white_gold.png
-        file: /images/brandkit/rotary_simple_white_gold.png
+        preview: /images/brandkit/rotary/rotary_simple_white_gold.png
+        file: /images/brandkit/rotary/rotary_simple_white_gold.png
         white: true
 
 authors:
