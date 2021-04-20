@@ -181,6 +181,17 @@ brandkit:
         preview: /images/brandkit/RBE_masterbrandWhiteSimple.png
         file: /images/brandkit/RBE_masterbrandWhiteSimple.png
         white: true
+  - group_name: RotaSambandh
+    items_list:
+      - title: RotaSambandh Primary Logo
+        description: Standard version of RotaSambandh Logo
+        preview: /images/brandkit/rotasambandh.png
+        file: /images/brandkit/rotasambandh.png
+      - title: RotaSambandh Logo Icon
+        description: Standard version of RotaSambandh Logo Icon
+        preview: /images/brandkit/rotasambandh_icon.png
+        file: /images/brandkit/rotasambandh_icon.png
+
   - group_name: Rotaract Masterbrand
     items_list:
       - title: Rotaract Masterbrand
