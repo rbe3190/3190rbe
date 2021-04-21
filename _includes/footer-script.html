@@ -10,7 +10,10 @@
 <script src="{{site.baseurl}}/js/isotope.js"></script>
 <script src="{{site.baseurl}}/js/appear.js"></script>
 <script src="{{site.baseurl}}/js/jquery.fancybox.js"></script>
+
 <script src="{{site.baseurl}}/js/script.js"></script>
+
+{% if page.layout == "post" or page.layout == "event" or page.layout == "cause" %}
 <script src="{{site.baseurl}}/js/InstagramFeed.min.js"></script>
 <script>
     (function () {
@@ -29,3 +32,4 @@
         });
     })();
 </script>
+{% endif %}

@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% if page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Tag: {{ page.title | capitalize | replace: "-"," "}}{% elsif page.type == "category" %}{{ page.title | capitalize | replace: "-"," "}}{% else %}{{ page.title }}{% endif %}{% if page.url == "/" %}{{site.title}} - UNITE . RISE . EMPOWER{% else %} - {{site.title}}{% endif %}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates with tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
@@ -58,7 +58,6 @@
     <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.png" type="image/x-icon">
     <link rel="icon" href="{{site.baseurl}}/images/favicon.png" type="image/x-icon">
     
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     {% if site.google_tracking_id %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{site.google_tracking_id}}"></script>
