@@ -88,6 +88,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "categories"
         widget: "select"
         multiple: true
+        required: false
         options:
           - { label: "Club Service", value: "Club-Service" }
           - { label: "Community Service", value: "Community-Service" }
@@ -98,5 +99,6 @@ collections: # A list of collections the CMS should be able to edit
         widget: "list"
         allow_add: true
         default: ["hosting, participating, volunteering"]
+        required: false
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
