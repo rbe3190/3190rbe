@@ -4,8 +4,7 @@ title: Rendezvous with Rotaract
 date: 2020-08-23
 image: /images/uploads/2021rendezvouswithrotaract.png
 author: rbe
-categories:
-  - Club-Service
+categories: null
 tags:
   - hosting, participating, volunteering
 description: >
