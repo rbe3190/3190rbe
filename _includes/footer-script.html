@@ -12,24 +12,3 @@
 <script src="{{site.baseurl}}/js/jquery.fancybox.js"></script>
 
 <script src="{{site.baseurl}}/js/script.js"></script>
-
-{% if page.layout == "post" or page.layout == "event" or page.layout == "cause" %}
-<script src="{{site.baseurl}}/js/InstagramFeed.min.js"></script>
-<script>
-    (function () {
-        new InstagramFeed({
-            'username': '3190rbe',
-            'container': document.getElementById("instafeed"),
-            'display_profile': false,
-            'display_biography': false,
-            'display_gallery': true,
-            'callback': null,
-            'styling': true,
-            'items': 6,
-            'image_size': 150,
-            'lazy_load': true,
-            'on_error': console.error
-        });
-    })();
-</script>
-{% endif %}

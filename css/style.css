@@ -5977,7 +5977,7 @@ element css
 	font-size: 12px;
 	font-weight: 600;
 	font-family: 'Poppins', sans-serif;
-	color: #ff9000;
+	/* color: #ff9000; */
 	margin-top: 6px;
 	margin-right: 10px;
 	display: inline-block;
