@@ -6,7 +6,7 @@ image: /images/uploads/2021rendezvouswithrotaract.png
 author: rbe
 categories: null
 tags:
-  - hosting, participating, volunteering
+  - hosting
 description: >
   Rendezvous with Rotaract was a talk show led by Rtr. Pranav Bhat. In this show
   IPP Rtr. Spoorthy and Rtr. Rakshith joined Rtr. Pranav in a fun-filled event.
