@@ -103,7 +103,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: Comments
         name: "comments"
         widget: list
-        fileds:
+        fields:
           - {label: "Name of User", name: "user", widget: "string"}   
           - label: "Start time"
             name: "start"
