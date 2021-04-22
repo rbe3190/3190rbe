@@ -100,5 +100,17 @@ collections: # A list of collections the CMS should be able to edit
         allow_add: true
         default: ["hosting, participating, volunteering"]
         required: false
+      - label: Comments
+        name: "comments"
+        fileds:
+          - {label: "Name of User", name: "user", widget: "string"}   
+          - label: "Start time"
+            name: "start"
+            widget: "datetime"
+            date_format: "YYYY-MM-DD" 
+            time_format: "HH:mm:ss"
+            format: "YYYY-MM-DD HH:mm:ss"
+            picker_utc: false
+          - {label: "Comment", name: "comment", widget: "markdown"}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown", required: false}

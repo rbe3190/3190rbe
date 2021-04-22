@@ -29,8 +29,8 @@ layout: default
                                     <h4><a>{{page.title}}</a></h4>
                                     <ul class="post-meta">
                                         <li><span class="far fa-user"></span>By: {{site.data.info.authors[page.author].display_name}}</li>
-                                        <!-- <li><span class="far fa-comment"></span>Comment 74</li>
-                                        <li><span class="far fa-heart"></span>39</li> -->
+                                        {% if page.comments.size > 0 %}<li><span class="far fa-comment"></span> {{page.comments.size}}</li>{% endif %}
+                                        <!-- <li><span class="far fa-heart"></span>39</li> -->
                                     </ul>
                                 </div>  
                                 <div class="lower-content">
@@ -68,10 +68,35 @@ layout: default
 
                     {% include author.html %}
                     
+                    {% if page.comments.size > 0 %}
+                    <!--Comments Area-->
+                    <div class="comments-area">
+                        <div class="group-title">
+                            <h2>Comments ({{page.comments.size}})</h2>
+                            <div class="separator">
+                            </div>
+                        </div>
+                        {% for comment in page.comments %}
+                        <!--Comment Box-->
+                        <div class="comment-box">
+                            <div class="comment">
+                                <div class="author-thumb"><img src="{{site.baseurl}}/images/resource/user.png" alt="{{comment.user}}"></div>
+                                <div class="comment-inner clearfix">
+                                    <div class="comment-info clearfix"><strong>{{comment.user}}</strong></div>
+                                    <div class="text">{{comment.comment}}</div>
+                                    <div class="comment-time">{{ comment.timestamp | date: '%B %d, %Y at %I:%M %p' }}</div> 
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!--End Comments Area-->
+                    {% endif %}
+
                     <!--Comment Form-->
                     <div class="comment-form">
                         <div class="group-title">
-                            <h2>Send a Message</h2>
+                            <h2>Submit a Comment</h2>
                             <div class="separator">
                             </div>
                         </div>
