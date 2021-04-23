@@ -77,7 +77,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     sort: "date:desc"
     sortable_fields: ['title','date']
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{date}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}

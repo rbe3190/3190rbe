@@ -83,19 +83,18 @@ areasoffocus:
   - title: Protecting the environment
     icon: flaticon-circle
     description: We are tackling environmental issues the seriously and working towards betterment of the community around us
-    # description: Nostrud exercitation ullamco laboris nisi utm aliquip sed duis aute lorem ipsum.
 
 # stats:
-#   - title: Received Donations
+#   - title: Cash Contributions
 #     icon: flaticon-donation-1
 #     count: 98520
-#   - title: Received Donations
+#   - title: In-Kind Contributions
 #     icon: flaticon-balloon
 #     count: 30682
-#   - title: Our Volunteers
+#   - title: Volunteer Representations
 #     icon: flaticon-shirt
 #     count: 614
-#   - title: Projects Done
+#   - title: Volunteer Hours
 #     icon: flaticon-ecology
 #     count: 14369
 
