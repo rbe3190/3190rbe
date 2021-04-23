@@ -105,8 +105,8 @@ collections: # A list of collections the CMS should be able to edit
         widget: list
         fields:
           - {label: "Name of User", name: "user", widget: "string"}   
-          - label: "Start time"
-            name: "start"
+          - label: "Comment Time"
+            name: "timestamp"
             widget: "datetime"
             date_format: "YYYY-MM-DD" 
             time_format: "HH:mm:ss"
