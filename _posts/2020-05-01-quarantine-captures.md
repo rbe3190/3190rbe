@@ -17,13 +17,13 @@ The event saw than 60 participants from across the Rotaract Districts across the
 
 The winners were decided based on two criteria:
 
-* Most Creative
+##### Most Creative
 
 ![Most Creative Winner 1](/images/uploads/1920quarantinecaptures4.jpeg "Most Creative Winner 1")
 
 ![Most Creative Winner 2](/images/uploads/1920quarantinecaptures3.jpeg "Most Creative Winner 2")
 
-* Most Linked
+##### Most Linked
 
 ![Most Liked Winner 1](/images/uploads/1920quarantinecaptures5.jpeg "Most Liked Winner 1")
 
