@@ -1,7 +1,7 @@
 ---
 layout: cause
 focus: Community Service
-title: General Projects
+title: Donate for Service Projects
 image: /images/uploads/general_donation.png
 due: ""
 active: true

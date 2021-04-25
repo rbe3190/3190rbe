@@ -15,7 +15,73 @@ permalink: search
     <!-- Causes Section -->
     <section class="causes-section">
         <div class="container">
-            <script async src="https://cse.google.com/cse.js?cx=005672163470134270944:aa75kecrt3t"></script>
-		    <div class="gcse-searchresults-only"></div>
+            
+            <p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+
+            <ul id="search-results"></ul>
+
+            <!-- <script async src="https://cse.google.com/cse.js?cx=005672163470134270944:aa75kecrt3t"></script>
+		    <div class="gcse-searchresults-only"></div> -->
         </div>
     </section>
+
+<script>
+	window.data = {
+        {% assign added = false %}
+
+		{% for post in site.posts %}
+			{% if post.title %}
+				{% unless post.excluded_in_search %}
+					{% if added %},{% endif %}
+					{% assign added = false %}
+					"{{ post.url | slugify }}": {
+						"id": "{{ post.url | slugify }}",
+						"title": "{{ post.title | xml_escape }}",
+						"categories": "{{ post.categories | join: ", " | xml_escape }}",
+						"url": " {{ post.url | xml_escape }}",
+                        "description": {{ post.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
+						"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+					}
+					{% assign added = true %}
+				{% endunless %}
+			{% endif %}
+		{% endfor %}
+        {% for cause in site.causes %}
+			{% if cause.title %}
+				{% unless cause.excluded_in_search %}
+					{% if added %},{% endif %}
+					{% assign added = false %}
+					"{{ cause.url | slugify }}": {
+						"id": "{{ cause.url | slugify }}",
+						"title": "{{ cause.title | xml_escape }}",
+						"categories": "{{ cause.categories | join: ", " | xml_escape }}",
+						"url": " {{ cause.url | xml_escape }}",
+                        "description": {{ cause.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
+						"content": {{ cause.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+					}
+					{% assign added = true %}
+				{% endunless %}
+			{% endif %}
+		{% endfor %}
+        {% for event in site.events %}
+			{% if event.title %}
+				{% unless event.excluded_in_search %}
+					{% if added %},{% endif %}
+					{% assign added = false %}
+					"{{ event.url | slugify }}": {
+						"id": "{{ event.url | slugify }}",
+						"title": "{{ event.title | xml_escape }}",
+						"categories": "{{ event.categories | join: ", " | xml_escape }}",
+						"url": " {{ event.url | xml_escape }}",
+                        "description": {{ event.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
+						"content": {{ event.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+					}
+					{% assign added = true %}
+				{% endunless %}
+			{% endif %}
+		{% endfor %}
+	};
+</script>
+
+<script src="{{ site.baseurl }}/js/lunr.min.js"></script>
+<script src="{{ site.baseurl }}/js/search.js"></script>
