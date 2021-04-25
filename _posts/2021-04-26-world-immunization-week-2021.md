@@ -33,6 +33,6 @@ Talking about #EndPolio we would like to recall some images in our gallery from 
 
 ![National Immunisation Day 2021](/images/uploads/2021worldimmunizationweek5.jpeg "National Immunisation Day 2021")
 
-Let’s raise awareness of the importance of vaccines around the world during World Immunization Week 2021.
+Let’s raise awareness on the importance of vaccines around the world during World Immunization Week 2021.
 
 \#VaccinesWork
