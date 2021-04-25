@@ -25,7 +25,7 @@ On the occasion of World Immunization Week, we are sharing 3 quick facts on Rota
 * Nearly 3 billion children in 122 countries children have been saved from becoming paralyzed by polio.
 * Only 2 countries continue to report wild polio cases.
 
-Talking about #EndPolio we would like to recall some images in our gallery from the recent National Immunization Day in January of 2021.
+Talking about #EndPolio we would like to recall some images in our gallery from the recent National Immunization Day in January of 2021 where our members were in action amidst the Covid 19 Crisis.
 
 ![National Immunisation Day 2021](/images/uploads/2021worldimmunizationweek3.jpeg "National Immunisation Day 2021")
 
