@@ -5,8 +5,6 @@ date: 2021-04-26
 image: /images/uploads/2021worldimmunizationweek.png
 author: rbe
 tags:
-  - VaccinesWork
-  - EndPolio
   - awareness
 description: World Immunization Week is celebrated every year in the last week
   of April to promote the use of vaccines to protect people of all ages against
