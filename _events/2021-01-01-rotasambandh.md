@@ -15,14 +15,14 @@ description: RotaSambandh connects Rotaractors with the Achievers and
   CONNECT WITH MENTOR and SHADOW THE MENTOR. RotaSambandh is a project created
   by Rtr. Rtn. Arun Teja Godavarthi aka. ZeoSpec of Rotaract Bangalore East.
 ---
-{% include youtube.html id='vx9YQqc1eg8' %}
-
 ### Key Features
 #### Experience Navigation to your Destination
 
 ##### RotaSambandh connects you with the Achievers and Established professionals ie.Mentors(Rotarians) from various classifications of your Choice and Passion.
 
 > A Mentor is someone who allows you to see the hope inside yourself. <br>— Oprah Winfrey.
+
+{% include youtube.html id='vx9YQqc1eg8' %}
 
 #### RotaSambandh has two formats:
 
