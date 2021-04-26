@@ -1,0 +1,68 @@
+{% if page.layout == "event" %}
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "name": "{{page.title}}",
+        "url": "{{page.url | absolute_url}}",
+        "startDate": "{{ page.start | date_to_xmlschema }}",
+        "endDate": "{{ page.end | date_to_xmlschema }}",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "{{page.url | absolute_url}}"
+        },
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "image": [
+          "{{page.image | absolute_url}}"
+         ],
+        "description": "{{page.description}}",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Rotaract Bangalore east",
+          "url": "https://3190rbe.org"
+        }
+      }
+</script>
+{% elsif page.layout == "post" %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{page.title}}",
+      "image": [
+        "{{page.image | absolute_url}}"
+       ],
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.date | date_to_xmlschema }}"
+    }
+</script>
+{% else %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://3190rbe.org/",
+        "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://3190rbe.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "Rotaract Bangalore East",
+        "url" : "https://3190rbe.org/",
+        "logo" : "https://3190rbe.org/images/rbe.png",
+        "sameAs" : [
+          "https://www.instagram.com/3190rbe/",
+          "https://twitter.com/3190rbe",
+          "https://www.linkedin.com/company/3190rbe/",
+          "https://www.facebook.com/3190rbe/"
+        ]
+      }    
+</script>
+{% endif %}
