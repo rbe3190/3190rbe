@@ -248,10 +248,11 @@
                             </div>
                             <div class="inner-box">
                                 <ul>
+                                    {% assign pageDate = page.date | date: "%B %Y" %}
                                     {% for post in site.posts %}
                                     {% assign currentDate = post.date | date: "%B %Y" %}
                                     {% if currentDate != myDate %}
-                                    <li {% if page.date == post.date %}class="active"{% endif %}><a href="{{site.baseurl}}/news/{{ currentDate | date: "%Y/%m" }}"">{{ currentDate }}</a></li>
+                                    <li {% if pageDate == currentDate %}class="active"{% endif %}><a href="{{site.baseurl}}/news/{{ currentDate | date: "%Y/%m" }}"">{{ currentDate }}</a></li>
                                     {% assign myDate = currentDate %}
                                     {% endif %}
                                     {% endfor %}
