@@ -16,11 +16,29 @@ noindex: true
     <!-- Causes Section -->
     <section class="causes-section">
         <div class="container">
-            
+			<div class="row justify-content-center">
+                <div class="col-lg-10 mt-30">
+                    <div class="default-form-area">
+                        <form action="{{ site.baseurl }}/search" method="get" class="contact-form style-five">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">        
+                                    <div class="form-group">
+										<input type="search" name="q" placeholder="Search Here" required>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- Causes Section -->
+    <section class="causes-section">
+        <div class="container">
             <p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
 
             <ul id="search-results"></ul>
-
             <!-- <script async src="https://cse.google.com/cse.js?cx=005672163470134270944:aa75kecrt3t"></script>
 		    <div class="gcse-searchresults-only"></div> -->
         </div>
