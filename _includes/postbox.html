@@ -2,7 +2,7 @@
 <div class="news-block-one col-lg-4 col-md-6">
     <div class="inner-box">
         <div class="image">
-            <img src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | relative_url }}{% endif %}" alt="{{post.title}}">
+            <img loading="lazy" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | relative_url }}{% endif %}" alt="{{post.title}}">
             <div class="overlay">
                 <a class="link-btn" href="{{post.url}}">
                     <i class="fa fa-link"></i>

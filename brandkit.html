@@ -34,7 +34,7 @@ description: RBE Brandkit consists of the Club Logos of Rotaract Bangalore East,
                       {% for item in item.items_list %}
                       <div class="member-entry">
                         <a href="{{ item.file | relative_url }}" target="_blank" class="member-img">
-                          <img src="{{ item.preview | relative_url }}" {% if item.white %}style="background-color: gray;"{% endif %} class="img-rounded" alt="{{ item.title }}">
+                          <img loading="lazy" src="{{ item.preview | relative_url }}" {% if item.white %}style="background-color: gray;"{% endif %} class="img-rounded" alt="{{ item.title }}">
                           <i class="fa fa-forward"></i>
                         </a>
                         <div class="member-details">

@@ -14,7 +14,7 @@
                             <div class="footer-widget about-widget">
                                 <div class="footer-logo">
                                     <figure>
-                                        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/footer-logo.png" alt=""></a>
+                                        <a href="{{site.baseurl}}/"><img loading="lazy" src="{{site.baseurl}}/images/footer-logo.png" alt=""></a>
                                     </figure>
                                 </div>
                                 <div class="widget-content">
@@ -60,7 +60,7 @@
                                         {% for post in posts limit: 2 %}
                                         <div class="post">
                                             <figure class="post-thumb">
-                                                <img src="{{post.image | relative_url}}" alt="{{post.title}}">
+                                                <img loading="lazy" src="{{post.image | relative_url}}" alt="{{post.title}}">
                                                 <a href="{{ post.url }}" class="overlay-link">
                                                     <span class="fa fa-link"></span>
                                                 </a>
