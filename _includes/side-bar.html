@@ -22,7 +22,7 @@
                             {% assign posts = site.posts | sort: 'date' | reverse %}
                             {% for post in posts limit: 3 %}
                             <article class="post">
-                                <figure class="post-thumb"><a href="{{ post.url }}"><img src="{{post.image | relative_url}}" alt="{{post.title}}"></a></figure>
+                                <figure class="post-thumb"><a href="{{ post.url }}"><img loading="lazy" src="{{post.image | relative_url}}" alt="{{post.title}}"></a></figure>
                                 <div class="text"><a href="{{ post.url }}">{{post.title}}</a></div>
                                 <div class="post-info">{{ post.date | date: '%B %d, %Y' }}</div>
                             </article>
@@ -77,7 +77,7 @@
                                     {% endif %}
                                 <div class="inner-box">
                                     <figure class="image">
-                                        <img src="{{cause.image | relative_url}}" alt="{{cause.title}}">
+                                        <img loading="lazy" src="{{cause.image | relative_url}}" alt="{{cause.title}}">
                                         <div class="overlay"><a href="{{cause.url}}" class="theme-btn btn-style-two">Read More</a>
                                         </div>
                                     </figure>
@@ -124,7 +124,7 @@
                                     {% endif %}
                                 <div class="inner-box">
                                     <figure class="image">
-                                        <img src="{{cause.image | relative_url}}" alt="{{cause.title}}">
+                                        <img loading="lazy" src="{{cause.image | relative_url}}" alt="{{cause.title}}">
                                         <div class="overlay"><a href="{{cause.url}}" class="theme-btn btn-style-two">Read More</a>
                                         </div>
                                     </figure>
@@ -180,7 +180,7 @@
                                 <div class="inner-box">
                                     <div class="text">{{review.message}} </div>
                                     <div class="author">
-                                        <div class="image"><img style="max-width: 60px; max-height: 60px;" src="{{review.image | relative_url}}" alt="{{review.name}}"></div>
+                                        <div class="image"><img loading="lazy" style="max-width: 60px; max-height: 60px;" src="{{review.image | relative_url}}" alt="{{review.name}}"></div>
                                         <h3>{{review.name}}</h3>
                                         <div class="designation">{{review.affiliation}}</div>
                                     </div>

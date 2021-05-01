@@ -4,7 +4,7 @@
 <div class="author-box">
     <span class="border-shape-left"></span>
     <div class="inner-box">
-        <div class="image"><img style="max-width: 180px; max-height: 150px;" src="{% if author.image %}{% if author.image contains "://" %}{{ author.image }}{% else %}{{ author.image | relative_url }}{% endif %}{% else %}{{site.baseurl}}/images/rbe.png{% endif %}" alt="{{ author.display_name }}"></div>
+        <div class="image"><img loading="lazy" style="max-width: 180px; max-height: 150px;" src="{% if author.image %}{% if author.image contains "://" %}{{ author.image }}{% else %}{{ author.image | relative_url }}{% endif %}{% else %}{{site.baseurl}}/images/rbe.png{% endif %}" alt="{{ author.display_name }}"></div>
         <div class="name">{{ author.display_name }}</div>
         <div class="text">{{author.description}} </div>
     </div>
