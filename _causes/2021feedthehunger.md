@@ -5,7 +5,7 @@ title: Donate Now! FEED the HUNGER via CRAFTING ROOTS
 image: /images/uploads/cause_2021feedthehunger.png
 due: 2021-05-12
 active: true
-goal: "5,00,000.00"
+goal: ---
 progress: 0
 featured: true
 donation_link: https://rzp.io/l/feedthehunger

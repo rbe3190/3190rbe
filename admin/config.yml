@@ -31,7 +31,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: "number"
         default: 0
         value_type: "int"
-        min: 1
+        min: 0
         max: 100
         step: 1
       - {label: "Featured Cause?", name: "featured", widget: "boolean", default: false}
