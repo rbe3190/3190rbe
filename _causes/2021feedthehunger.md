@@ -3,11 +3,11 @@ layout: cause
 focus: Community Service
 title: Donate Now! FEED the HUNGER via CRAFTING ROOTS
 image: /images/uploads/cause_2021feedthehunger.png
-due: 2021-05-12
-active: true
+due: 2021-06-11
+active: false
 goal: ---
-progress: 0
-featured: true
+progress: 100
+featured: false
 donation_link: https://rzp.io/l/feedthehunger2
 intro: Donate for the cause by CRAFTING ROOTS, to FEED the HUNGER at Railway Stations.
 description: The Current lockdown has affected the daily wage labours community badly and a majority of them are finding it difficult to fill their stomachs. Crafting Roots is involved in the relief work to feed the hungry by preparing, packaging and distributing the meals. Crafting Roots is seeking your little help financially in the process of feeding the hungry. 
