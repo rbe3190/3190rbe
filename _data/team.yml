@@ -10,7 +10,7 @@
   #   image: /images/team/zeospec.jpg
 
 members:
-  - name: Rtr. Rakshith Purushothaman
+  - name: Rtr. Padmanesar R
     role: President
     social:
       linkedin: ""
@@ -19,9 +19,9 @@ members:
       instagram: ""
       email: ""
     featurelink: ""
-    image: /images/team/rakshith.png
-  - name: Rtr. Spoorthi K S
-    role: Charter President
+    image: /images/team/padmanesar.png
+  - name: Rtr. Rakshith Purushothaman
+    role: Immediate Past President
     social:
       linkedin: ""
       twitter: ""
@@ -29,9 +29,19 @@ members:
       instagram: ""
       email: ""
     featurelink: "" 
-    image: /images/team/spoorthi.png
-  - name: Rtr. Muhsin M P
+    image: /images/team/rakshith.png
+  - name: Rtr. Arun Teja Godavarthi
     role: Secretary
+    social:
+      linkedin: "https://www.linkedin.com/in/zeospec/"
+      twitter: "https://twitter.com/ZeoSpec"
+      facebook: "https://www.facebook.com/zeospec/"
+      instagram: "https://www.instagram.com/ZeoSpec/"
+      email: "hi@zeospec.com"
+    featurelink: "https://rtr.zeospec.com/"
+    image: /images/team/zeospec.jpg
+  - name: Rtr. Umang Kumar Agarwal
+    role: Joint Secretary
     social:
       linkedin: ""
       twitter: ""
@@ -39,7 +49,7 @@ members:
       instagram: ""
       email: ""
     featurelink: ""
-    image: /images/team/muhsin.png
+    image: /images/team/umang.jpeg
   - name: Rtr. Goutham Dixith S N
     role: Treasurer
     social:
@@ -50,7 +60,7 @@ members:
       email: ""
     featurelink: ""
     image: /images/team/goutham.png
-  - name: Rtr. Padmanesar R
+  - name: Rtr. Vignesh R
     role: Sergeant-at-Arms
     social:
       linkedin: ""
@@ -59,8 +69,28 @@ members:
       instagram: ""
       email: ""
     featurelink: ""
-    image: /images/team/padmanesar.png
-  - name: Rtr. Abhishek Raj
+    image: /images/team/vignesh.jpeg
+  - name: Rtr. Dhatri
+    role: Areas of Focus Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/logo.png
+  - name: Rtr. Shayan T S
+    role: Events Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/shayan.jpeg
+  - name: Rtr. Madan Mohan B
     role: Club Service Director
     social:
       linkedin: ""
@@ -69,69 +99,9 @@ members:
       instagram: ""
       email: ""
     featurelink: ""
-    image: /images/team/abhishek.png
-  - name: Rtr. Anurag Dolai
-    role: Co-Club Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/anurag.png
-  - name: Rtr. Pavithra Purushothaman
-    role: International Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/pavithra.png
-  - name: Rtr. Anirjit Ghosh
-    role: Co-International Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/anirjit.png
-  - name: Rtr. Nikhila P
-    role: Professional Development Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/nikhila.png
-  - name: Rtr. Deepak Balasubramanin
-    role: Co-Professional Development Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/deepak.png
-  - name: Rtr. Ragesh C R
-    role: Community Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/ragesh.png
+    image: /images/team/madan.jpeg
   - name: Rtr. Samiha Isbath A S
-    role: Co-Community Service Director
+    role: Club Service Director
     social:
       linkedin: ""
       twitter: ""
@@ -140,7 +110,67 @@ members:
       email: ""
     featurelink: ""
     image: /images/team/samiha.png
-  - name: Rtr. Sunkara Gnanateja
+  - name: Rtr. Goutham L
+    role: Community Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/gouthamL.jpeg
+  - name: Rtr. Muhsin M P
+    role: Community Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/muhsin.png
+  - name: Rtr. Anirjit Ghosh
+    role: International Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/anirjit.png
+  - name: Rtr. Sachin T V
+    role: International Service Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/sachin.jpg
+  - name: Rtr. Biswaranjan Jena
+    role: Professional Development Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/biswa.jpeg
+  - name: Rtr. Hemanth Kumar
+    role: Professional Development Director
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: ""
+      email: ""
+    featurelink: ""
+    image: /images/team/hemanth.jpeg
+  - name: Rtr. Meghana S
     role: Public Relations Director
     social:
       linkedin: ""
@@ -149,24 +179,4 @@ members:
       instagram: ""
       email: ""
     featurelink: ""
-    image: /images/team/sunkara.png
-  - name: Rtr. Rahul S
-    role: Co-Public Relations Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/rahul.png
-  - name: Rtr. Pranav Bhat
-    role: Editor
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/pranav.png
+    image: /images/team/meghana.jpeg

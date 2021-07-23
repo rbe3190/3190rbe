@@ -288,26 +288,55 @@ brandkit:
         preview: /images/brandkit/markofexcellence/markofexcellence_white.png
         file: /images/brandkit/markofexcellence/markofexcellence_white.png
         white: true
-  - group_name: Rotary International Theme RIY 2020 – 2021
+  - group_name: Rotary International Theme RIY 2021 – 2022
     items_list:
-      - title: Rotary International Theme
-        description: Standard version of Rotary International Theme for RIY 2020 – 2021
-        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021.png
-        file: /images/brandkit/rotarytheme2021/RotaryTheme2021.png
+      - title: Rotary International Theme - RGB
+        description: Standard version(RGB) of Rotary International Theme for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_RGB.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_RGB.png
+      - title: Rotary International Theme - PMS-C
+        description: Standard version(PMS-C) of Rotary International Theme for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_PMS-C.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_PMS-C.png
       - title: Rotary International Theme - White
         description: White version of Rotary International Theme for RIY 2020 – 2021
-        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_white.png
-        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_white.png
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_white.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_white.png
         white: true
-      - title: Rotary International Theme with Masterbrand
-        description: Rotary International Theme logo with Masterbrand
-        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrand.png
-        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrand.png
+      - title: Rotary International Theme - Black
+        description: Black version of Rotary International Theme for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_black.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_black.png
+      - title: Rotary International Theme with Masterbrand - RGB
+        description: Rotary International Theme with Masterbrand(RGB) for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrand_RGB.png
+        file: /images/brandkit/rotarytheme2122/rotarytheme2122_RGB.png
+      - title: Rotary International Theme with Masterbrand - PMS-C
+        description: Rotary International Theme with Masterbrand(PMS-C) for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrand_PMS-C.png
+        file: /images/brandkit/rotarytheme2122/rotarytheme2122_PMS-C.png
       - title: Rotary International Theme with Masterbrand - White
-        description: White Rotary International Theme logo with Masterbrand
-        preview: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrandwhite.png
-        file: /images/brandkit/rotarytheme2021/RotaryTheme2021_masterbrandwhite.png
+        description: White version of Rotary International Theme with Masterbrand for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandwhite.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandwhite.png
         white: true
+      - title: Rotary International Theme with Masterbrand - Simple - RGB
+        description: Simplified Rotary International Theme with Masterbrand(RGB) for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandsimplified_RGB.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandsimplified_RGB.png
+      - title: Rotary International Theme with Masterbrand - Simple - PMS-C
+        description: Simplified Rotary International Theme with Masterbrand(PMS-C) for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandsimplified_PMS-C.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandsimplified_PMS-C.png
+      - title: Rotary International Theme with Masterbrand - Simple - White
+        description: White version of Simplified Rotary International Theme with Masterbrand for RIY 2020 – 2021
+        preview: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandwhite.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_masterbrandwhite.png
+        white: true
+      - title: Rotary International Theme Color Chart
+        description: Rotary International Theme Color Chart
+        preview: /images/brandkit/documentimg.png
+        file: /images/brandkit/rotarytheme2122/Rotarytheme2122_ColorChart.png
   - group_name: Rotary Masterbrand
     items_list:
       - title: Rotary Masterbrand
