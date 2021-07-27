@@ -1,14 +1,3 @@
-  # - name: Rtr. Arun Teja Godavarthi
-  #   role: Member
-  #   social:
-  #     linkedin: https://www.linkedin.com/in/zeospec/
-  #     twitter: https://twitter.com/ZeoSpec
-  #     facebook: https://www.facebook.com/zeospec/
-  #     instagram: https://www.instagram.com/ZeoSpec/
-  #     email: hi@zeospec.com
-  #   featurelink: https://zeospec.com
-  #   image: /images/team/zeospec.jpg
-
 members:
   - name: Rtr. Padmanesar R
     role: President
@@ -28,17 +17,17 @@ members:
       facebook: ""
       instagram: ""
       email: ""
-    featurelink: "" 
+    featurelink: ""
     image: /images/team/rakshith.png
   - name: Rtr. Arun Teja Godavarthi
     role: Secretary
     social:
-      linkedin: "https://www.linkedin.com/in/zeospec/"
-      twitter: "https://twitter.com/ZeoSpec"
-      facebook: "https://www.facebook.com/zeospec/"
-      instagram: "https://www.instagram.com/ZeoSpec/"
-      email: "hi@zeospec.com"
-    featurelink: "https://rtr.zeospec.com/"
+      linkedin: https://www.linkedin.com/in/zeospec/
+      twitter: https://twitter.com/ZeoSpec
+      facebook: https://www.facebook.com/zeospec/
+      instagram: https://www.instagram.com/ZeoSpec/
+      email: hi@zeospec.com
+    featurelink: https://rtr.zeospec.com/
     image: /images/team/zeospec.jpg
   - name: Rtr. Umang Kumar Agarwal
     role: Joint Secretary
@@ -85,10 +74,10 @@ members:
     social:
       linkedin: ""
       twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      facebook: https://www.facebook.com/shayan.bhargav
+      instagram: https://instagram.com/shayanbhargav
+      email: shayanbhargav02982@gmail.com
+    featurelink: https://instagram.com/shayanbhargav
     image: /images/team/shayan.jpeg
   - name: Rtr. Madan Mohan B
     role: Club Service Director
@@ -156,9 +145,9 @@ members:
       linkedin: ""
       twitter: ""
       facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      instagram: https://www.instagram.com/biswaranjan_jena_mangu
+      email: biswaranjanjena1000@gmail.com
+    featurelink: https://www.instagram.com/biswaranjan_jena_mangu
     image: /images/team/biswa.jpeg
   - name: Rtr. Hemanth Kumar
     role: Professional Development Director
@@ -173,10 +162,10 @@ members:
   - name: Rtr. Meghana S
     role: Public Relations Director
     social:
-      linkedin: ""
+      linkedin: https://www.linkedin.com/in/megha-s-3b2826174
       twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      facebook: https://www.facebook.com/megha.bharathi.94
+      instagram: https://www.instagram.com/me.gha8421/
+      email: meghanasbs0@gmail.com
+    featurelink: https://www.instagram.com/me.gha8421/
     image: /images/team/meghana.jpeg
