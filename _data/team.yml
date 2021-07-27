@@ -5,9 +5,9 @@ members:
       linkedin: ""
       twitter: ""
       facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      instagram: https://instagram.com/weirdo_beard
+      email: nesarradhakrishna@gmail.com
+    featurelink: https://instagram.com/weirdo_beard
     image: /images/team/padmanesar.png
   - name: Rtr. Rakshith Purushothaman
     role: Immediate Past President
