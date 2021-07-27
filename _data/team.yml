@@ -132,12 +132,12 @@ members:
   - name: Rtr. Sachin T V
     role: International Service Director
     social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      linkedin: https://www.linkedin.com/in/sachiinvish/
+      twitter: https://twitter.com/sachiinvish
+      facebook: https://www.facebook.com/sachiinvish/
+      instagram: https://www.instagram.com/sachiinvish/
+      email: sachiinvish@gmail.com
+    featurelink: https://www.instagram.com/sachiinvish/
     image: /images/team/sachin.jpg
   - name: Rtr. Biswaranjan Jena
     role: Professional Development Director
