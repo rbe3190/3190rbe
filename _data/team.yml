@@ -14,10 +14,10 @@ members:
     social:
       linkedin: ""
       twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      facebook: https://www.facebook.com/Rakshith.Purushotham
+      instagram: https://www.instagram.com/goodguyraks/
+      email: rtr.rakshith@gmail.com
+    featurelink: https://www.instagram.com/goodguyraks/
     image: /images/team/rakshith.png
   - name: Rtr. Arun Teja Godavarthi
     role: Secretary
@@ -54,10 +54,10 @@ members:
     social:
       linkedin: ""
       twitter: ""
-      facebook: ""
-      instagram: ""
+      facebook: https://www.facebook.com/me.viki13
+      instagram: https://instagram.com/the__versatile
       email: ""
-    featurelink: ""
+    featurelink: https://instagram.com/the__versatile
     image: /images/team/vignesh.jpeg
   - name: Rtr. Dhatri Vasishta
     role: Areas of Focus Director
@@ -65,9 +65,9 @@ members:
       linkedin: ""
       twitter: ""
       facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      instagram: https://www.instagram.com/dha3_vasishta/
+      email: dhatrivasishta5@gmail.com
+    featurelink: https://www.instagram.com/dha3_vasishta/
     image: /images/team/dhaatri.jpeg
   - name: Rtr. Shayan T S
     role: Events Director
@@ -84,20 +84,20 @@ members:
     social:
       linkedin: ""
       twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      facebook: https://www.facebook.com/rockmadan.madan.10
+      instagram: https://instagram.com/dj_madan__
+      email: madan12madan123@gmail.com
+    featurelink: https://instagram.com/dj_madan__
     image: /images/team/madan.jpeg
   - name: Rtr. Samiha Isbath A S
     role: Club Service Director
     social:
-      linkedin: ""
+      linkedin: https://www.linkedin.com/in/samiha-isbath-591005114
       twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
+      facebook: https://www.facebook.com/samiha.isbath
+      instagram: https://instagram.com/samiha1996
+      email: samiha36@gmail.com
+    featurelink: https://instagram.com/samiha1996
     image: /images/team/samiha.png
   - name: Rtr. Goutham L
     role: Community Service Director
