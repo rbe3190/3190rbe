@@ -379,19 +379,19 @@ layout: default
                         <div class="overlay-box">
                             <ul class="social-icon-one">
                                 {% if member.social.facebook != "" %} 
-                                <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
+                                <li><a href="{{member.social.facebook}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
                                 {% endif %}
                                 {% if member.social.instagram != "" %}
-                                <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                                <li><a href="{{member.social.instagram}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
                                 {% endif %}
                                 {% if member.social.twitter != "" %}
-                                <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                                <li><a href="{{member.social.twitter}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
                                 {% endif %}
                                 {% if member.social.linkedin != "" %}
                                 <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
                                 {% endif %}
                                 {% if member.social.email != "" %}
-                                <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
+                                <li><a href="mailto:{{member.social.email}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
                                 {% endif %}
                             </ul>
                         </div>
