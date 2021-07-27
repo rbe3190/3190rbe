@@ -47,7 +47,7 @@ permalink: about
     <!-- Fact Counter -->
     <div class="fact-counter sp-two style-two">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 {% for fact in site.data.info.stats %}
                 <!--Column-->
                 <article class="column counter-column col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-duration="{% if forloop.first %}900{% else %}{{forloop.index | minus:1 | times:300}}{% endif %}ms">
@@ -55,7 +55,7 @@ permalink: about
                         <div class="inner-box">
                             <div class="icon-box"><span class="{{fact.icon}}"></span></div>
                             <div class="count-outer">
-                                <span>{{fact.count}}</span>
+                                <span class="count-text{% if forloop.first %}{% else %}{{forloop.index | minus:1}}{% endif %}" data-speed="3000" data-stop="{{fact.count}}">0</span>
                                 <p>{{fact.title}}</p>
                             </div>
                         </div>                                                      

@@ -84,19 +84,19 @@ areasoffocus:
     icon: flaticon-circle
     description: We are tackling environmental issues the seriously and working towards betterment of the community around us
 
-# stats:
-#   - title: Cash Contributions
-#     icon: flaticon-donation-1
-#     count: 98520
-#   - title: In-Kind Contributions
-#     icon: flaticon-balloon
-#     count: 30682
-#   - title: Volunteer Representations
-#     icon: flaticon-shirt
-#     count: 614
-#   - title: Volunteer Hours
-#     icon: flaticon-ecology
-#     count: 14369
+stats:
+  - title: Cash Contributions
+    icon: flaticon-donation-1
+    count: 98520
+  - title: In-Kind Contributions
+    icon: flaticon-balloon
+    count: 30682
+  - title: Volunteer Representations
+    icon: flaticon-shirt
+    count: 614
+  - title: Volunteer Hours
+    icon: flaticon-ecology
+    count: 14369
 
 # testimonials:
   # - name: Rtr. ABC
