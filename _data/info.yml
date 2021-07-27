@@ -205,7 +205,7 @@ brandkit:
         preview: /images/brandkit/rotaract/rotaract_white.png
         file: /images/brandkit/rotaract/rotaract_white.png
         white: true
-  - group_name: Rotaract Masterbrand with RID 3190
+  - group_name: Rotaract Masterbrand with District 3190
     items_list:
       - title: Rotaract 3190 Masterbrand
         description: Standard Version of Rotaract 3190 Masterbrand
@@ -369,6 +369,42 @@ brandkit:
         description: White & Gold version Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary_simple_white_gold.png
         file: /images/brandkit/rotary/rotary_simple_white_gold.png
+        white: true
+  - group_name: Rotary Masterbrand with District 3190
+    items_list:
+      - title: Rotary 3190 Masterbrand
+        description: Standard Version of Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190.png
+        file: /images/brandkit/rotary3190/rotary3190.png
+      - title: Rotary 3190 Masterbrand - Azure
+        description: Azure version of Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_azure.png
+        file: /images/brandkit/rotary3190/rotary3190_azure.png
+      - title: Rotary 3190 Masterbrand - Black
+        description: Black version of Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_black.png
+        file: /images/brandkit/rotary3190/rotary3190_black.png
+      - title: Rotary 3190 Masterbrand - White
+        description: White version of Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_white.png
+        file: /images/brandkit/rotary3190/rotary3190_white.png
+        white: true
+      - title: Rotary 3190 Masterbrand Simplified
+        description: Simplified standard Version of Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_simple.png
+        file: /images/brandkit/rotary3190/rotary3190_simple.png
+      - title: Rotary 3190 Masterbrand Simplified - Azure
+        description: Azure version of Simplified Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_simple_azure.png
+        file: /images/brandkit/rotary3190/rotary3190_azure.png
+      - title: Rotary 3190 Masterbrand Simplified - Black
+        description: Black version of simplified Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_simple_black.png
+        file: /images/brandkit/rotary3190/rotary3190_simple_black.png
+      - title: Rotary 3190 Masterbrand Simplified - White
+        description: White version of simplified Rotary 3190 Masterbrand
+        preview: /images/brandkit/rotary3190/rotary3190_simple_white.png
+        file: /images/brandkit/rotary3190/rotary3190_simple_white.png
         white: true
 
 authors:
