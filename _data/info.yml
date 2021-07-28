@@ -84,19 +84,87 @@ areasoffocus:
     icon: flaticon-circle
     description: We are tackling environmental issues the seriously and working towards betterment of the community around us
 
-stats:
-  - title: Cash Contributions
-    icon: flaticon-donation-1
-    count: 98520
-  - title: In-Kind Contributions
-    icon: flaticon-balloon
-    count: 30682
-  - title: Volunteer Representations
-    icon: flaticon-shirt
-    count: 614
-  - title: Volunteer Hours
-    icon: flaticon-ecology
-    count: 14369
+# stats:
+#   - title: Areas of Focus
+#     icon: flaticon-support
+#     count: 7
+#   - title: In-Kind Contributions
+#     icon: flaticon-balloon
+#     count: 30682
+#   - title: Volunteer Representations
+#     icon: flaticon-shirt
+#     count: 614
+#   - icon: flaticon-construction
+#   - icon: flaticon-drawing
+#   - icon: flaticon-group
+#   - icon: flaticon-businessman
+#   - icon: flaticon-arrows
+#   - icon: flaticon-arrows-1
+#   - icon: flaticon-left-arrow
+#   - icon: flaticon-arrows-2
+#   - icon: flaticon-layers
+#   - icon: flaticon-arrows-3
+#   - icon: flaticon-arrows-4
+#   - icon: flaticon-left-arrow-1
+#   - icon: flaticon-right-arrow
+#   - icon: flaticon-note
+#   - icon: flaticon-favorite
+#   - icon: flaticon-left
+#   - icon: flaticon-left-quotes-sign
+#   - icon: flaticon-envelope
+#   - icon: flaticon-remove
+#   - icon: flaticon-multimedia
+#   - icon: flaticon-technology
+#   - icon: flaticon-social
+#   - icon: flaticon-edit
+#   - icon: flaticon-signs
+#   - icon: flaticon-can
+#   - icon: flaticon-check
+#   - icon: flaticon-social-1
+#   - icon: flaticon-circle
+#   - icon: flaticon-cross
+#   - icon: flaticon-agenda
+#   - icon: flaticon-business
+#   - icon: flaticon-pencil
+#   - icon: flaticon-construction-1
+#   - icon: flaticon-profile
+#   - icon: flaticon-suitcase
+#   - icon: flaticon-connection
+#   - icon: flaticon-people
+#   - icon: flaticon-travel
+#   - icon: flaticon-people-1
+#   - icon: flaticon-signs-1
+#   - icon: flaticon-location-pin
+#   - icon: flaticon-creative-idea
+#   - icon: flaticon-play-button
+#   - icon: flaticon-diamond
+#   - icon: flaticon-magnifying-glass
+#   - icon: flaticon-play-button-1
+#   - icon: flaticon-play-button-2
+#   - icon: flaticon-quote
+#   - icon: flaticon-right-quote-symbol
+#   - icon: flaticon-add-plus-button
+#   - icon: flaticon-minus
+#   - icon: flaticon-tick
+#   - icon: flaticon-tick-box
+#   - icon: flaticon-donation
+#   - icon: flaticon-button
+#   - icon: flaticon-heart
+#   - icon: flaticon-donation-1
+#   - icon: flaticon-support
+#   - icon: flaticon-lace
+#   - icon: flaticon-shirt
+#   - icon: flaticon-monitor
+#   - icon: flaticon-boy
+#   - icon: flaticon-cancer
+#   - icon: flaticon-love-and-romance
+#   - icon: flaticon-doctor
+#   - icon: flaticon-heart-box
+#   - icon: flaticon-ecology
+#   - icon: flaticon-balloon
+#   - icon: flaticon-blood
+#   - icon: flaticon-two-quotes
+#   - icon: flaticon-quotations
 
 # testimonials:
   # - name: Rtr. ABC
@@ -501,4 +569,4 @@ authors:
   # - icon: flaticon-balloon
   # - icon: flaticon-blood
   # - icon: flaticon-two-quotes
-  # - icon: flaticon-quotations  
+  # - icon: flaticon-quotations
