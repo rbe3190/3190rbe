@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% if page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Tag: {{ page.title | capitalize | replace: "-"," "}}{% elsif page.type == "category" %}{{ page.title | capitalize | replace: "-"," "}}{% else %}{{ page.title }}{% endif %}{% if page.url == "/" %}{{site.title}} - UNITE . RISE . EMPOWER{% else %} - {{site.title}}{% endif %}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates with tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
   
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}"> 
 
@@ -19,14 +19,14 @@
     <meta property="og:image" content="{% if page.image %}{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}{% else %}{{ site.og_img | absolute_url }}{% endif %}" />
     <meta property="og:image:width" content="600" />
     <meta property="og:image:height" content="600" />
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates with tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@3190rbe">
     <meta name="twitter:url" content="{{ page.url | absolute_url }}">
     <meta name="twitter:site" content="@3190rbe">
     <meta name="twitter:title" content="{% if page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Tag: {{ page.title | capitalize | replace: "-"," "}}{% elsif page.type == "category" %}{{ page.title | capitalize | replace: "-"," "}}{% else %}{{ page.title }}{% endif %}{% if page.url == "/" %}{{site.title}} - UNITE . RISE . EMPOWER{% else %} - {{site.title}}{% endif %}">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates with tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:domain" content="{{ site.url }}">
     <meta name="twitter:image:src" content="{% if page.image %}{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}{% else %}{{ site.og_img | absolute_url }}{% endif %}">
     
@@ -36,8 +36,8 @@
     <meta name="copyright" content="Rotaract Bangalore East">
     <meta name="Classification" content="Community">
     <meta name="owner" content="Rotaract Bangalore East">
-    <meta name="url" content="http://3190rbe.org/">
-    <meta name="identifier-URL" content="http://3190rbe.org/">
+    <meta name="url" content="https://3190rbe.org/">
+    <meta name="identifier-URL" content="https://3190rbe.org/">
     <meta name="category" content="Community">
     <meta http-equiv="cache-control" content="public" />
     <meta http-equiv="Expires" content="0">
@@ -49,7 +49,7 @@
     {% if page.redirect_to_home == true %}
     <meta http-equiv="refresh" content="{{page.rtime}}; url = /" />
     {% endif %}
-    
+
     <!-- Stylesheets -->
     <link href="{{site.baseurl}}/css/bootstrap.css" rel="stylesheet">
     <link href="{{site.baseurl}}/css/style.css" rel="stylesheet">
