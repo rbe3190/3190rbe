@@ -24,7 +24,7 @@
                             <article class="post">
                                 <figure class="post-thumb"><a href="{{ post.url }}"><img loading="lazy" src="{{post.image | relative_url}}" alt="{{post.title}}"></a></figure>
                                 <div class="text"><a href="{{ post.url }}">{{post.title}}</a></div>
-                                <div class="post-info">{{ post.date | date: '%B %d, %Y' }}</div>
+                                <div class="post-info">{{ post.date | date: '%d, %Y' }}</div>
                             </article>
                             {% endfor %}
                             {% assign posts = null %}
@@ -102,7 +102,7 @@
 
                                         <div class="donate clearfix">
                                             <div class="float-left">
-                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%d, %Y'}}{% else %}Ongoing{% endif %}</span>
                                             </div>
                                             <div class="float-right">
                                                 Goal: ₹{{cause.goal}}
@@ -148,7 +148,7 @@
 
                                         <div class="donate clearfix">
                                             <div class="float-left">
-                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
+                                                <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%d, %Y'}}{% else %}Ongoing{% endif %}</span>
                                             </div>
                                             <div class="float-right">
                                                 Goal: ₹{{cause.goal}}
@@ -248,11 +248,11 @@
                             </div>
                             <div class="inner-box">
                                 <ul>
-                                    {% assign pageDate = page.date | date: "%B %Y" %}
+                                    {% assign pageDate = page.date | date: "%Y" %}
                                     {% for post in site.posts %}
-                                    {% assign currentDate = post.date | date: "%B %Y" %}
+                                    {% assign currentDate = post.date | date: "%Y" %}
                                     {% if currentDate != myDate %}
-                                    <li {% if pageDate == currentDate %}class="active"{% endif %}><a href="{{site.baseurl}}/news/{{ currentDate | date: "%Y/%m" }}"">{{ currentDate }}</a></li>
+                                    <li {% if pageDate == currentDate %}class="active"{% endif %}><a href="{{site.baseurl}}/news/{{ currentDate }}"">{{ currentDate }}</a></li>
                                     {% assign myDate = currentDate %}
                                     {% endif %}
                                     {% endfor %}

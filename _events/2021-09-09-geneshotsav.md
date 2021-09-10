@@ -4,7 +4,7 @@ title: GENESHOTSAV
 start: 2021-09-11 11:00
 end: 2021-09-11 18:00
 author: rbe
-venue: Vishwaneedam Trust
+venue: Rotary Bangalore Vidyalaya
 button_text: Location
 button_url: http://l.3190rbe.org/JPoHcr
 image: /images/uploads/event_2122ganeshotsav.png
@@ -52,4 +52,4 @@ Join us 🙏 ... let's enjoy together & add this memory to our life together🥰
 
 <hr style="border-top: 1px dashed #ff9000">
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15550.977711207326!2d77.58!3d12.9881915!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbb1c1c61377b02e1!2sVishwaneedam%20Trust!5e0!3m2!1sen!2sin!4v1631171840811!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.526256437229!2d77.49071311482159!3d12.938141490877863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3ec021a4c513%3A0xe5fa3c6a03889483!2sRotary%20Bangalore%20Vidyalaya!5e0!3m2!1sen!2sin!4v1631270835795!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
