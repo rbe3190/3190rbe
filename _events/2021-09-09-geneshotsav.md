@@ -2,7 +2,7 @@
 layout: event
 title: GENESHOTSAV
 start: 2021-09-11 11:00
-end: 2021-09-11 18:00
+end: 2021-09-11 16:00
 author: rbe
 venue: Rotary Bangalore Vidyalaya
 button_text: Location
