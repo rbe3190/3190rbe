@@ -11,7 +11,9 @@ tags:
   - hosting
   - partnership
   - joint-project
-description: Celebrating the International Day of Charity, Rotaract Bangalore East donated 1000 Sanitary Pads. Through this initiative the Rotaract Club also promoted the hygienic menstrual practices. 
+description: Celebrating the International Day of Charity, Rotaract Bangalore
+  East donated 1000 Sanitary Pads. Through this initiative the Rotaract Club
+  also promoted the hygienic menstrual practices.
 ---
 In continuation to Celebrating the International Day of Charity, Rotaract Banaglore East collaborated with [Rotaract Club of Ambarnath](https://www.instagram.com/rcambarnath/){:target="_blank"} of **RI District 3142** for the noble cause supported by `105` other Rotaract Clubs from across South Asia.
 
@@ -26,4 +28,4 @@ Donation of `800` Sanitary Pads at Abalashrama
 ![Donation at Belaku Shishu Nivasa](/images/uploads/2122charityofgoodness2.jpeg "Donation at Belaku Shishu Nivasa")
 Donation of `200` Sanitary Pads at Belaku Shishu Nivasa
 
-We thanks **Rtr. Chandramuthu**, **Rtr. Dhaatri** and **Rtr. Surakshit** for their extensive support towards making this a successful and memorable collaboration.
+We thanks **Rtr. Chandramuthu**, **Rtr. Dhatri** and **Rtr. Surakshith** for their extensive support towards making this a successful and memorable collaboration.
