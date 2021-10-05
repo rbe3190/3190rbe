@@ -1,6 +1,6 @@
 ---
 layout: event
-title: Mega Vaccination Drive
+title: Free Vaccination Drive
 start: 2021-10-06 09:30
 end: 2021-10-06 15:00
 author: rbe
