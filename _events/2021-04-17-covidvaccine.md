@@ -2,14 +2,16 @@
 layout: event
 title: COVIDSHIELD for FREE
 start: 2021-04-20 11:00
-end: ""
+end: 2021-11-13 17:44
 author: rbe
 venue: Domlur Senior Citizen Charitable Trust
 button_text: Location
 button_url: https://goo.gl/maps/YkDwZGr25CgRLuEK9
 image: /images/uploads/event_2021covidvaccine.png
 intro: Get COVIDSHIELD Vaccine for FREE
-description: Rotaract Bangalore East is increasing the outreach the outreach of the COVID Vaccination efforts by Domlur Senior Citizen Charitable Trust supported by BBMP.
+description: Rotaract Bangalore East is increasing the outreach the outreach of
+  the COVID Vaccination efforts by Domlur Senior Citizen Charitable Trust
+  supported by BBMP.
 ---
 ### Key Details
 
