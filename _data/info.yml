@@ -40,7 +40,7 @@ fnav:
     url: /join
 
 partners:
-  - type: Our Sponsor Club
+  - title: Our Sponsor Club
     line_count: 2
     list:
       - name: Rotary Bangalore East
@@ -175,23 +175,23 @@ areasoffocus:
 brandkit:
   - group_name: Rotaract Bangalore East
     items_list:
-      - title: Rotaract Bagalore East Logo
+      - title: Rotaract Bangalore East Logo
         description: Standard logo of Rotaract Bangalore East
         preview: /images/brandkit/RBE/RBEoriginal.png
         file: /images/brandkit/RBE/RBEoriginal.png
-      - title: Rotaract Bagalore East Logo - Black
+      - title: Rotaract Bangalore East Logo - Black
         description: Black version of Rotaract Bagnalore East Logo
         preview: /images/brandkit/RBE/RBEblack.png
         file: /images/brandkit/RBE/RBEblack.png
-      - title: Rotaract Bagalore East Logo - Blue
+      - title: Rotaract Bangalore East Logo - Blue
         description: Blue version of Rotaract Bagnalore East Logo
         preview: /images/brandkit/RBE/RBEblue.png
         file: /images/brandkit/RBE/RBEblue.png
-      - title: Rotaract Bagalore East Logo - Red
+      - title: Rotaract Bangalore East Logo - Red
         description: Red version of Rotaract Bagnalore East Logo
         preview: /images/brandkit/RBE/RBEred.png
         file: /images/brandkit/RBE/RBEred.png
-      - title: Rotaract Bagalore East Logo - White
+      - title: Rotaract Bangalore East Logo - White
         description: White version of Rotaract Bagnalore East Logo
         preview: /images/brandkit/RBE/RBEwhite.png
         file: /images/brandkit/RBE/RBEwhite.png
