@@ -15,8 +15,6 @@ description: "TREK TO RISE is an adventure activity hosted by Rotaract Bangalore
 ---
 Hello Rotaractors!! Here it is!!🥳
 
-
-
 🏔️🌄 TREK To RISE 🌄🏔️
 
 Organised by
@@ -33,21 +31,16 @@ Dabaspet, Bangalore Rural.
 
 Register soon!! 🤩🥳
 
-
-
 📝For bulk reg and further details contact:
 
 Rtr Hemanth [](wa.me/919611118059)
 
-[wa.me/919611118059](wa.me/919611118059)
-
+[wa.me/919611118059](https://wa.me/919611118059)
 
 Rtr Nesar
 
-[Wa.me/917760019285](Wa.me/917760019285)
-
-
+[Wa.me/917760019285](https://Wa.me/917760019285)
 
 Rtr Vignesh
 
-[Wa.me/918277711080](Wa.me/918277711080)
+[Wa.me/918277711080](https://Wa.me/918277711080)
