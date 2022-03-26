@@ -22,10 +22,14 @@ Hello Rotaractors!! Here it is!!🥳
 🗓️Date: 8th May 2022 (Sunday)
 
 📍🏔️Trek spot:
+
 Shivagange 🌄🤩
+
 Dabaspet, Bangalore Rural.
 
 Register soon!! 🤩🥳
+
+
 
 📝For bulk reg and further details contact:
 
