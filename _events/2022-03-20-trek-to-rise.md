@@ -15,15 +15,19 @@ description: "TREK TO RISE is an adventure activity hosted by Rotaract Bangalore
 ---
 Hello Rotaractors!! Here it is!!🥳
 
+
+
 🏔️🌄 TREK To RISE 🌄🏔️
 
-☀️ Rotaract Bangalore East! ☀️ 
+Organised by
 
-🗓️Date: 8th May 2022 (Sunday)
+☀️ **Rotaract Bangalore East!** ☀️ 
+
+🗓️Date: **8th May 2022 (Sunday)**
 
 📍🏔️Trek spot:
 
-Shivagange 🌄🤩
+**Shivagange** 🌄🤩
 
 Dabaspet, Bangalore Rural.
 
