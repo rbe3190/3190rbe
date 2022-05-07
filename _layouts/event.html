@@ -36,7 +36,11 @@ layout: default
                                     </div>
  
                                     <div class="clearfix mt-30 post-share-options">
+                                        {% if page.button_open %}
                                         <div class="float-left"><div class="popup-link"><a href="{% if page.button_url contains "://" %}{{ page.button_url }}{% else %}{{ page.button_url | relative_url }}{% endif %}" class="theme-btn btn-style-two" target="_blank">{{page.button_text}}</a></div></div>
+                                        {% else %}
+                                        <div class="float-left"><div class="popup-link"><a href="#" class="theme-btn btn-style-fourteen">Closed</a></div></div>
+                                        {% endif %}
                                         <div class="float-right">
                                             <span>Share This</span> 
                                             <ul class="social-icon-three list-inline-item">
