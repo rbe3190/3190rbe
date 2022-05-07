@@ -65,7 +65,7 @@ collections: # A list of collections the CMS should be able to edit
         required: false
       - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
       - {label: "Venue", name: "venue", widget: "string"}
-      - {label: "Button Text", name: "button_text", widget: "string"}
+      - {label: "Button Open?", name: "button_open", widget: "boolean", default: true}
       - {label: "Button Url", name: "button_url", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Introduction", name: "intro", widget: "markdown"}
