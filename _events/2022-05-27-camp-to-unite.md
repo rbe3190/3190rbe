@@ -14,10 +14,7 @@ description: A 2 day - 1 Night Village Camp by Rotaract Bangalore East, with
   hands on farming experience & cultural treat of NAMMA KARNATAKA.
 ---
 🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁
-
 Bisi Bisi Greetings☕🏕️
-
-
 
 We the Rotaractors of 
 
@@ -28,11 +25,7 @@ presents to you a weekend full of natural and sustainable living and hands on fa
 For further details 🗒️
 
 Rtr. Padma Nesar R
-
 7760019285
 
-
-
 Rtr. Surakshith
-
 97383 22420
