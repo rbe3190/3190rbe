@@ -6,7 +6,8 @@ end: 2022-06-19 17:00
 author: rbe
 venue: Puligal, Karnataka
 button_open: true
-button_url: Register Now
+button_text: Register Now
+button_url: https://e.3190rbe.org/CampToUniteReg
 image: /images/uploads/event_2021camptounite.png
 intro: A 2 day - 1 Night Village Camp with hands on farming experience &
   cultural treat of NAMMA KARNATAKA.
