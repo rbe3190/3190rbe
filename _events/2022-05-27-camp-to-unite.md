@@ -14,15 +14,32 @@ intro: A 2 day - 1 Night Village Camp with hands on farming experience &
 description: A 2 day - 1 Night Village Camp by Rotaract Bangalore East, with
   hands on farming experience & cultural treat of NAMMA KARNATAKA.
 ---
-🥁🥁🥁🥁🥁🥁🥁🥁🥁🥁
+Hello People!! Here it is!!🥳
 
-Bisi Bisi Greetings☕🏕️
+🏔️🌄 Camp to UNITE 🌄🏔️
 
-☀️ Rotaract Bangalore East☀️
+Organised by 
 
-presents to you a weekend full of natural and sustainable living and hands on farming and camping experience!! With exposure to rich culture of Karnataka.
+☀️ Rotaract Bangalore East! ☀️ 
 
-For further details 🗒️
+🗓️Date: 18 and 19 June 2022
+
+Place: PULIGAL📍
+
+
+Registration Fee 💸
+
+Early Bird: Rs 1549/- only (food, transport and Goodies included)
+Use the below link to Register👇🏻
+
+
+Early bird passes closes on 31 May 2022
+
+
+
+Register soon!! 🤩🥳
+
+📝For bulk reg and further details contact:
 
 Rtr. Padma Nesar R: 7760019285
 
