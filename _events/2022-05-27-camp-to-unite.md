@@ -18,21 +18,27 @@ Hello People!! Here it is!!🥳
 
 🏔️🌄 Camp to UNITE 🌄🏔️
 
+
+
 Organised by 
 
 ☀️ Rotaract Bangalore East! ☀️ 
+
+
 
 🗓️Date: 18 and 19 June 2022
 
 Place: PULIGAL📍
 
 
+
 Registration Fee 💸
 
 SLAB 1: Rs 1649/- only (Stay, food, transport and Goodies included)
 
-
 Register soon!! 🤩🥳
+
+
 
 📝For bulk reg and further details contact:
 
