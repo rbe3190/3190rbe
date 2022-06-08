@@ -29,12 +29,7 @@ Place: PULIGAL📍
 
 Registration Fee 💸
 
-Early Bird: Rs 1549/- only (food, transport and Goodies included).
-Use
-
-
-Early bird passes closes on 31 May 2022
-
+SLAB 1: Rs 1649/- only (Stay, food, transport and Goodies included)
 
 
 Register soon!! 🤩🥳
