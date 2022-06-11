@@ -15,6 +15,8 @@ description: A 2 day - 1 Night Village Camp by Rotaract Bangalore East, with
   hands on farming experience & cultural treat of NAMMA KARNATAKA.
 ---
 Hello People!! Here it is!!🥳
+
+
 🏔️🌄 Camp to UNITE 🌄🏔️
 
 Organised by 
