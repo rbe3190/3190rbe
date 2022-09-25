@@ -304,6 +304,37 @@ brandkit:
         preview: /images/brandkit/rotaract3190/rotaract3190_simple_white.png
         file: /images/brandkit/rotaract3190/rotaract3190_simple_white.png
         white: true
+  - group_name: Rotaract 3190 Theme RIY 2022 - 2023
+    items_list:
+      - title: Rotaract 3190 Theme
+        description: Standalone Version of Rotaract 3190 Theme
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme.png
+      - title: Rotaract 3190 Theme with Masterbrand
+        description: Rotaract 3190 Theme with Masterbrand
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand.png
+      - title: Rotaract 3190 Theme with Black Masterbrand
+        description: Rotaract 3190 Theme with Black Masterbrand
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand_black.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand_black.png
+      - title: Rotaract 3190 Theme with White Masterbrand
+        description: Rotaract 3190 Theme with White Masterbrand
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme_materbrand_white.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme_materbrand_white.png
+        white: true
+      - title: Rotaract 3190 Theme - Printable PDF
+        description: Standalone Version of Rotaract 3190 Theme - Printable PDF
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme.pdf
+      - title: Rotaract 3190 Theme with Masterbrand - Printable PDF
+        description: Rotaract 3190 Theme with Masterbrand - Printable PDF
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme_masterbrand.pdf
+      - title: Rotaract 3190 Theme - EPS File
+        description: Standalone Version of Rotaract 3190 Theme - EPS File
+        preview: /images/brandkit/rotaract3190theme2223/rotaract3190theme.png
+        file: /images/brandkit/rotaract3190theme2223/rotaract3190theme.eps
   - group_name: Rotary Bangalore East
     items_list:
       - title: Rotary Bangalore East - Theme
@@ -397,25 +428,24 @@ brandkit:
         preview: /images/brandkit/rotary/rotary_white_gold.png
         file: /images/brandkit/rotary/rotary_white_gold.png
         white: true
-
-      - title: Rotary Masterbrand
+      - title: Rotary Masterbrand Simplified
         description: Standard version of Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary.png
         file: /images/brandkit/rotary/rotary.png
-      - title: Rotary Masterbrand - Azure
+      - title: Rotary Masterbrand Simplified - Azure
         description: Azure version of Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary_azure.png
         file: /images/brandkit/rotary/rotary_azure.png
-      - title: Rotary Masterbrand - Black
+      - title: Rotary Masterbrand Simplified - Black
         description: Black version of Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary_black.png
         file: /images/brandkit/rotary/rotary_black.png
-      - title: Rotary Masterbrand - White
+      - title: Rotary Masterbrand Simplified - White
         description: White version of Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary_white.png
         file: /images/brandkit/rotary/rotary_white.png
         white: true
-      - title: Rotary Masterbrand - White & Gold
+      - title: Rotary Masterbrand Simplified - White & Gold
         description: White & Gold version of Simplified Rotary Masterbrand
         preview: /images/brandkit/rotary/rotary_white_gold.png
         file: /images/brandkit/rotary/rotary_white_gold.png
@@ -466,6 +496,48 @@ brandkit:
         preview: /images/brandkit/rotary3190/rotary3190_simple_white_gold.png
         file: /images/brandkit/rotary3190/rotary3190_simple_white_gold.png
         white: true
+  - group_name: Rotary 3190 Theme RIY 2022 - 2023
+    items_list:
+      - title: Rotary 3190 Theme - PNG
+        description: Rotary 3190 Theme - PNG
+        preview: /images/brandkit/rotary3190theme2223/rotary3190theme2223.png
+        file: /images/brandkit/rotary3190theme2223/rotary3190theme2223.png
+      - title: Rotary 3190 Theme - JPG
+        description: Rotary 3190 Theme - JPG
+        preview: /images/brandkit/rotary3190theme2223/rotary3190theme2223.jpg
+        file: /images/brandkit/rotary3190theme2223/rotary3190theme2223.jpg
+  - group_name: Rotary International Theme RIY 2022 - 2023
+    items_list:
+      - title: Imagine Rotary - Horizontal
+        description: Horizontal Version of "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Horizontal.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Horizontal.png
+      - title: Imagine Rotary - Horizontal - Black
+        description: Black version Version of Horizontal "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Horizontal_black.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Horizontal_black.png
+      - title: Imagine Rotary - Horizontal - Black
+        description: White version Version of Horizontal "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Horizontal_white.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Horizontal_white.png
+        white: true
+      - title: Imagine Rotary - Vertical
+        description: Vertical Version of "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Vertical.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Vertical.png
+      - title: Imagine Rotary - Horizontal - Black
+        description: Black version Version of Vertical "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Vertical_black.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Vertical_black.png
+      - title: Imagine Rotary - Horizontal - Black
+        description: White version Version of Vertical "Imagine Rotary"
+        preview: /images/brandkit/rotarytheme2223/ri2223_Vertical_white.png
+        file: /images/brandkit/rotarytheme2223/ri2223_Vertical_white.png
+        white: true
+      - title: Imagine Rotary Brand Guidelines
+        description: Brand Guidelines of Presidential Theme - "Imagine Rotary"
+        preview: /images/brandkit/documentimg.png
+        file: /images/brandkit/rotarytheme2223/ri2223themebrandinguide.pdf
   - group_name: Interact Masterbrand
     items_list:
       - title: Interact Masterbrand
