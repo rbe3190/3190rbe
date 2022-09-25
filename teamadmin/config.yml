@@ -35,4 +35,4 @@ collections: # A list of collections the CMS should be able to edit
                   - {label: "Instagram Profile Link", name: "instagram", widget: "string", default: "", required: false}
                   - {label: "Email ID", name: "email", widget: "string", default: "", required: false}
               - {label: "Featured Profile Link", name: "featurelink", widget: "string", default: "", required: false}
-              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image (Dimension: 420*420 px) (File Name: First Name)", name: "image", widget: "image"}

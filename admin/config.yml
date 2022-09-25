@@ -22,7 +22,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Layout", name: "layout", widget: "hidden", default: "cause"}
       - {label: "Focus", name: "focus", widget: "string"}
       - {label: "Cause Title", name: "title", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image (Dimension: 750*420 px) (File Name: cause_2223abc...)", name: "image", widget: "image"} 
       - {label: "Due Date", name: "due", widget: "date", format: "YYYY-MM-DD", required: false}
       - {label: "Cause Status: Active?", name: "active", widget: "boolean", default: true}
       - {label: "Fundraise Goal", name: "goal", widget: "string"}
@@ -68,7 +68,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Button Open?", name: "button_open", widget: "boolean", default: true}
       - {label: "Button Text", name: "button_text", widget: "string"}
       - {label: "Button Url", name: "button_url", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image (Dimension: 750*420 px) (File Name: event_2223abc...)", name: "image", widget: "image"}
       - {label: "Introduction", name: "intro", widget: "markdown"}
       - {label: "Meta Description", name: "description", widget: "markdown"}
       - {label: "Event Details", name: "body", widget: "markdown", required: false}
@@ -83,7 +83,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Image (Dimension: 750*420 px) (File Name: 2223abc...)", name: "image", widget: "image"}
       - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
       - label: "Avenues"
         name: "categories"
