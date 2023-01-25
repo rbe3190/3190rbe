@@ -276,6 +276,34 @@ brandkit:
         preview: /images/brandkit/rotaract/rotaract_simple_white.png
         file: /images/brandkit/rotaract/rotaract_simple_white.png
         white: true
+  - group_name: Rotaract Masterbrand with District 3191
+    items_list:
+      - title: Rotaract 3191 Masterbrand
+        description: Standard Version of Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191.png
+        file: /images/brandkit/rotaract3191/rotaract3191.png
+      - title: Rotaract 3191 Masterbrand - Black
+        description: Black version of Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191_Black.png
+        file: /images/brandkit/rotaract3191/rotaract3191_Black.png
+      - title: Rotaract 3191 Masterbrand - White
+        description: White version of Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191_White.png
+        file: /images/brandkit/rotaract3191/rotaract3191_White.png
+        white: true
+      - title: Rotaract 3191 Masterbrand Simplified
+        description: Simplified standard Version of Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191_simple.png
+        file: /images/brandkit/rotaract3191/rotaract3191_simple.png
+      - title: Rotaract 3191 Masterbrand Simplified - Black
+        description: Black version of simplified Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191_simple_black.png
+        file: /images/brandkit/rotaract3191/rotaract3191_simple_black.png
+      - title: Rotaract 3191 Masterbrand Simplified - White
+        description: White version of simplified Rotaract 3191 Masterbrand
+        preview: /images/brandkit/rotaract3191/rotaract3191_simple_white.png
+        file: /images/brandkit/rotaract3191/rotaract3191_simple_white.png
+        white: true
   - group_name: Rotaract Masterbrand with District 3190
     items_list:
       - title: Rotaract 3190 Masterbrand
@@ -450,6 +478,52 @@ brandkit:
         preview: /images/brandkit/rotary/rotary_white_gold.png
         file: /images/brandkit/rotary/rotary_white_gold.png
         white: true
+  - group_name: Rotary Masterbrand with District 3191
+    items_list:
+      - title: Rotary 3191 Masterbrand
+        description: Standard Version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191.png
+        file: /images/brandkit/rotary3191/rotary3191.png
+      - title: Rotary 3191 Masterbrand - Azure
+        description: Azure version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_azure.png
+        file: /images/brandkit/rotary3191/rotary3191_azure.png
+      - title: Rotary 3191 Masterbrand - Black
+        description: Black version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_black.png
+        file: /images/brandkit/rotary3191/rotary3191_black.png
+      - title: Rotary 3191 Masterbrand - White
+        description: White version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_white.png
+        file: /images/brandkit/rotary3191/rotary3191_white.png
+        white: true
+      - title: Rotary 3191 Masterbrand - White & Gold
+        description: White & Gold version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_white_gold.png
+        file: /images/brandkit/rotary3191/rotary3191_white_gold.png
+        white: true
+      - title: Rotary 3191 Masterbrand Simplified
+        description: Simplified standard Version of Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_simple.png
+        file: /images/brandkit/rotary3191/rotary3191_simple.png
+      - title: Rotary 3191 Masterbrand Simplified - Azure
+        description: Azure version of Simplified Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_simple_azure.png
+        file: /images/brandkit/rotary3191/rotary3191_simple_azure.png
+      - title: Rotary 3191 Masterbrand Simplified - Black
+        description: Black version of simplified Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_simple_black.png
+        file: /images/brandkit/rotary3191/rotary3191_simple_black.png
+      - title: Rotary 3191 Masterbrand Simplified - White
+        description: White version of simplified Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_simple_white.png
+        file: /images/brandkit/rotary3191/rotary3191_simple_white.png
+        white: true
+      - title: Rotary 3191 Masterbrand Simplified - White & Gold
+        description: White & Gold version of simplified Rotary 3191 Masterbrand
+        preview: /images/brandkit/rotary3191/rotary3191_simple_white_gold.png
+        file: /images/brandkit/rotary3191/rotary3191_simple_white_gold.png
+        white: true
   - group_name: Rotary Masterbrand with District 3190
     items_list:
       - title: Rotary 3190 Masterbrand
@@ -506,6 +580,38 @@ brandkit:
         description: Rotary 3190 Theme - JPG
         preview: /images/brandkit/rotary3190theme2223/rotary3190theme2223.jpg
         file: /images/brandkit/rotary3190theme2223/rotary3190theme2223.jpg
+  - group_name: Rotary International Theme RIY 2023 - 2024
+    items_list:
+      - title: Create Hope in the World - Horizontal
+        description: Horizontal Version of "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Horizontal_RGB.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Horizontal_RGB.png
+      - title: Create Hope in the World - Horizontal - Black
+        description: Black version Version of Horizontal "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Horizontal_black.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Horizontal_black.png
+      - title: Create Hope in the World - Horizontal - White
+        description: White version Version of Horizontal "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Horizontal_white.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Horizontal_white.png
+        white: true
+      - title: Create Hope in the World - Vertical
+        description: Vertical Version of "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Vertical_RGB.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Vertical_RGB.png
+      - title: Create Hope in the World - Horizontal - Black
+        description: Black version Version of Vertical "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Vertical_black.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Vertical_black.png
+      - title: Create Hope in the World - Horizontal - White
+        description: White version Version of Vertical "Create Hope in the World"
+        preview: /images/brandkit/rotarytheme2324/ri2324_Vertical_white.png
+        file: /images/brandkit/rotarytheme2324/ri2324_Vertical_white.png
+        white: true
+      - title: Create Hope in the World Brand Guidelines
+        description: Brand Guidelines of Presidential Theme - "Create Hope in the World"
+        preview: /images/brandkit/documentimg.png
+        file: /images/brandkit/rotarytheme2324/rit2324_Guidelines.pdf
   - group_name: Rotary International Theme RIY 2022 - 2023
     items_list:
       - title: Imagine Rotary - Horizontal
@@ -516,7 +622,7 @@ brandkit:
         description: Black version Version of Horizontal "Imagine Rotary"
         preview: /images/brandkit/rotarytheme2223/ri2223_Horizontal_black.png
         file: /images/brandkit/rotarytheme2223/ri2223_Horizontal_black.png
-      - title: Imagine Rotary - Horizontal - Black
+      - title: Imagine Rotary - Horizontal - White
         description: White version Version of Horizontal "Imagine Rotary"
         preview: /images/brandkit/rotarytheme2223/ri2223_Horizontal_white.png
         file: /images/brandkit/rotarytheme2223/ri2223_Horizontal_white.png
@@ -529,7 +635,7 @@ brandkit:
         description: Black version Version of Vertical "Imagine Rotary"
         preview: /images/brandkit/rotarytheme2223/ri2223_Vertical_black.png
         file: /images/brandkit/rotarytheme2223/ri2223_Vertical_black.png
-      - title: Imagine Rotary - Horizontal - Black
+      - title: Imagine Rotary - Horizontal - White
         description: White version Version of Vertical "Imagine Rotary"
         preview: /images/brandkit/rotarytheme2223/ri2223_Vertical_white.png
         file: /images/brandkit/rotarytheme2223/ri2223_Vertical_white.png
