@@ -5,6 +5,7 @@ start: 2021-11-14 10:00
 end: 2021-11-14 12:30
 author: rbe
 venue: Rainbow Homes, Domlur
+button_open: true
 button_text: Join Us
 button_url: "tel:7760019285 "
 image: /images/uploads/event_2021childernsday.png

@@ -5,6 +5,7 @@ start: 2021-09-11 11:00
 end: 2021-09-11 16:00
 author: rbe
 venue: Rotary Bangalore Vidyalaya
+button_open: true
 button_text: Location
 button_url: http://l.3190rbe.org/JPoHcr
 image: /images/uploads/event_2122ganeshotsav.png

@@ -5,6 +5,7 @@ start: 2021-04-24 17:00
 end: 2021-04-24 19:00
 author: rbe
 venue: Onine
+button_open: true
 button_text: Register
 button_url: https://cutt.ly/XvTlbEl
 image: /images/uploads/event-2021careerchatjoshua.png

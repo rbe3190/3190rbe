@@ -5,6 +5,7 @@ start: 2021-07-25 19:00
 end: 2021-07-25 20:00
 author: rbe
 venue: Onine
+button_open: true
 button_text: Join
 button_url: http://l.3190rbe.org/RotaJnana
 image: /images/uploads/2122rotagnana.png

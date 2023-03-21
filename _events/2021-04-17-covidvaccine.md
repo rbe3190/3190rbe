@@ -5,6 +5,7 @@ start: 2021-04-20 11:00
 end: 2021-11-13 17:44
 author: rbe
 venue: Domlur Senior Citizen Charitable Trust
+button_open: true
 button_text: Location
 button_url: https://goo.gl/maps/YkDwZGr25CgRLuEK9
 image: /images/uploads/event_2021covidvaccine.png

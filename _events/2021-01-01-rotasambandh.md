@@ -5,6 +5,7 @@ start: 2021-01-01 23:00
 end: ""
 author: rbe
 venue: Online
+button_open: true
 button_text: Apply Now
 button_url: https://rotasambandh.com
 image: /images/uploads/event_2021rotasambandh.png

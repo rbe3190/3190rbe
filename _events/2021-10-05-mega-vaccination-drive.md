@@ -5,6 +5,7 @@ start: 2021-10-06 09:30
 end: 2021-10-06 15:00
 author: rbe
 venue: V-MARKET
+button_open: true
 button_text: Location
 button_url: https://goo.gl/maps/NztoLgy3TeV2WDb97
 image: /images/uploads/event_2122-vaccination6oct.png
