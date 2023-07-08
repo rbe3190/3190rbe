@@ -1,4 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
 https://3191rbe.netlify.com/* https://3191rbe.org/:splat 301!
+https://3190rbe.org//* https://3191rbe.org/:splat 301!
 
 https://l.3190rbe.org/* https://e.3190rbe.org/:splat 301!
