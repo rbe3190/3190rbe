@@ -2,7 +2,7 @@
 # Site settings
 title: Rotaract Bangalore East
 subtitle: "Unite . Rise . Empower"
-url: "https://3190rbe.org" # the base hostname & protocol for your site
+url: "https://3191rbe.org" # the base hostname & protocol for your site
 # baseurl: "/the/subpath/of/your/site" # Set this value to "" if you want your site to be root
 baseurl: ""
 timezone: Asia/Kolkata
