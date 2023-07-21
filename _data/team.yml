@@ -1,156 +1,6 @@
 members:
-  - name: Rtr. Padmanesar R
-    role: President
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: https://instagram.com/weirdo_beard
-      email: nesarradhakrishna@gmail.com
-    featurelink: https://instagram.com/weirdo_beard
-    image: /images/team/padmanesar.png
-  - name: Rtr. Rakshith Purushothaman
-    role: Immediate Past President
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: https://www.facebook.com/Rakshith.Purushotham
-      instagram: https://www.instagram.com/goodguyraks/
-      email: rtr.rakshith@gmail.com
-    featurelink: https://www.instagram.com/goodguyraks/
-    image: /images/team/rakshith.png
-  - name: Rtr. Arun Teja Godavarthi
-    role: Secretary
-    social:
-      linkedin: https://www.linkedin.com/in/zeospec/
-      twitter: https://twitter.com/ZeoSpec
-      facebook: https://www.facebook.com/zeospec/
-      instagram: https://www.instagram.com/ZeoSpec/
-      email: hi@zeospec.com
-    featurelink: https://rtr.zeospec.com/
-    image: /images/team/zeospec.jpg
-  - name: Rtr. Umang Kumar Agarwal
-    role: Joint Secretary
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/umang.jpeg
-  - name: Rtr. Goutham Dixith S N
-    role: Treasurer
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/goutham.png
-  - name: Rtr. Vignesh R
-    role: Sergeant-at-Arms
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: https://www.facebook.com/me.viki13
-      instagram: https://instagram.com/the__versatile
-      email: ""
-    featurelink: https://instagram.com/the__versatile
-    image: /images/team/vignesh.jpeg
-  - name: Rtr. Dhatri Vasishta
-    role: Areas of Focus Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: https://www.instagram.com/dha3_vasishta/
-      email: dhatrivasishta5@gmail.com
-    featurelink: https://www.instagram.com/dha3_vasishta/
-    image: /images/team/dhaatri.jpeg
-  - name: Rtr. Shayan T S
-    role: Events Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: https://www.facebook.com/shayan.bhargav
-      instagram: https://instagram.com/shayanbhargav
-      email: shayanbhargav02982@gmail.com
-    featurelink: https://instagram.com/shayanbhargav
-    image: /images/team/shayan.jpeg
-  - name: Rtr. Madan Mohan B
-    role: Club Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: https://www.facebook.com/rockmadan.madan.10
-      instagram: https://instagram.com/dj_madan__
-      email: madan12madan123@gmail.com
-    featurelink: https://instagram.com/dj_madan__
-    image: /images/team/madan.jpeg
-  - name: Rtr. Samiha Isbath A S
-    role: Club Service Director
-    social:
-      linkedin: https://www.linkedin.com/in/samiha-isbath-591005114
-      twitter: ""
-      facebook: https://www.facebook.com/samiha.isbath
-      instagram: https://instagram.com/samiha1996
-      email: samiha36@gmail.com
-    featurelink: https://instagram.com/samiha1996
-    image: /images/team/samiha.png
-  - name: Rtr. Goutham L
-    role: Community Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/gouthamL.jpeg
-  - name: Rtr. Muhsin M P
-    role: Community Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/muhsin.png
-  - name: Rtr. Anirjit Ghosh
-    role: International Service Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: ""
-      email: ""
-    featurelink: ""
-    image: /images/team/anirjit.png
-  - name: Rtr. Sachin T V
-    role: International Service Director
-    social:
-      linkedin: https://www.linkedin.com/in/sachiinvish/
-      twitter: https://twitter.com/sachiinvish
-      facebook: https://www.facebook.com/sachiinvish/
-      instagram: https://www.instagram.com/sachiinvish/
-      email: sachiinvish@gmail.com
-    featurelink: https://www.instagram.com/sachiinvish/
-    image: /images/team/sachin.jpg
-  - name: Rtr. Biswaranjan Jena
-    role: Professional Development Director
-    social:
-      linkedin: ""
-      twitter: ""
-      facebook: ""
-      instagram: https://www.instagram.com/biswaranjan_jena_mangu
-      email: biswaranjanjena1000@gmail.com
-    featurelink: https://www.instagram.com/biswaranjan_jena_mangu
-    image: /images/team/biswa.jpeg
   - name: Rtr. Hemanth Kumar
-    role: Professional Development Director
+    role: President
     social:
       linkedin: ""
       twitter: ""
@@ -159,13 +9,13 @@ members:
       email: ""
     featurelink: ""
     image: /images/team/hemanth.jpeg
-  - name: Rtr. Meghana S
-    role: Public Relations Director
+  - name: Rtr. Madan Mohan B
+    role: Immediate Past President
     social:
-      linkedin: https://www.linkedin.com/in/megha-s-3b2826174
+      linkedin: ""
       twitter: ""
-      facebook: https://www.facebook.com/megha.bharathi.94
-      instagram: https://www.instagram.com/me.gha8421/
-      email: meghanasbs0@gmail.com
-    featurelink: https://www.instagram.com/me.gha8421/
-    image: /images/team/meghana.jpeg
+      facebook: https://www.facebook.com/rockmadan.madan.10
+      instagram: https://instagram.com/dj_madan__
+      email: madan12madan123@gmail.com
+    featurelink: https://instagram.com/dj_madan__
+    image: /images/team/madan.jpeg
