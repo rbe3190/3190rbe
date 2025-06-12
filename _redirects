@@ -1,3 +1,3 @@
 # Redirect default Netlify subdomain to primary domain
 https://rotaractblreast.netlify.com/* https://rotaractblreast.org/:splat 301!
-https://3191rbe.org//* https://rotaractblreast.org/:splat 301!
+https://3191rbe.org/* https://rotaractblreast.org/:splat 301!
