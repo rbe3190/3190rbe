@@ -7,9 +7,9 @@ backend:
 # publish_mode: editorial_workflow
 
 media_folder: "images/uploads/" # Folder where user uploaded files should go
-site_url: https://3191rbe.org/
-display_url: 3191rbe.org
-logo_url: https://3191rbe.org/images/rbe.png
+site_url: https://rotaractblreast.org/
+display_url: rotaractblreast.org
+logo_url: https://rotaractblreast.org/images/rbe.png
 
 collections: # A list of collections the CMS should be able to edit 
   - label: "Causes"
