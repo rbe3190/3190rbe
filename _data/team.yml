@@ -1,11 +1,11 @@
 members:
-  # - name: Rtr. Madan Mohan B
-  #   role: Immediate Past President
-  #   social:
-  #     linkedin: ""
-  #     twitter: ""
-  #     facebook: https://www.facebook.com/rockmadan.madan.10
-  #     instagram: https://instagram.com/dj_madan__
-  #     email: madan12madan123@gmail.com
-  #   featurelink: https://instagram.com/dj_madan__
-  #   image: /images/team/madan.jpeg
+  - name: Rtr. Surakshith S
+    role: President Elect
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: https://www.instagram.com/surakshith_s_/
+      email: ""
+    featurelink: https://www.instagram.com/surakshith_s_/
+    image: /images/team/surakshit.jpeg
