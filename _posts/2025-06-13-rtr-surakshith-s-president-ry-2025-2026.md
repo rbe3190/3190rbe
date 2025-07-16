@@ -5,7 +5,7 @@ date: 2025-06-13
 image: /images/uploads/2526president.png
 author: rbe
 tags:
-  - Announcement
+  - announcement
 description: Rotaract Bangalore East is thrilled to announce Rtr. Surakshith S
   as the President for Rotary Year 2025 - 2026.
 ---

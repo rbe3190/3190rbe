@@ -13,7 +13,7 @@ description: Quarantine Captures was an indoor photography competition that was
 ---
 Quarantine Captures was an indoor photography competition that was inspired by the Lockdown period, i.e staying at home sweet home.
 
-The event saw than 60 participants from across the Rotaract Districts across the world including Kenya and Nigeria. The entries shared on the [Rotaract Bangalore East Instagram](https://www.instagram.com/3190rbe/){:target="_blank"}.
+The event saw than 60 participants from across the Rotaract Districts across the world including Kenya and Nigeria. The entries shared on the [Rotaract Bangalore East Instagram](https://www.instagram.com/rotaractblreast/){:target="_blank"}.
 
 The winners were decided based on two criteria:
 

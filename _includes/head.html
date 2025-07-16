@@ -22,15 +22,15 @@
     <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
     
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@3190rbe">
+    <meta name="twitter:creator" content="@rotaractblreast">
     <meta name="twitter:url" content="{{ page.url | absolute_url }}">
-    <meta name="twitter:site" content="@3190rbe">
+    <meta name="twitter:site" content="@rotaractblreast">
     <meta name="twitter:title" content="{% if page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Tag: {{ page.title | capitalize | replace: "-"," "}}{% elsif page.type == "category" %}{{ page.title | capitalize | replace: "-"," "}}{% else %}{{ page.title }}{% endif %}{% if page.url == "/" %}{{site.title}} - UNITE . RISE . EMPOWER{% else %} - {{site.title}}{% endif %}">
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.type == "year" %}Rotaract Bangalore East's updates during {{ page.type }} {{ page.date | date: "%Y"}}{% elsif page.type == "month" %}Rotaract Bangalore East's updates in the {{ page.type }} of {{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}Rotaract Bangalore East's updates on {{ page.type }} of {{ page.date | date: "%d %B %Y"}}{% elsif page.type == "tag" %}Rotaract Bangalore East's updates tagged as - {{ page.title }}{% elsif page.type == "category" %}Rotaract Bangalore East's updates under {{ page.title }} avenue{% else %}{{ site.description }}{% endif %}">
     <meta name="twitter:domain" content="{{ site.url }}">
     <meta name="twitter:image:src" content="{% if page.image %}{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}{% else %}{{ site.og_img | absolute_url }}{% endif %}">
     
-    <meta name="keywords" content="Rotaract, Rotary, Rotaract Bangalore, Bangalore East, 3190rbe, rbe" />
+    <meta name="keywords" content="Rotaract, Rotary, Rotaract Bangalore, Bangalore East, rotaractblreast, rbe" />
     <meta name="author" content="ZeoSpec" />
     <meta name="subject" content="UNITE . RISE . EMPOWER">
     <meta name="copyright" content="Rotaract Bangalore East">
