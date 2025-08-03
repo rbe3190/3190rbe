@@ -2,7 +2,7 @@
 layout: event
 title: Caaaming Sooon!!!
 start: 2019-08-01 00:00
-end: 2025-08-03 12:28
+end: 2025-07-01 00:00
 author: rbe
 venue: Online
 button_open: true
