@@ -16,12 +16,6 @@ description: R﻿otaract Utsava, presented by Rotaract Bangalore East, Rotaract
   exciting event that offers a fantastic platform for your club to shine,
   connect with the Rotaract community, and showcase your unique talent.
 ---
-🎊 Rotaract Uthsava 2025 🎊\
-Hosted by:\
-Rotaract Bangalore East  \
-Rotaract Club of Bangalore High Grounds\
-Rotaract Club of Bangalore SouthWest
-
 **Namaskara 🙏🏻**\
 Get ready for a celebration like no other
 
