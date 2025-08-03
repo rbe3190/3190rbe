@@ -42,8 +42,8 @@ Rotaract Bangalore East\
 \
 **Rtn. Rtr. Rohith KR**\
 Rotaract Club of Bangalore High Grounds\
-📲 +91 86600 18080
-
+📲 +91 86600 18080\
+\
 **Rtr. Cessna Bhattacharyya**\
 Rotaract Club of Bangalore SouthWest\
 📲 +91 96067 74330
