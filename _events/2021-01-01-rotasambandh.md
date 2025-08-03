@@ -2,7 +2,7 @@
 layout: event
 title: RotaSambandh
 start: 2021-01-01 23:00
-end: ""
+end: 2025-08-03 12:26
 author: rbe
 venue: Online
 button_open: true
