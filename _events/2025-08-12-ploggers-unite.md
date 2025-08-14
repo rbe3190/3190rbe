@@ -9,16 +9,15 @@ button_open: true
 button_text: RSVP
 button_url: https://go.rotaractblreast.org/ploggersunitersvp
 image: /images/uploads/event2526ploggersunite.png
-intro: Rotaract Club of Bangalore East in collaboration with The Indian Ploggers
+intro: Rotaract Bangalore East in collaboration with The Indian Ploggers Army,
+  are excited to invite you to be a part of Ploggers Unite - Be the Change 💚
+description: Rotaract Bangalore East in collaboration with The Indian Ploggers
   Army, are excited to invite you to be a part of Ploggers Unite - Be the Change
   💚
-description: Rotaract Club of Bangalore East in collaboration with The Indian
-  Ploggers Army, are excited to invite you to be a part of Ploggers Unite - Be
-  the Change 💚
 ---
 **🌿 Join for a Cleaner Tomorrow 🌿**\
 \
-**Rotaract Club of Bangalore East** in collaboration with **The Indian Ploggers Army**, are excited to invite you to be a part of Ploggers Unite - Be the Change 💚\
+**Rotaract Bangalore East** in collaboration with **The Indian Ploggers Army**, are excited to invite you to be a part of Ploggers Unite - Be the Change 💚\
 \
 This Plog Run is about taking action to make our environment cleaner and greener. 🌎✨\
 \
