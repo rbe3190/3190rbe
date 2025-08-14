@@ -173,53 +173,6 @@ areasoffocus:
   #   message: We the members of Rotaract Bangalore East (Easterners) follow the motto UNITE to RISE and EMPOWER. 
 
 brandkit:
-  - group_name: Rotaract Bangalore East
-    items_list:
-      - title: Rotaract Bangalore East Logo
-        description: Standard logo of Rotaract Bangalore East
-        preview: /images/brandkit/RBE/RBEoriginal.png
-        file: /images/brandkit/RBE/RBEoriginal.png
-      - title: Rotaract Bangalore East Logo - Black
-        description: Black version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBE/RBEblack.png
-        file: /images/brandkit/RBE/RBEblack.png
-      - title: Rotaract Bangalore East Logo - Blue
-        description: Blue version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBE/RBEblue.png
-        file: /images/brandkit/RBE/RBEblue.png
-      - title: Rotaract Bangalore East Logo - Red
-        description: Red version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBE/RBEred.png
-        file: /images/brandkit/RBE/RBEred.png
-      - title: Rotaract Bangalore East Logo - White
-        description: White version of Rotaract Bagnalore East Logo
-        preview: /images/brandkit/RBE/RBEwhite.png
-        file: /images/brandkit/RBE/RBEwhite.png
-        white: true
-  # - group_name: RBE - UNITE RISE EMPOWER
-  #   items_list:
-  #     - title: RBE - UNITE RISE EMPOWER
-  #       description: Standard version of RBE - UNITE RISE EMPOWER
-  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
-  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
-  #     - title: RBE - UNITE RISE EMPOWER - White Text
-  #       description: Standard version of RBE - UNITE RISE EMPOWER with white text
-  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
-  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
-  #       white: true
-  #     - title: RBE - UNITE RISE EMPOWER - Black
-  #       description: Black version of RBE - UNITE RISE EMPOWER
-  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
-  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
-  #     - title: RBE - UNITE RISE EMPOWER - Grey
-  #       description: Grey version of RBE - UNITE RISE EMPOWER
-  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
-  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
-  #     - title: RBE - UNITE RISE EMPOWER - White
-  #       description: White version of RBE - UNITE RISE EMPOWER
-  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
-  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
-  #       white: true
   - group_name: RBE - Rotaract Masterbrand
     items_list:
       - title: RBE - Rotaract Masterbrand
@@ -274,6 +227,53 @@ brandkit:
         preview: /images/brandkit/RBEmasterbrand/RBE_masterbrand_simple_white_alt.png
         file: /images/brandkit/RBEmasterbrand/RBE_masterbrand_simple_white_alt.png
         white: true
+  - group_name: Rotaract Bangalore East
+    items_list:
+      - title: Rotaract Bangalore East Logo
+        description: Standard logo of Rotaract Bangalore East
+        preview: /images/brandkit/RBE/RBEoriginal.png
+        file: /images/brandkit/RBE/RBEoriginal.png
+      - title: Rotaract Bangalore East Logo - Black
+        description: Black version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBE/RBEblack.png
+        file: /images/brandkit/RBE/RBEblack.png
+      - title: Rotaract Bangalore East Logo - Blue
+        description: Blue version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBE/RBEblue.png
+        file: /images/brandkit/RBE/RBEblue.png
+      - title: Rotaract Bangalore East Logo - Red
+        description: Red version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBE/RBEred.png
+        file: /images/brandkit/RBE/RBEred.png
+      - title: Rotaract Bangalore East Logo - White
+        description: White version of Rotaract Bagnalore East Logo
+        preview: /images/brandkit/RBE/RBEwhite.png
+        file: /images/brandkit/RBE/RBEwhite.png
+        white: true
+  # - group_name: RBE - UNITE RISE EMPOWER
+  #   items_list:
+  #     - title: RBE - UNITE RISE EMPOWER
+  #       description: Standard version of RBE - UNITE RISE EMPOWER
+  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
+  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpower.png
+  #     - title: RBE - UNITE RISE EMPOWER - White Text
+  #       description: Standard version of RBE - UNITE RISE EMPOWER with white text
+  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
+  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhitetext.png
+  #       white: true
+  #     - title: RBE - UNITE RISE EMPOWER - Black
+  #       description: Black version of RBE - UNITE RISE EMPOWER
+  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
+  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerBlack.png
+  #     - title: RBE - UNITE RISE EMPOWER - Grey
+  #       description: Grey version of RBE - UNITE RISE EMPOWER
+  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
+  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerGrey.png
+  #     - title: RBE - UNITE RISE EMPOWER - White
+  #       description: White version of RBE - UNITE RISE EMPOWER
+  #       preview: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
+  #       file: /images/brandkit/RBEUniteRiseEmpower/RBEUniteRiseEmpowerWhite.png
+  #       white: true
   - group_name: Rotaract Masterbrand
     items_list:
       - title: Rotaract Masterbrand
