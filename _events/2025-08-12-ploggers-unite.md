@@ -9,12 +9,12 @@ button_open: true
 button_text: RSVP
 button_url: https://go.rotaractblreast.org/ploggersunitersvp
 image: /images/uploads/event2526ploggersunite.png
-intro: "**Rotaract Club of Bangalore East** in collaboration with **The Indian
-  Ploggers Army**, are excited to invite you to be a part of Ploggers Unite - Be
-  the Change 💚"
-description: "**Rotaract Club of Bangalore East** in collaboration with **The
-  Indian Ploggers Army**, are excited to invite you to be a part of Ploggers
-  Unite - Be the Change 💚"
+intro: Rotaract Club of Bangalore East in collaboration with The Indian Ploggers
+  Army, are excited to invite you to be a part of Ploggers Unite - Be the Change
+  💚
+description: Rotaract Club of Bangalore East in collaboration with The Indian
+  Ploggers Army, are excited to invite you to be a part of Ploggers Unite - Be
+  the Change 💚
 ---
 **🌿 Join for a Cleaner Tomorrow 🌿**\
 \
