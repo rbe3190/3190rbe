@@ -157,6 +157,16 @@ layout: compress
 </button>
     
 
+{% assign load_owl = false %}
+{% if page.url == "/" or page.url == "/index.html" %}
+  {% assign load_owl = true %}
+{% elsif page.path == "about.html" %}
+  {% assign load_owl = true %}
+{% elsif site.data.info.testimonials.size > 0 %}
+  {% if page.layout == "post" or page.layout == "cause" or page.layout == "event" %}
+    {% assign load_owl = true %}
+  {% endif %}
+{% endif %}
 {% include footer-script.html %}
 
 </body>

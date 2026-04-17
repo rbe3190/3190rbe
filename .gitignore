@@ -3,3 +3,4 @@ _site
 Gemfile.lock
 original_files
 templates
+.github/workflows/lighthouse.yml

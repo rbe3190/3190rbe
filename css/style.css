@@ -20,7 +20,7 @@
 
 **********************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700|Poppins:300,400,500,600,700&display=swap');
 /*font-family: 'Poppins', sans-serif;
 font-family: 'Lato', sans-serif;*/
 
@@ -40,6 +40,7 @@ font-family: 'Lato', sans-serif;*/
 @font-face {
     font-family: PonyTale;
     src: url(../fonts/PonyTale.otf);
+    font-display: swap;
 }
 
 /*

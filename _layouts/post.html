@@ -21,7 +21,7 @@ layout: default
                     <div class="blog-single">
                         <div class="inner-box">
                             <div class="image">
-                                <img loading="lazy" src="{{page.image | relative_url}}" alt="{{page.title}}">
+                                <img fetchpriority="high" decoding="async" src="{{page.image | relative_url}}" alt="{{page.title}}">
                             </div>
                             <div class="lower-box">
                                 <div class="top-content">

@@ -1,14 +1,13 @@
-<!-- jequery plugins -->
+<!-- jequery plugins: Owl only on pages with carousels; MixItUp/Isotope/Fancybox omitted (no templates use those selectors—re-add if needed). -->
 
 <script src="{{site.baseurl}}/js/jquery.js"></script>
 <script src="{{site.baseurl}}/js/popover.js"></script>
 <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
 <script src="{{site.baseurl}}/js/wow.js"></script>
+{% if load_owl %}
 <script src="{{site.baseurl}}/js/owl.js"></script>
+{% endif %}
 <script src="{{site.baseurl}}/js/validate.js"></script>
-<script src="{{site.baseurl}}/js/mixitup.js"></script>
-<script src="{{site.baseurl}}/js/isotope.js"></script>
 <script src="{{site.baseurl}}/js/appear.js"></script>
-<script src="{{site.baseurl}}/js/jquery.fancybox.js"></script>
 
 <script src="{{site.baseurl}}/js/script.js"></script>

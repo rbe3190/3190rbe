@@ -19,20 +19,22 @@
         "description": "{{page.description}}",
         "organizer": {
           "@type": "Organization",
-          "name": "Rotaract Bangalore east",
+          "name": "Rotaract Bangalore East",
           "url": "https://rotaractblreast.org"
         }
       }
 </script>
 {% elsif page.layout == "post" %}
+{% assign article_desc = page.description | default: site.description | strip_html | truncate: 300 %}
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "headline": "{{page.title}}",
+      "headline": {{ page.title | jsonify }},
       "image": [
         "{{page.image | absolute_url}}"
        ],
+      "description": {{ article_desc | jsonify }},
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.date | date_to_xmlschema }}"
     }
