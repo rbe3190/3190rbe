@@ -1,3 +1,8 @@
 # Redirect default Netlify subdomain to primary domain
 https://rotaractblreast.netlify.com/* https://rotaractblreast.org/:splat 301!
 https://3191rbe.org/* https://rotaractblreast.org/:splat 301!
+
+# Merged teamadmin into single Decap CMS
+/teamadmin /admin 301!
+/teamadmin/ /admin/ 301!
+/teamadmin/* /admin/:splat 301!

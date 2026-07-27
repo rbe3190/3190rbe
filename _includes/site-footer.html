@@ -1,0 +1,78 @@
+<footer class="bg-inverse-surface text-inverse-on-surface mt-auto">
+  <div class="wrap py-12 md:py-16">
+    <div class="grid grid-cols-2 gap-8 lg:grid-cols-12 lg:gap-10">
+      <div class="col-span-2 lg:col-span-4">
+        <a href="{{ '/' | relative_url }}" class="inline-block mb-4">
+          <img src="{{ '/images/site/footer-logo.png' | relative_url }}" alt="Rotaract Bangalore East" class="h-12 w-auto" width="160" height="48" loading="lazy">
+        </a>
+        <p class="text-sm text-inverse-on-surface/80 mb-4 max-w-xs">
+          District 3191 · Sponsored by Rotary Bangalore East. UNITE. RISE. EMPOWER.
+        </p>
+        <div class="flex gap-3">
+          {% if site.data.info.site_social.instagram %}
+          <a href="{{ site.data.info.site_social.instagram }}" class="touch-target inline-flex items-center justify-center hover:text-primary-container" target="_blank" rel="noopener" aria-label="Instagram">
+            {% include icon-social.html network="instagram" %}
+          </a>
+          {% endif %}
+          {% if site.data.info.site_social.facebook %}
+          <a href="{{ site.data.info.site_social.facebook }}" class="touch-target inline-flex items-center justify-center hover:text-primary-container" target="_blank" rel="noopener" aria-label="Facebook">
+            {% include icon-social.html network="facebook" %}
+          </a>
+          {% endif %}
+          {% if site.data.info.site_social.linkedin %}
+          <a href="{{ site.data.info.site_social.linkedin }}" class="touch-target inline-flex items-center justify-center hover:text-primary-container" target="_blank" rel="noopener" aria-label="LinkedIn">
+            {% include icon-social.html network="linkedin" %}
+          </a>
+          {% endif %}
+          {% if site.data.info.site_social.twitter %}
+          <a href="{{ site.data.info.site_social.twitter }}" class="touch-target inline-flex items-center justify-center hover:text-primary-container" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            {% include icon-social.html network="twitter" %}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-span-1 lg:col-span-2">
+        <h2 class="font-display font-semibold text-white mb-4">Explore</h2>
+        <ul class="space-y-2 text-sm text-inverse-on-surface/80">
+          <li><a href="{{ '/about' | relative_url }}" class="hover:text-primary-container">About</a></li>
+          <li><a href="{{ '/news/' | relative_url }}" class="hover:text-primary-container">News</a></li>
+          <li><a href="{{ '/causes' | relative_url }}" class="hover:text-primary-container">Causes</a></li>
+          <li><a href="{{ '/events' | relative_url }}" class="hover:text-primary-container">Events</a></li>
+          <li><a href="{{ '/join' | relative_url }}" class="hover:text-primary-container">Join Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-1 lg:col-span-3">
+        <h2 class="font-display font-semibold text-white mb-4">Tools &amp; legal</h2>
+        <ul class="space-y-2 text-sm text-inverse-on-surface/80">
+          <li><a href="{{ '/search' | relative_url }}" class="hover:text-primary-container">Search</a></li>
+          <li><a href="{{ '/brandkit' | relative_url }}" class="hover:text-primary-container">Brand Kit</a></li>
+          <li><a href="https://blood.rotaract3190.org" class="hover:text-primary-container" target="_blank" rel="noopener">Blood Donors</a></li>
+          <li><a href="{{ '/privacy' | relative_url }}" class="hover:text-primary-container">Privacy</a></li>
+          <li><a href="{{ '/terms' | relative_url }}" class="hover:text-primary-container">Terms</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-2 lg:col-span-3">
+        <h2 class="font-display font-semibold text-white mb-4">Contact</h2>
+        <ul class="space-y-2 text-sm text-inverse-on-surface/80">
+          <li>{{ site.data.info.location }}</li>
+          {% if site.data.info.email %}
+          <li><a href="mailto:{{ site.data.info.email }}" class="hover:text-primary-container">{{ site.data.info.email }}</a></li>
+          {% endif %}
+          {% if site.data.info.phone %}
+          <li><a href="tel:{{ site.data.info.phone | remove: ' ' }}" class="hover:text-primary-container">{{ site.data.info.phone }}</a></li>
+          {% endif %}
+          <li><a href="{{ '/contact' | relative_url }}" class="hover:text-primary-container">Contact form →</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="wrap py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-inverse-on-surface/60">
+      <p>&copy; {{ 'now' | date: '%Y' }} Rotaract Bangalore East. All rights reserved.</p>
+      <p>RI District 3191</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+{% comment %}
+  Requires: event, now_stamp (unix int).
+  Sets: event_state = ongoing | upcoming | past
+{% endcomment %}
+{% assign start_stamp = event.start | date: '%s' | plus: 0 %}
+{% assign event_state = 'past' %}
+{% if event.end and event.end != '' %}
+  {% assign end_stamp = event.end | date: '%s' | plus: 0 %}
+  {% if start_stamp <= now_stamp and end_stamp >= now_stamp %}
+    {% assign event_state = 'ongoing' %}
+  {% elsif start_stamp > now_stamp %}
+    {% assign event_state = 'upcoming' %}
+  {% else %}
+    {% assign event_state = 'past' %}
+  {% endif %}
+{% else %}
+  {% if start_stamp > now_stamp %}
+    {% assign event_state = 'upcoming' %}
+  {% else %}
+    {% assign event_state = 'past' %}
+  {% endif %}
+{% endif %}

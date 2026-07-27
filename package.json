@@ -1,0 +1,11 @@
+{
+  "name": "rotaractblreast",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/main.css -o ./assets/css/main.css --minify",
+    "watch:css": "tailwindcss -i ./src/css/main.css -o ./assets/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

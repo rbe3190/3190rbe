@@ -3,46 +3,37 @@ layout: default
 title: Search Results
 permalink: search
 noindex: true
+sitemap: false
 ---
+{% include page-hero.html title="Search" eyebrow="Find anything on the site" lead="News, events, causes, and key pages." %}
+{% include site-breadcrumbs.html %}
 
-    <!--Page title-->
-    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-        <div class="container">
-            <h1>Search Results</h1>
-        </div>
-    </section>
-    {% include breadcrumbs.html %}
+<section class="section-pad">
+  <div class="wrap max-w-3xl">
+    <form action="{{ '/search' | relative_url }}" method="get" class="mb-6" role="search">
+      <label for="search-q" class="sr-only">Search</label>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="search-q" type="search" name="q" placeholder="Search news, events, causes, pages…" required
+               class="flex-1 min-w-0 rounded border border-outline-variant bg-surface-container-lowest px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-container">
+        <button type="submit" class="btn btn-primary touch-target shrink-0">Search</button>
+      </div>
+    </form>
 
-    <!-- Causes Section -->
-    <section class="causes-section">
-        <div class="container">
-			<div class="row justify-content-center">
-                <div class="col-lg-10 mt-30">
-                    <div class="default-form-area">
-                        <form action="{{ site.baseurl }}/search" method="get" class="contact-form style-five">
-                            <div class="row clearfix">
-                                <div class="col-md-12 column">        
-                                    <div class="form-group">
-										<input type="search" name="q" placeholder="Search Here" required>
-                                    </div>
-                                </div>
-                        </form>
-                    </div>
-               </div>
-            </div>
-        </div>
-    </section>
+    <div id="search-type-filters" class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter by type">
+      <button type="button" class="btn btn-outline text-sm py-2 px-3" data-search-type="all" aria-pressed="true">All</button>
+      <button type="button" class="btn btn-outline text-sm py-2 px-3" data-search-type="news" aria-pressed="false">News</button>
+      <button type="button" class="btn btn-outline text-sm py-2 px-3" data-search-type="events" aria-pressed="false">Events</button>
+      <button type="button" class="btn btn-outline text-sm py-2 px-3" data-search-type="causes" aria-pressed="false">Causes</button>
+      <button type="button" class="btn btn-outline text-sm py-2 px-3" data-search-type="pages" aria-pressed="false">Pages</button>
+    </div>
 
-	<!-- Causes Section -->
-    <section class="causes-section">
-        <div class="container">
-            <p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
-
-            <ul id="search-results"></ul>
-            <!-- <script async src="https://cse.google.com/cse.js?cx=005672163470134270944:aa75kecrt3t"></script>
-		    <div class="gcse-searchresults-only"></div> -->
-        </div>
-    </section>
+    <p class="text-on-surface-variant mb-6">
+      <span id="search-process">Loading</span> results
+      <span id="search-query-container" class="hidden"> for “<strong id="search-query"></strong>”</span>
+    </p>
+    <ul id="search-results" class="space-y-2"></ul>
+  </div>
+</section>
 
 <script>
 	window.data = {
@@ -55,11 +46,12 @@ noindex: true
 					{% assign added = false %}
 					"{{ post.url | slugify }}": {
 						"id": "{{ post.url | slugify }}",
-						"title": "{{ post.title | xml_escape }}",
-						"categories": "{{ post.categories | join: ", " | xml_escape }}",
-						"url": " {{ post.url | xml_escape }}",
-                        "description": {{ post.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
-						"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+						"title": {{ post.title | jsonify }},
+						"type": "news",
+						"categories": {{ post.categories | join: ", " | jsonify }},
+						"url": {{ post.url | jsonify }},
+                        "description": {{ post.description | strip_html | truncate: 500 | jsonify }},
+						"content": {{ post.content | strip_html | truncate: 500 | jsonify }}
 					}
 					{% assign added = true %}
 				{% endunless %}
@@ -72,11 +64,12 @@ noindex: true
 					{% assign added = false %}
 					"{{ cause.url | slugify }}": {
 						"id": "{{ cause.url | slugify }}",
-						"title": "{{ cause.title | xml_escape }}",
-						"categories": "{{ cause.categories | join: ", " | xml_escape }}",
-						"url": " {{ cause.url | xml_escape }}",
-                        "description": {{ cause.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
-						"content": {{ cause.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+						"title": {{ cause.title | jsonify }},
+						"type": "causes",
+						"categories": "",
+						"url": {{ cause.url | jsonify }},
+                        "description": {{ cause.description | strip_html | truncate: 500 | jsonify }},
+						"content": {{ cause.content | strip_html | truncate: 500 | jsonify }}
 					}
 					{% assign added = true %}
 				{% endunless %}
@@ -89,18 +82,82 @@ noindex: true
 					{% assign added = false %}
 					"{{ event.url | slugify }}": {
 						"id": "{{ event.url | slugify }}",
-						"title": "{{ event.title | xml_escape }}",
-						"categories": "{{ event.categories | join: ", " | xml_escape }}",
-						"url": " {{ event.url | xml_escape }}",
-                        "description": {{ event.description | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }},
-						"content": {{ event.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+						"title": {{ event.title | jsonify }},
+						"type": "events",
+						"categories": "",
+						"url": {{ event.url | jsonify }},
+                        "description": {{ event.description | strip_html | truncate: 500 | jsonify }},
+						"content": {{ event.content | strip_html | truncate: 500 | jsonify }}
 					}
 					{% assign added = true %}
 				{% endunless %}
 			{% endif %}
 		{% endfor %}
+		{% if added %},{% endif %}
+		"page-about": {
+			"id": "page-about",
+			"title": "About Rotaract Bangalore East",
+			"type": "pages",
+			"categories": "about team",
+			"url": "/about",
+			"description": "Our story, core values UNITE RISE EMPOWER, and team.",
+			"content": "Rotaract Bangalore East about team UNITE RISE EMPOWER District 3191"
+		},
+		"page-join": {
+			"id": "page-join",
+			"title": "Join Us",
+			"type": "pages",
+			"categories": "membership",
+			"url": "/join",
+			"description": "Become an Easterner — membership application.",
+			"content": "Join Rotaract Bangalore East membership application Easterner"
+		},
+		"page-contact": {
+			"id": "page-contact",
+			"title": "Contact",
+			"type": "pages",
+			"categories": "contact",
+			"url": "/contact",
+			"description": "Contact Rotaract Bangalore East.",
+			"content": "Contact email phone Bangalore Rotaract"
+		},
+		"page-brandkit": {
+			"id": "page-brandkit",
+			"title": "Brand Kit",
+			"type": "pages",
+			"categories": "brand",
+			"url": "/brandkit",
+			"description": "Official logos and brand assets.",
+			"content": "Brand kit logos Rotary Rotaract assets download"
+		},
+		"page-events": {
+			"id": "page-events",
+			"title": "Events & Activities",
+			"type": "pages",
+			"categories": "events",
+			"url": "/events",
+			"description": "Ongoing, upcoming, and past events.",
+			"content": "Events activities workshops drives fellowship"
+		},
+		"page-causes": {
+			"id": "page-causes",
+			"title": "Our Causes",
+			"type": "pages",
+			"categories": "causes",
+			"url": "/causes",
+			"description": "Active fundraising and service causes.",
+			"content": "Causes donate fundraising service projects"
+		},
+		"page-news": {
+			"id": "page-news",
+			"title": "News & Updates",
+			"type": "pages",
+			"categories": "news",
+			"url": "/news/",
+			"description": "News and updates from Easterners.",
+			"content": "News updates stories projects club"
+		}
 	};
 </script>
-
-<script src="{{ site.baseurl }}/js/lunr.min.js"></script>
-<script src="{{ site.baseurl }}/js/search.js"></script>
+<script src="{{ '/js/lunr.min.js' | relative_url }}"></script>
+<script src="{{ '/js/search.js' | relative_url }}"></script>

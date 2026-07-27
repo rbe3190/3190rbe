@@ -1,1 +1,12 @@
-members: []
+members:
+  - name: Rtr. Surakshith S
+    role: President
+    member_since: "19 July 2019"
+    social:
+      linkedin: ""
+      twitter: ""
+      facebook: ""
+      instagram: https://www.instagram.com/surakshith_s_/
+      email: ""
+    featurelink: https://www.instagram.com/surakshith_s_/
+    image: /images/team/surakshit.jpeg

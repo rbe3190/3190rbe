@@ -4,124 +4,121 @@ title: Join
 permalink: join
 description: Join Rotaract Bangalore East as we UNITE to RISE by learning from each other and EMPOWER the community around us and experience the joy of giving as members of RBE.
 ---
+{% include page-hero.html title="Join Us" eyebrow="Become an Easterner" lead="UNITE with like-minded people. RISE through shared learning. EMPOWER Bangalore together." %}
+{% include site-breadcrumbs.html %}
 
-    <!--Page title-->
-    <section class="page-title" style="background-image:url(images/background/5.png)">
-        <div class="container">
-            <h1>Join Us</h1>
+<section class="section-pad bg-surface-container-low">
+  <div class="wrap">
+    <p class="label-caps text-center mb-2">Why join</p>
+    <h2 class="font-display text-headline-lg text-center mb-10">What you get as a member</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="card p-6">
+        <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">diversity_3</span>
+        <h3 class="font-display text-lg font-semibold mb-2">Community</h3>
+        <p class="text-on-surface-variant text-sm">A family of Easterners — fellowship, mentorship, and lifelong friendships.</p>
+      </article>
+      <article class="card p-6">
+        <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">school</span>
+        <h3 class="font-display text-lg font-semibold mb-2">Growth</h3>
+        <p class="text-on-surface-variant text-sm">Professional development, leadership roles, and learning by doing.</p>
+      </article>
+      <article class="card p-6">
+        <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">volunteer_activism</span>
+        <h3 class="font-display text-lg font-semibold mb-2">Impact</h3>
+        <p class="text-on-surface-variant text-sm">Hands-on service across Rotary’s areas of focus in Bangalore and beyond.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-ink text-white py-12">
+  <div class="wrap flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <div>
+      <h2 class="font-display text-2xl font-bold">Ready to apply?</h2>
+      <p class="text-white/80 mt-1">Fill the form below — we’ll get back to you soon.</p>
+    </div>
+    <a href="#application" class="btn btn-primary shrink-0">Start application</a>
+  </div>
+</section>
+
+<section id="application" class="section-pad">
+  <div class="wrap grid lg:grid-cols-5 gap-12">
+    <div class="lg:col-span-3">
+      <h2 class="font-display text-headline-md mb-6">Membership application</h2>
+      <script>var submission = false;</script>
+      <iframe name="join_hidden_iframe" id="join-hidden-iframe" class="hidden" title="Hidden form target" onload="if(submission){window.location='{{ '/thankyou' | relative_url }}';}"></iframe>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSeukck0yLWRUanwK1XjL6gBOMDlq0pk4oJ5bRIQ2QYeY7BYvg/formResponse"
+            target="join_hidden_iframe" onsubmit="submission=true;" method="POST" class="space-y-4">
+        <div class="form-field">
+          <label for="join-name">Name</label>
+          <input id="join-name" type="text" name="entry.610221127" required>
         </div>
-    </section>
-    {% include breadcrumbs.html %}
-
-    <!-- Contact form -->
-    <section class="contact-form-section sp-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mb-30">
-                    <div class="default-form-area">
-                        <h1>Lets UNITE, RISE AND EMPOWER</h1>
-
-                        <script type="text/javascript">
-                            var submission = false;
-                        </script>
-                        <iframe name="join_hidden_iframe" id="join-hidden-iframe" style="display:none;"
-                            onload="if(submission)  {window.location='/thankyou/';}"></iframe>
-
-                        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeukck0yLWRUanwK1XjL6gBOMDlq0pk4oJ5bRIQ2QYeY7BYvg/formResponse"
-                        target="join_hidden_iframe" onsubmit="submission=true;" id="join-page-form" name="join_form" method="POST" class="contact-form style-five">
-                            <div class="row clearfix">
-                                <div class="col-md-12 column">        
-                                    <div class="form-group">
-                                        <label for="join-name">Name</label>
-                                        <input id="join-name" type="text" name="entry.610221127" placeholder="" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 column">
-                                    <div class="form-group">
-                                        <label for="join-email">Email</label>
-                                        <input id="join-email" type="email" name="entry.207513290" class="form-control required email" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 column">
-                                    <div class="form-group">
-                                        <label for="join-phone">Phone</label>
-                                        <input id="join-phone" type="tel" name="entry.557203297" class="form-control" pattern="[6-9]{1}[0-9]{9}" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 column">
-                                    <div class="form-group">
-                                        <label for="join-dob">Date of Birth</label>
-                                        <input id="join-dob" type="text" name="entry.798190516" onfocus="(this.type='date')" class="form-control" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 column">
-                                    <div class="form-group">
-                                        <label for="join-gender">Gender</label>
-                                        <select id="join-gender" name="entry.1887778624" required>
-                                            <option value="" disabled="" selected="" hidden=""></option>
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                            <option value="Prefer not to say">Prefer not to say</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 column">
-                                    <div class="form-group">
-                                        <label for="join-address">Your Current Address</label>
-                                        <input id="join-address" type="text" name="entry.2134806077" class="form-control" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 column">
-                                    <div class="form-group">
-                                        <label for="join-social">Your Instagram / Linked Profile Link?</label>
-                                        <input id="join-social" type="text" name="entry.293248112" class="form-control" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 column">
-                                    <div class="form-group">
-                                        <label for="join-why">Why do you want to join Rotaract?</label>
-                                        <textarea id="join-why" name="entry.64299667" class="form-control textarea required" placeholder="" required></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 column">
-                                    <div class="form-group">
-                                        <label for="join-prior">Were you a Rotaractor before? if yes, please share a brief about your Rotaract Journey?</label>
-                                        <textarea id="join-prior" name="entry.51188460" class="form-control textarea required" placeholder="" required></textarea>
-                                    </div>
-                                </div>                                            
-                            </div>
-                            <div class="contact-section-btn">
-                                <div class="form-group style-two">
-                                    <input id="join-form-botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                    <button class="theme-btn btn-style-two" type="submit" data-loading-text="Please wait...">Submit Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-5 mb-30 pl-lg-5">
-                    <div class="title">
-                        <h4>Contact Information</h4>
-                        <div class="text mb-40">You can contact or visit us anytime round the week.</div>
-                    </div>
-                    <ul class="contact-info-list">
-                        <li><span class="fas fa-map-marker-alt"></span><b>Address</b>{{site.data.info.location}}</li>
-                        <li><span class="fa fa fa-envelope-open"></span><b>Email</b>{{site.data.info.email}}</li>
-                        <li><span class="fa fa-phone"></span><b>Phone</b>{{site.data.info.phone}}</li>
-                    </ul>
-                    <ul class="social-icon-three">
-                    {% for social in site.data.info.site_social %}
-                        {% if social[1] %}
-                        <li><a href="{{ social[1] }}" target="_blank"><i class="fab fa-{{ social[0] }}"></i></a></li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    
-                </div>
-            </div>            
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="form-field">
+            <label for="join-email">Email</label>
+            <input id="join-email" type="email" name="entry.207513290" required>
+          </div>
+          <div class="form-field">
+            <label for="join-phone">Phone</label>
+            <input id="join-phone" type="tel" name="entry.557203297" pattern="[6-9]{1}[0-9]{9}" required>
+          </div>
         </div>
-    </section>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="form-field">
+            <label for="join-dob">Date of birth</label>
+            <input id="join-dob" type="date" name="entry.798190516" required>
+          </div>
+          <div class="form-field">
+            <label for="join-gender">Gender</label>
+            <select id="join-gender" name="entry.1887778624" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="join-address">Current address</label>
+          <input id="join-address" type="text" name="entry.2134806077" required>
+        </div>
+        <div class="form-field">
+          <label for="join-social">Instagram / LinkedIn profile</label>
+          <input id="join-social" type="text" name="entry.293248112" required>
+        </div>
+        <div class="form-field">
+          <label for="join-why">Why do you want to join Rotaract?</label>
+          <textarea id="join-why" name="entry.64299667" rows="4" required></textarea>
+        </div>
+        <div class="form-field">
+          <label for="join-prior">Were you a Rotaractor before? If yes, share a brief about your journey.</label>
+          <textarea id="join-prior" name="entry.51188460" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit application</button>
+      </form>
+    </div>
+    <aside class="lg:col-span-2 space-y-6">
+      <div class="card p-6 bg-surface-container-low">
+        <h3 class="font-display font-semibold mb-3">Contact</h3>
+        <p class="text-sm text-on-surface-variant mb-1">{{ site.data.info.location }}</p>
+        <p class="text-sm"><a href="mailto:{{ site.data.info.email }}" class="text-primary">{{ site.data.info.email }}</a></p>
+        <p class="text-sm"><a href="tel:{{ site.data.info.phone | remove: ' ' }}" class="text-primary">{{ site.data.info.phone }}</a></p>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-display font-semibold mb-4">FAQ</h3>
+        <details class="border-b border-outline-variant/40 py-3">
+          <summary class="font-medium cursor-pointer">Who can join?</summary>
+          <p class="text-sm text-on-surface-variant mt-2">Young adults interested in service and leadership in Bangalore. Reach out if you’re unsure.</p>
+        </details>
+        <details class="border-b border-outline-variant/40 py-3">
+          <summary class="font-medium cursor-pointer">What happens after I apply?</summary>
+          <p class="text-sm text-on-surface-variant mt-2">Our membership team reviews applications and will contact you about next steps and meetings.</p>
+        </details>
+        <details class="py-3">
+          <summary class="font-medium cursor-pointer">Do I need prior Rotaract experience?</summary>
+          <p class="text-sm text-on-surface-variant mt-2">No — newcomers and continuing Rotaractors are both welcome.</p>
+        </details>
+      </div>
+    </aside>
+  </div>
+</section>

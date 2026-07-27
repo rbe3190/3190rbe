@@ -1,28 +1,16 @@
 ---
 layout: default
 ---
+{% capture archive_title %}{% if page.type == "year" %}{{ page.date | date: "%Y" }}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y" }}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y" }}{% else %}{% if page.type == "tag" %}Tag: {% endif %}{{ page.title | capitalize | replace: "-"," " }}{% endif %}{% endcapture %}
+{% include page-hero.html title=archive_title eyebrow="News archive" %}
+{% include site-breadcrumbs.html %}
 
-    <!--Page title-->
-    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-        <div class="container">
-            <!-- <h1>{% if page.layout == "post" %}Blog Post{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% elsif page.bannertitle %}{{page.bannertitle}}{% else %}{{ page.title | capitalize | replace: "-"," "}}{% endif %}</h1> -->
-            <h1>{% if page.layout == "post" %}News Details{% elsif page.type == "year" %}{{ page.date | date: "%Y"}}{% elsif page.type == "month" %}{{ page.date | date: "%B %Y"}}{% elsif page.type == "day" %}{{ page.date | date: "%d %B %Y"}}{% else %}{% if page.type == "tag" %}Tag: {% endif %}{{ page.title | capitalize | replace: "-"," "}}{% endif %}</h1>
-        </div>
-    </section>
-
-    {% include breadcrumbs.html %}
- 
-    <!-- News Section -->
-    <section class="news-section sp-two">
-        <div class="container">
-
-            <div class="row clearfix justify-content-center">
-                {% for post in page.posts %}
-
-                    {% include postbox.html %}
-                
-                {% endfor %}
-            </div>
-            {% include pagination.html %}
-        </div>
-    </section>
+<section class="section-pad">
+  <div class="wrap">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in page.posts %}
+        {% include card-post.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

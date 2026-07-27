@@ -24,8 +24,6 @@ nav:
     url: /contact
 
 fnav:
-  - title: Home
-    url: /
   - title: About
     url: /about
   - title: News
@@ -34,8 +32,6 @@ fnav:
     url: /causes
   - title: Events
     url: /events
-  - title: Brand Kit
-    url: /brandkit    
   - title: Join Us
     url: /join
 
@@ -45,7 +41,7 @@ partners:
     list:
       - name: Rotary Bangalore East
         link: https://goodwillrbe.blogspot.com/
-        img: /images/supporters/rotaryeast.jpg
+        img: /images/site/rotaryeast.jpg
 
 welcomeSection:
   - title: UNITE
@@ -60,6 +56,20 @@ welcomeSection:
     icon: flaticon-donation
     brief: With the Unity we Rise and Empower the Community around Us.
     target: /news
+
+coreValues:
+  - title: UNITE
+    brief: We are a family — no one gets left behind or forgotten.
+    image: /images/site/about.jpg
+    target: /join
+  - title: RISE
+    brief: With unity we rise by learning from each other's spirit of Rotaract.
+    image: /images/site/eastpeacerun.jpg
+    target: /events
+  - title: EMPOWER
+    brief: With unity we rise and empower the community around us.
+    image: /images/site/volunteer.jpg
+    target: /causes
 
 areasoffocus:
   - title: Promoting peace
@@ -175,7 +185,7 @@ areasoffocus:
 authors:
   rbe:
     display_name: Rotaract Bangalore East
-    image: /images/rbe.png
+    image: /images/site/rbe.png
     description: We the members of Rotaract Bangalore East (Easterners) follow the motto UNITE to RISE and EMPOWER.
 
 # buttons:

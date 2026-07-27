@@ -2,218 +2,171 @@
 layout: default
 title: About
 permalink: about
+description: Learn about Rotaract Bangalore East — our story, core values UNITE · RISE · EMPOWER, team, and how we serve the community in Bangalore.
 ---
-    <!--Page title-->
-    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-        <div class="container">
-            <h1>About Us</h1>
-        </div>
-    </section>
-    {% include breadcrumbs.html %}
+{% include page-hero.html title="About Rotaract Bangalore East" eyebrow="Our story · Since 1975" lead="Established 17 January 1975 and rechartered 19 July 2019. A family with a mission: UNITE · RISE · EMPOWER." %}
+{% include site-breadcrumbs.html %}
 
-    <!-- About Us -->
-    <section class="about-us-two sp-four">
-        <div class="container">
-            <!-- about block -->
-            <div class="about-block-two">
-                <div class="inner-box">
-                    <h4>UNITE . RISE . EMPOWER <span></span></h4>
-                    <h1>About <span class="theme-color">Rotaract Bagalore East</span></h1>
-                    <!-- <h1>Impact of <span class="theme-color">RBE</span></h1> -->
-                    <div class="text">
-                        <p>Rotaract Bangalore East is a community-based club from Bangalore, established on 17 January 1975 and rechartered on 19 July 2019 with 3 core values "UNITE . RISE . EMPOWER".</p>
-                        <p>We are a group of bright, energetic and motivated youngsters creating a positive change in society.</p>
-                        <p>At Rotaract Bangalore East we believe in 3 core values "UNITE . RISE . EMPOWER":<br>
-                            <strong>UNITE:</strong> We are a family and family means no one gets left behind or forgotten.<br>
-                            <strong>RISE:</strong> With Unity, we RISE by learning from each other.<br>
-                            <strong>EMPOWER:</strong> With Unity, we Rise and Empower the Community around us.<br>
-                        </p>
-                        <p>Be part of the journey by Volunteering, Collaborating and Supporting the Events and Projects. Let's experience the joy of giving back to the community.</p>
-                        <p>#rotaractblreast<br>"UNITE . RISE . EMPOWER"</p>
-                    </div>
-                    <!-- <div class="author">
-                        <div class="inner-box">
-                            <div class="image"><img loading="lazy" src="images/resource/logoSign.png" alt="RBE Logo"></div>
-                            <h5>Team RBE</h5>
-                            <div class="sign"><img loading="lazy" src="images/resource/logoSign.png" alt="RBE Logo"></div>
-                        </div>  
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section-pad">
+  <div class="wrap max-w-3xl">
+    <p class="text-body-lg text-on-surface-variant mb-4">
+      Rotaract Bangalore East is a community-based club from Bangalore. We are bright, energetic, and motivated youngsters creating positive change in society.
+    </p>
+    <p class="text-on-surface-variant mb-4">
+      <strong class="text-on-surface">UNITE:</strong> We are a family — no one gets left behind or forgotten.<br>
+      <strong class="text-on-surface">RISE:</strong> With unity, we rise by learning from each other.<br>
+      <strong class="text-on-surface">EMPOWER:</strong> With unity, we rise and empower the community around us.
+    </p>
+    <p class="text-on-surface-variant">
+      Volunteer, collaborate, and support our events and projects. Let’s experience the joy of giving back. #rotaractblreast
+    </p>
+  </div>
+</section>
 
-    {% if site.data.info.stats %}
-    <!-- Fact Counter -->
-    <div class="fact-counter sp-two style-two">
-        <div class="container">
-            <div class="row justify-content-center">
-                {% for fact in site.data.info.stats %}
-                <!--Column-->
-                <article class="column counter-column col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-duration="{% if forloop.first %}900{% else %}{{forloop.index | minus:1 | times:300}}{% endif %}ms">
-                    <div class="item">
-                        <div class="inner-box">
-                            <div class="icon-box"><span class="{{fact.icon}}"></span></div>
-                            <div class="count-outer">
-                                <span class="count-text{% if forloop.first %}{% else %}{{forloop.index | minus:1}}{% endif %}" data-speed="3000" data-stop="{{fact.count}}">0</span>
-                                <p>{{fact.title}}</p>
-                            </div>
-                        </div>                                                      
-                    </div>
-                </article>
-                {% endfor %}
-            </div>
+<section class="relative section-pad overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="{{ '/images/site/background-3.jpg' | relative_url }}" alt="" class="h-full w-full object-cover" loading="lazy">
+    <div class="absolute inset-0 bg-inverse-surface/75"></div>
+  </div>
+  <div class="wrap relative grid md:grid-cols-2 gap-10 items-center text-inverse-on-surface">
+    <img src="{{ '/images/site/feature-5.jpeg' | relative_url }}" alt="Fundraising for goodness" class="rounded-lg w-full object-cover aspect-[4/3]" loading="lazy">
+    <div>
+      <p class="label-caps text-primary-fixed mb-3">Fundraising for goodness</p>
+      <h2 class="font-display text-headline-lg text-white mb-4">Quick community response</h2>
+      <p class="mb-6 text-inverse-on-surface/85">The support we give to the community is the rent we pay for our time on Earth. Be part of the change.</p>
+      <a href="{{ '/causes' | relative_url }}" class="btn btn-primary">Our causes</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad bg-surface-container-low">
+  <div class="wrap">
+    <p class="label-caps text-center mb-2">Core values</p>
+    <h2 class="font-display text-headline-lg text-center mb-10">UNITE · RISE · EMPOWER</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {% for value in site.data.info.coreValues %}
+      <article class="card overflow-hidden">
+        <div class="aspect-[16/10]">
+          <img src="{{ value.image | relative_url }}" alt="" class="h-full w-full object-cover" loading="lazy">
         </div>
+        <div class="p-6">
+          <h3 class="font-display text-headline-md mb-2">{{ value.title }}</h3>
+          <p class="text-on-surface-variant mb-4">{{ value.brief }}</p>
+          <a href="{{ value.target | relative_url }}" class="text-primary font-bold text-sm uppercase tracking-wider">Explore →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="team" class="section-pad scroll-mt-24">
+  <div class="wrap">
+    <p class="label-caps text-center mb-2">#TeamRBE</p>
+    <h2 class="font-display text-headline-lg text-center mb-8">Our team</h2>
+
+    {% if site.data.team.members.size > 0 %}
+    {% assign team_preview = 11 %}
+    <div id="team-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 mb-6">
+      {% for member in site.data.team.members %}
+      <article class="team-card card text-center p-3 md:p-4{% if forloop.index > team_preview %} team-card-more hidden{% endif %}"{% if forloop.index > team_preview %} data-team-more{% endif %}>
+        {% if member.image and member.image != "" %}
+        <img
+          src="{{ member.image | relative_url }}"
+          alt="{{ member.name }}"
+          class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover object-top mx-auto mb-3 border-2 border-primary-container"
+          loading="lazy"
+          width="96"
+          height="96"
+        >
+        {% else %}
+        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto mb-3 border-2 border-primary-container bg-primary-container text-on-primary-container font-display text-xl font-bold flex items-center justify-center" aria-hidden="true">
+          {{ member.name | split: ' ' | last | slice: 0 }}
+        </div>
+        {% endif %}
+        <h3 class="font-display text-sm font-semibold text-on-surface leading-snug mb-0.5">
+          {% if member.featurelink and member.featurelink != "" %}
+          <a href="{{ member.featurelink }}" target="_blank" rel="noopener" class="hover:text-primary">{{ member.name }}</a>
+          {% else %}
+          {{ member.name }}
+          {% endif %}
+        </h3>
+        <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-1">{{ member.role }}</p>
+        {% if member.member_since and member.member_since != "" %}
+        <p class="text-[11px] text-on-surface-variant mb-2 leading-snug">Member since {{ member.member_since }}</p>
+        {% endif %}
+        <div class="flex flex-wrap gap-0.5 justify-center">
+          {% if member.social.instagram and member.social.instagram != "" %}
+          <a href="{{ member.social.instagram }}" class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary" target="_blank" rel="noopener" aria-label="{{ member.name }} on Instagram">
+            <span class="[&>svg]:w-3.5 [&>svg]:h-3.5">{% include icon-social.html network="instagram" %}</span>
+          </a>
+          {% endif %}
+          {% if member.social.linkedin and member.social.linkedin != "" %}
+          <a href="{{ member.social.linkedin }}" class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary" target="_blank" rel="noopener" aria-label="{{ member.name }} on LinkedIn">
+            <span class="[&>svg]:w-3.5 [&>svg]:h-3.5">{% include icon-social.html network="linkedin" %}</span>
+          </a>
+          {% endif %}
+          {% if member.social.twitter and member.social.twitter != "" %}
+          <a href="{{ member.social.twitter }}" class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary" target="_blank" rel="noopener" aria-label="{{ member.name }} on X (Twitter)">
+            <span class="[&>svg]:w-3.5 [&>svg]:h-3.5">{% include icon-social.html network="twitter" %}</span>
+          </a>
+          {% endif %}
+          {% if member.social.facebook and member.social.facebook != "" %}
+          <a href="{{ member.social.facebook }}" class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary" target="_blank" rel="noopener" aria-label="{{ member.name }} on Facebook">
+            <span class="[&>svg]:w-3.5 [&>svg]:h-3.5">{% include icon-social.html network="facebook" %}</span>
+          </a>
+          {% endif %}
+          {% if member.social.email and member.social.email != "" %}
+          <a href="mailto:{{ member.social.email }}" class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary" aria-label="Email {{ member.name }}">
+            <span class="material-symbols-outlined text-[18px]" aria-hidden="true">mail</span>
+          </a>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+
+      <a href="{{ '/join' | relative_url }}" class="card border-dashed border-2 border-primary-container/50 flex flex-col items-center justify-center p-3 md:p-4 text-center hover:bg-primary-container/10 transition-colors min-h-[11rem]">
+        <span class="material-symbols-outlined text-3xl text-primary mb-1" aria-hidden="true">person_add</span>
+        <span class="font-display text-sm font-semibold text-on-surface">Join the team</span>
+        <span class="text-xs text-on-surface-variant mt-1">Become an Easterner</span>
+      </a>
+    </div>
+
+    {% if site.data.team.members.size > team_preview %}
+    <div class="text-center">
+      <button type="button" id="team-show-more" class="btn btn-outline text-sm touch-target" data-team-total="{{ site.data.team.members.size }}" aria-expanded="false" aria-controls="team-grid">
+        Show all {{ site.data.team.members.size }} members
+      </button>
     </div>
     {% endif %}
-
-    <!-- Disaster response -->
-    <section class="disaster-response sp-two" style="background-image: url(images/background/3.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="image mb-30"><img loading="lazy" src="images/resource/feature-5.jpeg" alt="Fundrising for Goodness"></div>
-                </div>
-                <div class="col-lg-6 pl-lg-5">
-                    <div class="text-block-one">
-                        <h4>Fundrising for Goodness</h4>
-                        <h1>Quick Community Response</h1>
-                        <div class="text">The support we give to the community is the rent that we pay for our time on Earth. Be part of the change and experience the joy of giving back to the community.</div>
-                        <div class="link-btn"><a href="{{site.baseurl}}/causes" class="theme-btn btn-style-twelve">Our Causes</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Welcome Section -->
-    <section class="welcome-section sp-two">
-        <div class="container">
-            <div class="row justify-content-around">
-                {% for block in site.data.info.welcomeSection %}
-                <!-- services block -->
-                <div class="services-block-one col-lg-4 col-md-6">
-                    <div class="inner-box hvr-float-shadow">
-                        <div class="icon"><span class="{{block.icon}}"></span></div>
-                        <h4><a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}>{{block.title}}</a></h4>
-                        <div class="text">{{block.brief}}</div>
-                        <div class="read-more">
-                            <a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}><span class="flaticon-right-arrow"></span></a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Team -->
-    <section class="our-team sp-five">
-        <div class="container">
-            <!--Sec Title-->
-            <div class="sec-title centered">
-                <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-                <h1>Our <span>Team</span></h1>
-                <div class="text">#TeamRBE</div>
-            </div>
-            <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
-                {% for member in site.data.team.members %}
-                <!-- team block -->
-                <div class="team-block">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img loading="lazy" src="{{member.image | relative_url}}" alt="{{member.name}}">
-                            <div class="overlay-box">
-                                <ul class="social-icon-one">
-                                    {% if member.social.facebook != "" %}
-                                    <li><a href="{{member.social.facebook}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
-                                    {% endif %}
-                                    {% if member.social.instagram != "" %}
-                                    <li><a href="{{member.social.instagram}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
-                                    {% endif %}
-                                    {% if member.social.twitter != "" %}
-                                    <li><a href="{{member.social.twitter}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
-                                    {% endif %}
-                                    {% if member.social.linkedin != "" %}
-                                    <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
-                                    {% endif %}
-                                    {% if member.social.email != "" %}
-                                    <li><a href="mailto:{{member.social.email}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
-                                    {% endif %}
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="lower-box">
-                            <div class="designation">{{member.role}}</div>
-                            <h4><a {% if member.featurelink != "" %}href="{{member.featurelink}}" target="_blank"{% endif %}>{{member.name}}</a></h4>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                <!-- end -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Parallax section -->
-    <section class="parallax-section style-two" style="background-image: url(images/background/3.jpg)">
-        <div class="container">
-            <h1>We are Easterners<br>United to Rise and Empower the Community.</h1>
-            <h3>Join us & Become a Rotaractor <span class="border-shape"></span></h3>
-        </div>
-    </section>
-    {% if site.data.info.testimonials.size > 0 %}
-    <!-- Testimonial Section -->
-    <section class="testimonial-section sp-one">
-        <div class="container">
-            <div class="single-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-none">
-                {% for testimonial in site.data.info.testimonials %}
-                <div class="testimonial-block-one">
-                    <div class="inner-box">
-                        <div class="image">
-                            <img loading="lazy" src="{{testimonial.image | relative_url}}" alt="{{testimonial.name}}">
-                        </div>
-                        <div class="text">{{testimonial.message}} </div>
-                        <h3>{{testimonial.name}}  <span>{{testimonial.affiliation}}</span></h3>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <!--End Testimonial Section-->
+    {% else %}
+    <div class="text-center max-w-md mx-auto mb-10">
+      <p class="text-on-surface-variant mb-4">Team roster coming soon.</p>
+      <a href="{{ '/join' | relative_url }}" class="btn btn-primary">Join Us</a>
+    </div>
     {% endif %}
-    <!-- Feature section -->
-    <!-- <section class="feature-section">
-        <div class="container-fluid">
-            <div class="row m-0">
-                <div class="feature-block col-xl-4 col-lg-6">
-                    <div class="inner-box">
-                        <div class="image"><img loading="lazy" src="images/resource/feature-1.jpg" alt=""></div>
-                        <div class="overlay-content">
-                            <h5>Food & Water</h5>
-                            <h4>Benefitting over 800,000 children every year through welfare projects </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-block col-xl-4 col-lg-6">
-                    <div class="inner-box">
-                        <div class="image"><img loading="lazy" src="images/resource/feature-2.jpg" alt=""></div>
-                        <div class="overlay-content">
-                            <h5>Get Quick Donations</h5>
-                            <h4>Deploy best possible methodology and technology for achieving ideal</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-block col-xl-4 col-lg-6">
-                    <div class="inner-box">
-                        <div class="image"><img loading="lazy" src="images/resource/feature-3.jpg" alt=""></div>
-                        <div class="overlay-content">
-                            <h5>Real Approach</h5> 
-                            <h4>We help donors make safe and easy donations to local organizations</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+  </div>
+</section>
+
+<section class="bg-primary-container text-on-primary-container py-16">
+  <div class="wrap text-center">
+    <h2 class="font-display text-headline-lg mb-3">We are Easterners</h2>
+    <p class="text-lg mb-6 max-w-xl mx-auto">United to rise and empower the community.</p>
+    <a href="{{ '/join' | relative_url }}" class="btn btn-ink">Become a Rotaractor</a>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="wrap">
+    <p class="label-caps text-center mb-2">Areas of focus</p>
+    <h2 class="font-display text-headline-lg text-center mb-10">Where we serve</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for area in site.data.info.areasoffocus %}
+      <article class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+        <h3 class="font-display font-semibold text-on-surface mb-2">{{ area.title }}</h3>
+        <p class="text-sm text-on-surface-variant">{{ area.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+# Lighthouse audits against production URLs.
+name: Lighthouse
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Lighthouse
+        run: npm install -g lighthouse@11
+
+      - name: Audit key URLs
+        run: |
+          mkdir -p lighthouse-out
+          set -e
+          audit() {
+            local path="$1"
+            local slug="$2"
+            lighthouse "https://rotaractblreast.org${path}" \
+              --preset=desktop \
+              --only-categories=performance,accessibility,best-practices,seo \
+              --output=json \
+              --output-path="lighthouse-out/${slug}.json" \
+              --chrome-flags="--headless=new --no-sandbox --disable-gpu"
+          }
+          audit "/" "home"
+          audit "/about" "about"
+          audit "/news/" "news"
+          audit "/causes" "causes"
+          audit "/events" "events"
+          audit "/contact" "contact"
+          audit "/join" "join"
+          audit "/brandkit" "brandkit"
+
+      - name: Check score floors
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const dir = 'lighthouse-out';
+          const floors = { performance: 0.4, accessibility: 0.8, 'best-practices': 0.7, seo: 0.85 };
+          let failed = false;
+          for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) {
+            const report = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+            console.log('\n' + file);
+            for (const [cat, floor] of Object.entries(floors)) {
+              const score = report.categories[cat]?.score ?? 0;
+              const ok = score >= floor;
+              console.log(`  ${cat}: ${(score * 100).toFixed(0)} (floor ${(floor * 100).toFixed(0)}) ${ok ? 'OK' : 'FAIL'}`);
+              if (!ok) failed = true;
+            }
+          }
+          if (failed) process.exit(1);
+          NODE
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-json
+          path: lighthouse-out/

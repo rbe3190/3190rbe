@@ -3,33 +3,17 @@ layout: default
 title: Thank You
 permalink: thankyou
 noindex: true
-redirect_to_home: true
-rtime: 5
+sitemap: false
 ---
-
-    <!--Page title-->
-    <section class="page-title" style="background-image:url(images/background/5.png)">
-        <div class="container">
-            <h1>Thank You</h1>
-        </div>
-    </section>
-    {% include breadcrumbs.html %}
-
-        <!-- About Us -->
-        <section class="about-us-two sp-four">
-            <div class="container">
-                <!-- about block -->
-                <div class="about-block-two">
-                    <div class="inner-box">
-                        <h4>We have Received Your Submission!<span></span></h4>
-                        <h1>Happy <span class="theme-color">Rotaraction!</span></h1>
-                        <div class="text">
-                            <p>We will contact you shortly 🤝</p>
-                            <p>Redirecting to home page ...</p>
-                            <a href="{{site.baseurl}}/" class="theme-btn btn-style-four">Go back to Home Page</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+<section class="section-pad">
+  <div class="wrap max-w-xl text-center py-16">
+    <p class="label-caps mb-3">Submission received</p>
+    <h1 class="font-display text-headline-lg mb-4">Thank you</h1>
+    <p class="text-on-surface-variant mb-2">Happy Rotaraction! We’ll contact you shortly.</p>
+    <p class="text-sm text-on-surface-variant mb-8">Redirecting to the home page…</p>
+    <a href="{{ '/' | relative_url }}" class="btn btn-primary">Back to home</a>
+  </div>
+</section>
+<script>
+  setTimeout(function () { window.location.href = "{{ '/' | relative_url }}"; }, 5000);
+</script>

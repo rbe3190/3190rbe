@@ -1,6 +1,41 @@
-_site
-.jekyll-cache
-Gemfile.lock
-original_files
-templates
-.github/workflows/lighthouse.yml
+# Build / dependencies
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+node_modules/
+.bundle/
+
+# Logs & OS
+*.log
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Editor / local tooling
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+*.canvas.tsx
+
+# Internal docs & audit artifacts (not for production publish or deploy noise)
+docs/
+DESIGN.md
+IMPLEMENTATION.md
+*.audit.md
+*-audit.txt
+*-audit.json
+final-delete-list.txt
+
+# Legacy / local-only (kept on disk if present; never publish)
+original_files/
+stitch_rotaract_bangalore_east_redesign/
+css/
+fonts/
+templates/
+
+# Temp image backups
+/tmp/
