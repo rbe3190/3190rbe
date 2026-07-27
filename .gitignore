@@ -30,12 +30,12 @@ IMPLEMENTATION.md
 *-audit.json
 final-delete-list.txt
 
-# Legacy / local-only (kept on disk if present; never publish)
+# Legacy / local-only (root only — do NOT use bare "css/" or it ignores src/css & assets/css)
 original_files/
 stitch_rotaract_bangalore_east_redesign/
-css/
-fonts/
-templates/
+/css/
+/fonts/
+/templates/
 
 # Temp image backups
 /tmp/
