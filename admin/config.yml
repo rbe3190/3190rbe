@@ -1,10 +1,11 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (master by default)
-  squash_merges: true
+  branch: master # Branch to update (optional; defaults to master)
 
-# This line should *not* be indented
-publish_mode: editorial_workflow
+# Decap UI search disabled to protect GitHub API budget; use the public /search page instead.
+search: false
+
+# Direct publish to master (no Decap draft/PR workflow) — fewer GitHub API calls on every collection load.
 
 media_folder: "images/uploads/" # Folder where user uploaded files should go
 site_url: https://rotaractblreast.org/
