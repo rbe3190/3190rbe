@@ -2,77 +2,65 @@
 layout: default
 title: Events & Activities
 permalink: events
-description: Upcoming and past events from Rotaract Bangalore East — workshops, drives, and fellowship for Rotaractors and guests in Bangalore.
+description: Current and past events from Rotaract Bangalore East — workshops, drives, and fellowship for Rotaractors and guests in Bangalore.
 ---
+{% assign now_stamp = site.time | date: '%s' | plus: 0 %}
+{% assign events_sorted = site.events | sort: "start" %}
+{% include page-hero.html title="Events & Activities" eyebrow="Gather · Serve · Celebrate" lead="Workshops, drives, and fellowship with Easterners." show_search_link=true %}
+{% include site-breadcrumbs.html %}
 
-<!--Page title-->
-<section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-    <div class="container">
-        <h1>Our Events & Activities</h1>
+<section class="section-pad">
+  <div class="wrap">
+    {% assign live_count = 0 %}
+    {% for event in events_sorted %}
+      {% include assign-event-state.html %}
+      {% if event_state == 'ongoing' or event_state == 'upcoming' %}
+        {% assign live_count = live_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if live_count > 0 %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for event in events_sorted %}
+        {% include assign-event-state.html %}
+        {% if event_state == 'ongoing' or event_state == 'upcoming' %}
+          {% include card-event.html %}
+        {% endif %}
+      {% endfor %}
     </div>
-</section>
-{% include breadcrumbs.html %}
-
-<!-- Causes Section -->
-<section class="event-section-two sp-two">
-    <div class="container">
-        <div class="row justify-content-around">
-            {% assign events = site.events | sort: 'start' %}
-            {% capture now %}{{ site.time | date: '%Y%m%d' | plus: 0 }}{%- endcapture %}
-            {% for event in events %}
-            {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-            {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-            {% if end >= now or event.end == "" %}
-            <!--Cause Block-->
-            <div class="event-block-two col-lg-6">
-                <div class="inner-box">
-                    <figure class="image">
-                        <img loading="lazy" src="{{event.image | relative_url}}" alt="{{event.title}}">
-                        <div class="overlay"><a href="{{event.url}}" class="theme-btn btn-style-eight">Learn More</a>
-                        </div>
-                    </figure>
-                    <div class="lower-content">
-                        <div class="date">{{ event.start | date: '%d' }} <span>{{ event.start | date: '%b' | upcase}}</span></div>
-                        <h4>{{event.title}}</h4>
-                        <div class="text">{{event.intro | truncate: 80}} </div>
-                        <ul class="post-meta">
-                            <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                            <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
-                            <li><a href="{{event.url}}" class="theme-btn btn-style-thirteen">Learn More</a></li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-
-        <section class="about-us-two sp-four">
-            <div class="container">
-                <!-- about block -->
-                <div class="about-block-two">
-                    <div class="inner-box">
-                        <h4>Past Events<span></span></h4>
-                        <div class="text">                            
-                            {% assign events = site.events | sort: 'end' | reverse %}
-                            {% assign past_events = "" | split: "" %}
-                            {% for event in events %}
-                                {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                                {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                                {% if end < now and event.end != "" %}
-                                {% assign past_events = past_events | push: event %}
-                                {% endif %}
-                            {% endfor %}
-                            
-                            {% for event in past_events %}
-                                    {% if forloop.first %}<p>{% endif %}<a href="{{event.url}}">{{event.title}}</a>{% if forloop.last %}</p>{% else %}, {% endif %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+    {% else %}
+    <div class="card p-8 text-center bg-surface-container-low">
+      <p class="text-on-surface-variant mb-4">No events scheduled right now. Check News or join our list for the next invite.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="{{ '/news/' | relative_url }}" class="btn btn-outline text-sm touch-target">Browse news</a>
+        <a href="{{ '/join' | relative_url }}" class="btn btn-primary text-sm touch-target">Join Us</a>
+      </div>
     </div>
+    {% endif %}
+
+    {% assign past_count = 0 %}
+    {% assign events_rev = site.events | sort: "start" | reverse %}
+    {% for event in events_rev %}
+      {% include assign-event-state.html %}
+      {% if event_state == 'past' %}
+        {% assign past_count = past_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if past_count > 0 %}
+    <h2 class="font-display text-headline-md mt-16 mb-6">Past events</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% assign past_shown = 0 %}
+      {% for event in events_rev %}
+        {% include assign-event-state.html %}
+        {% if event_state == 'past' %}
+          {% assign past_shown = past_shown | plus: 1 %}
+          {% if past_shown <= 12 %}
+            {% include card-event.html %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
 </section>

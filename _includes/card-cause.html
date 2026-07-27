@@ -1,0 +1,27 @@
+<article class="card card-lift group flex flex-col">
+  <a href="{{ cause.url | relative_url }}" class="block aspect-[16/10] overflow-hidden bg-surface-container">
+    {% if cause.image %}
+    <img src="{{ cause.image | relative_url }}" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="750" height="420">
+    {% endif %}
+  </a>
+  <div class="p-5 flex flex-col flex-1">
+    <p class="label-caps mb-2">{% if cause.focus %}{{ cause.focus }}{% else %}Cause{% endif %}</p>
+    <h3 class="font-display text-lg font-semibold text-on-surface mb-2">
+      <a href="{{ cause.url | relative_url }}" class="hover:text-primary">{{ cause.title }}</a>
+    </h3>
+    {% if cause.intro %}
+    <p class="text-sm text-on-surface-variant line-clamp-3 mb-4 flex-1">{{ cause.intro | strip_html | truncate: 120 }}</p>
+    {% else %}
+    <div class="flex-1"></div>
+    {% endif %}
+    {% if cause.progress %}
+    <div class="progress mb-2" role="progressbar" aria-valuenow="{{ cause.progress }}" aria-valuemin="0" aria-valuemax="100" aria-label="Fundraising progress">
+      <span style="width: {{ cause.progress }}%"></span>
+    </div>
+    <p class="text-xs text-on-surface-variant mb-4">{{ cause.progress }}% funded{% if cause.goal %} · Goal {{ cause.goal }}{% endif %}</p>
+    {% endif %}
+    <a href="{{ cause.url | relative_url }}" class="text-metadata text-primary font-bold uppercase tracking-wider mt-auto inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+      Support cause <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>

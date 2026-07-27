@@ -9,7 +9,7 @@ timezone: Asia/Kolkata
 
 description: Rotaract Bangalore East is a community-based club in Bangalore. Through its service activities, RBE aims to create a positive social impact and experience the joy of giving back to the community.
 # description: Rotaract Bangalore East is a community-based club in Bangalore, established on 17 January 1975 and rechartered on 19 July 2019 with 3 core values "UNITE . RISE . EMPOWER". Through its service activities, RBE aims to create a positive social impact and experience the joy of giving back to the community.
-og_img: /images/ogimage.png
+og_img: /images/site/ogimage.png
 
 # Theme Colour: ff9000
 # Build settings
@@ -45,7 +45,7 @@ compress_html:
   blanklines: false
   profile: false
   startings: []
-  
+
 # Archives
 jekyll-archives:
   enabled: all
@@ -59,6 +59,33 @@ jekyll-archives:
 
 include:
   - _redirects
+  - _headers
+  - robots.txt
 
 exclude:
   - README.md
+  - DESIGN.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - original_files
+  - caaamingsooon
+  - vendor
+  - src
+  - tailwind.config.js
+  - postcss.config.js
+  - stitch_rotaract_bangalore_east_redesign
+  - scripts
+  - .github
+  - docs
+  - css
+  - fonts
+  - templates
+  - plugins
+  - scss
+  - less
+  - sass
+  - .gitignore
+  - .ruby-version

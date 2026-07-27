@@ -2,484 +2,200 @@
 layout: default
 description: Rotaract Bangalore East (RBE) — UNITE, RISE, and EMPOWER through community service in Bangalore. News, events, causes, and how to join Easterners.
 ---
-<!-- Main slider -->
-<section class="main-slider">
-    <div class="container-fluid">
-        <ul class="main-slider-carousel owl-carousel owl-theme slide-nav">
-            <li class="slider-wrapper">
-                <div class="image"><img fetchpriority="high" decoding="async" src="images/main-slider/4.jpg" alt="Rotaract Bangalore East members at a community event"></div>
-                <div class="slider-caption light text-center">
-                    <div class="container">
-                        <h3>UNITE . RISE . EMPOWER<span class="border-shape"></span></h3>
-                        <h1>UNITE with Easterners</h1>
-                        <div class="text light large-text">We are a family and family means no one gets left behind or forgotten</div>
-                        <div class="link-btn"><a href="{{site.baseurl}}/news" class="theme-btn btn-style-two">Learn More</a></div>
-                    </div>                            
-                </div>
-                <div class="slide-overlay"></div>
-            </li>
-            <li class="slider-wrapper">
-                <div class="image"><img loading="lazy" src="images/main-slider/2.jpg" alt=""></div>
-                <div class="slider-caption light text-center">
-                    <div class="container">
-                        <h3>UNITE . RISE . EMPOWER<span class="border-shape"></span></h3>
-                        <h1>RISE with Easterners</h1>
-                        <div class="text light large-text">With Unity we RISE by learning from each other</div>
-                        <div class="link-btn"><a href="{{site.baseurl}}/news" class="theme-btn btn-style-two">Learn More</a></div>
-                    </div>                          
-                </div>
-                <div class="slide-overlay"></div>
-            </li>
-            <li class="slider-wrapper">
-                <div class="image"><img loading="lazy" src="images/main-slider/3.jpg" alt=""></div>
-                <div class="slider-caption light text-center">
-                    <div class="container">
-                        <h3>UNITE . RISE . EMPOWER<span class="border-shape"></span></h3>
-                        <h1>EMPOWER the Community</h1>
-                        <div class="text light large-text">With Unity we Rise and Empower the Community around Us</div>
-                        <div class="link-btn"><a href="{{site.baseurl}}/news" class="theme-btn btn-style-two">Learn More</a></div>
-                    </div>                          
-                </div>
-                <div class="slide-overlay"></div>
-            </li>
-        </ul>
+{% assign now_stamp = site.time | date: '%s' | plus: 0 %}
+{% assign active_causes = site.causes | where: "active", true %}
+
+<section class="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img src="{{ '/images/site/slider-4.jpg' | relative_url }}" alt="" class="h-full w-full object-cover" fetchpriority="high" decoding="async" width="1920" height="1080">
+    <div class="absolute inset-0 hero-scrim"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+  </div>
+  <div class="wrap relative z-10 w-full flex flex-col items-start md:items-center text-left md:text-center py-16 md:py-24">
+    <p class="label-caps text-primary-fixed mb-6 inline-block backdrop-blur-sm bg-inverse-surface/40 px-4 py-1 rounded">A Family with a Mission · District 3191</p>
+    <h1 class="font-display text-display-hero text-white mb-6 max-w-4xl">UNITE. RISE. EMPOWER.</h1>
+    <p class="text-body-lg text-surface-container-highest mb-10 max-w-2xl">
+      Bright, energetic youngsters creating positive change in Bangalore. Join Easterners and experience the joy of giving back.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+      <a href="{{ '/join' | relative_url }}" class="btn btn-primary px-8 py-4 text-base">Join the Movement <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span></a>
+      <a href="{{ '/about' | relative_url }}" class="btn btn-ghost px-8 py-4 text-base">Discover Our Impact</a>
     </div>
+  </div>
 </section>
 
-<!-- Welcome Section -->
-<section class="welcome-section sp-two">
-    <div class="container">
-        <div class="row justify-content-around">
-            {% for block in site.data.info.welcomeSection %}
-            <!-- services block -->
-            <div class="services-block-one col-lg-3 col-md-6 col-sm-6">
-                <div class="inner-box hvr-float-shadow">
-                    <div class="icon"><span class="{{block.icon}}"></span></div>
-                    <h4><a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}>{{block.title}}</a></h4>
-                    <div class="text">{{block.brief}}</div>
-                    <div class="read-more">
-                        <a href="{% if block.target contains "://" %}{{ block.target }}{% else %}{{ block.target | relative_url }}{% endif %}" {% if block.target contains "://" %}target="_blank"{% endif %}><span class="flaticon-right-arrow"></span></a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            <!-- end -->
-        </div>
-    </div>
+<section class="wrap relative z-20 -mt-8 md:-mt-16 lg:-mt-20 section-pad pt-0">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+    {% for value in site.data.info.coreValues %}
+    <a href="{{ value.target | relative_url }}" class="card card-lift p-0 overflow-hidden group block">
+      <div class="aspect-[16/10] overflow-hidden">
+        <img src="{{ value.image | relative_url }}" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="640" height="400">
+      </div>
+      <div class="p-6 md:p-8">
+        <h2 class="font-display text-headline-md text-on-surface mb-3">{{ value.title }}</h2>
+        <p class="text-on-surface-variant mb-4">{{ value.brief }}</p>
+        <span class="text-metadata text-primary font-bold uppercase tracking-wider">Learn more →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </section>
 
-<!-- About Us -->
-<section class="about-us">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 image-block-one">
-                <div class="image big-image"><img loading="lazy" src="images/resource/about.jpg" alt=""></div>
-                <div class="image small-image"><img loading="lazy" src="images/resource/about-small.jpg" alt=""></div>
-            </div>
-            <div class="col-lg-6 offset-lg-1">
-                <div class="pl-lg-5">
-                    <!-- sec-title -->
-                    <div class="sec-title style-two">
-                        <h4>A Family with Mission</h4>
-                        <h1>We are <span>Rotaractors</span></h1>
-                    </div>
-                    <!-- about block -->
-                    <div class="about-block">
-                        <div class="inner-box">
-                            <div class="text">
-                                <p>Rotaract Bangalore East is a community-based club from Bangalore, sponsored by <a href="https://goodwillrbe.blogspot.com/" target="_blank">Rotary Bangalore East</a>. We are a group of bright, energetic and motivated youngsters creating a positive change in society.</p>
-                                <p>Through our activities, we aim to create a positive social impact and experience the joy of giving back to the community. Be part of the journey by Volunteering, Collaborating and Supporting the Events and Projects. Let's "UNITE . RISE . EMPOWER".</p>
-                            </div>
-                            <div class="author">
-                                <div class="inner-box">
-                                    <h5>Team RBE</h5>
-                                </div>
-                                <div class="sign"><img loading="lazy" src="images/resource/logoSign.png" alt="RBE Logo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
-            </div>
-        </div>
+<section class="section-pad bg-surface-container-low">
+  <div class="wrap grid lg:grid-cols-2 gap-12 items-center">
+    <div class="relative overflow-hidden rounded-lg">
+      <img src="{{ '/images/site/about.jpg' | relative_url }}" alt="Rotaract Bangalore East members" class="rounded-lg w-full object-cover aspect-[4/3]" loading="lazy" width="800" height="600">
+      <img src="{{ '/images/site/about-small.jpg' | relative_url }}" alt="" class="hidden md:block absolute bottom-4 right-4 w-32 lg:w-40 rounded-lg border-4 border-background shadow-lift" loading="lazy" width="160" height="160">
     </div>
+    <div>
+      <p class="label-caps mb-3">Who we are</p>
+      <h2 class="font-display text-headline-lg text-on-surface mb-4">We are Rotaractors</h2>
+      <p class="text-on-surface-variant text-body-lg mb-4">
+        Rotaract Bangalore East is a community-based club sponsored by
+        <a href="https://goodwillrbe.blogspot.com/" class="text-primary underline underline-offset-2" target="_blank" rel="noopener">Rotary Bangalore East</a>.
+        We create positive social impact and share the joy of giving back.
+      </p>
+      <p class="text-on-surface-variant mb-8">
+        Volunteer, collaborate, and support our events and projects. Let’s UNITE · RISE · EMPOWER.
+      </p>
+      <a href="{{ '/about' | relative_url }}" class="btn btn-ink">Our story</a>
+    </div>
+  </div>
 </section>
 
-{% assign featured_causes = site.causes | where: "featured","true" | sort: 'due' %}
+<section class="section-pad">
+  <div class="wrap">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div>
+        <p class="label-caps mb-2">What’s happening</p>
+        <h2 class="font-display text-headline-lg">News, events &amp; causes</h2>
+      </div>
+      <div class="flex flex-wrap gap-2 sm:gap-3">
+        <a href="{{ '/events' | relative_url }}" class="btn btn-outline text-sm py-2 px-4 touch-target">All events</a>
+        <a href="{{ '/news/' | relative_url }}" class="btn btn-outline text-sm py-2 px-4 touch-target">All news</a>
+        <a href="{{ '/causes' | relative_url }}" class="btn btn-outline text-sm py-2 px-4 touch-target">All causes</a>
+      </div>
+    </div>
 
-{% assign active_fcauses = 0 %}
-{% for cause in featured_causes %}
-    {% if cause.active %}
-        {% assign active_fcauses = active_fcauses | plus: 1 %}
+    {% comment %}Spotlight: ongoing (soonest end) else next upcoming.{% endcomment %}
+    {% assign spotlight_event = nil %}
+    {% assign spotlight_state = nil %}
+    {% assign spotlight_end = 9999999999 %}
+    {% assign events_sorted = site.events | sort: "start" %}
+    {% for event in events_sorted %}
+      {% include assign-event-state.html %}
+      {% if event_state == 'ongoing' %}
+        {% assign this_end = event.end | date: '%s' | plus: 0 %}
+        {% if this_end < spotlight_end %}
+          {% assign spotlight_event = event %}
+          {% assign spotlight_end = this_end %}
+          {% assign spotlight_state = 'ongoing' %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% unless spotlight_event %}
+      {% for event in events_sorted %}
+        {% include assign-event-state.html %}
+        {% if event_state == 'upcoming' %}
+          {% assign spotlight_event = event %}
+          {% assign spotlight_state = 'upcoming' %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
+
+    {% if spotlight_event %}
+    <a href="{{ spotlight_event.url | relative_url }}" class="card card-lift mb-10 grid md:grid-cols-2 overflow-hidden group">
+      {% if spotlight_event.image %}
+      <div class="aspect-[16/10] md:aspect-auto md:min-h-[280px] overflow-hidden">
+        <img src="{{ spotlight_event.image | relative_url }}" alt="" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="p-6 md:p-10 flex flex-col justify-center">
+        <p class="label-caps mb-2">{% if spotlight_state == 'ongoing' %}Ongoing{% else %}Upcoming event{% endif %}</p>
+        <h3 class="font-display text-2xl font-bold text-on-surface mb-2">{{ spotlight_event.title }}</h3>
+        <p class="text-on-surface-variant mb-2">{{ spotlight_event.start | date: '%B %d, %Y · %H:%M' }}{% if spotlight_event.venue %} · {{ spotlight_event.venue }}{% endif %}</p>
+        {% if spotlight_event.intro %}<p class="text-on-surface-variant line-clamp-3 mb-4">{{ spotlight_event.intro | strip_html | truncate: 160 }}</p>{% endif %}
+        <span class="text-metadata text-primary font-bold uppercase tracking-wider inline-flex items-center gap-1">Learn more <span aria-hidden="true">→</span></span>
+      </div>
+    </a>
     {% endif %}
-{% endfor %}
 
-{% if active_fcauses > 0 %}
-<!-- Causes Section -->
-<section class="causes-section sp-two">
-    <div class="container">
-        <!--Sec Title-->
-        <div class="sec-title centered">
-            <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-            <h1>Featured <span>Causes</span></h1>
-            <div class="text">The support we give to the community is the rent that we pay for our time on Earth.</div>
-        </div>
-        <div class="row justify-content-around">
-    {% assign featuredpost_count = 0 %}   
-    {% for cause in featured_causes limit: 3 %}
-        {% if cause.due != "" and cause.active and featuredpost_count < 3 %}
-        <!--Cause Block-->
-        <div class="cause-block col-lg-4 col-md-6">
-            <div class="inner-box">
-                <figure class="image">
-                    <img loading="lazy" src="{{cause.image | relative_url}}" alt="{{cause.title}}">
-                    <div class="overlay">
-                    </div>
-                </figure>
-                <div class="lower-content">
-                    <h5>{{cause.focus}}</h5>
-                    <h4>{{cause.title}}</h4>
-                    <div class="text">{{cause.intro | truncate: 80}} </div>
-                    <!--Progress Levels-->
-                    <div class="progress-levels">
-                        <!--Skill Box-->
-                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
-                            <div class="inner">
-                                <div class="bar">
-                                    <div class="bar-innner"><div class="bar-fill" data-percent="{{cause.progress}}"><div class="percent"></div></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    {% comment %}
+      Mixed feed (~9): live events (ongoing/upcoming excl. spotlight), active causes, recent news.
+    {% endcomment %}
+    {% assign mix_limit = 9 %}
+    {% assign mix_count = 0 %}
+    {% assign events_taken = 0 %}
+    {% assign causes_taken = 0 %}
+    {% assign posts_taken = 0 %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for i in (1..9) %}
+        {% assign kind = forloop.index0 | modulo: 3 %}
+        {% assign added = 0 %}
 
-                    <div class="donate clearfix">
-                        <div class="float-left">
-                            <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
-                        </div>
-                        <div class="float-right">
-                            Goal: ₹{{cause.goal}}
-                        </div>
-                    </div>
-                    <div class="link-btn"><a href="{{cause.url}}" class="theme-btn btn-style-four">Read More</a></div>
-                </div>
-            </div>
-        </div>   
-        {% assign featuredpost_count = featuredpost_count | plus: 1 %}   
+        {% if kind == 0 %}
+          {% assign match_i = 0 %}
+          {% for event in events_sorted %}
+            {% if added == 1 %}{% break %}{% endif %}
+            {% include assign-event-state.html %}
+            {% if event_state == 'ongoing' or event_state == 'upcoming' %}
+              {% unless spotlight_event and event.url == spotlight_event.url %}
+                {% if match_i == events_taken %}
+                  {% include card-event.html %}
+                  {% assign events_taken = events_taken | plus: 1 %}
+                  {% assign mix_count = mix_count | plus: 1 %}
+                  {% assign added = 1 %}
+                {% else %}
+                  {% assign match_i = match_i | plus: 1 %}
+                {% endif %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        {% elsif kind == 1 %}
+          {% for cause in active_causes offset: causes_taken limit: 1 %}
+            {% include card-cause.html %}
+            {% assign causes_taken = causes_taken | plus: 1 %}
+            {% assign mix_count = mix_count | plus: 1 %}
+            {% assign added = 1 %}
+          {% endfor %}
+        {% else %}
+          {% for post in site.posts offset: posts_taken limit: 1 %}
+            {% include card-post.html %}
+            {% assign posts_taken = posts_taken | plus: 1 %}
+            {% assign mix_count = mix_count | plus: 1 %}
+            {% assign added = 1 %}
+          {% endfor %}
         {% endif %}
-    {% endfor %}
+      {% endfor %}
 
-    {% for cause in featured_causes limit: 3 %}
-        {% if cause.due == "" and cause.active and featuredpost_count < 3 %}
-        <!--Cause Block-->
-        <div class="cause-block col-lg-4 col-md-6">
-            <div class="inner-box">
-                <figure class="image">
-                    <img loading="lazy" src="{{cause.image | relative_url}}" alt="{{cause.title}}">
-                    <div class="overlay">
-                    </div>
-                </figure>
-                <div class="lower-content">
-                    <h5>{{cause.focus}}</h5>
-                    <h4>{{cause.title}}</h4>
-                    <div class="text">{{cause.intro | truncate: 80}} </div>
-                    <!--Progress Levels-->
-                    <div class="progress-levels">
-                        <!--Skill Box-->
-                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
-                            <div class="inner">
-                                <div class="bar">
-                                    <div class="bar-innner"><div class="bar-fill" data-percent="{{cause.progress}}"><div class="percent"></div></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="donate clearfix">
-                        <div class="float-left">
-                            <span>Deadline: {% if cause.due != "" %}{{cause.due | date: '%b %d, %Y'}}{% else %}Ongoing{% endif %}</span>
-                        </div>
-                        <div class="float-right">
-                            Goal: ₹{{cause.goal}}
-                        </div>
-                    </div>
-                    <div class="link-btn"><a href="{{cause.url}}" class="theme-btn btn-style-four">Read More</a></div>
-                </div>
-            </div>
-        </div>
-        {% assign featuredpost_count = featuredpost_count | plus: 1 %}
+      {% for cause in active_causes offset: causes_taken %}
+        {% if mix_count >= mix_limit %}{% break %}{% endif %}
+        {% include card-cause.html %}
+        {% assign causes_taken = causes_taken | plus: 1 %}
+        {% assign mix_count = mix_count | plus: 1 %}
+      {% endfor %}
+      {% assign match_i = 0 %}
+      {% for event in events_sorted %}
+        {% if mix_count >= mix_limit %}{% break %}{% endif %}
+        {% include assign-event-state.html %}
+        {% if event_state == 'ongoing' or event_state == 'upcoming' %}
+          {% unless spotlight_event and event.url == spotlight_event.url %}
+            {% if match_i >= events_taken %}
+              {% include card-event.html %}
+              {% assign events_taken = events_taken | plus: 1 %}
+              {% assign mix_count = mix_count | plus: 1 %}
+            {% endif %}
+            {% assign match_i = match_i | plus: 1 %}
+          {% endunless %}
         {% endif %}
-    {% endfor %}
-    
-        </div>
+      {% endfor %}
+      {% for post in site.posts offset: posts_taken %}
+        {% if mix_count >= mix_limit %}{% break %}{% endif %}
+        {% include card-post.html %}
+        {% assign posts_taken = posts_taken | plus: 1 %}
+        {% assign mix_count = mix_count | plus: 1 %}
+      {% endfor %}
     </div>
-</section>
-{% endif %}
-
-
-{% if site.data.info.stats %}
-<!-- Fact Counter -->
-<div class="fact-counter sp-two" style="background-image: url(images/background/1.jpg)">
-    <div class="container">
-        <div class="row justify-content-center">
-
-            {% for fact in site.data.info.stats %}
-            <!--Column-->
-            <article class="column counter-column col-xl-3 col-lg-6 col-md-6 wow fadeIn" data-wow-duration="{% if forloop.first %}900{% else %}{{forloop.index | minus:1 | times:300}}{% endif %}ms">
-                <div class="item">
-                    <div class="inner-box">
-                        <div class="icon-box"><span class="{{fact.icon}}"></span></div>
-                        <div class="count-outer">
-                            <span class="count-text{% if forloop.first %}{% else %}{{forloop.index | minus:1}}{% endif %}" data-speed="3000" data-stop="{{fact.count}}">0</span>
-                            <p>{{fact.title}}</p>
-                        </div>
-                    </div>                                                      
-                </div>
-            </article>
-            {% endfor %}
-
-        </div>
-    </div>
-</div>
-{% endif %}
-
-<!-- Mission Section -->
-<section class="mission-section sp-one">
-    <div class="container">
-        <!--Sec Title-->
-        <div class="sec-title centered">
-            <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-            <h1>Mission & <span>Goals</span></h1>
-            <div class="text">With Unity we Rise and Empower the Community Around Us</div>
-        </div>
-
-        <div class="row clearfix justify-content-center">
-            {% for mission in site.data.info.areasoffocus %}
-            <!-- Mission block -->
-            <div class="col-xl-4 col-lg-6 col-md-6 mission-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <div class="caption">
-                            <div>
-                                <div class="icon-box"><span class="{{mission.icon}}"></span></div>
-                                <h4>{{mission.title}}</h4>
-                            </div>  
-                        </div>
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">{{mission.description | strip_html | truncate: 80 }}</div>
-                                    <h4>{{mission.title}}</h4>
-                                    <div class="icon-box"><span class="{{mission.icon}}"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-            
-    </div>
-</section>
-
-<!-- Event section -->
-<section class="event-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5 image-block-one">
-                <div class="image big-image"><img loading="lazy" src="images/resource/upcomming-event.jpg" alt=""></div>
-            </div>
-            <div class="col-lg-6 offset-lg-1">
-                <div class="sp-three">
-                    <!-- sec-title -->
-                    <div class="sec-title style-two">
-                        <h4>A Family with Mission</h4>
-                        <h1>Our <span>Events</span></h1>
-                        <div class="text">Be part of the journey by Volunteering, Collaborating and Supporting the Events and Projects. Let's UNITE . RISE . EMPOWER</div>
-                    </div>
-                    
-                    <div class="row">
-
-                        {% assign events = site.events | sort: 'start' %}
-                        {% capture now %}{{ site.time | date: '%Y%m%d' | plus: 0 }}{%- endcapture %}
-
-                        {% assign event_count = 0 %}
-
-                        {% for event in events %}
-                        {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% capture end %}{{event.end | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% if end != "" and end >= now and event_count < 2 %} 
-                            <!-- Event block -->
-                            <div class="col-md-6 event-block">
-                                <div class="inner-box">
-                                    <div class="date">{{ event.start | date: '%d' }} <span>{{ event.start | date: '%B' | upcase}}</span></div>
-                                    <div class="organizer">Organized By: <a>{{site.data.info.authors[event.author].display_name}}</a></div>
-                                    <h4>{{event.title}}</h4>
-                                    <ul class="post-meta">
-                                        <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                                        <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
-                                        <li><a href="{{event.url}}" class="theme-btn btn-style-three">Learn More</a></li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <!-- Event block -->
-                        {% assign event_count = event_count | plus: 1 %}
-                        {% endif %}
-                        {% endfor %}
-
-                        {% for event in events %}
-                        {% capture start %}{{event.start | date: '%Y%m%d' | plus: 0 }}{% endcapture %}
-                        {% if event.end == "" and event_count < 2 %} 
-                            <!-- Event block -->
-                            <div class="col-md-6 event-block">
-                                <div class="inner-box">
-                                    <div class="date">{{ event.start | date: '%d' }} <span>{{ event.start | date: '%B' | upcase}}</span></div>
-                                    <div class="organizer">Organized By: <a>{{site.data.info.authors[event.author].display_name}}</a></div>
-                                    <h4>{{event.title}}</h4>
-                                    <ul class="post-meta">
-                                        <li><span class="fa fa-clock"></span>{% if start <= now %}Started on {{ event.start | date: '%d.%m.%Y %I:%M %p' }}{% else %}Starts {{ event.start | date: '%I:%M %p' }}{% endif %}</li>
-                                        <li><span class="fa fa-map-marker-alt"></span>{{event.venue}}</li>
-                                        <li><a href="{{event.url}}" class="theme-btn btn-style-three">Learn More</a></li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <!-- Event block -->
-                        {% assign event_count = event_count | plus: 1 %}
-                        {% endif %}
-                        {% endfor %}
-
-
-                    </div>
-                    
-                    <div class="link-btn"><a href="{{site.baseurl}}/events" class="theme-btn btn-style-fourteen">Events Calender</a></div>
-                </div>
-                    
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Our Team -->
-<section class="our-team sp-one">
-    <div class="container">
-        <!--Sec Title-->
-        <div class="sec-title centered">
-            <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-            <h1>Our <span>Team</span></h1>
-            <div class="text">#TeamRBE</div>
-        </div>
-        <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dot-style-one">
-            {% for member in site.data.team.members %}
-            <!-- team block -->
-            <div class="team-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img loading="lazy" src="{{member.image | relative_url}}" alt="{{member.name}}">
-                        <div class="overlay-box">
-                            <ul class="social-icon-one">
-                                {% if member.social.facebook != "" %} 
-                                <li><a href="{{member.social.facebook}}" target="_blank"><span class="fab fa-facebook"></span></a></li>
-                                {% endif %}
-                                {% if member.social.instagram != "" %}
-                                <li><a href="{{member.social.instagram}}" target="_blank"><span class="fab fa-instagram"></span></a></li>
-                                {% endif %}
-                                {% if member.social.twitter != "" %}
-                                <li><a href="{{member.social.twitter}}" target="_blank"><span class="fab fa-twitter"></span></a></li>
-                                {% endif %}
-                                {% if member.social.linkedin != "" %}
-                                <li><a href="{{member.social.linkedin}}" target="_blank"><span class="fab fa-linkedin"></span></a></li>
-                                {% endif %}
-                                {% if member.social.email != "" %}
-                                <li><a href="mailto:{{member.social.email}}" target="_blank"><span class="fas fa-envelope-open"></span></a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="designation">{{member.role}}</div>
-                        <h4><a {% if member.featurelink != "" %}href="{{member.featurelink}}" target="_blank"{% endif %}>{{member.name}}</a></h4>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            <!-- end -->
-        </div>
-    </div>
-</section>
-
-<!-- Parallax section -->
-<section class="parallax-section" style="background-image: url(images/background/3.jpg)">
-    <div class="container">
-        <h1>We are Easterners<br>United to Rise and Empower the Community.</h1>
-        <h3>Join us & Become a Rotaractor <span class="border-shape"></span></h3>
-    </div>
-</section>
-{% if site.data.info.testimonials.size > 0 %}
-{% include testimonial.html %}
-{% endif %}
-<!-- News Section -->
-<section class="news-section sp-two">
-    <div class="container">
-        <!--Sec Title-->
-        <div class="sec-title centered">
-            <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-            <h1>What’s <span>Happening</span></h1>
-            <div class="text">Read and share the latest updates from Rotaract Bangalore East</div>
-        </div>
-        <div class="row clearfix">
-            {% assign posts = site.posts | sort: 'date' | reverse %}
-            {% for post in posts limit: 3 %}
-            {% include postbox.html %}
-            {% endfor %}
-            {% assign posts = null %}
-        </div>
-    </div>
-</section>
-
-<!-- Volunteer section -->
-<section class="volunteer-section">
-    <div class="container">
-        <div class="outer-box">
-            <!--Sec Title-->
-            <div class="sec-title centered">
-                <div class="icon-box"><img loading="lazy" src="images/icons/sec-title.png" alt=""></div>
-                <h1>Get  <span>Involved</span></h1>
-                <div class="text">Let's UNITE . RISE . EMPOWER</div>
-            </div>
-            <div class="row m-0">
-                <div class="col-lg-6 p-0">
-                    <div class="text-block-two">
-                        <h3>Rotaract Bangalore East</h3>
-                        <h4>Join us to be part of the Rotaract family.</h4>
-                        <div class="text">At Rotaract Bagnalroe East, we UNITE to RISE by learning from each other and EMPOWER the community around us and experience the joy of giving as members of RBE.</div>
-                        <div class="link-btn"><a href="{{site.baseurl}}/join" class="theme-btn btn-style-two">Join Us</a></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 p-0">
-                    <div class="image"><img loading="lazy" src="images/resource/volunteer.jpg" alt=""></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Supporters section -->
-<section class="client-section sp-one">
-    <div class="container">
-
-        {% for type in site.data.info.partners %}
-
-        <div class="sec-title centered">
-            <h3>{{type.title}}</h3>
-        </div>
-
-        <div class="row justify-content-center">
-            {% for partner in type.list %}
-            <div class="image col-12 col-md-6 col-lg-{{12 | divided_by:type.line_count}} mb-4 mb-md-5 text-center"><a href="{{partner.link}}" target="_blank"><img loading="lazy" src="{{partner.img | relative_url}}" alt="{{partner.name}}"></a></div>
-            {% endfor %}
-        </div>
-        {% endfor %}
-    </div>
+  </div>
 </section>

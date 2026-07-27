@@ -3,27 +3,20 @@ layout: default
 title: News & Updates
 description: News and updates from Rotaract Bangalore East — service projects, club activities, and stories from Easterners in Bangalore.
 ---
+{% include page-hero.html title="News & Updates" eyebrow="Stories from Easterners" lead="Projects, fellowship, and impact from Rotaract Bangalore East." show_search_link=true %}
+{% include site-breadcrumbs.html %}
 
-    <!--Page title-->
-    <section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-        <div class="container">
-            <h1>News & Updates</h1>
-        </div>
-    </section>
-
-    {% include breadcrumbs.html %}
- 
-    <!-- News Section -->
-    <section class="news-section sp-two">
-        <div class="container">
-
-            <div class="row clearfix justify-content-center">
-                {% for post in paginator.posts %}
-
-                    {% include postbox.html %}
-                
-                {% endfor %}
-            </div>
-            {% include pagination.html %}
-        </div>
-    </section>
+<section class="section-pad">
+  <div class="wrap">
+    {% if paginator.posts.size > 0 %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in paginator.posts %}
+        {% include card-post.html %}
+      {% endfor %}
+    </div>
+    {% include site-pagination.html %}
+    {% else %}
+    <p class="text-center text-on-surface-variant">No news yet. Check back soon.</p>
+    {% endif %}
+  </div>
+</section>

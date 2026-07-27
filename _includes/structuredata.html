@@ -1,70 +1,108 @@
-{% if page.layout == "event" %}
+{% if page.noindex %}
+{% comment %}No JSON-LD on noindex utilities (search, thankyou, 404, admin).{% endcomment %}
+{% elsif page.layout == "event" %}
+{% assign event = page %}
+{% assign event_desc = page.description | default: page.intro | default: site.description | strip_html | truncate: 300 %}
+{% assign now_stamp = site.time | date: '%s' | plus: 0 %}
+{% include assign-event-state.html %}
+{% assign schema_event_status = 'https://schema.org/EventScheduled' %}
 <script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "Event",
-        "name": "{{page.title}}",
-        "url": "{{page.url | absolute_url}}",
-        "startDate": "{{ page.start | date_to_xmlschema }}",
-        "endDate": "{{ page.end | date_to_xmlschema }}",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "location": {
-          "@type": "VirtualLocation",
-          "url": "{{page.url | absolute_url}}"
-        },
-        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-        "image": [
-          "{{page.image | absolute_url}}"
-         ],
-        "description": "{{page.description}}",
-        "organizer": {
-          "@type": "Organization",
-          "name": "Rotaract Bangalore East",
-          "url": "https://rotaractblreast.org"
-        }
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "startDate": "{{ page.start | date_to_xmlschema }}"{% if page.end and page.end != '' %},
+  "endDate": "{{ page.end | date_to_xmlschema }}"{% endif %},
+  "eventStatus": {{ schema_event_status | jsonify }},
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ page.venue | default: "Bangalore, India" | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    }
+  }{% if page.image and page.image != '' %},
+  "image": [{{ page.image | absolute_url | jsonify }}]{% endif %},
+  "description": {{ event_desc | jsonify }},
+  "organizer": {
+    "@type": "NGO",
+    "name": "Rotaract Bangalore East",
+    "url": {{ site.url | jsonify }}
+  }
+}
 </script>
 {% elsif page.layout == "post" %}
 {% assign article_desc = page.description | default: site.description | strip_html | truncate: 300 %}
 <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NewsArticle",
-      "headline": {{ page.title | jsonify }},
-      "image": [
-        "{{page.image | absolute_url}}"
-       ],
-      "description": {{ article_desc | jsonify }},
-      "datePublished": "{{ page.date | date_to_xmlschema }}",
-      "dateModified": "{{ page.date | date_to_xmlschema }}"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ page.title | jsonify }},
+  {% if page.image and page.image != '' %}"image": [{{ page.image | absolute_url | jsonify }}],{% endif %}
+  "description": {{ article_desc | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": { "@type": "Organization", "name": "Rotaract Bangalore East" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rotaract Bangalore East",
+    "logo": { "@type": "ImageObject", "url": {{ "/images/site/rbe.png" | absolute_url | jsonify }} }
+  },
+  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+}
 </script>
-{% else %}
+{% elsif page.url == "/" or page.url == "/about" or page.url == "/about.html" %}
+{% if page.url == "/" %}
 <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://rotaractblreast.org/",
-        "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://rotaractblreast.org/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-        }
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": {{ site.url | append: "/" | jsonify }},
+  "name": {{ site.title | jsonify }}
+}
 </script>
+{% endif %}
 <script type="application/ld+json">
-    {
-        "@context" : "http://schema.org",
-        "@type" : "Organization",
-        "name" : "Rotaract Bangalore East",
-        "url" : "https://rotaractblreast.org/",
-        "logo" : "https://rotaractblreast.org/images/rbe.png",
-        "sameAs" : [
-          "https://www.instagram.com/rotaractblreast/",
-          "https://twitter.com/rotaractblreast",
-          "https://www.linkedin.com/company/rotaractblreast/",
-          "https://www.facebook.com/rotaractblreast/"
-        ]
-      }    
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Rotaract Bangalore East",
+  "alternateName": "RBE",
+  "url": {{ site.url | append: "/" | jsonify }},
+  "logo": {{ "/images/site/rbe.png" | absolute_url | jsonify }},
+  "email": {{ site.data.info.email | jsonify }},
+  "telephone": {{ site.data.info.phone | jsonify }},
+  "foundingDate": "1975-01-17",
+  "slogan": "UNITE · RISE · EMPOWER",
+  "areaServed": {
+    "@type": "City",
+    "name": "Bangalore"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Rotary Bangalore East",
+    "url": "https://goodwillrbe.blogspot.com/"
+  },
+  "memberOf": {
+    "@type": "Organization",
+    "name": "Rotary International District 3191"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bangalore",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    {{ site.data.info.site_social.instagram | jsonify }},
+    {{ site.data.info.site_social.twitter | jsonify }},
+    {{ site.data.info.site_social.linkedin | jsonify }},
+    {{ site.data.info.site_social.facebook | jsonify }}
+  ]
+}
 </script>
 {% endif %}

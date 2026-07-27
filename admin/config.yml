@@ -9,7 +9,7 @@ publish_mode: editorial_workflow
 media_folder: "images/uploads/" # Folder where user uploaded files should go
 site_url: https://rotaractblreast.org/
 display_url: rotaractblreast.org
-logo_url: https://rotaractblreast.org/images/rbe.png
+logo_url: https://rotaractblreast.org/images/site/rbe.png
 
 collections: # A list of collections the CMS should be able to edit 
   - label: "Causes"
@@ -34,7 +34,7 @@ collections: # A list of collections the CMS should be able to edit
         min: 0
         max: 100
         step: 1
-      - {label: "Featured Cause?", name: "featured", widget: "boolean", default: false}
+      - {label: "Featured Cause? (optional; site prioritizes active + recency)", name: "featured", widget: "boolean", default: false}
       - {label: "Donation Link", name: "donation_link", widget: "string"}
       - {label: "Introduction", name: "intro", widget: "markdown"}
       - {label: "Meta Description", name: "description", widget: "markdown"}
@@ -55,7 +55,7 @@ collections: # A list of collections the CMS should be able to edit
         time_format: "HH:mm"
         format: "YYYY-MM-DD HH:mm"
         picker_utc: false
-      - label: "End time"
+      - label: "End time (required for multi-day / ongoing events)"
         name: "end"
         widget: "datetime"
         date_format: "YYYY-MM-DD" 
@@ -63,6 +63,7 @@ collections: # A list of collections the CMS should be able to edit
         format: "YYYY-MM-DD HH:mm"
         picker_utc: false
         required: false
+        hint: "Set an accurate end. If omitted, the event becomes Past as soon as Start passes."
       - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
       - {label: "Venue", name: "venue", widget: "string"}
       - {label: "Button Open?", name: "button_open", widget: "boolean", default: true}
@@ -76,9 +77,8 @@ collections: # A list of collections the CMS should be able to edit
     name: "news"
     folder: "_posts"
     create: true # Allow users to create new documents in this collection
-    sort: "date:desc"
     sortable_fields: ['title','date']
-    slug: "{{date}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
@@ -99,11 +99,12 @@ collections: # A list of collections the CMS should be able to edit
         name: "tags"
         widget: "list"
         allow_add: true
-        default: ["hosting, participating, volunteering"]
+        default: ["hosting", "participating", "volunteering"]
         required: false
       - label: Comments
         name: "comments"
         widget: list
+        required: false
         fields:
           - {label: "Name of User", name: "user", widget: "string"}   
           - label: "Comment Time"
@@ -116,3 +117,55 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Comment", name: "comment", widget: "markdown"}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
+  - label: "Team"
+    name: "team"
+    files:
+      - label: "Rotaract Bangalore East | Team"
+        name: "team"
+        file: "_data/team.yml"
+        media_folder: "/images/team"
+        public_folder: "/images/team"
+        fields:
+          - label: Team Members
+            name: members
+            widget: list
+            fields:
+              - {label: "Name", name: "name", widget: "string", default: ""}
+              - {label: "Role / designation", name: "role", widget: "string", default: ""}
+              - {label: "Member since", name: "member_since", widget: "string", default: "", required: false, hint: "Year only (2020) or full date (19 July 2019)"}
+              - label: Social Media Links
+                name: social
+                widget: object
+                fields:
+                  - {label: "Linkedin Profile Link", name: "linkedin", widget: "string", default: "", required: false}
+                  - {label: "Twitter Handle Link", name: "twitter", widget: "string", default: "", required: false}
+                  - {label: "Facebook Profile Link", name: "facebook", widget: "string", default: "", required: false}
+                  - {label: "Instagram Profile Link", name: "instagram", widget: "string", default: "", required: false}
+                  - {label: "Email ID", name: "email", widget: "string", default: "", required: false}
+              - {label: "Featured Profile Link", name: "featurelink", widget: "string", default: "", required: false}
+              - {label: "Image (Dimension: 420*420 px) (File Name: First Name)", name: "image", widget: "image"}
+  - label: "Brand Kit"
+    name: "brandkit"
+    files:
+      - label: "Brand Kit groups & assets"
+        name: "brandkit"
+        file: "_data/brandkit.yml"
+        media_folder: "images/brandkit"
+        public_folder: "/images/brandkit"
+        fields:
+          - label: "Brand families / groups"
+            name: "groups"
+            widget: "list"
+            summary: "{{fields.group_name}}"
+            fields:
+              - {label: "Group name", name: "group_name", widget: "string"}
+              - label: "Assets in this group"
+                name: "items_list"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "string"}
+                  - {label: "Preview image", name: "preview", widget: "image"}
+                  - {label: "Download file", name: "file", widget: "image"}
+                  - {label: "Needs dark preview background?", name: "white", widget: "boolean", default: false, required: false, hint: "On for white/light logos so they show on a dark swatch"}

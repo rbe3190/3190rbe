@@ -1,153 +1,29 @@
 ---
 layout: default
 ---
-<!--Page title-->
-<section class="page-title" style="background-image:url({{site.baseurl}}/images/background/5.png)">
-    <div class="container">
-        <h1>News Details</h1>
-    </div>
-</section>
+{% include page-hero.html title=page.title eyebrow="News" hide_title=true background=false %}
+{% include site-breadcrumbs.html %}
 
-{% include breadcrumbs.html %}
-
-    <!-- Sidebar page -->
-    <div class="sidebar-page-container">
-        <div class="container">
-            <div class="row">
-                
-                <!--Content Side / Blogs Classic-->
-                <div class="content-side col-lg-8">
-                    <!-- Blog single -->
-                    <div class="blog-single">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img fetchpriority="high" decoding="async" src="{{page.image | relative_url}}" alt="{{page.title}}">
-                            </div>
-                            <div class="lower-box">
-                                <div class="top-content">
-                                    <div class="date">{{ page.date | date: '%d' }} <span>{{ page.date | date: '%b' | upcase}}</span></div>
-                                    <h4><a>{{page.title}}</a></h4>
-                                    <ul class="post-meta">
-                                        <li><span class="far fa-user"></span>By: {{site.data.info.authors[page.author].display_name}}</li>
-                                        {% if page.comments.size > 0 %}<li><span class="far fa-comment"></span> {{page.comments.size}}</li>{% endif %}
-                                        <!-- <li><span class="far fa-heart"></span>39</li> -->
-                                    </ul>
-                                </div>  
-                                <div class="lower-content">
-                                {{content}}
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {% include tags_share.html %}
-                    
-                    
-
-                        <div class="row mb-4">
-                           {% if page.previous.url %}
-                            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-start">
-                                 <a href="{{page.previous.url | relative_url}}" class="theme-btn btn-style-fourteen">
-                                    Previous
-                                 </a>
-
-                           </div>
-                            {% endif %}
-
-                            {% if page.next.url %}   
-                            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-end">
-                                      <a href="{{page.next.url | relative_url}}" class="theme-btn btn-style-fourteen">
-                                         Next
-                                      </a>
-                            </div>
-                           {% endif %}
-                        </div>
-
-
-
-                    {% include author.html %}
-                    
-                    {% if page.comments.size > 0 %}
-                    <!--Comments Area-->
-                    <div class="comments-area">
-                        <div class="group-title">
-                            <h2>Comments ({{page.comments.size}})</h2>
-                            <div class="separator">
-                            </div>
-                        </div>
-                        {% for comment in page.comments %}
-                        <!--Comment Box-->
-                        <div class="comment-box">
-                            <div class="comment">
-                                <div class="author-thumb"><img loading="lazy" src="{{site.baseurl}}/images/resource/user2.png" alt="{{comment.user}}"></div>
-                                <div class="comment-inner clearfix">
-                                    <div class="comment-info clearfix"><strong>{{comment.user}}</strong></div>
-                                    <div class="text">{{comment.comment}}</div>
-                                    <div class="comment-time">{{ comment.timestamp | date: '%B %d, %Y at %I:%M %p' }}</div> 
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <!--End Comments Area-->
-                    {% endif %}
-
-                    <!--Comment Form-->
-                    <div class="comment-form">
-                        <div class="group-title">
-                            <h2>Submit a Comment</h2>
-                            <div class="separator">
-                            </div>
-                        </div>
-                        <script type="text/javascript">
-                            var submission = false;
-                        </script>
-                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-                            onload="if(submission)  {window.location='/thankyou/';}"></iframe>
-
-                        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf02MgLmOUTFe1xqBj98Z9_p0RqlhL-E0lx61iUd7k1i3zgOQ/formResponse"
-                        target="hidden_iframe" onsubmit="submission=true;" method="POST">
-                            <div class="row clearfix">
-                                <div class="column col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" name="entry.1663291207" placeholder="Your Name" required="">
-                                    </div>
-                                </div>
-                                <div class="column col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="email" name="entry.2091356536" placeholder="Email" required="">
-                                    </div>
-                                </div>
-                                <div class="column col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="hidden" name="entry.59731515" value="{{page.title}}" placeholder="Post Title" required="">
-                                    </div>
-                                </div>
-                                <div class="column col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="hidden" name="entry.1898924551" value="{{page.url | absolute_url}}" placeholder="Post URL" required="">
-                                    </div>
-                                </div>
-                                <div class="column col-md-12 col-sm-12">
-                                    <div class="form-group">
-                                        <textarea name="entry.1709853619" placeholder="Message" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="theme-btn btn-style-one" type="submit" name="submit-form">Send Now</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                    <!-- End form -->
-
-                </div>
-                
-                {% include side-bar.html %}
-                
-            </div>
-        </div>
+<article class="section-pad pt-0">
+  <div class="wrap max-w-3xl">
+    {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full rounded-lg mb-8 aspect-[16/9] object-cover" fetchpriority="high" decoding="async" width="1200" height="675">
+    {% endif %}
+    <p class="text-metadata text-on-surface-variant mb-2">{{ page.date | date: '%B %d, %Y' }}{% if site.data.info.authors[page.author].display_name %} · {{ site.data.info.authors[page.author].display_name }}{% endif %}</p>
+    <h1 class="font-display text-headline-lg text-on-surface mb-6">{{ page.title }}</h1>
+    <div class="prose-rbe">
+      {{ content }}
     </div>
 
+    {% include site-share.html %}
+
+    <div class="flex justify-between gap-4 mt-10 pt-8 border-t border-outline-variant/40">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline text-sm">← Previous</a>
+      {% else %}<span></span>{% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="btn btn-outline text-sm">Next →</a>
+      {% endif %}
+    </div>
+  </div>
+</article>
