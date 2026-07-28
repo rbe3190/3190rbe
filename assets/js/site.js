@@ -61,11 +61,6 @@
     });
   }
 
-  var consent = document.getElementById("rbe-consent");
-  var KEY = "rbe-analytics-consent";
-  function setConsentOpen(open) {
-    document.body.classList.toggle("consent-open", open);
-  }
   function loadAnalytics() {
     if (window.__rbeAnalyticsLoaded) return;
     window.__rbeAnalyticsLoaded = true;
@@ -81,45 +76,8 @@
     window.gtag = gtag;
     gtag("js", new Date());
     gtag("config", gaId);
-    (function (c, l, a, r, i, t, y) {
-      c[a] =
-        c[a] ||
-        function () {
-          (c[a].q = c[a].q || []).push(arguments);
-        };
-      t = l.createElement(r);
-      t.async = 1;
-      t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "kqy8qv8n8h");
   }
-  if (consent) {
-    var stored = localStorage.getItem(KEY);
-    if (stored === "accept") {
-      loadAnalytics();
-    } else if (stored !== "decline") {
-      consent.classList.add("is-visible");
-      setConsentOpen(true);
-    }
-    function dismissConsent(accepted) {
-      localStorage.setItem(KEY, accepted ? "accept" : "decline");
-      consent.classList.remove("is-visible");
-      setConsentOpen(false);
-      if (accepted) loadAnalytics();
-    }
-    consent.querySelector("[data-consent-accept]")?.addEventListener("click", function () {
-      dismissConsent(true);
-    });
-    consent.querySelector("[data-consent-decline]")?.addEventListener("click", function () {
-      dismissConsent(false);
-    });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && consent.classList.contains("is-visible")) {
-        dismissConsent(false);
-      }
-    });
-  }
+  loadAnalytics();
 
   var searchOverlay = document.getElementById("search-overlay");
   var searchOpeners = document.querySelectorAll("[data-search-open]");

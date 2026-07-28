@@ -128,13 +128,6 @@
     @apply w-full min-w-0 max-w-full rounded border border-outline-variant bg-surface-container-lowest px-3 py-2.5 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container;
   }
 
-  .consent-banner {
-    @apply fixed left-4 right-4 bottom-4 z-[90] max-w-md mx-auto bg-surface-container-lowest border border-outline-variant rounded-lg shadow-lift p-4 hidden;
-  }
-  .consent-banner.is-visible {
-    @apply block;
-  }
-
   .sticky-panel {
     @apply sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto;
   }
@@ -150,9 +143,4 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-}
-
-/* Consent-visible FAB offset — safelist via static stylesheet */
-body.consent-open #scroll-top {
-  bottom: 11rem;
 }
