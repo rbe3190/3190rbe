@@ -28,7 +28,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Focus", name: "focus", widget: "string"}
       - {label: "Cause Title", name: "title", widget: "string"}
       - {label: "Image (Dimension: 750*420 px) (File Name: cause_2223abc...)", name: "image", widget: "image"} 
-      - {label: "Due Date", name: "due", widget: "date", format: "YYYY-MM-DD", required: false}
+      - {label: "Due Date", name: "due", widget: "datetime", type: "date", format: "YYYY-MM-DD", required: false}
       - {label: "Cause Status: Active?", name: "active", widget: "boolean", default: true}
       - {label: "Fundraise Goal", name: "goal", widget: "string"}
       - label: "Fundraise Progress"
@@ -87,7 +87,7 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD"}
+      - {label: "Date", name: "date", widget: "datetime", type: "date", format: "YYYY-MM-DD"}
       - {label: "Image (Dimension: 750*420 px) (File Name: 2223abc...)", name: "image", widget: "image"}
       - {label: "Author", name: "author", widget: "hidden", default: "rbe"}
       - label: "Avenues"
