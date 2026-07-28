@@ -5,7 +5,11 @@
 {% assign event_desc = page.description | default: page.intro | default: site.description | strip_html | truncate: 300 %}
 {% assign now_stamp = site.time | date: '%s' | plus: 0 %}
 {% include assign-event-state.html %}
+{% if page.cancelled %}
+{% assign schema_event_status = 'https://schema.org/EventCancelled' %}
+{% else %}
 {% assign schema_event_status = 'https://schema.org/EventScheduled' %}
+{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,6 +39,7 @@
   }
 }
 </script>
+{% include structuredata-breadcrumbs.html %}
 {% elsif page.layout == "post" %}
 {% assign article_desc = page.description | default: site.description | strip_html | truncate: 300 %}
 <script type="application/ld+json">
@@ -53,6 +58,95 @@
     "logo": { "@type": "ImageObject", "url": {{ "/images/site/rbe.png" | absolute_url | jsonify }} }
   },
   "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+}
+</script>
+{% include structuredata-breadcrumbs.html %}
+{% elsif page.layout == "cause" %}
+{% include structuredata-breadcrumbs.html %}
+{% elsif page.url == "/join" or page.url == "/join.html" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in site.data.join_faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% elsif page.url == "/news/" or page.url == "/news/index.html" %}
+{% if paginator and paginator.posts %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "News & Updates",
+  "itemListElement": [
+    {% for post in paginator.posts %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": {{ post.title | jsonify }},
+      "url": {{ post.url | absolute_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% elsif page.url == "/events" or page.url == "/events.html" %}
+{% assign now_stamp = site.time | date: '%s' | plus: 0 %}
+{% assign events_sorted = site.events | sort: "start" %}
+{% assign list_pos = 0 %}
+{% assign list_first = true %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Events & Activities",
+  "itemListElement": [
+    {% for event in events_sorted %}
+      {% include assign-event-state.html %}
+      {% if event_state == 'ongoing' or event_state == 'upcoming' %}
+        {% assign list_pos = list_pos | plus: 1 %}
+        {% unless list_first %},{% endunless %}
+        {% assign list_first = false %}
+    {
+      "@type": "ListItem",
+      "position": {{ list_pos }},
+      "name": {{ event.title | jsonify }},
+      "url": {{ event.url | absolute_url | jsonify }}
+    }
+      {% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% elsif page.url == "/causes" or page.url == "/causes.html" %}
+{% assign active_causes = site.causes | where: "active", true %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Our Causes",
+  "itemListElement": [
+    {% for cause in active_causes %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": {{ cause.title | jsonify }},
+      "url": {{ cause.url | absolute_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
 }
 </script>
 {% elsif page.url == "/" or page.url == "/about" or page.url == "/about.html" %}

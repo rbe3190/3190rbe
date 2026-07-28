@@ -59,6 +59,7 @@ jekyll-archives:
 
 include:
   - robots.txt
+  - llms.txt
 
 exclude:
   - README.md

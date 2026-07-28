@@ -106,18 +106,12 @@ description: Join Rotaract Bangalore East as we UNITE to RISE by learning from e
       </div>
       <div class="card p-6">
         <h3 class="font-display font-semibold mb-4">FAQ</h3>
-        <details class="border-b border-outline-variant/40 py-3">
-          <summary class="font-medium cursor-pointer">Who can join?</summary>
-          <p class="text-sm text-on-surface-variant mt-2">Young adults interested in service and leadership in Bangalore. Reach out if you’re unsure.</p>
+        {% for item in site.data.join_faq %}
+        <details class="{% unless forloop.last %}border-b border-outline-variant/40 {% endunless %}py-3">
+          <summary class="font-medium cursor-pointer">{{ item.question }}</summary>
+          <p class="text-sm text-on-surface-variant mt-2">{{ item.answer }}</p>
         </details>
-        <details class="border-b border-outline-variant/40 py-3">
-          <summary class="font-medium cursor-pointer">What happens after I apply?</summary>
-          <p class="text-sm text-on-surface-variant mt-2">Our membership team reviews applications and will contact you about next steps and meetings.</p>
-        </details>
-        <details class="py-3">
-          <summary class="font-medium cursor-pointer">Do I need prior Rotaract experience?</summary>
-          <p class="text-sm text-on-surface-variant mt-2">No — newcomers and continuing Rotaractors are both welcome.</p>
-        </details>
+        {% endfor %}
       </div>
     </aside>
   </div>

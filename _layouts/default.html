@@ -16,11 +16,15 @@ layout: compress
   {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.og_img | absolute_url }}{% endif %}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.og_img | absolute_url }}{% endif %}">
   <link rel="shortcut icon" href="{{ '/images/site/favicon.png' | relative_url }}" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

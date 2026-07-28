@@ -35,6 +35,12 @@ site_js = read("_site/assets/js/site.js")
 
 ok("robots.txt", Path("_site/robots.txt").exists())
 ok("robots_disallow_admin", "Disallow: /admin/" in robots)
+ok("robots_gptbot", "User-agent: GPTBot" in robots)
+ok("robots_claudebot", "User-agent: ClaudeBot" in robots)
+ok("robots_perplexitybot", "User-agent: PerplexityBot" in robots)
+ok("llms_txt", Path("_site/llms.txt").exists() and "Rotaract Bangalore East" in read("_site/llms.txt"))
+ok("og_site_name", 'property="og:site_name"' in Path("_layouts/default.html").read_text(encoding="utf-8", errors="ignore"))
+ok("twitter_title_meta", 'name="twitter:title"' in Path("_layouts/default.html").read_text(encoding="utf-8", errors="ignore"))
 ok("headers", Path("netlify.toml").exists() and "[[headers]]" in Path("netlify.toml").read_text(encoding="utf-8", errors="ignore"))
 ok("redirects", "[[redirects]]" in Path("netlify.toml").read_text(encoding="utf-8", errors="ignore"))
 ok("no_publish_dir_headers_file", not Path("_headers").exists() and not Path("_site/_headers").exists())
@@ -63,9 +69,13 @@ ok("brandkit_filters", "brandkit-filter" in brandkit)
 ok("no_brandkit_side_nav", "brandkit-nav" not in brandkit)
 ok("team", "Surakshith" in about)
 ok("join_form_fields", "entry.610221127" in join)
+ok("join_faqpage", '"@type": "FAQPage"' in join or '"@type":"FAQPage"' in join)
 ok("contact_form_fields", "entry.1155332808" in contact)
 ok("events_page", "Events" in events)
+ok("events_itemlist", "ItemList" in events)
 ok("news_page", "News" in news)
+ok("news_itemlist", "ItemList" in news)
+ok("causes_itemlist", "ItemList" in read("_site/causes.html"))
 ok("admin_team", "_data/team.yml" in admin)
 ok("admin_search_disabled", "search: false" in admin)
 ok("admin_default_sort_causes_due", 'field: due, default_sort: desc' in admin)
@@ -109,6 +119,19 @@ posts = sorted(Path("_site").glob("news/[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-
 ok("news_post_pages_all_29", len(posts) == 29)
 ok("belaku_permalink", Path("_site/news/2019/11/03/belaku/index.html").exists())
 ok("kept_president2122_permalink", Path("_site/news/2021/04/22/president2122/index.html").exists())
+ok(
+    "post_breadcrumb_list",
+    "BreadcrumbList" in read("_site/news/2021/04/22/president2122/index.html"),
+)
+sample_event = next(Path("_site/events").rglob("index.html"), None)
+ok("event_breadcrumb_list", sample_event is not None and "BreadcrumbList" in read(sample_event))
+ok(
+    "event_status_scheduled_or_cancelled",
+    sample_event is not None
+    and (
+        "EventScheduled" in read(sample_event) or "EventCancelled" in read(sample_event)
+    ),
+)
 if posts:
     sample = read(posts[0])
     h1s = len(re.findall(r"<h1\b", sample, flags=re.I))
