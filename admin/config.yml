@@ -1,11 +1,15 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 backend:
-  name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  name: github
+  repo: rotaractblreast/RBEwebsite
+  branch: master
+  auth_methods: [oauth]
+  # Omit base_url / auth_endpoint — Netlify OAuth defaults (api.netlify.com/auth).
 
-# Decap UI search disabled to protect GitHub API budget; use the public /search page instead.
+# Search uses Sveltia client-side indexing over loaded entries (not Decap GitHub API search).
 search: false
 
-# Direct publish to master (no Decap draft/PR workflow) — fewer GitHub API calls on every collection load.
+# Direct publish to master (no CMS draft/PR workflow).
 
 media_folder: "images/uploads/" # Folder where user uploaded files should go
 site_url: https://rotaractblreast.org/
