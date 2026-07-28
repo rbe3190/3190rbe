@@ -1,12 +1,10 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
 backend:
   name: github
   repo: rotaractblreast/RBEwebsite
   branch: master
-  auth_methods: [oauth]
   # Omit base_url / auth_endpoint — Netlify OAuth defaults (api.netlify.com/auth).
 
-# Search uses Sveltia client-side indexing over loaded entries (not Decap GitHub API search).
+# Disable CMS search to reduce GitHub API load when browsing collections.
 search: false
 
 # Direct publish to master (no CMS draft/PR workflow).

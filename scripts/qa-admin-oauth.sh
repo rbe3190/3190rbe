@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Ops + prod probes for Sveltia CMS + GitHub OAuth (replaces Git Gateway checks).
+# Ops + prod probes for Decap CMS + GitHub OAuth (no Git Gateway / Identity).
 set -euo pipefail
 
 SITE="${SITE_URL:-https://rotaractblreast.org}"
@@ -45,13 +45,13 @@ echo "== Probe ${SITE} =="
 cfg=$(curl -s "${SITE}/admin/config.yml" || true)
 ok "prod_github_backend" $([[ "$cfg" == *"name: github"* ]] && echo 1 || echo 0)
 ok "prod_repo" $([[ "$cfg" == *"rotaractblreast/RBEwebsite"* ]] && echo 1 || echo 0)
-ok "prod_oauth_only" $([[ "$cfg" == *"auth_methods"* ]] && [[ "$cfg" == *"oauth"* ]] && echo 1 || echo 0)
+ok "prod_no_auth_methods" $([[ "$cfg" != *"auth_methods"* ]] && echo 1 || echo 0)
 ok "prod_no_git_gateway" $([[ "$cfg" != *"git-gateway"* ]] && echo 1 || echo 0)
 ok "prod_search_false" $([[ "$cfg" == *"search: false"* ]] && echo 1 || echo 0)
 
 admin_html=$(curl -s "${SITE}/admin/" || true)
-ok "prod_sveltia_script" $([[ "$admin_html" == *"@sveltia/cms@0/dist/sveltia-cms.js"* ]] && echo 1 || echo 0)
-ok "prod_no_decap" $([[ "$admin_html" != *"decap-cms"* ]] && echo 1 || echo 0)
+ok "prod_decap_script" $([[ "$admin_html" == *"decap-cms"* ]] && echo 1 || echo 0)
+ok "prod_no_sveltia" $([[ "$admin_html" != *"@sveltia/cms"* ]] && echo 1 || echo 0)
 ok "prod_no_identity_widget" $([[ "$admin_html" != *"netlify-identity-widget"* ]] && echo 1 || echo 0)
 
 gw_code=$(curl -s -o /tmp/rbe-gw-body.txt -w "%{http_code}" "${SITE}/.netlify/git/github/")
@@ -76,7 +76,7 @@ if [[ "$oauth_body" == "404" ]] || grep -qi "Not Found" /tmp/rbe-oauth-body.txt 
 elif [[ "$oauth_body" == "302" || "$oauth_body" == "200" || "$oauth_body" == "301" ]]; then
   ok "netlify_github_oauth_provider" 1
 else
-  echo "NOTE: unexpected OAuth broker response HTTP ${oauth_body}; open /admin and try Sign In with GitHub."
+  echo "NOTE: unexpected OAuth broker response HTTP ${oauth_body}; open /admin and try Login with GitHub."
   ok "netlify_github_oauth_provider_check_manually" 1
 fi
 
@@ -87,7 +87,7 @@ echo "2. DevTools → Network → open News"
 echo "   Expect: api.github.com (GraphQL/REST), NOT /.netlify/git/github/"
 echo "   Expect: X-RateLimit-Limit ≈ 5000 (not ~60)"
 echo "   Fail if: 'API rate limit exceeded for <your-IP>'"
-echo "3. News list shows ~10 entries (archived posts stay on the public site)"
+echo "3. News list shows 29 entries"
 echo "4. Open Causes, Events, Team, Brand Kit — no 403 rate-limit storms"
 echo "5. Edit + publish a harmless field → commit on master as your GitHub user → Netlify build green"
 echo "6. Second Write editor can log in; user without Write cannot publish"

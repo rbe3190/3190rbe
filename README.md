@@ -1,6 +1,6 @@
 # Rotaract Bangalore East
 
-[rotaractblreast.org](https://rotaractblreast.org) — Jekyll + Netlify + [Sveltia CMS](https://sveltiacms.app/).
+[rotaractblreast.org](https://rotaractblreast.org) — Jekyll + Netlify + [Decap CMS](https://decapcms.org/) with GitHub OAuth.
 
 **UNITE . RISE . EMPOWER** · Brand orange `#ff9000`
 
@@ -11,7 +11,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Open `/admin/` locally to load Sveltia (GitHub login works against production OAuth after the app is registered).
+Open `/admin/` locally to load Decap (GitHub login works against production OAuth after the app is registered).
 
 ## Content admin (`/admin`)
 
@@ -32,7 +32,7 @@ That script prints the full checklist: create a GitHub OAuth App (callback `http
 3. Open [rotaractblreast.org/admin/](https://rotaractblreast.org/admin/) → **Login with GitHub**.
 4. Publish writes directly to `master` and triggers a Netlify deploy.
 
-Only the newest ~10 News posts live at `_posts/` for the CMS. Older posts are under `_posts/archive/` (still published by Jekyll; edit them in git if needed).
+All News posts live under `_posts/` and are editable in the CMS.
 
 ## Stack
 
