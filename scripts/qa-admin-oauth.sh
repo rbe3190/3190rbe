@@ -50,7 +50,7 @@ ok "prod_no_git_gateway" $([[ "$cfg" != *"git-gateway"* ]] && echo 1 || echo 0)
 ok "prod_search_false" $([[ "$cfg" == *"search: false"* ]] && echo 1 || echo 0)
 
 admin_html=$(curl -s "${SITE}/admin/" || true)
-ok "prod_sveltia_script" $([[ "$admin_html" == *"@sveltia/cms"* ]] && echo 1 || echo 0)
+ok "prod_sveltia_script" $([[ "$admin_html" == *"@sveltia/cms@0/dist/sveltia-cms.js"* ]] && echo 1 || echo 0)
 ok "prod_no_decap" $([[ "$admin_html" != *"decap-cms"* ]] && echo 1 || echo 0)
 ok "prod_no_identity_widget" $([[ "$admin_html" != *"netlify-identity-widget"* ]] && echo 1 || echo 0)
 

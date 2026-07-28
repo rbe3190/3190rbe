@@ -11,6 +11,7 @@ sitemap: false
     <link rel="shortcut icon" href="{{ "/images/site/favicon.png" | absolute_url }}" type="image/x-icon">
 </head>
 <body>
-    <script src="https://unpkg.com/@sveltia/cms@^1/dist/sveltia-cms.js"></script>
+    <!-- @0 tracks latest 0.x; unpkg cannot resolve caret ranges like @^1 in the URL path. -->
+    <script src="https://unpkg.com/@sveltia/cms@0/dist/sveltia-cms.js"></script>
 </body>
 </html>
