@@ -1,5 +1,7 @@
 # Rotaract Bangalore East
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4f68392-a404-44af-bcae-4ebd807ff1d1/deploy-status)](https://app.netlify.com/projects/rotaractblreast/deploys)
+
 [rotaractblreast.org](https://rotaractblreast.org) — Jekyll + Netlify + [Decap CMS](https://decapcms.org/) with GitHub OAuth.
 
 **UNITE . RISE . EMPOWER** · Brand orange `#ff9000`

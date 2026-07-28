@@ -58,8 +58,6 @@ jekyll-archives:
     tag: '/news/tag-:name/'
 
 include:
-  - _redirects
-  - _headers
   - robots.txt
 
 exclude:

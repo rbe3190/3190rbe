@@ -19,7 +19,12 @@ collections: # A list of collections the CMS should be able to edit
     name: "causes"
     folder: "_causes"
     create: true # Allow users to create new documents in this collection
-    sortable_fields: ['title','due','active','progress','featured']
+    sortable_fields:
+      - { field: due, default_sort: desc }
+      - title
+      - active
+      - progress
+      - featured
     slug: "{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "cause"}
@@ -46,7 +51,10 @@ collections: # A list of collections the CMS should be able to edit
     name: "events"
     folder: "_events"
     create: true # Allow users to create new documents in this collection
-    sortable_fields: ['title','start','end']
+    sortable_fields:
+      - { field: start, default_sort: desc }
+      - title
+      - end
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
@@ -80,7 +88,9 @@ collections: # A list of collections the CMS should be able to edit
     name: "news"
     folder: "_posts"
     create: true # Allow users to create new documents in this collection
-    sortable_fields: ['title','date']
+    sortable_fields:
+      - { field: date, default_sort: desc }
+      - title
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
