@@ -66,6 +66,20 @@ else
   ok "git_gateway_probe_unexpected" 0
 fi
 
+# Netlify OAuth broker must be installed (GitHub Client ID/Secret under Access & security → OAuth).
+oauth_body=$(curl -s -o /tmp/rbe-oauth-body.txt -w "%{http_code}" \
+  "https://api.netlify.com/auth?provider=github&site_id=rotaractblreast.org&scope=repo%2Cuser")
+echo "GET api.netlify.com/auth?provider=github → HTTP ${oauth_body}"
+if [[ "$oauth_body" == "404" ]] || grep -qi "Not Found" /tmp/rbe-oauth-body.txt 2>/dev/null; then
+  echo "FAIL: Netlify GitHub OAuth provider not installed (steps A–B above)."
+  ok "netlify_github_oauth_provider" 0
+elif [[ "$oauth_body" == "302" || "$oauth_body" == "200" || "$oauth_body" == "301" ]]; then
+  ok "netlify_github_oauth_provider" 1
+else
+  echo "NOTE: unexpected OAuth broker response HTTP ${oauth_body}; open /admin and try Sign In with GitHub."
+  ok "netlify_github_oauth_provider_check_manually" 1
+fi
+
 echo ""
 echo "== Manual browser UAT (required) =="
 echo "1. Incognito → ${SITE}/admin/ → Login with GitHub"
