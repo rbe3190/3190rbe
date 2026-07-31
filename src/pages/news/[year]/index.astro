@@ -1,0 +1,61 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CardPost from "@/components/CardPost.astro";
+import { getPosts } from "@/lib/content";
+import { categorySlug, postDateParts } from "@/lib/paths";
+import type { Post } from "@/lib/types";
+
+type ArchiveKind = "year" | "category";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const paths: Array<{
+    params: { year: string };
+    props: { kind: ArchiveKind; title: string; posts: Post[] };
+  }> = [];
+
+  const years = [...new Set(posts.map((p) => postDateParts(p, ["year"]).year))];
+  for (const y of years) {
+    paths.push({
+      params: { year: y },
+      props: {
+        kind: "year",
+        title: y,
+        posts: posts.filter((p) => postDateParts(p, ["year"]).year === y),
+      },
+    });
+  }
+
+  const cats = [...new Set(posts.flatMap((p) => p.categories))];
+  for (const cat of cats) {
+    const slug = categorySlug(cat);
+    paths.push({
+      params: { year: slug },
+      props: {
+        kind: "category",
+        title: cat.replace(/-/g, " "),
+        posts: posts.filter((p) => p.categories.includes(cat)),
+      },
+    });
+  }
+
+  return paths;
+}
+
+const { title, posts } = Astro.props;
+---
+<BaseLayout title={`${title} — News`} description={`News archive: ${title}`}>
+  <PageHero title={title} eyebrow="News archive" />
+  <Breadcrumbs
+    crumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news/" }, { label: title }]}
+  />
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => <CardPost post={post} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,105 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { getSiteSettings } from "@/lib/content";
+
+const settings = await getSiteSettings();
+---
+<BaseLayout
+  title="Contact"
+  description="Contact Rotaract Bangalore East — address, phone, and email. Send a message to Easterners in Bangalore."
+>
+  <PageHero
+    title="Contact Us"
+    eyebrow="We’re here"
+    lead="Reach Easterners anytime — send a message or find us in Bangalore."
+  />
+  <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
+
+  <section class="w-full h-48 md:h-64 lg:h-80 bg-surface-container">
+    <iframe
+      title="Map showing Rotaract Bangalore East in Bangalore"
+      loading="lazy"
+      class="w-full h-full border-0"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d124410.28846350599!2d77.678933!3d12.9832651!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6c3c101b0de06586!2sRotaract%20Bangalore%20East!5e0!3m2!1sen!2sin!4v1611615516117!5m2!1sen!2sin"
+      allowfullscreen=""
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-headline-md mb-6">Send a message</h2>
+        <script is:inline>var submission = false;</script>
+        <iframe
+          name="contact_hidden_iframe"
+          id="contact-hidden-iframe"
+          class="hidden"
+          title="Hidden form target"
+          onload="if(submission){window.location='/thankyou/';}"></iframe>
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLScWK1k3HYIZMoFWLXx-nkBJ7FbHR42jiJtYdt62U4EnpC3iyQ/formResponse"
+          target="contact_hidden_iframe"
+          onsubmit="submission=true;"
+          method="POST"
+          class="space-y-4"
+        >
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" type="text" name="entry.1155332808" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" type="email" name="entry.535311334" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contact-phone">Phone</label>
+            <input id="contact-phone" type="tel" name="entry.659322169" required />
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="entry.1069201920" rows="5" required></textarea>
+          </div>
+          <div class="form-field max-w-xs">
+            <label for="contact-spam-check">What is the sum of 2 + 2?</label>
+            <input
+              id="contact-spam-check"
+              type="text"
+              name="entry.199032974"
+              placeholder="Enter the answer in digits"
+              required
+            />
+            <p class="text-xs text-on-surface-variant">
+              Submissions with an incorrect answer are rejected.
+            </p>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <aside class="lg:col-span-2">
+        <div class="card p-6 bg-surface-container-low sticky-panel">
+          <h3 class="font-display font-semibold mb-4">Contact information</h3>
+          <ul class="space-y-4 text-sm text-on-surface-variant">
+            <li>
+              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Address</span>
+              {settings.location}
+            </li>
+            <li>
+              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Email</span>
+              <a href={`mailto:${settings.email}`} class="text-primary">{settings.email}</a>
+            </li>
+            <li>
+              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Phone</span>
+              <a href={`tel:${settings.phone.replace(/\s/g, "")}`} class="text-primary"
+                >{settings.phone}</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

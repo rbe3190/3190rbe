@@ -1,0 +1,301 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import SocialIcon from "@/components/SocialIcon.astro";
+import { getSiteSettings, getTeam } from "@/lib/content";
+import { SITE } from "@/lib/site";
+
+const settings = await getSiteSettings();
+const team = await getTeam();
+const preview = 11;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  name: SITE.title,
+  url: SITE.url,
+  email: settings.email,
+  telephone: settings.phone,
+  foundingDate: "1975-01-17",
+  slogan: SITE.subtitle,
+  sameAs: Object.values(settings.siteSocial).filter(Boolean),
+};
+
+function initial(name: string) {
+  const parts = name.trim().split(/\s+/);
+  const last = parts[parts.length - 1] || name;
+  return last.slice(0, 1).toUpperCase();
+}
+---
+<BaseLayout
+  title="About"
+  description="Learn about Rotaract Bangalore East — our story, core values UNITE · RISE · EMPOWER, team, and how we serve the community in Bangalore."
+  jsonLd={jsonLd}
+>
+  <PageHero
+    title="About Rotaract Bangalore East"
+    eyebrow="Our story · Since 1975"
+    lead="Established 17 January 1975 and rechartered 19 July 2019. A family with a mission: UNITE · RISE · EMPOWER."
+  />
+  <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "About" }]} />
+
+  <section class="section-pad">
+    <div class="wrap max-w-3xl">
+      <p class="text-body-lg text-on-surface-variant mb-4">
+        Rotaract Bangalore East is a community-based club from Bangalore. We are bright, energetic, and
+        motivated youngsters creating positive change in society.
+      </p>
+      <p class="text-on-surface-variant mb-4">
+        <strong class="text-on-surface">UNITE:</strong> We are a family — no one gets left behind or
+        forgotten.<br />
+        <strong class="text-on-surface">RISE:</strong> With unity, we rise by learning from each other.<br
+        />
+        <strong class="text-on-surface">EMPOWER:</strong> With unity, we rise and empower the community
+        around us.
+      </p>
+      <p class="text-on-surface-variant">
+        Volunteer, collaborate, and support our events and projects. Let’s experience the joy of giving
+        back. #rotaractblreast
+      </p>
+    </div>
+  </section>
+
+  <section class="relative section-pad overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/site/background-3.jpg"
+        alt=""
+        class="h-full w-full object-cover"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-inverse-surface/75"></div>
+    </div>
+    <div class="wrap relative grid md:grid-cols-2 gap-10 items-center text-inverse-on-surface">
+      <img
+        src="/images/site/feature-5.jpeg"
+        alt="Fundraising for goodness"
+        class="rounded-lg w-full object-cover aspect-[4/3]"
+        loading="lazy"
+      />
+      <div>
+        <p class="label-caps text-primary-fixed mb-3">Fundraising for goodness</p>
+        <h2 class="font-display text-headline-lg text-white mb-4">Quick community response</h2>
+        <p class="mb-6 text-inverse-on-surface/85">
+          The support we give to the community is the rent we pay for our time on Earth. Be part of the
+          change.
+        </p>
+        <a href="/causes/" class="btn btn-primary">Our causes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-surface-container-low">
+    <div class="wrap">
+      <p class="label-caps text-center mb-2">Core values</p>
+      <h2 class="font-display text-headline-lg text-center mb-10">UNITE · RISE · EMPOWER</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {
+          settings.coreValues.map((value) => (
+            <article class="card overflow-hidden">
+              <div class="aspect-[16/10]">
+                <img src={value.image} alt="" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <h3 class="font-display text-headline-md mb-2">{value.title}</h3>
+                <p class="text-on-surface-variant mb-4">{value.brief}</p>
+                <a
+                  href={value.target}
+                  class="text-primary font-bold text-sm uppercase tracking-wider"
+                >
+                  Explore →
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section-pad scroll-mt-24">
+    <div class="wrap">
+      <p class="label-caps text-center mb-2">#TeamRBE</p>
+      <h2 class="font-display text-headline-lg text-center mb-8">Our team</h2>
+
+      {
+        team.length > 0 ? (
+          <>
+            <div
+              id="team-grid"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 mb-6"
+            >
+              {team.map((member, i) => (
+                <article
+                  class:list={[
+                    "team-card card text-center p-3 md:p-4",
+                    i >= preview && "team-card-more hidden",
+                  ]}
+                  data-team-more={i >= preview ? true : undefined}
+                >
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover object-top mx-auto mb-3 border-2 border-primary-container"
+                      loading="lazy"
+                      width="96"
+                      height="96"
+                    />
+                  ) : (
+                    <div
+                      class="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto mb-3 border-2 border-primary-container bg-primary-container text-on-primary-container font-display text-xl font-bold flex items-center justify-center"
+                      aria-hidden="true"
+                    >
+                      {initial(member.name)}
+                    </div>
+                  )}
+                  <h3 class="font-display text-sm font-semibold text-on-surface leading-snug mb-0.5">
+                    {member.featurelink ? (
+                      <a
+                        href={member.featurelink}
+                        target="_blank"
+                        rel="noopener"
+                        class="hover:text-primary"
+                      >
+                        {member.name}
+                      </a>
+                    ) : (
+                      member.name
+                    )}
+                  </h3>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-1">
+                    {member.role}
+                  </p>
+                  {member.memberSince && (
+                    <p class="text-[11px] text-on-surface-variant mb-2 leading-snug">
+                      Member since {member.memberSince}
+                    </p>
+                  )}
+                  <div class="flex flex-wrap gap-0.5 justify-center">
+                    {member.social?.instagram && (
+                      <a
+                        href={member.social.instagram}
+                        class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`${member.name} on Instagram`}
+                      >
+                        <SocialIcon network="instagram" class="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {member.social?.linkedin && (
+                      <a
+                        href={member.social.linkedin}
+                        class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`${member.name} on LinkedIn`}
+                      >
+                        <SocialIcon network="linkedin" class="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {member.social?.twitter && (
+                      <a
+                        href={member.social.twitter}
+                        class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`${member.name} on X (Twitter)`}
+                      >
+                        <SocialIcon network="twitter" class="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {member.social?.facebook && (
+                      <a
+                        href={member.social.facebook}
+                        class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label={`${member.name} on Facebook`}
+                      >
+                        <SocialIcon network="facebook" class="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {member.social?.email && (
+                      <a
+                        href={`mailto:${member.social.email}`}
+                        class="inline-flex items-center justify-center h-8 w-8 text-on-surface-variant hover:text-primary"
+                        aria-label={`Email ${member.name}`}
+                      >
+                        <span class="material-symbols-outlined text-[18px]" aria-hidden="true">
+                          mail
+                        </span>
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+
+              <a
+                href="/join/"
+                class="card border-dashed border-2 border-primary-container/50 flex flex-col items-center justify-center p-3 md:p-4 text-center hover:bg-primary-container/10 transition-colors min-h-[11rem]"
+              >
+                <span class="material-symbols-outlined text-3xl text-primary mb-1" aria-hidden="true">
+                  person_add
+                </span>
+                <span class="font-display text-sm font-semibold text-on-surface">Join the team</span>
+                <span class="text-xs text-on-surface-variant mt-1">Become an Easterner</span>
+              </a>
+            </div>
+
+            {team.length > preview && (
+              <div class="text-center">
+                <button
+                  type="button"
+                  id="team-show-more"
+                  class="btn btn-outline text-sm touch-target"
+                  data-team-total={team.length}
+                  aria-expanded="false"
+                  aria-controls="team-grid"
+                >
+                  Show all {team.length} members
+                </button>
+              </div>
+            )}
+          </>
+        ) : (
+          <div class="text-center max-w-md mx-auto mb-10">
+            <p class="text-on-surface-variant mb-4">Team roster coming soon.</p>
+            <a href="/join/" class="btn btn-primary">Join Us</a>
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="bg-primary-container text-on-primary-container py-16">
+    <div class="wrap text-center">
+      <h2 class="font-display text-headline-lg mb-3">We are Easterners</h2>
+      <p class="text-lg mb-6 max-w-xl mx-auto">United to rise and empower the community.</p>
+      <a href="/join/" class="btn btn-ink">Become a Rotaractor</a>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap">
+      <p class="label-caps text-center mb-2">Areas of focus</p>
+      <h2 class="font-display text-headline-lg text-center mb-10">Where we serve</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          settings.areasOfFocus.map((area) => (
+            <article class="bg-surface-container-lowest border border-outline-variant/40 rounded-lg p-6">
+              <h3 class="font-display font-semibold text-on-surface mb-2">{area.title}</h3>
+              <p class="text-sm text-on-surface-variant">{area.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

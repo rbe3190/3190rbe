@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import CardPost from "@/components/CardPost.astro";
+import { getPosts } from "@/lib/content";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const tags = [...new Set(posts.flatMap((p) => p.tags))];
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, posts: posts.filter((p) => p.tags.includes(tag)) },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const title = `Tag: ${tag}`;
+---
+<BaseLayout title={title} description={`Posts tagged ${tag}`}>
+  <PageHero title={title} eyebrow="News archive" />
+  <Breadcrumbs
+    crumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news/" }, { label: tag }]}
+  />
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => <CardPost post={post} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

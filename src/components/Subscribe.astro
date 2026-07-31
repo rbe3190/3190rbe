@@ -1,0 +1,38 @@
+---
+---
+<section class="bg-surface-container border-y border-outline-variant/40">
+  <div class="wrap py-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div>
+      <p class="label-caps mb-2">Stay in the loop</p>
+      <h2 class="font-display text-headline-md text-on-surface">Subscribe for updates</h2>
+      <p class="text-on-surface-variant mt-1 max-w-md">
+        News, events, and causes from Rotaract Bangalore East.
+      </p>
+    </div>
+    <script is:inline>var submission = false;</script>
+    <iframe
+      name="hidden_iframe"
+      id="hidden_iframe"
+      class="hidden"
+      title="Hidden form target"
+      onload="if(submission){window.location='/thankyou';}"></iframe>
+    <form
+      action="https://docs.google.com/forms/d/e/1FAIpQLSf5ddGyszvRC6Mb1VfxbIUWxIe8Sbfht1j7CcDXESQbZYi0Jg/formResponse"
+      target="hidden_iframe"
+      onsubmit="submission=true;"
+      method="POST"
+      class="flex flex-col md:flex-row gap-3 w-full md:max-w-md"
+    >
+      <label class="sr-only" for="subscribe-email">Email</label>
+      <input
+        id="subscribe-email"
+        type="email"
+        name="entry.1441391045"
+        placeholder="Your email…"
+        required
+        class="flex-1 min-w-0 rounded border border-outline-variant bg-surface-container-lowest px-3 py-2.5 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container"
+      />
+      <button type="submit" class="btn btn-primary shrink-0 touch-target w-full md:w-auto">Subscribe</button>
+    </form>
+  </div>
+</section>
