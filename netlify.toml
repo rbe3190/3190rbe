@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
   # Sanity is the content source of truth. Unset / omit USE_FS_CONTENT (do not set to "1").
+  # Both values are public (they ship in the client bundle), so pin them here rather than
+  # relying on site env vars — a missing project id fails the build.
+  PUBLIC_SANITY_PROJECT_ID = "t6bu0f9m"
+  PUBLIC_SANITY_DATASET = "production"
 
 [[headers]]
   for = "/*"
