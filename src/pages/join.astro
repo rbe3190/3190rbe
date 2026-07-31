@@ -1,0 +1,174 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import { getJoinFaq, getSiteSettings } from "@/lib/content";
+
+const settings = await getSiteSettings();
+const faq = await getJoinFaq();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+---
+<BaseLayout
+  title="Join"
+  description="Join Rotaract Bangalore East as we UNITE to RISE by learning from each other and EMPOWER the community around us and experience the joy of giving as members of RBE."
+  jsonLd={jsonLd}
+>
+  <PageHero
+    title="Join Us"
+    eyebrow="Become an Easterner"
+    lead="UNITE with like-minded people. RISE through shared learning. EMPOWER Bangalore together."
+  />
+  <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "Join" }]} />
+
+  <section class="section-pad bg-surface-container-low">
+    <div class="wrap">
+      <p class="label-caps text-center mb-2">Why join</p>
+      <h2 class="font-display text-headline-lg text-center mb-10">What you get as a member</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="card p-6">
+          <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">diversity_3</span>
+          <h3 class="font-display text-lg font-semibold mb-2">Community</h3>
+          <p class="text-on-surface-variant text-sm">
+            A family of Easterners — fellowship, mentorship, and lifelong friendships.
+          </p>
+        </article>
+        <article class="card p-6">
+          <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">school</span>
+          <h3 class="font-display text-lg font-semibold mb-2">Growth</h3>
+          <p class="text-on-surface-variant text-sm">
+            Professional development, leadership roles, and learning by doing.
+          </p>
+        </article>
+        <article class="card p-6">
+          <span class="material-symbols-outlined text-3xl text-primary mb-3" aria-hidden="true">volunteer_activism</span>
+          <h3 class="font-display text-lg font-semibold mb-2">Impact</h3>
+          <p class="text-on-surface-variant text-sm">
+            Hands-on service across Rotary’s areas of focus in Bangalore and beyond.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-ink text-white py-12">
+    <div class="wrap flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h2 class="font-display text-2xl font-bold text-white">Ready to apply?</h2>
+        <p class="text-white/80 mt-1">Fill the form below — we’ll get back to you soon.</p>
+      </div>
+      <a href="#application" class="btn btn-primary shrink-0">Start application</a>
+    </div>
+  </section>
+
+  <section id="application" class="section-pad">
+    <div class="wrap grid lg:grid-cols-5 gap-12">
+      <div class="lg:col-span-3">
+        <h2 class="font-display text-headline-md mb-6">Membership application</h2>
+        <script is:inline>var submission = false;</script>
+        <iframe
+          name="join_hidden_iframe"
+          id="join-hidden-iframe"
+          class="hidden"
+          title="Hidden form target"
+          onload="if(submission){window.location='/thankyou/';}"></iframe>
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSeukck0yLWRUanwK1XjL6gBOMDlq0pk4oJ5bRIQ2QYeY7BYvg/formResponse"
+          target="join_hidden_iframe"
+          onsubmit="submission=true;"
+          method="POST"
+          class="space-y-4"
+        >
+          <div class="form-field">
+            <label for="join-name">Name</label>
+            <input id="join-name" type="text" name="entry.610221127" required />
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="form-field">
+              <label for="join-email">Email</label>
+              <input id="join-email" type="email" name="entry.207513290" required />
+            </div>
+            <div class="form-field">
+              <label for="join-phone">Phone</label>
+              <input id="join-phone" type="tel" name="entry.557203297" pattern="[6-9]{1}[0-9]{9}" required />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="form-field">
+              <label for="join-dob">Date of birth</label>
+              <input id="join-dob" type="date" name="entry.798190516" required />
+            </div>
+            <div class="form-field">
+              <label for="join-gender">Gender</label>
+              <select id="join-gender" name="entry.1887778624" required>
+                <option value="" disabled selected hidden></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="join-address">Current address</label>
+            <input id="join-address" type="text" name="entry.2134806077" required />
+          </div>
+          <div class="form-field">
+            <label for="join-social">Instagram / LinkedIn profile</label>
+            <input id="join-social" type="text" name="entry.293248112" required />
+          </div>
+          <div class="form-field">
+            <label for="join-why">Why do you want to join Rotaract?</label>
+            <textarea id="join-why" name="entry.64299667" rows="4" required></textarea>
+          </div>
+          <div class="form-field">
+            <label for="join-prior"
+              >Were you a Rotaractor before? If yes, share a brief about your journey.</label
+            >
+            <textarea id="join-prior" name="entry.51188460" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit application</button>
+        </form>
+      </div>
+      <aside class="lg:col-span-2 space-y-6">
+        <div class="card p-6 bg-surface-container-low">
+          <h3 class="font-display font-semibold mb-3">Contact</h3>
+          <p class="text-sm text-on-surface-variant mb-1">{settings.location}</p>
+          <p class="text-sm">
+            <a href={`mailto:${settings.email}`} class="text-primary">{settings.email}</a>
+          </p>
+          <p class="text-sm">
+            <a href={`tel:${settings.phone.replace(/\s/g, "")}`} class="text-primary"
+              >{settings.phone}</a
+            >
+          </p>
+        </div>
+        {
+          faq.length > 0 && (
+            <div class="card p-6">
+              <h3 class="font-display font-semibold mb-4">FAQ</h3>
+              {faq.map((item, i) => (
+                <details
+                  class:list={[
+                    "py-3",
+                    i < faq.length - 1 && "border-b border-outline-variant/40",
+                  ]}
+                >
+                  <summary class="font-medium cursor-pointer">{item.question}</summary>
+                  <p class="text-sm text-on-surface-variant mt-2">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          )
+        }
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

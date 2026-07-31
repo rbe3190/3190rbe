@@ -2,49 +2,61 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4f68392-a404-44af-bcae-4ebd807ff1d1/deploy-status)](https://app.netlify.com/projects/rotaractblreast/deploys)
 
-[rotaractblreast.org](https://rotaractblreast.org) — Jekyll + Netlify + [Decap CMS](https://decapcms.org/) with GitHub OAuth.
+[rotaractblreast.org](https://rotaractblreast.org) — **Astro** (static) + **Sanity** CMS, hosted on **Netlify**.
 
 **UNITE . RISE . EMPOWER** · Brand orange `#ff9000`
 
 ## Develop
 
 ```bash
-bundle install
-bundle exec jekyll serve
+cp .env.example .env   # set PUBLIC_SANITY_* (leave USE_FS_CONTENT unset)
+npm install
+npm run dev
 ```
 
-Open `/admin/` locally to load Decap (GitHub login works against production OAuth after the app is registered).
+Site: `http://localhost:4321` · Studio: `http://localhost:4321/admin/`
 
+Content is **Sanity-only** (news, events, causes, team). Static YAML remains under `_data/` for site settings, join FAQ, and brand kit.
 ## Content admin (`/admin`)
 
-Editors sign in with **GitHub** (Write access on this repo). There is no Netlify Identity / Git Gateway.
+Editors sign in with **Google** via Sanity (not GitHub).
 
-### One-time ops (club Netlify + GitHub owner)
+1. Create a free [Sanity](https://www.sanity.io) account (Google login is fine).
+2. Club admin invites you on the Sanity project (role **Editor**).
+3. Open [rotaractblreast.org/admin/](https://rotaractblreast.org/admin/) → sign in.
+4. Use the top toolbar: **Content** (docs), **Media** (all uploaded images/files), **Query** (Vision).
+5. Publish → Netlify rebuild (Sanity webhook → build hook).
+
+Dataset assets live in Studio **Media**, not under Manage → Dataset (that screen is for dataset settings, not a file browser).
+
+Ops: set `PUBLIC_SANITY_PROJECT_ID` + `PUBLIC_SANITY_DATASET` in Netlify. Create a build hook and attach a Sanity webhook on publish.
+
+Optional: purge unused migration leftovers (dry-run, then delete):
 
 ```bash
-./scripts/qa-admin-oauth.sh
+npm run purge:orphans
+npm run purge:orphans:delete
 ```
 
-That script prints the full checklist: create a GitHub OAuth App (callback `https://api.netlify.com/auth/done`), install it under Netlify → OAuth, invite editors with Write, then disable Identity/Git Gateway after UAT.
+### One-time content migration (already done)
 
-### Editor onboarding
+Jekyll `_posts` / `_events` / `_causes` were migrated into Sanity and removed from the repo.
+`scripts/migrate-content.mjs` remains only as a historical reference (it expects those folders).
 
-1. Create a free GitHub account.
-2. Accept an invite to `rotaractblreast/RBEwebsite` with **Write** (team `website-editors` or Collaborator).
-3. Open [rotaractblreast.org/admin/](https://rotaractblreast.org/admin/) → **Login with GitHub**.
-4. Publish writes directly to `master` and triggers a Netlify deploy.
-
-All News posts live under `_posts/` and are editable in the CMS.
-
+Ops: ensure Netlify does **not** set `USE_FS_CONTENT=1` (site/build env or `netlify.toml`).
 ## Stack
 
-- Theme UI + Bootstrap 5.3 + orange brand layer [`css/rbe.css`](css/rbe.css)
-- Design notes: [`DESIGN.md`](DESIGN.md)
-- Content: `_posts`, `_events`, `_causes`, `_data`
+- Astro 5 static site + Tailwind 3 (existing RBE tokens)
+- Sanity Studio embedded at `/admin`
+- Pagefind search, RSS, sitemap
+- Forms still post to Google Forms
 
 ## QA
 
 ```bash
-./scripts/qa-local.sh
-./scripts/qa-admin-oauth.sh   # after deploy + OAuth wired
+./scripts/qa-astro.sh
 ```
+
+## Deploy
+
+Netlify build: `npm ci && npm run build` → publish `dist` (see `netlify.toml`). Same site/domain as before.
