@@ -26,6 +26,11 @@
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Critical host / path redirects only.
+# Do NOT add trailing-slash canonicals like /about → /about/: with force=true,
+# Netlify matches both /about and /about/ and loops (ERR_TOO_MANY_REDIRECTS).
+# Astro trailingSlash: "always" already emits .../index.html; Netlify serves /about/ natively.
+
 [[redirects]]
   from = "https://rotaractblreast.netlify.com/*"
   to = "https://rotaractblreast.org/:splat"
@@ -33,164 +38,6 @@
   force = true
 
 [[redirects]]
-  from = "https://3191rbe.org/*"
-  to = "https://rotaractblreast.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/teamadmin"
-  to = "/admin/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/teamadmin/"
-  to = "/admin/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/teamadmin/*"
-  to = "/admin/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/feed.xml"
   to = "/rss.xml"
   status = 301
-
-# Trailing-slash canonicals (Astro trailingSlash: always)
-[[redirects]]
-  from = "/about"
-  to = "/about/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/join"
-  to = "/join/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/causes"
-  to = "/causes/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/events"
-  to = "/events/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/search"
-  to = "/search/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/brandkit"
-  to = "/brandkit/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/privacy"
-  to = "/privacy/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/terms"
-  to = "/terms/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/thankyou"
-  to = "/thankyou/"
-  status = 301
-  force = true
-
-# Temporary Astro path shapes → restored Jekyll-compatible URLs
-[[redirects]]
-  from = "/news/page/:num"
-  to = "/news/page-:num/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/page/:num/"
-  to = "/news/page-:num/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/tag/:name"
-  to = "/news/tag-:name/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/tag/:name/"
-  to = "/news/tag-:name/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Community-Service"
-  to = "/news/community-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Community-Service/"
-  to = "/news/community-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Club-Service"
-  to = "/news/club-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Club-Service/"
-  to = "/news/club-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/International-Service"
-  to = "/news/international-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/International-Service/"
-  to = "/news/international-service/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Professional-Development"
-  to = "/news/professional-development/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/news/category/Professional-Development/"
-  to = "/news/professional-development/"
-  status = 301
-  force = true

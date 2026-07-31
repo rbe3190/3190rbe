@@ -2,61 +2,103 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4f68392-a404-44af-bcae-4ebd807ff1d1/deploy-status)](https://app.netlify.com/projects/rotaractblreast/deploys)
 
-[rotaractblreast.org](https://rotaractblreast.org) — **Astro** (static) + **Sanity** CMS, hosted on **Netlify**.
+Official website of [Rotaract Bangalore East](https://rotaractblreast.org) — an open-source, static site built with **Astro**, content managed in **Sanity**, and hosted on **Netlify**.
 
-**UNITE . RISE . EMPOWER** · Brand orange `#ff9000`
+**UNITE · RISE · EMPOWER** · Brand orange `#ff9000`
 
-## Develop
+## Features
+
+- News, events, causes, and team managed in Sanity Studio at `/admin`
+- Static HTML at deploy time (fast CDN delivery; no server runtime for pages)
+- Pagefind site search, RSS (`/rss.xml`), and sitemap
+- Join / contact / subscribe forms via Google Forms
+- Brand kit and club info from lightweight YAML + static assets
+
+## Quick start
 
 ```bash
-cp .env.example .env   # set PUBLIC_SANITY_* (leave USE_FS_CONTENT unset)
+cp .env.example .env
+# Set PUBLIC_SANITY_PROJECT_ID and PUBLIC_SANITY_DATASET
+# Optional: SANITY_API_WRITE_TOKEN only if you run migration/repair scripts
+
 npm install
 npm run dev
 ```
 
-Site: `http://localhost:4321` · Studio: `http://localhost:4321/admin/`
+| URL | What |
+|-----|------|
+| http://localhost:4321/ | Public site |
+| http://localhost:4321/admin/ | Sanity Studio |
 
-Content is **Sanity-only** (news, events, causes, team). Static YAML remains under `_data/` for site settings, join FAQ, and brand kit.
-## Content admin (`/admin`)
+## Content model
 
-Editors sign in with **Google** via Sanity (not GitHub).
+| Content | Where it lives |
+|---------|----------------|
+| News, events, causes, team, categories, tags | Sanity |
+| Site settings, contact, home/about copy | `_data/info.yml` |
+| Join FAQ | `_data/join_faq.yml` |
+| Brand kit | `_data/brandkit.yml` + `public/images/brandkit/` |
 
-1. Create a free [Sanity](https://www.sanity.io) account (Google login is fine).
-2. Club admin invites you on the Sanity project (role **Editor**).
-3. Open [rotaractblreast.org/admin/](https://rotaractblreast.org/admin/) → sign in.
-4. Use the top toolbar: **Content** (docs), **Media** (all uploaded images/files), **Query** (Vision).
-5. Publish → Netlify rebuild (Sanity webhook → build hook).
+Sanity is the source of truth for editorial content. Do not set `USE_FS_CONTENT=1` on Netlify.
 
-Dataset assets live in Studio **Media**, not under Manage → Dataset (that screen is for dataset settings, not a file browser).
+## Editing content (`/admin`)
 
-Ops: set `PUBLIC_SANITY_PROJECT_ID` + `PUBLIC_SANITY_DATASET` in Netlify. Create a build hook and attach a Sanity webhook on publish.
+Editors use **Google** via Sanity (not GitHub).
 
-Optional: purge unused migration leftovers (dry-run, then delete):
+1. Create a [Sanity](https://www.sanity.io) account (Google login is fine).
+2. Ask a club admin to invite you to the project (Editor role).
+3. Open [rotaractblreast.org/admin/](https://rotaractblreast.org/admin/) and sign in.
+4. Use **Content**, **Media**, and **Query** (Vision) in the Studio toolbar.
+5. Publish — a Sanity webhook should trigger a Netlify rebuild so changes go live.
 
-```bash
-npm run purge:orphans
-npm run purge:orphans:delete
-```
+Images live in Studio **Media** (Sanity CDN), not in the Git repo.
 
-### One-time content migration (already done)
+Ops setup for publish → deploy: see [`SANITY-NETLIFY.md`](./SANITY-NETLIFY.md).
 
-Jekyll `_posts` / `_events` / `_causes` were migrated into Sanity and removed from the repo.
-`scripts/migrate-content.mjs` remains only as a historical reference (it expects those folders).
+## How deploys work
 
-Ops: ensure Netlify does **not** set `USE_FS_CONTENT=1` (site/build env or `netlify.toml`).
+This site is **static**. Sanity content is fetched during `npm run build` and baked into HTML. Visitors do not call Sanity on each page view.
+
+Rebuilds happen when:
+
+1. Code is pushed to the production branch (`master`), or
+2. Sanity publishes content (build hook + webhook), or
+3. A **daily** scheduled Netlify build runs — needed because event “upcoming / ongoing / past” status is computed at build time from start/end dates.
+
 ## Stack
 
-- Astro 5 static site + Tailwind 3 (existing RBE tokens)
-- Sanity Studio embedded at `/admin`
-- Pagefind search, RSS, sitemap
-- Forms still post to Google Forms
+- [Astro 5](https://astro.build) (static) + Tailwind CSS 3
+- [Sanity](https://www.sanity.io) Studio embedded with `@sanity/astro`
+- [Pagefind](https://pagefind.app) search
+- Netlify (CDN, headers, redirects)
 
-## QA
+## Scripts
 
-```bash
-./scripts/qa-astro.sh
+| Command | Purpose |
+|---------|---------|
+| `npm run dev` | Local development |
+| `npm run build` | Production build + Pagefind index |
+| `npm run preview` | Preview the `dist` output |
+| `npm run qa` | Local QA script |
+| `npm run purge:orphans` | List unused Sanity assets (dry-run) |
+
+## Deploy (Netlify)
+
+Build command and publish directory are defined in `netlify.toml`:
+
+```text
+npm ci && npm run build
+→ publish: dist
 ```
 
-## Deploy
+Public Sanity project settings can live in `netlify.toml` `[build.environment]` (they are not secrets). Keep `SANITY_API_WRITE_TOKEN` out of Netlify — it is only for local maintenance scripts.
 
-Netlify build: `npm ci && npm run build` → publish `dist` (see `netlify.toml`). Same site/domain as before.
+Redirects should stay minimal (legacy hosts, `/teamadmin` → `/admin/`, `/feed.xml` → `/rss.xml`). Do not add forced trailing-slash redirects; they can loop on Netlify.
+
+## Contributing
+
+Issues and pull requests are welcome. For agent / maintainer context (architecture pitfalls, env rules, rebuild hooks), see [`AGENTS.md`](./AGENTS.md). Production ship checklist: [`SHIP-CRITERIA.md`](./SHIP-CRITERIA.md).
+
+## License / club
+
+Website of Rotaract Bangalore East. Brand assets and club marks remain club property; code contributions follow the repository’s license and contribution norms.
