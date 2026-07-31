@@ -16,7 +16,7 @@ const label = state === "ongoing" ? "Ongoing" : state === "upcoming" ? "Upcoming
       event.image && (
         <img
           src={event.image}
-          alt=""
+          alt={event.title}
           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
           width="750"

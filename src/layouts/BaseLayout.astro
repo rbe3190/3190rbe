@@ -6,11 +6,19 @@ import Subscribe from "../components/Subscribe.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
 import { SITE, PRIMARY_NAV } from "../lib/site";
 import { getSiteSettings } from "../lib/content";
+import {
+  CONTENT_OG_IMAGE_SIZE,
+  DEFAULT_OG_IMAGE_SIZE,
+  metaDescription,
+  twitterHandleFromUrl,
+} from "../lib/seo";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string | null;
+  /** Accessible description of the social/OG image. Defaults to page or site title. */
+  imageAlt?: string;
   noindex?: boolean;
   ogType?: "website" | "article";
   canonicalPath?: string;
@@ -22,6 +30,7 @@ const {
   title,
   description = SITE.description,
   image,
+  imageAlt,
   noindex = false,
   ogType = "website",
   canonicalPath,
@@ -33,8 +42,12 @@ const settings = await getSiteSettings();
 const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} — ${SITE.subtitle}`;
 const path = canonicalPath ?? Astro.url.pathname;
 const canonical = new URL(path, SITE.url).href;
+const usingDefaultOg = !image;
 const ogImage = new URL(image || SITE.ogImage, SITE.url).href;
-const desc = description.replace(/<[^>]+>/g, "").slice(0, 160);
+const ogSize = usingDefaultOg ? DEFAULT_OG_IMAGE_SIZE : CONTENT_OG_IMAGE_SIZE;
+const ogAlt = imageAlt || title || SITE.title;
+const desc = metaDescription(description);
+const twitterSite = twitterHandleFromUrl(settings.siteSocial?.twitter);
 const jsonBlocks = jsonLd == null ? [] : Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 ---
 <!DOCTYPE html>
@@ -43,20 +56,27 @@ const jsonBlocks = jsonLd == null ? [] : Array.isArray(jsonLd) ? jsonLd : [jsonL
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff9000" />
     <title>{pageTitle}</title>
     <meta name="description" content={desc} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:locale" content="en_IN" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content={String(ogSize.width)} />
+    <meta property="og:image:height" content={String(ogSize.height)} />
+    <meta property="og:image:alt" content={ogAlt} />
     <meta name="twitter:card" content="summary_large_image" />
+    {twitterSite && <meta name="twitter:site" content={twitterSite} />}
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
     <link rel="shortcut icon" href="/images/site/favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

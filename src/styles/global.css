@@ -70,23 +70,108 @@
     @apply shadow-lift -translate-y-1;
   }
 
+  /* Body copy rendered from Markdown. Rules are descendant selectors (not
+     `space-y-*`) so spacing survives however deeply the HTML is wrapped. */
   .prose-rbe {
-    @apply max-w-3xl text-on-surface-variant space-y-4;
+    @apply max-w-3xl text-on-surface-variant;
+  }
+  .prose-rbe > :first-child {
+    @apply mt-0;
+  }
+  .prose-rbe > :last-child {
+    @apply mb-0;
+  }
+  .prose-rbe p {
+    @apply my-4 leading-relaxed;
   }
   .prose-rbe h2 {
-    @apply font-display text-headline-md text-on-surface mt-8 mb-3;
+    @apply font-display text-headline-md text-on-surface mt-10 mb-3;
   }
   .prose-rbe h3 {
-    @apply font-display text-lg font-semibold text-on-surface mt-6 mb-2;
+    @apply font-display text-lg font-semibold text-on-surface mt-8 mb-2;
+  }
+  .prose-rbe h4 {
+    @apply font-display text-base font-semibold text-on-surface mt-6 mb-2;
   }
   .prose-rbe a {
-    @apply text-primary underline underline-offset-2;
+    @apply text-primary underline underline-offset-2 hover:text-on-primary-container;
+  }
+  .prose-rbe strong {
+    @apply font-semibold text-on-surface;
+  }
+  .prose-rbe em {
+    @apply italic;
+  }
+  .prose-rbe del,
+  .prose-rbe s {
+    @apply line-through text-on-surface-variant/80;
   }
   .prose-rbe ul {
-    @apply list-disc pl-5 space-y-1;
+    @apply list-disc pl-6 my-4 space-y-1.5;
   }
+  .prose-rbe ol {
+    @apply list-decimal pl-6 my-4 space-y-1.5;
+  }
+  .prose-rbe li {
+    @apply leading-relaxed;
+  }
+  .prose-rbe li::marker {
+    @apply text-primary;
+  }
+  .prose-rbe li > ul,
+  .prose-rbe li > ol {
+    @apply my-1.5;
+  }
+  .prose-rbe li > p {
+    @apply my-0;
+  }
+  /* GFM task lists from EasyMDE check-list */
+  .prose-rbe li:has(> input[type="checkbox"]) {
+    @apply list-none -ml-6 pl-0;
+  }
+  .prose-rbe li > input[type="checkbox"] {
+    @apply mr-2 align-middle accent-primary;
+  }
+  .prose-rbe blockquote {
+    @apply my-6 border-l-4 border-primary-container pl-4 italic;
+  }
+  .prose-rbe blockquote p {
+    @apply my-2;
+  }
+  .prose-rbe code {
+    @apply rounded bg-surface-container px-1.5 py-0.5 text-[0.9em] font-medium text-on-surface;
+  }
+  .prose-rbe pre {
+    @apply my-6 overflow-x-auto rounded-lg bg-ink p-4 text-sm text-white;
+  }
+  .prose-rbe pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+  .prose-rbe hr {
+    @apply my-10 border-outline-variant/60;
+  }
+  /* `max-w-full` rather than `w-full` so small inline images keep their size. */
   .prose-rbe img {
-    @apply rounded-lg my-6;
+    @apply my-6 mx-auto block h-auto max-w-full rounded-lg;
+  }
+  .prose-rbe figure {
+    @apply my-6;
+  }
+  .prose-rbe figure img {
+    @apply my-0;
+  }
+  .prose-rbe figcaption {
+    @apply mt-2 text-center text-metadata text-on-surface-variant/80;
+  }
+  .prose-rbe table {
+    @apply my-6 w-full border-collapse text-left text-sm;
+  }
+  .prose-rbe th,
+  .prose-rbe td {
+    @apply border border-outline-variant/50 px-3 py-2 align-top;
+  }
+  .prose-rbe th {
+    @apply bg-surface-container font-semibold text-on-surface;
   }
 
   .progress {

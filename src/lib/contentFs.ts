@@ -10,6 +10,7 @@ import type {
   SiteSettings,
   TeamMember,
 } from "./types";
+import { normalizePostCategory, normalizePostTag } from "./paths";
 
 const ROOT = process.cwd();
 
@@ -67,12 +68,14 @@ export function loadPostsFromFs(): Post[] {
         slug,
         publishedAt,
         image: data.image ? String(data.image) : null,
-        author: String(data.author ?? "rbe"),
-        categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
-        tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+        categories: Array.isArray(data.categories)
+          ? data.categories.map((c: unknown) => normalizePostCategory(String(c)))
+          : [],
+        tags: Array.isArray(data.tags)
+          ? data.tags.map((t: unknown) => normalizePostTag(String(t)))
+          : [],
         description: String(data.description ?? ""),
         bodyMarkdown: content,
-        legacyComments: Array.isArray(data.comments) ? data.comments : undefined,
         url: postUrl(publishedAt, slug),
       } satisfies Post;
     })
@@ -89,7 +92,6 @@ export function loadEventsFromFs(): EventDoc[] {
         start: toIsoLocal(data.start),
         end: toIsoLocal(data.end),
         venue: String(data.venue ?? ""),
-        author: String(data.author ?? "rbe"),
         buttonOpen: Boolean(data.button_open ?? true),
         buttonText: String(data.button_text ?? ""),
         buttonUrl: String(data.button_url ?? ""),

@@ -6,7 +6,9 @@ import MarkdownBody from "@/components/MarkdownBody.astro";
 import Share from "@/components/Share.astro";
 import { getPosts } from "@/lib/content";
 import { formatDate } from "@/lib/events";
+import { newsCategoryPath } from "@/lib/paths";
 import { SITE } from "@/lib/site";
+import { breadcrumbListJsonLd, newsArticleJsonLd } from "@/lib/seo";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -36,32 +38,34 @@ export async function getStaticPaths() {
 
 const { post, prev, next } = Astro.props;
 const authorName = SITE.title;
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: post.title,
-  datePublished: post.publishedAt,
-  image: post.image ? [new URL(post.image, SITE.url).href] : undefined,
-  description: post.description,
-  author: { "@type": "Organization", name: SITE.title },
-};
+const categories = (post.categories ?? []).filter((c) => c?.slug);
+const crumbs = [
+  { label: "Home", href: "/" },
+  { label: "News", href: "/news/" },
+  { label: post.title },
+];
+const jsonLd = [
+  newsArticleJsonLd({
+    title: post.title,
+    description: post.description,
+    url: post.url,
+    publishedAt: post.publishedAt,
+    image: post.image,
+  }),
+  breadcrumbListJsonLd(crumbs),
+];
 ---
 <BaseLayout
   title={post.title}
   description={post.description}
   image={post.image}
+  imageAlt={post.title}
   ogType="article"
   canonicalPath={post.url}
   jsonLd={jsonLd}
 >
   <PageHero title={post.title} eyebrow="News" hideTitle background={false} />
-  <Breadcrumbs
-    crumbs={[
-      { label: "Home", href: "/" },
-      { label: "News", href: "/news/" },
-      { label: post.title },
-    ]}
-  />
+  <Breadcrumbs crumbs={crumbs} />
   <article class="section-pad pt-0">
     <div class="wrap max-w-3xl">
       {
@@ -77,14 +81,26 @@ const jsonLd = {
           />
         )
       }
-      <p class="text-metadata text-on-surface-variant mb-2">
+      <p class="text-metadata text-on-surface-variant mb-3">
         {formatDate(post.publishedAt)}
         {authorName ? ` · ${authorName}` : ""}
       </p>
+      {
+        categories.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-4" aria-label="Categories">
+            {categories.map((cat) => (
+              <a
+                href={newsCategoryPath(cat.slug)}
+                class="text-xs uppercase tracking-wider border border-outline-variant/60 text-on-surface px-2.5 py-1 rounded-full font-semibold hover:border-primary hover:text-primary"
+              >
+                {cat.title}
+              </a>
+            ))}
+          </div>
+        )
+      }
       <h1 class="font-display text-headline-lg text-on-surface mb-6">{post.title}</h1>
-      <div class="prose-rbe">
-        <MarkdownBody markdown={post.bodyMarkdown} class="" />
-      </div>
+      <MarkdownBody markdown={post.bodyMarkdown} />
       <Share url={post.url} title={post.title} tags={post.tags} />
       <div class="flex justify-between gap-4 mt-10 pt-8 border-t border-outline-variant/40">
         {prev ? <a href={prev.url} class="btn btn-outline text-sm">← Previous</a> : <span />}

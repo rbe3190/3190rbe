@@ -13,19 +13,20 @@
 - https://rotaractblreast.org/
 
 ## Key pages
-- About: https://rotaractblreast.org/about
-- Join: https://rotaractblreast.org/join
-- Causes: https://rotaractblreast.org/causes
-- Events: https://rotaractblreast.org/events
+- About: https://rotaractblreast.org/about/
+- Join: https://rotaractblreast.org/join/
+- Causes: https://rotaractblreast.org/causes/
+- Events: https://rotaractblreast.org/events/
 - News: https://rotaractblreast.org/news/
-- Contact: https://rotaractblreast.org/contact
+- Contact: https://rotaractblreast.org/contact/
 
 ## Contact
 - Email: info@rotaractblreast.org
 
 ## Feeds
-- Sitemap: https://rotaractblreast.org/sitemap.xml
-- Atom feed: https://rotaractblreast.org/feed.xml
+- Sitemap: https://rotaractblreast.org/sitemap-index.xml
+- RSS: https://rotaractblreast.org/rss.xml
+- Legacy feed URL (301): https://rotaractblreast.org/feed.xml
 
 ## Private
 - /admin/ is for club editors only (not for citation or training summaries).

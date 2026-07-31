@@ -1,0 +1,295 @@
+/**
+ * EasyMDE chrome + preview typography for Sanity Studio.
+ *
+ * Preview rules mirror `.prose-rbe` from global.css (Tailwind does not apply
+ * inside Studio). Everything is scoped so the rest of the Studio UI is intact.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap");
+
+/*
+ * Keep the formatting toolbar reachable in long bodies. EasyMDE ships
+ * `position: relative` with no background, so it scrolls out of view and you
+ * lose sight of the cursor while scrolling back up to click a button.
+ *
+ * Excludes `.fullscreen`, where EasyMDE already pins the toolbar itself.
+ * Adjust `--rbe-md-toolbar-offset` if a sticky Studio header ever overlaps it.
+ */
+.EasyMDEContainer .editor-toolbar:not(.fullscreen) {
+  position: sticky;
+  top: var(--rbe-md-toolbar-offset, 0px);
+  z-index: 3;
+  background: var(--card-bg-color, #fff);
+  border-bottom: 1px solid var(--card-border-color, #e3e3e3);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* Sticky needs an unclipped path to the scroll container. */
+.EasyMDEContainer {
+  overflow: visible;
+}
+
+.editor-preview .rbe-md-preview,
+.editor-preview-side .rbe-md-preview {
+  --rbe-on-surface: #231a11;
+  --rbe-on-surface-variant: #564334;
+  --rbe-primary: #8e4e00;
+  --rbe-primary-container: #ff9000;
+  --rbe-on-primary-container: #633400;
+  --rbe-surface-container: #feeadc;
+  --rbe-outline-variant: #dcc2ae;
+  --rbe-ink: #111111;
+  --rbe-bg: #fff8f5;
+
+  box-sizing: border-box;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.5rem;
+  color: var(--rbe-on-surface-variant);
+  background: var(--rbe-bg);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.editor-preview .rbe-md-preview *,
+.editor-preview-side .rbe-md-preview * {
+  box-sizing: border-box;
+}
+
+.editor-preview .rbe-md-preview > :first-child,
+.editor-preview-side .rbe-md-preview > :first-child {
+  margin-top: 0;
+}
+
+.editor-preview .rbe-md-preview > :last-child,
+.editor-preview-side .rbe-md-preview > :last-child {
+  margin-bottom: 0;
+}
+
+.editor-preview .rbe-md-preview p,
+.editor-preview-side .rbe-md-preview p {
+  margin: 1rem 0;
+  line-height: 1.625;
+}
+
+.editor-preview .rbe-md-preview h2,
+.editor-preview-side .rbe-md-preview h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  color: var(--rbe-on-surface);
+}
+
+.editor-preview .rbe-md-preview h3,
+.editor-preview-side .rbe-md-preview h3 {
+  margin: 2rem 0 0.5rem;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--rbe-on-surface);
+}
+
+.editor-preview .rbe-md-preview h4,
+.editor-preview-side .rbe-md-preview h4 {
+  margin: 1.5rem 0 0.5rem;
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--rbe-on-surface);
+}
+
+.editor-preview .rbe-md-preview a,
+.editor-preview-side .rbe-md-preview a {
+  color: var(--rbe-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.editor-preview .rbe-md-preview a:hover,
+.editor-preview-side .rbe-md-preview a:hover {
+  color: var(--rbe-on-primary-container);
+}
+
+.editor-preview .rbe-md-preview strong,
+.editor-preview-side .rbe-md-preview strong {
+  font-weight: 600;
+  color: var(--rbe-on-surface);
+}
+
+.editor-preview .rbe-md-preview em,
+.editor-preview-side .rbe-md-preview em {
+  font-style: italic;
+}
+
+.editor-preview .rbe-md-preview del,
+.editor-preview .rbe-md-preview s,
+.editor-preview-side .rbe-md-preview del,
+.editor-preview-side .rbe-md-preview s {
+  text-decoration: line-through;
+  color: color-mix(in srgb, var(--rbe-on-surface-variant) 80%, transparent);
+}
+
+.editor-preview .rbe-md-preview ul,
+.editor-preview-side .rbe-md-preview ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.editor-preview .rbe-md-preview ol,
+.editor-preview-side .rbe-md-preview ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+
+.editor-preview .rbe-md-preview li,
+.editor-preview-side .rbe-md-preview li {
+  margin: 0.375rem 0;
+  line-height: 1.625;
+}
+
+.editor-preview .rbe-md-preview li::marker,
+.editor-preview-side .rbe-md-preview li::marker {
+  color: var(--rbe-primary);
+}
+
+.editor-preview .rbe-md-preview li > ul,
+.editor-preview .rbe-md-preview li > ol,
+.editor-preview-side .rbe-md-preview li > ul,
+.editor-preview-side .rbe-md-preview li > ol {
+  margin: 0.375rem 0;
+}
+
+.editor-preview .rbe-md-preview li > p,
+.editor-preview-side .rbe-md-preview li > p {
+  margin: 0;
+}
+
+.editor-preview .rbe-md-preview li:has(> input[type="checkbox"]),
+.editor-preview-side .rbe-md-preview li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1.5rem;
+  padding-left: 0;
+}
+
+.editor-preview .rbe-md-preview li > input[type="checkbox"],
+.editor-preview-side .rbe-md-preview li > input[type="checkbox"] {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  accent-color: var(--rbe-primary);
+}
+
+.editor-preview .rbe-md-preview blockquote,
+.editor-preview-side .rbe-md-preview blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--rbe-primary-container);
+  font-style: italic;
+}
+
+.editor-preview .rbe-md-preview blockquote p,
+.editor-preview-side .rbe-md-preview blockquote p {
+  margin: 0.5rem 0;
+}
+
+.editor-preview .rbe-md-preview code,
+.editor-preview-side .rbe-md-preview code {
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  background: var(--rbe-surface-container);
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--rbe-on-surface);
+}
+
+.editor-preview .rbe-md-preview pre,
+.editor-preview-side .rbe-md-preview pre {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: var(--rbe-ink);
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.editor-preview .rbe-md-preview pre code,
+.editor-preview-side .rbe-md-preview pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.editor-preview .rbe-md-preview hr,
+.editor-preview-side .rbe-md-preview hr {
+  margin: 2.5rem 0;
+  border: 0;
+  border-top: 1px solid color-mix(in srgb, var(--rbe-outline-variant) 60%, transparent);
+}
+
+.editor-preview .rbe-md-preview img,
+.editor-preview-side .rbe-md-preview img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 0.5rem;
+}
+
+.editor-preview .rbe-md-preview figure,
+.editor-preview-side .rbe-md-preview figure {
+  margin: 1.5rem 0;
+}
+
+.editor-preview .rbe-md-preview figure img,
+.editor-preview-side .rbe-md-preview figure img {
+  margin: 0 auto;
+}
+
+.editor-preview .rbe-md-preview figcaption,
+.editor-preview-side .rbe-md-preview figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--rbe-on-surface-variant) 80%, transparent);
+}
+
+.editor-preview .rbe-md-preview table,
+.editor-preview-side .rbe-md-preview table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.editor-preview .rbe-md-preview th,
+.editor-preview .rbe-md-preview td,
+.editor-preview-side .rbe-md-preview th,
+.editor-preview-side .rbe-md-preview td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--rbe-outline-variant) 50%, transparent);
+  vertical-align: top;
+}
+
+.editor-preview .rbe-md-preview th,
+.editor-preview-side .rbe-md-preview th {
+  background: var(--rbe-surface-container);
+  font-weight: 600;
+  color: var(--rbe-on-surface);
+}
+
+/* Soften EasyMDE’s default preview chrome so our site canvas reads clearly */
+.editor-preview,
+.editor-preview-side {
+  background: var(--card-bg-color, #fff8f5) !important;
+}

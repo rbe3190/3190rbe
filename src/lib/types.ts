@@ -14,18 +14,26 @@ export type SiteSettings = {
   areasOfFocus: Array<{ title: string; icon?: string; description: string }>;
 };
 
+export type PostCategory = {
+  title: string;
+  slug: string;
+};
+
+export type PostTag = {
+  title: string;
+  slug: string;
+};
+
 export type Post = {
   _id?: string;
   title: string;
   slug: string;
   publishedAt: string;
   image?: string | null;
-  author: string;
-  categories: string[];
-  tags: string[];
+  categories: PostCategory[];
+  tags: PostTag[];
   description: string;
   bodyMarkdown: string;
-  legacyComments?: Array<{ user: string; timestamp: string; comment: string }>;
   url: string;
 };
 
@@ -36,7 +44,6 @@ export type EventDoc = {
   start: string;
   end: string;
   venue: string;
-  author: string;
   buttonOpen: boolean;
   buttonText: string;
   buttonUrl: string;

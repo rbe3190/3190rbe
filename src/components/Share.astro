@@ -1,18 +1,28 @@
 ---
 import SocialIcon from "./SocialIcon.astro";
 import { SITE } from "../lib/site";
-import { newsTagPath } from "../lib/paths";
+import { newsTagPath, normalizePostTag } from "../lib/paths";
+import type { PostTag } from "../lib/types";
 
 interface Props {
   url: string;
   title: string;
-  tags?: string[];
+  tags?: Array<string | PostTag>;
 }
 const { url, title, tags = [] } = Astro.props;
 const absolute = new URL(url, SITE.url).href;
 const encodedUrl = encodeURIComponent(absolute);
 const encodedTitle = encodeURIComponent(title);
-const tagList = (tags ?? []).map(String).filter(Boolean);
+const tagList = (tags ?? [])
+  .map((t) => {
+    if (typeof t === "string") {
+      const s = t.trim();
+      return s ? normalizePostTag(s) : null;
+    }
+    if (t?.slug) return { title: t.title || t.slug, slug: t.slug };
+    return null;
+  })
+  .filter((t): t is { title: string; slug: string } => Boolean(t?.slug));
 ---
 <div class="share-bar flex flex-wrap items-center gap-3 mt-10 pt-6 border-t border-outline-variant/40">
   <span class="text-sm font-semibold text-on-surface">Share</span>
@@ -87,13 +97,13 @@ const tagList = (tags ?? []).map(String).filter(Boolean);
 
   {
     tagList.length > 0 && (
-      <div class="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-1">
+      <div class="flex flex-wrap gap-2 w-full sm:w-auto sm:ml-1" aria-label="Tags">
         {tagList.map((t) => (
           <a
-            href={newsTagPath(t)}
-            class="text-xs uppercase tracking-wider bg-primary-container/35 text-on-primary-container px-2.5 py-1 rounded-full font-semibold"
+            href={newsTagPath(t.slug)}
+            class="text-xs uppercase tracking-wider bg-primary-container/35 text-on-primary-container px-2.5 py-1 rounded-full font-semibold hover:bg-primary-container/55"
           >
-            {t}
+            {t.title}
           </a>
         ))}
       </div>

@@ -71,24 +71,44 @@ export async function getPosts(): Promise<Post[]> {
   const client = getSanityClient();
   const rows = await client.fetch<Array<Record<string, unknown>>>(
     `*[_type == "post"]|order(publishedAt desc){
-      _id, title, "slug": slug.current, publishedAt, image, author, categories, tags, description, bodyMarkdown, legacyComments
+      _id, title, "slug": slug.current, publishedAt, image, description, bodyMarkdown,
+      "categories": categories[]->{
+        title,
+        "slug": slug.current
+      },
+      "tags": tags[]->{
+        title,
+        "slug": slug.current
+      }
     }`,
   );
   return rows.map((r) => {
     const slug = String(r.slug);
     const publishedAt = String(r.publishedAt);
+    const categories = ((r.categories as Array<Record<string, unknown>>) ?? [])
+      .filter((c) => c && (c.slug || c.title))
+      .map((c) => ({
+        title: String(c.title ?? c.slug ?? ""),
+        slug: String(c.slug ?? "").toLowerCase(),
+      }))
+      .filter((c) => c.slug);
+    const tags = ((r.tags as Array<Record<string, unknown>>) ?? [])
+      .filter((t) => t && (t.slug || t.title))
+      .map((t) => ({
+        title: String(t.title ?? t.slug ?? ""),
+        slug: String(t.slug ?? "").toLowerCase(),
+      }))
+      .filter((t) => t.slug);
     return {
       _id: String(r._id),
       title: String(r.title),
       slug,
       publishedAt,
       image: urlForImage(r.image as SanityImageSource),
-      author: String(r.author ?? "rbe"),
-      categories: (r.categories as string[]) ?? [],
-      tags: (r.tags as string[]) ?? [],
+      categories,
+      tags,
       description: String(r.description ?? ""),
       bodyMarkdown: String(r.bodyMarkdown ?? ""),
-      legacyComments: r.legacyComments as Post["legacyComments"],
       url: postUrl(publishedAt, slug),
     };
   });
@@ -99,7 +119,7 @@ export async function getEvents(): Promise<EventDoc[]> {
   const client = getSanityClient();
   const rows = await client.fetch<Array<Record<string, unknown>>>(
     `*[_type == "event"]|order(start desc){
-      _id, title, "slug": slug.current, start, end, venue, author, buttonOpen, buttonText, buttonUrl, image, intro, description, bodyMarkdown
+      _id, title, "slug": slug.current, start, end, venue, buttonOpen, buttonText, buttonUrl, image, intro, description, bodyMarkdown
     }`,
   );
   return rows.map((r) => {
@@ -111,7 +131,6 @@ export async function getEvents(): Promise<EventDoc[]> {
       start: String(r.start),
       end: String(r.end),
       venue: String(r.venue ?? ""),
-      author: String(r.author ?? "rbe"),
       buttonOpen: Boolean(r.buttonOpen),
       buttonText: String(r.buttonText ?? ""),
       buttonUrl: String(r.buttonUrl ?? ""),

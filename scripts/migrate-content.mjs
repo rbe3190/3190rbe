@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Migrate Jekyll content + media into Sanity.
+ * HISTORICAL — one-time Jekyll → Sanity migration.
+ * Source folders (_posts / _events / _causes / images/uploads) were removed after cutover.
  * Requires: PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET, SANITY_API_WRITE_TOKEN
  * Loads .env from the repo root if present (Node does not load it by itself).
  */
@@ -212,6 +213,22 @@ async function migratePosts() {
   for (const { file, data, content } of readMd("_posts")) {
     const slug = slugFromFilename(file);
     const id = `post-${slug}`;
+    const categories = (data.categories || []).map((raw, i) => {
+      const catSlug = String(raw).toLowerCase();
+      return {
+        _type: "reference",
+        _ref: `category-${catSlug}`,
+        _key: `cat${i}_${catSlug}`,
+      };
+    });
+    const tags = (data.tags || []).map((raw, i) => {
+      const tSlug = tagSlugify(raw);
+      return {
+        _type: "reference",
+        _ref: `tag-${tSlug}`,
+        _key: `tag${i}_${tSlug}`,
+      };
+    });
     await client.createOrReplace({
       _id: id,
       _type: "post",
@@ -219,12 +236,10 @@ async function migratePosts() {
       slug: { _type: "slug", current: slug },
       publishedAt: toIsoLocal(data.date),
       image: imageRef(data.image),
-      author: data.author || "rbe",
-      categories: data.categories || [],
-      tags: data.tags || [],
+      categories,
+      tags,
       description: data.description || "",
       bodyMarkdown: content.trim(),
-      legacyComments: data.comments || undefined,
     });
     console.log("post", slug);
   }
@@ -241,7 +256,6 @@ async function migrateEvents() {
       start: toIsoLocal(data.start),
       end: toIsoLocal(data.end),
       venue: data.venue || "",
-      author: data.author || "rbe",
       buttonOpen: Boolean(data.button_open ?? true),
       buttonText: data.button_text || "",
       buttonUrl: data.button_url || "",
@@ -282,6 +296,61 @@ async function migrateCauses() {
   }
 }
 
+async function migrateCategories() {
+  const defaults = [
+    { title: "Club Service", slug: "club-service" },
+    { title: "Community Service", slug: "community-service" },
+    { title: "International Service", slug: "international-service" },
+    { title: "Professional Development", slug: "professional-development" },
+  ];
+  for (const c of defaults) {
+    await client.createOrReplace({
+      _id: `category-${c.slug}`,
+      _type: "category",
+      title: c.title,
+      slug: { _type: "slug", current: c.slug },
+    });
+  }
+  console.log("categories", defaults.length);
+}
+
+function tagSlugify(raw) {
+  const slug = String(raw ?? "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || "tag";
+}
+
+function titleFromLegacy(raw) {
+  return String(raw)
+    .replace(/-/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+}
+
+async function migrateTags() {
+  const seen = new Map();
+  for (const { data } of readMd("_posts")) {
+    for (const raw of data.tags || []) {
+      const slug = tagSlugify(raw);
+      if (!seen.has(slug)) seen.set(slug, titleFromLegacy(raw) || slug);
+    }
+  }
+  for (const [slug, title] of seen) {
+    await client.createOrReplace({
+      _id: `tag-${slug}`,
+      _type: "tag",
+      title,
+      slug: { _type: "slug", current: slug },
+    });
+  }
+  console.log("tags", seen.size);
+}
+
 async function migrateSingletons() {
   // Site settings / Join FAQ / Brand Kit are static on disk — not migrated to Sanity.
 
@@ -317,6 +386,8 @@ async function main() {
     process.exitCode = 1;
   }
   console.log("Documents…");
+  await migrateCategories();
+  await migrateTags();
   await migratePosts();
   await migrateEvents();
   await migrateCauses();
@@ -325,6 +396,8 @@ async function main() {
     "posts": count(*[_type=="post"]),
     "events": count(*[_type=="event"]),
     "causes": count(*[_type=="cause"]),
+    "categories": count(*[_type=="category"]),
+    "tags": count(*[_type=="tag"]),
     "images": count(*[_type=="sanity.imageAsset"]),
     "files": count(*[_type=="sanity.fileAsset"]),
     "team": count(*[_type=="team"])
@@ -334,9 +407,11 @@ async function main() {
     counts.posts === 29 &&
     counts.events === 13 &&
     counts.causes === 2 &&
-    counts.team === 1;
+    counts.team === 1 &&
+    counts.categories === 4 &&
+    counts.tags >= 1;
   if (!okDocs) {
-    console.warn("Count mismatch vs expected posts/events/causes 29/13/2 + team", counts);
+    console.warn("Count mismatch vs expected posts/events/causes/team/categories + tags", counts);
     process.exitCode = 2;
   } else if (uploadFailures.length) {
     console.log("Documents OK; re-run migrate later to retry failed assets.");

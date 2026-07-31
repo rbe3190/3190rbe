@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  USE_FS_CONTENT = "1"
+  # Sanity is the content source of truth. Unset / omit USE_FS_CONTENT (do not set to "1").
 
 [[headers]]
   for = "/*"

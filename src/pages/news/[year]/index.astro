@@ -4,8 +4,8 @@ import PageHero from "@/components/PageHero.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import CardPost from "@/components/CardPost.astro";
 import { getPosts } from "@/lib/content";
-import { categorySlug, postDateParts } from "@/lib/paths";
-import type { Post } from "@/lib/types";
+import { postDateParts } from "@/lib/paths";
+import type { Post, PostCategory } from "@/lib/types";
 
 type ArchiveKind = "year" | "category";
 
@@ -28,15 +28,19 @@ export async function getStaticPaths() {
     });
   }
 
-  const cats = [...new Set(posts.flatMap((p) => p.categories))];
-  for (const cat of cats) {
-    const slug = categorySlug(cat);
+  const bySlug = new Map<string, PostCategory>();
+  for (const p of posts) {
+    for (const c of p.categories ?? []) {
+      if (c?.slug && !bySlug.has(c.slug)) bySlug.set(c.slug, c);
+    }
+  }
+  for (const cat of bySlug.values()) {
     paths.push({
-      params: { year: slug },
+      params: { year: cat.slug },
       props: {
         kind: "category",
-        title: cat.replace(/-/g, " "),
-        posts: posts.filter((p) => p.categories.includes(cat)),
+        title: cat.title,
+        posts: posts.filter((p) => (p.categories ?? []).some((c) => c.slug === cat.slug)),
       },
     });
   }

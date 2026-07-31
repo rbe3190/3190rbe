@@ -19,4 +19,6 @@ export const PRIMARY_NAV = [
   { title: "Contact", url: "/contact/" },
 ] as const;
 
-export const POSTS_PER_PAGE = 9;
+/** Card grid page size (3×3) for news, past events, and completed causes. */
+export const LIST_PAGE_SIZE = 9;
+export const POSTS_PER_PAGE = LIST_PAGE_SIZE;

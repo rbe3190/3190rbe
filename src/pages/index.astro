@@ -6,6 +6,7 @@ import CardCause from "@/components/CardCause.astro";
 import { getCauses, getEvents, getPosts, getSiteSettings } from "@/lib/content";
 import { eventState, formatSpotlightDate, nowStamp, toUnix } from "@/lib/events";
 import { SITE } from "@/lib/site";
+import { webSiteJsonLd } from "@/lib/seo";
 
 const settings = await getSiteSettings();
 const posts = await getPosts();
@@ -62,44 +63,41 @@ while (mix.length < 9 && pi < posts.length) {
   mix.push({ kind: "post", data: posts[pi++] });
 }
 
+const homeDescription =
+  "Rotaract Bangalore East (RBE) — UNITE, RISE, and EMPOWER through community service in Bangalore. News, events, causes, and how to join Easterners.";
 const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE.title,
-    url: SITE.url,
-    description: SITE.description,
-  },
+  webSiteJsonLd(homeDescription),
   {
     "@context": "https://schema.org",
     "@type": "NGO",
     name: SITE.title,
-    alternateName: "RBE",
+    alternateName: ["RBE", "Easterners"],
     url: SITE.url,
     logo: `${SITE.url}/images/site/rbe.png`,
     email: settings.email,
     telephone: settings.phone,
     foundingDate: "1975-01-17",
     slogan: SITE.subtitle,
-    areaServed: "Bangalore",
+    areaServed: {
+      "@type": "City",
+      name: "Bengaluru",
+    },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Bangalore",
+      addressLocality: "Bengaluru",
+      addressRegion: "KA",
       addressCountry: "IN",
     },
     sameAs: Object.values(settings.siteSocial).filter(Boolean),
   },
 ];
 ---
-<BaseLayout
-  description="Rotaract Bangalore East (RBE) — UNITE, RISE, and EMPOWER through community service in Bangalore. News, events, causes, and how to join Easterners."
-  jsonLd={jsonLd}
->
+<BaseLayout description={homeDescription} jsonLd={jsonLd}>
   <section class="relative w-full min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0">
       <img
         src="/images/site/slider-4.jpg"
-        alt=""
+        alt="Rotaract Bangalore East members at a club event"
         class="h-full w-full object-cover"
         width="1920"
         height="1080"
@@ -140,7 +138,7 @@ const jsonLd = [
             <div class="aspect-[16/10] overflow-hidden">
               <img
                 src={value.image}
-                alt=""
+                alt={value.title}
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 width="640"
@@ -173,7 +171,7 @@ const jsonLd = [
         />
         <img
           src="/images/site/about-small.jpg"
-          alt=""
+          alt="Rotaract Bangalore East members volunteering together"
           class="hidden md:block absolute bottom-4 right-4 w-32 lg:w-40 rounded-lg border-4 border-background shadow-lift"
           loading="lazy"
           width="160"
@@ -227,7 +225,7 @@ const jsonLd = [
               <div class="aspect-[16/10] md:aspect-auto md:min-h-[280px] overflow-hidden">
                 <img
                   src={spotlight.image}
-                  alt=""
+                  alt={spotlight.title}
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />

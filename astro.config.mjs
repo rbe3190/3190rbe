@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadEnv } from "vite";
 import { pagefindDevPlugin } from "./scripts/pagefind-dev-plugin.mjs";
+import { rbeAdminShell } from "./scripts/rbe-admin-shell.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const env = loadEnv(process.env.NODE_ENV ?? "development", process.cwd(), "");
@@ -30,6 +31,30 @@ export default defineConfig({
       },
     },
     plugins: [pagefindDevPlugin(__dirname)],
+    // Pre-bundle Studio + markdown-preview deps at startup so the first /admin/
+    // visit (or adding new imports) does not mid-flight re-optimize and orphan
+    // hashed chunks like resources-*.js.
+    optimizeDeps: {
+      include: [
+        "react",
+        "react-dom",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "react-is",
+        "styled-components",
+        "sanity",
+        "sanity/structure",
+        "sanity/router",
+        "@sanity/ui",
+        "@sanity/vision",
+        "sanity-plugin-markdown",
+        "sanity-plugin-media",
+        "easymde",
+        "dompurify",
+        "marked",
+      ],
+    },
     // Studio hydrates in the browser — stub env reads used by Sanity tooling.
     // Module dedupe for react/sanity is handled by @sanity/astro (do not alias
     // `sanity` to a folder path; that breaks `sanity/router` etc. subpaths).
@@ -49,6 +74,8 @@ export default defineConfig({
       studioBasePath: "/admin",
       studioRouterHistory: "hash",
     }),
+    // Owns /admin HTML shell after Sanity injects the route (avoids duplicate-route warning).
+    rbeAdminShell(),
     react(),
     tailwind({
       applyBaseStyles: false,

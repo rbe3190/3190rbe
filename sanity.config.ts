@@ -2,7 +2,9 @@ import { buildLegacyTheme, defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { markdownSchema } from "sanity-plugin-markdown";
+import { media } from "sanity-plugin-media";
 import { schemaTypes } from "./schemaTypes";
+import { MarkdownBodyInput } from "./src/studio/MarkdownBodyInput";
 import { RbeStudioIcon } from "./src/studio/RbeStudioIcon";
 import "easymde/dist/easymde.min.css";
 
@@ -49,14 +51,18 @@ export default defineConfig({
               .title("Team")
               .id("team")
               .child(S.document().schemaType("team").documentId("team")),
+            S.documentTypeListItem("category").title("Categories"),
+            S.documentTypeListItem("tag").title("Tags"),
             S.divider(),
             S.documentTypeListItem("post").title("News"),
             S.documentTypeListItem("event").title("Events"),
             S.documentTypeListItem("cause").title("Causes"),
           ]),
     }),
+    // Dataset asset browser (images/files). Manage → dataset does not list these.
+    media(),
     visionTool({ title: "Query" }),
-    markdownSchema(),
+    markdownSchema({ input: MarkdownBodyInput }),
   ],
   schema: {
     types: schemaTypes,

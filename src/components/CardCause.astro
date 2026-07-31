@@ -1,5 +1,6 @@
 ---
 import type { Cause } from "../lib/types";
+import { formatInrCurrency } from "../lib/format";
 
 interface Props {
   cause: Cause;
@@ -12,7 +13,7 @@ const { cause } = Astro.props;
       cause.image && (
         <img
           src={cause.image}
-          alt=""
+          alt={cause.title}
           class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
           width="750"
@@ -49,7 +50,10 @@ const { cause } = Astro.props;
             <span style={`width: ${cause.progress}%`} />
           </div>
           <p class="text-xs text-on-surface-variant mb-4">
-            {cause.progress}% funded{cause.goal ? ` · Goal ${cause.goal}` : ""}
+            {cause.progress}% funded
+            {cause.goal != null && Number.isFinite(cause.goal)
+              ? ` · Goal ${formatInrCurrency(cause.goal)}`
+              : ""}
           </p>
         </>
       )

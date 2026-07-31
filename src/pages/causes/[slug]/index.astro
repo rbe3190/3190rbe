@@ -6,32 +6,48 @@ import MarkdownBody from "@/components/MarkdownBody.astro";
 import Share from "@/components/Share.astro";
 import { getCauses } from "@/lib/content";
 import { formatDate } from "@/lib/events";
+import { formatInrCurrency } from "@/lib/format";
+import { breadcrumbListJsonLd, causeWebPageJsonLd } from "@/lib/seo";
 
 export async function getStaticPaths() {
   const causes = await getCauses();
-  return causes.map((cause) => ({
-    params: { slug: cause.slug },
-    props: { cause },
-  }));
+  return causes
+    .filter((cause) => !/^page-\d+$/i.test(cause.slug))
+    .map((cause) => ({
+      params: { slug: cause.slug },
+      props: { cause },
+    }));
 }
 
 const { cause } = Astro.props;
 const dueLabel = cause.due ? formatDate(cause.due, { month: "short", day: "numeric", year: "numeric" }) : "Ongoing";
+const summary = cause.description || cause.intro;
+const crumbs = [
+  { label: "Home", href: "/" },
+  { label: "Causes", href: "/causes/" },
+  { label: cause.title },
+];
+const jsonLd = [
+  causeWebPageJsonLd({
+    title: cause.title,
+    description: summary,
+    url: cause.url,
+    image: cause.image,
+    donationLink: cause.donationLink,
+  }),
+  breadcrumbListJsonLd(crumbs),
+];
 ---
 <BaseLayout
   title={cause.title}
-  description={cause.description || cause.intro}
+  description={summary}
   image={cause.image}
+  imageAlt={cause.title}
   canonicalPath={cause.url}
+  jsonLd={jsonLd}
 >
   <PageHero title={cause.title} eyebrow={cause.focus || "Cause"} background={false} />
-  <Breadcrumbs
-    crumbs={[
-      { label: "Home", href: "/" },
-      { label: "Causes", href: "/causes/" },
-      { label: cause.title },
-    ]}
-  />
+  <Breadcrumbs crumbs={crumbs} />
   <article class="section-pad pt-0">
     <div class="wrap grid lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
@@ -49,9 +65,7 @@ const dueLabel = cause.due ? formatDate(cause.due, { month: "short", day: "numer
           )
         }
         {cause.intro && <p class="text-body-lg text-on-surface-variant mb-6">{cause.intro}</p>}
-        <div class="prose-rbe">
-          <MarkdownBody markdown={cause.bodyMarkdown || cause.description} class="" />
-        </div>
+        <MarkdownBody markdown={cause.bodyMarkdown || cause.description} />
         <Share url={cause.url} title={cause.title} />
       </div>
       <aside class="lg:col-span-1">
@@ -64,7 +78,7 @@ const dueLabel = cause.due ? formatDate(cause.due, { month: "short", day: "numer
             cause.goal != null && Number.isFinite(cause.goal) && (
               <div class="flex justify-between text-sm">
                 <span class="text-on-surface-variant">Goal</span>
-                <span class="font-medium">₹{cause.goal}</span>
+                <span class="font-medium">{formatInrCurrency(cause.goal)}</span>
               </div>
             )
           }

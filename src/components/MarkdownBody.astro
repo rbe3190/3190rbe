@@ -1,12 +1,12 @@
 ---
-import { marked } from "marked";
+import { renderMarkdown } from "@/lib/markdown";
 
 interface Props {
   markdown: string;
   class?: string;
 }
 const { markdown, class: className = "prose-rbe" } = Astro.props;
-const html = marked.parse(markdown || "", { async: false }) as string;
+const html = renderMarkdown(markdown || "");
 ---
 {
   className ? (

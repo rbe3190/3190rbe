@@ -7,7 +7,9 @@
 - [ ] `npm run build` succeeds (Astro → `dist` + Pagefind)
 - [ ] `scripts/qa-astro.sh` PASS
 - [ ] Public UI visual parity checklist PASS vs production (home, about, join, contact, news, event, causes, brandkit — desktop + mobile)
-- [ ] Sample event JSON-LD: valid `endDate`; past events not falsely “upcoming”
+- [ ] Sample event JSON-LD: valid `endDate` (falls back to `startDate` if missing); includes `url`
+- [ ] News JSON-LD includes `publisher` / `dateModified` / `mainEntityOfPage`
+- [ ] `public/llms.txt` cites `sitemap-index.xml` and `/rss.xml`
 - [ ] `dist/robots.txt` includes `Disallow: /admin/`
 - [ ] No Decap / Git Gateway / consent banner / Clarity
 
@@ -20,8 +22,7 @@
 - [ ] GA loads by default; no consent banner / Clarity
 - [ ] Smoke: Join/Contact/Subscribe → thankyou; share; events/news grids
 - [ ] Editor: Google login at `/admin`, publish → Netlify rebuild → content live
-- [ ] Netlify env: `PUBLIC_SANITY_PROJECT_ID`, `PUBLIC_SANITY_DATASET`; `USE_FS_CONTENT` off once Sanity is source of truth
-
+- [ ] Netlify env: `PUBLIC_SANITY_PROJECT_ID`, `PUBLIC_SANITY_DATASET`; **do not** set `USE_FS_CONTENT=1` (Sanity is source of truth)
 ## Go / no-go
 
 | Result | Meaning |

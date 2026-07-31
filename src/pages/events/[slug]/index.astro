@@ -5,20 +5,20 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import MarkdownBody from "@/components/MarkdownBody.astro";
 import Share from "@/components/Share.astro";
 import { getEvents } from "@/lib/content";
-import { eventState, formatDateTime, nowStamp } from "@/lib/events";
-import { SITE } from "@/lib/site";
+import { formatDateTime } from "@/lib/events";
+import { breadcrumbListJsonLd, eventJsonLd } from "@/lib/seo";
 
 export async function getStaticPaths() {
   const events = await getEvents();
-  return events.map((event) => ({
-    params: { slug: event.slug },
-    props: { event },
-  }));
+  return events
+    .filter((event) => !/^page-\d+$/i.test(event.slug))
+    .map((event) => ({
+      params: { slug: event.slug },
+      props: { event },
+    }));
 }
 
 const { event } = Astro.props;
-const now = nowStamp();
-const state = eventState(event.start, event.end, now);
 const buttonHref = event.buttonUrl?.includes("://")
   ? event.buttonUrl
   : event.buttonUrl
@@ -27,37 +27,35 @@ const buttonHref = event.buttonUrl?.includes("://")
       : `/${event.buttonUrl}`
     : "";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: event.title,
-  startDate: event.start,
-  endDate: event.end,
-  eventStatus: "https://schema.org/EventScheduled",
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-  location: event.venue
-    ? { "@type": "Place", name: event.venue, address: event.venue }
-    : undefined,
-  image: event.image ? [new URL(event.image, SITE.url).href] : undefined,
-  description: event.description || event.intro,
-  organizer: { "@type": "Organization", name: SITE.title, url: SITE.url },
-};
+const summary = event.description || event.intro;
+const crumbs = [
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/events/" },
+  { label: event.title },
+];
+const jsonLd = [
+  eventJsonLd({
+    title: event.title,
+    description: summary,
+    url: event.url,
+    start: event.start,
+    end: event.end,
+    venue: event.venue,
+    image: event.image,
+  }),
+  breadcrumbListJsonLd(crumbs),
+];
 ---
 <BaseLayout
   title={event.title}
-  description={event.description || event.intro}
+  description={summary}
   image={event.image}
+  imageAlt={event.title}
   canonicalPath={event.url}
   jsonLd={jsonLd}
 >
   <PageHero title={event.title} eyebrow="Event" background={false} />
-  <Breadcrumbs
-    crumbs={[
-      { label: "Home", href: "/" },
-      { label: "Events", href: "/events/" },
-      { label: event.title },
-    ]}
-  />
+  <Breadcrumbs crumbs={crumbs} />
   <article class="section-pad pt-0">
     <div class="wrap grid lg:grid-cols-3 gap-10">
       <div class="lg:col-span-2">
@@ -75,9 +73,7 @@ const jsonLd = {
           )
         }
         {event.intro && <p class="text-body-lg text-on-surface-variant mb-6">{event.intro}</p>}
-        <div class="prose-rbe">
-          <MarkdownBody markdown={event.bodyMarkdown || event.description} class="" />
-        </div>
+        <MarkdownBody markdown={event.bodyMarkdown || event.description} />
         <Share url={event.url} title={event.title} />
       </div>
       <aside class="lg:col-span-1">
