@@ -20,13 +20,12 @@ import type {
 } from "./types";
 
 function useFs(): boolean {
-  // Prefer explicit FS mode (Netlify/env). Shell USE_FS_CONTENT=1 also works when Vite exposes it.
+  // FS collections were removed in the Sanity cutover. Only opt in explicitly for local debugging
+  // after restoring markdown collections — never treat a missing project id as FS mode.
   const flag =
     import.meta.env.USE_FS_CONTENT ??
     (typeof process !== "undefined" ? process.env.USE_FS_CONTENT : undefined);
-  if (flag === "1") return true;
-  const id = import.meta.env.PUBLIC_SANITY_PROJECT_ID;
-  return !id || id === "placeholder";
+  return flag === "1";
 }
 
 export function getSanityClient() {
