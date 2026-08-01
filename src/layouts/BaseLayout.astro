@@ -39,7 +39,7 @@ const {
 } = Astro.props;
 
 const settings = await getSiteSettings();
-const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} — ${SITE.subtitle}`;
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} - ${SITE.subtitle}`;
 const path = canonicalPath ?? Astro.url.pathname;
 const canonical = new URL(path, SITE.url).href;
 const usingDefaultOg = !image;

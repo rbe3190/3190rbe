@@ -20,9 +20,9 @@
 - [ ] `curl -s https://rotaractblreast.org/robots.txt` includes `Disallow: /admin/`
 - [ ] Home loads Astro-bundled CSS (under `/_astro/`), not legacy `css/style.css`
 - [ ] GA loads by default; no consent banner / Clarity
-- [ ] Smoke: Join/Contact/Subscribe → thankyou; share; events/news grids
+- [ ] Smoke: Join and Subscribe post to Apps Script (`PUBLIC_FORMS_API_URL`) → inline thank-you, no redirect, row lands in the `Join` / `Newsletter` tab; Contact shows details (no form); share; events/news grids
 - [ ] Editor: Google login at `/admin`, publish → Netlify rebuild → content live
-- [ ] Netlify env: `PUBLIC_SANITY_PROJECT_ID`, `PUBLIC_SANITY_DATASET`; **do not** set `USE_FS_CONTENT=1` (Sanity is source of truth)
+- [ ] Netlify env (pinned in `netlify.toml`): `PUBLIC_SANITY_PROJECT_ID`, `PUBLIC_SANITY_DATASET`, `PUBLIC_FORMS_API_URL`; **do not** set `USE_FS_CONTENT=1` (Sanity is source of truth)
 ## Go / no-go
 
 | Result | Meaning |

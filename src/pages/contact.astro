@@ -2,18 +2,22 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import SocialIcon from "@/components/SocialIcon.astro";
 import { getSiteSettings } from "@/lib/content";
 
 const settings = await getSiteSettings();
+const social = Object.entries(settings.siteSocial || {}).filter(
+  (entry): entry is [keyof typeof settings.siteSocial, string] => Boolean(entry[1]),
+);
 ---
 <BaseLayout
   title="Contact"
-  description="Contact Rotaract Bangalore East — address, phone, and email. Send a message to Easterners in Bangalore."
+  description="Contact Rotaract Bangalore East - address, phone, email, and social channels for Easterners in Bangalore."
 >
   <PageHero
     title="Contact Us"
     eyebrow="We’re here"
-    lead="Reach Easterners anytime — send a message or find us in Bangalore."
+    lead="Reach Easterners by email, phone, or social - we’re happy to hear from you."
   />
   <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
 
@@ -28,78 +32,53 @@ const settings = await getSiteSettings();
   </section>
 
   <section class="section-pad">
-    <div class="wrap grid lg:grid-cols-5 gap-12">
-      <div class="lg:col-span-3">
-        <h2 class="font-display text-headline-md mb-6">Send a message</h2>
-        <script is:inline>var submission = false;</script>
-        <iframe
-          name="contact_hidden_iframe"
-          id="contact-hidden-iframe"
-          class="hidden"
-          title="Hidden form target"
-          onload="if(submission){window.location='/thankyou/';}"></iframe>
-        <form
-          action="https://docs.google.com/forms/d/e/1FAIpQLScWK1k3HYIZMoFWLXx-nkBJ7FbHR42jiJtYdt62U4EnpC3iyQ/formResponse"
-          target="contact_hidden_iframe"
-          onsubmit="submission=true;"
-          method="POST"
-          class="space-y-4"
-        >
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="form-field">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" type="text" name="entry.1155332808" required />
-            </div>
-            <div class="form-field">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" type="email" name="entry.535311334" required />
-            </div>
+    <div class="wrap max-w-3xl">
+      <h2 class="font-display text-headline-md mb-2">Get in touch</h2>
+      <p class="text-on-surface-variant mb-8">
+        Prefer a direct line? Email or call us - or follow along on social for news and events.
+      </p>
+      <ul class="space-y-6 text-on-surface-variant">
+        <li>
+          <span class="block text-metadata text-on-surface font-semibold mb-1">Address</span>
+          {settings.location}
+        </li>
+        <li>
+          <span class="block text-metadata text-on-surface font-semibold mb-1">Email</span>
+          <a href={`mailto:${settings.email}`} class="text-primary text-lg">{settings.email}</a>
+        </li>
+        <li>
+          <span class="block text-metadata text-on-surface font-semibold mb-1">Phone</span>
+          <a href={`tel:${settings.phone.replace(/\s/g, "")}`} class="text-primary text-lg"
+            >{settings.phone}</a
+          >
+        </li>
+      </ul>
+      {
+        social.length > 0 && (
+          <div class="mt-10 pt-8 border-t border-outline-variant/40">
+            <p class="text-metadata text-on-surface font-semibold mb-4">Social</p>
+            <ul class="flex flex-wrap gap-3">
+              {social.map(([network, url]) => (
+                <li>
+                  <a
+                    href={url}
+                    class="inline-flex items-center justify-center size-11 rounded-full bg-surface-container-low text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={network}
+                  >
+                    <SocialIcon network={network} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div class="form-field">
-            <label for="contact-phone">Phone</label>
-            <input id="contact-phone" type="tel" name="entry.659322169" required />
-          </div>
-          <div class="form-field">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="entry.1069201920" rows="5" required></textarea>
-          </div>
-          <div class="form-field max-w-xs">
-            <label for="contact-spam-check">What is the sum of 2 + 2?</label>
-            <input
-              id="contact-spam-check"
-              type="text"
-              name="entry.199032974"
-              placeholder="Enter the answer in digits"
-              required
-            />
-            <p class="text-xs text-on-surface-variant">
-              Submissions with an incorrect answer are rejected.
-            </p>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <aside class="lg:col-span-2">
-        <div class="card p-6 bg-surface-container-low sticky-panel">
-          <h3 class="font-display font-semibold mb-4">Contact information</h3>
-          <ul class="space-y-4 text-sm text-on-surface-variant">
-            <li>
-              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Address</span>
-              {settings.location}
-            </li>
-            <li>
-              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Email</span>
-              <a href={`mailto:${settings.email}`} class="text-primary">{settings.email}</a>
-            </li>
-            <li>
-              <span class="block text-metadata text-on-surface font-semibold mb-0.5">Phone</span>
-              <a href={`tel:${settings.phone.replace(/\s/g, "")}`} class="text-primary"
-                >{settings.phone}</a
-              >
-            </li>
-          </ul>
-        </div>
-      </aside>
+        )
+      }
+      <p class="mt-10 text-sm text-on-surface-variant">
+        Interested in membership?{" "}
+        <a href="/join/" class="text-primary font-medium">Apply on the Join page</a>.
+      </p>
     </div>
   </section>
 </BaseLayout>

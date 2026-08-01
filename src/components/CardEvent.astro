@@ -31,7 +31,7 @@ const label = state === "ongoing" ? "Ongoing" : state === "upcoming" ? "Upcoming
       event.start && (
         <p class="text-metadata text-on-surface-variant mb-2">
           {formatEventCardStart(event.start)}
-          {event.end ? ` – ${formatDateCard(event.end)}` : ""}
+          {event.end ? ` - ${formatDateCard(event.end)}` : ""}
         </p>
       )
     }

@@ -41,6 +41,10 @@ export default {
         "rotary-blue": "#005DAA",
         "peace-teal": "#008B94",
         "focus-red": "#D91B5C",
+        error: "#b3261e",
+        "on-error": "#ffffff",
+        "error-container": "#f9dedc",
+        "on-error-container": "#410e0b",
         ink: "#111111",
       },
       fontFamily: {

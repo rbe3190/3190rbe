@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* The [hidden] attribute must win over layout utilities. The browser default is only
+     `display: none`, which loses to an explicit `display` from a class like `flex` or
+     `grid` — so toggling `el.hidden = true` on such an element would leave it visible. */
+  [hidden] {
+    display: none !important;
+  }
   html {
     scroll-behavior: smooth;
   }
@@ -204,13 +210,150 @@
   .form-field {
     @apply flex flex-col gap-1.5 min-w-0;
   }
-  .form-field label {
+  /* Direct child only: option text inside choice cards must not become a caption. */
+  .form-field > label {
     @apply text-metadata text-on-surface font-semibold;
   }
-  .form-field input,
+  .form-field input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]),
   .form-field textarea,
   .form-field select {
-    @apply w-full min-w-0 max-w-full rounded border border-outline-variant bg-surface-container-lowest px-3 py-2.5 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container;
+    @apply w-full min-w-0 max-w-full rounded border border-outline-variant bg-surface-container-lowest px-3 py-2.5 text-on-surface min-h-[2.75rem] focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container;
+  }
+
+  .form-field select {
+    @apply appearance-none pr-10 cursor-pointer;
+    color-scheme: light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%23897362' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  /* Placeholder option still selected reads as muted, like an empty text field. */
+  .form-field select:has(option[value=""]:checked) {
+    @apply text-on-surface-variant/70;
+  }
+
+  .form-field input[type="date"] {
+    color-scheme: light;
+  }
+  .form-field input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply cursor-pointer opacity-60 hover:opacity-100;
+  }
+  .form-field input[type="date"]::-webkit-datetime-edit,
+  .form-field input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    @apply p-0;
+  }
+
+  .form-hint {
+    @apply text-xs text-on-surface-variant leading-snug;
+  }
+  .form-error {
+    @apply flex items-start gap-1.5 text-xs font-medium text-error;
+  }
+  .form-field--error input:not([type="radio"]):not([type="checkbox"]),
+  .form-field--error textarea,
+  .form-field--error select {
+    @apply border-error focus:ring-error focus:border-error;
+  }
+
+  .form-legend {
+    @apply font-display text-lg font-semibold text-on-surface;
+  }
+  .form-question {
+    @apply text-metadata text-on-surface font-semibold;
+  }
+  .req-mark {
+    @apply text-primary-container font-bold;
+  }
+
+  .choice-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-3;
+  }
+  .choice-card {
+    @apply relative flex items-start gap-3 rounded-lg border border-outline-variant/70 bg-surface-container-lowest px-4 py-3.5 cursor-pointer transition-colors duration-200 hover:border-primary-container/60 hover:bg-surface-container-low;
+  }
+  .choice-card__input {
+    @apply absolute h-px w-px opacity-0;
+  }
+  .choice-card__dot {
+    @apply mt-0.5 size-5 shrink-0 rounded-full border-2 border-outline bg-surface-container-lowest transition-all duration-200;
+  }
+  .choice-card__body {
+    @apply flex min-w-0 flex-col gap-0.5;
+  }
+  .choice-card__title {
+    @apply text-body-md font-medium leading-snug text-on-surface;
+  }
+  .choice-card__desc {
+    @apply text-sm leading-snug text-on-surface-variant;
+  }
+  .choice-card:has(.choice-card__input:checked) {
+    @apply border-primary-container bg-primary-container/10;
+  }
+  .choice-card:has(.choice-card__input:checked) .choice-card__dot {
+    @apply border-primary-container bg-primary-container;
+    box-shadow: inset 0 0 0 3px #ffffff;
+  }
+  .choice-card:has(.choice-card__input:focus-visible) {
+    @apply ring-2 ring-primary-container ring-offset-2 ring-offset-background;
+  }
+  .choice-grid--error .choice-card {
+    @apply border-error;
+  }
+  /* Compact variant: short one-line options that don't need a description. */
+  .choice-grid--compact {
+    @apply grid-cols-2 gap-2 lg:grid-cols-4;
+  }
+  .choice-card--compact {
+    @apply items-center gap-2.5 px-3 py-2.5 text-sm;
+  }
+  .choice-card--compact .choice-card__dot {
+    @apply mt-0 size-[1.125rem];
+  }
+  .choice-card--compact:has(.choice-card__input:checked) .choice-card__dot {
+    box-shadow: inset 0 0 0 2.5px #ffffff;
+  }
+
+  .check-grid {
+    @apply grid grid-cols-1 gap-2 sm:grid-cols-2;
+  }
+  .check-card {
+    @apply relative flex cursor-pointer items-center gap-2.5 rounded-lg border border-outline-variant/70 bg-surface-container-lowest px-3 py-2.5 text-sm leading-snug text-on-surface transition-colors duration-200 hover:border-primary-container/60 hover:bg-surface-container-low;
+  }
+  .check-card__input {
+    @apply absolute h-px w-px opacity-0;
+  }
+  .check-card__box {
+    @apply grid size-[1.125rem] shrink-0 place-items-center rounded-[0.25rem] border-2 border-outline bg-surface-container-lowest text-transparent transition-all duration-200 [&>svg]:size-3;
+  }
+  .check-card:has(.check-card__input:checked) {
+    @apply border-primary-container bg-primary-container/10;
+  }
+  .check-card:has(.check-card__input:checked) .check-card__box {
+    @apply border-primary-container bg-primary-container text-white;
+  }
+  .check-card:has(.check-card__input:focus-visible) {
+    @apply ring-2 ring-primary-container ring-offset-2 ring-offset-background;
+  }
+  .check-grid--error .check-card {
+    @apply border-error;
+  }
+  .check-subhead {
+    @apply text-xs font-semibold uppercase tracking-wider text-on-surface-variant;
+  }
+
+  .form-reveal {
+    @apply rounded-r-lg border-l-2 border-primary-container/50 bg-surface-container-low/60 py-4 pl-4 pr-3;
+    animation: form-reveal-in 220ms cubic-bezier(0.2, 0, 0, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .form-reveal {
+      animation: none;
+    }
+  }
+
+  .form-summary {
+    @apply rounded-lg border border-error/40 bg-error-container px-4 py-3 text-sm text-on-error-container;
   }
 
   .sticky-panel {
@@ -227,5 +370,16 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+@keyframes form-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

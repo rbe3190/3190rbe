@@ -16,7 +16,7 @@ Prefer this file over chat history when resuming work.
 - **Tailwind 3** with RBE design tokens (`#ff9000` brand orange)
 - **Sanity 3** via `@sanity/astro` + React Studio
 - **Pagefind** search (built into `npm run build`)
-- **RSS** (`/rss.xml`), **sitemap**, Google Forms for join/contact/subscribe
+- **RSS** (`/rss.xml`), **sitemap**, Apps Script + Sheets for join/subscribe (contact page is details-only)
 
 Jekyll, Decap, and Git Gateway are **gone**. Do not reintroduce them.
 
@@ -39,6 +39,7 @@ Jekyll, Decap, and Git Gateway are **gone**. Do not reintroduce them.
 |----------|--------|--------|
 | `PUBLIC_SANITY_PROJECT_ID` | Netlify build + local `.env` | Public; also pinned in `netlify.toml` |
 | `PUBLIC_SANITY_DATASET` | Netlify build + local `.env` | Usually `production` |
+| `PUBLIC_FORMS_API_URL` | Netlify build + local `.env` | Public Apps Script `/exec` URL; pinned in `netlify.toml` |
 | `SANITY_API_WRITE_TOKEN` | **Local `.env` only** | Migration/repair/purge scripts — never commit, never put on Netlify |
 | `USE_FS_CONTENT` | Optional local only | Do not set on Netlify |
 
@@ -121,6 +122,18 @@ Do **not** run destructive purge/delete or write migrations unless the user asks
 - After content/architecture changes, verify `npm run build` (and smoke `/`, `/news/`, `/events/`, `/about/`, `/admin/`).
 - Keep public docs (`README.md`) accurate for open-source readers; keep this file as the agent ops memory.
 - Ship checklist: `SHIP-CRITERIA.md`.
+
+## Forms / Google Apps Script
+
+- Google Forms POSTs have been replaced by Apps Script + Sheets: `google-apps-script/forms-api/`. No form on the site posts to `docs.google.com` any more.
+- One **spreadsheet-bound** Web App (Extensions → Apps Script from the Sheet — uses `getActiveSpreadsheet()`, no `SPREADSHEET_ID`). Three tabs: Join / Newsletter / Contact.
+- Emails only for **join** (club + applicant). Newsletter/contact: store only. Config is the `CONFIG` object at the top of `Code.gs` (club notify, reply-to, from-name, soft origins) — not Script Properties. No form secret. Applicant thank-you always sets Reply-To to the club inbox(es); MailApp From is the script owner and must not be the reply target.
+- Join emails are multipart: branded HTML (`applicantConfirmHtml_`, `clubNotifyHtml_`, shared `emailShell_`) plus plain-text fallback (`*Body_`). Edit both when changing copy. Table-based inline-styled markup only — email clients drop `<style>` and flex/grid. Escape all applicant input with `esc_()` / `nl2br_()`. Applicant mail CCs the club and replies to the club; club mail replies to the applicant.
+- **Contact page:** form removed — details + social only (anti-spam).
+- **No redirects on submit.** `/thankyou` is **deleted**; both forms confirm **inline** on the same page (a 301 `/thankyou` → `/` remains in `netlify.toml` for old links). Do not reintroduce a thank-you page or a hidden-iframe Google Form target.
+- **Join form** (`src/pages/join.astro`) is a self-contained Astro form. With `PUBLIC_FORMS_API_URL` unset it validates and shows a preview thank-you panel. With the URL set it POSTs to Apps Script and only shows thank-you after `{ ok: true }`. Order: Get in touch → What you do → A bit about you → Your Rotaract story → Interests. Two branch radios (`occupation`, `rotaractStatus`) reveal conditional fields. Markup carries honeypot (`website`) and page-load timestamp (`t`).
+- **Newsletter** (`src/components/Subscribe.astro`, rendered by `BaseLayout` on every page) POSTs `{ form: "newsletter", email, website, t }` to the same Web App and swaps the form for an inline confirmation. It re-arms `t` on email focus when the stamp is older than 30 min (and on bfcache restore), because a footer form can sit in an idle tab past the API's 2h staleness window.
+- `Code.gs` matches the join payload: `name, email, phone, dob, gender, address, social, organizationType, organization, rotaractStatus, why, clubName, journey, hobbies, contribute, contributeOther`. Always send every key (`""` for the inactive branch) so Sheet columns stay stable, and never collapse `\n` in textarea values. Responses are `{ ok, status, form?, error? }` — gate thank-you on `ok === true && status === 200` (Apps Script cannot set real HTTP status).
 
 ## Recent cutover memory (2026-07)
 

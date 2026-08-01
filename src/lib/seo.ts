@@ -170,7 +170,7 @@ export function causeWebPageJsonLd(input: {
           potentialAction: {
             "@type": "DonateAction",
             target: input.donationLink,
-            name: `Donate — ${input.title}`,
+            name: `Donate - ${input.title}`,
           },
         }
       : {}),

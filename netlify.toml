@@ -9,6 +9,8 @@
   # relying on site env vars — a missing project id fails the build.
   PUBLIC_SANITY_PROJECT_ID = "t6bu0f9m"
   PUBLIC_SANITY_DATASET = "production"
+  # Apps Script Web App /exec URL (public write-only). Join form POSTs here at runtime.
+  PUBLIC_FORMS_API_URL = "https://script.google.com/macros/s/AKfycbwchW0c5HpKBvqSuhtownO-xtqGEoo3qtjo73CSmVvQINpNptmy_DMlkb5gq36Zoun1/exec"
 
 [[headers]]
   for = "/*"
@@ -40,4 +42,11 @@
 [[redirects]]
   from = "/feed.xml"
   to = "/rss.xml"
+  status = 301
+
+# Legacy: /thankyou was the Google Forms landing page. Forms now confirm inline,
+# so the page is gone — keep old links/bookmarks off a 404.
+[[redirects]]
+  from = "/thankyou"
+  to = "/"
   status = 301

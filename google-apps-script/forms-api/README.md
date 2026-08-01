@@ -1,0 +1,196 @@
+# RBE Forms API (Google Apps Script + Sheets)
+
+Replaces Google Forms for **join** and **newsletter**.  
+One **spreadsheet-bound** Apps Script Web App · three tabs (`Join`, `Newsletter`, `Contact`).
+
+This is **not** a Google Form. You create a Google Sheet, open **Extensions → Apps Script** from that sheet, paste `Code.gs`, and deploy it as a Web App. The script is already linked to the file via `SpreadsheetApp.getActiveSpreadsheet()` — no spreadsheet ID to copy around. The website POSTs JSON; the script appends a row and (for join) sends emails. Visitors cannot read, edit, or delete sheet data through the API.
+
+## What you need to set
+
+Edit the `CONFIG` object at the top of [`Code.gs`](./Code.gs) — nothing lives in Script Properties.
+
+| Key | Purpose | Default |
+|-----|---------|---------|
+| `clubNotifyEmail` | Where club join alerts go (also CC on applicant mail) | `info@rotaractblreast.org` |
+| `replyToEmail` | Reply-To on the applicant thank-you (comma-separated OK). Always the club inbox — not the Apps Script owner account that appears as From. | `info@rotaractblreast.org` |
+| `mailFromName` | Display name on outbound mail | `Rotaract Bangalore East` |
+| `allowedOrigins` | Soft browser Origin/Referer allow-list (comma-separated). Set `""` to skip. | production + local Astro |
+
+No `SPREADSHEET_ID`. No form secret. Spam control is honeypot + timing + rate limit + validation (+ soft origin allow-list).
+
+## Email rules
+
+| Endpoint (`form` field) | Store in Sheet | Emails |
+|-------------------------|----------------|--------|
+| `join` | Yes | Club notify + applicant confirmation |
+| `newsletter` | Yes | None |
+| `contact` | Yes (kept for later; contact page has no form) | None |
+
+The JSON field `"form": "join"` only picks which tab/handler to use. It is not related to Google Forms.
+
+Both join emails are sent **multipart** — a branded HTML body plus a plain-text fallback, so they stay readable in clients that block HTML or images.
+
+| | Applicant confirmation | Club notification |
+|---|---|---|
+| To / CC | applicant, CC club | club |
+| Reply-To | `replyToEmail` (+ `clubNotifyEmail` if different) — never the Apps Script owner | applicant (reply goes straight to them) |
+| Body | Short, warm, brand header, one CTA | Scannable label/value table of every field |
+
+`MailApp` always sends **From** the Google account that owns the script. That is fine and expected — applicants should never need to write to that account. The thank-you sets **Reply-To** to the club inbox(es) from `CONFIG`, and the body names that address explicitly. Prefer deploying the Web App while signed in as the club Gmail (`info@…`) if you want From and Reply-To to match; either way, Reply is steered to the club.
+
+Editing the copy: `applicantConfirmHtml_` / `clubNotifyHtml_` for HTML, `applicantConfirmBody_` / `clubNotifyBody_` for the text fallback — **change both**. `emailShell_` holds the shared frame (logo, brand bar, footer). Email clients strip `<style>` blocks and ignore flex/grid, so the markup is table-based with inline styles only. All applicant-supplied values go through `esc_()` / `nl2br_()`; never interpolate raw form input into the HTML.
+
+The header logo is hot-linked from `rotaractblreast.org`, and Gmail hides images until the reader allows them — so no wording may depend on the logo being visible.
+
+## Setup (once)
+
+1. Create a Google Spreadsheet (e.g. **RBE Website Forms**).
+2. From that spreadsheet: **Extensions → Apps Script**.
+3. Delete the stub code, paste [`Code.gs`](./Code.gs), tweak `CONFIG` if needed, save. Rename the project if you like (`RBE Forms API`).
+4. In the editor, select function `setupSpreadsheet` → **Run** (Authorize when prompted). That creates the `Join`, `Newsletter`, and `Contact` tabs with headers and removes empty `Sheet1`.
+5. **Deploy → New deployment → Web app**
+   - Execute as: **Me**
+   - Who has access: **Anyone** (required so the public site can POST)
+6. Copy the Web App `/exec` URL.
+
+Re-deploy (New version) after every `Code.gs` change. Keep editing the script from the spreadsheet’s Extensions menu so it stays bound to that file.
+
+### Wire the Astro site
+
+`PUBLIC_FORMS_API_URL` is pinned in [`netlify.toml`](../../netlify.toml) (same pattern as the Sanity public IDs). Locally, copy it into `.env` from [`.env.example`](../../.env.example), then rebuild.
+
+- **Unset** → join form validates and shows a preview thank-you (nothing POSTed).
+- **Set** → form POSTs and shows thank-you only when the body is `{ "ok": true, "status": 200 }`.
+
+Both the join form and the newsletter band (`src/components/Subscribe.astro`, on every page) use this URL and confirm inline — nothing redirects to a thank-you page.
+
+If you tighten `CONFIG.allowedOrigins` in the deployed script, include every origin that will host the form (`https://rotaractblreast.org`, `http://localhost:4321`, and any Netlify preview host you still test from). Requests with **no** Origin/Referer (curl, some tools) skip that check; browsers always send one, so a missing allow-list entry returns `{ ok: false, status: 403 }`. After editing `CONFIG`, create a **new Web App deployment version** or the live `/exec` URL keeps serving the old code.
+
+### Test with curl / node
+
+Apps Script answers POST with a 302 to `script.googleusercontent.com`. Browsers and `fetch(..., { redirect: "follow" })` handle that. Plain `curl -L -X POST` often re-POSTs the redirect and gets HTML junk — prefer node `fetch`, or POST once, then GET the `Location` header.
+
+```bash
+API="https://script.google.com/macros/s/AKfycbwchW0c5HpKBvqSuhtownO-xtqGEoo3qtjo73CSmVvQINpNptmy_DMlkb5gq36Zoun1/exec"
+
+# Health
+curl -sL "$API"
+
+# Newsletter (store only)
+node -e "
+fetch('$API', {
+  method: 'POST',
+  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+  body: JSON.stringify({ form: 'newsletter', email: 'you@example.com', website: '', t: Date.now() - 5000 }),
+  redirect: 'follow',
+}).then((r) => r.text()).then(console.log)
+"
+
+# Join (store + 2 emails) — use a mailbox you control when testing confirmation mail
+node -e "
+fetch('$API', {
+  method: 'POST',
+  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+  body: JSON.stringify({
+    form: 'join', name: 'Test User', email: 'you@example.com', phone: '9876543210',
+    dob: '1998-01-15', gender: 'Female', address: 'Indiranagar', social: '@test',
+    organizationType: 'student', organization: 'Test College', rotaractStatus: 'new',
+    why: 'Test', clubName: '', journey: '', hobbies: 'Running',
+    contribute: ['Supporting education'], contributeOther: '', website: '', t: Date.now() - 5000,
+  }),
+  redirect: 'follow',
+}).then((r) => r.text()).then(console.log)
+"
+```
+
+Use `Content-Type: text/plain` from browsers to avoid a CORS preflight; the script still `JSON.parse`s the body.
+
+## Response contract
+
+Apps Script Web Apps **cannot reliably set HTTP status codes**. Gate UI on the JSON body:
+
+```json
+{ "ok": true,  "status": 200, "form": "join" }
+{ "ok": false, "status": 400, "error": "Missing fields: why", "form": "join" }
+```
+
+| `status` | Meaning |
+|----------|---------|
+| `200` | Accepted and stored (and emailed, for join) |
+| `400` | Validation / expired form / bad payload |
+| `403` | Origin not allowed (only if `ALLOWED_ORIGINS` is set) |
+| `429` | Too fast or rate-limited |
+| `500` | Unexpected server error |
+
+Honeypot hits return a **fake** success (`ok: true`) and write nothing.
+
+## Anti-spam (no secret)
+
+1. **Honeypot** `website` — bots fill it; API fakes success and does not write.
+2. **Timing** `t` — reject submits faster than ~2s or older than 2h.
+3. **Rate limit** — 5 posts / 10 min per email (or IP).
+4. **Optional origin allow-list** — soft browser check only.
+5. **Validation** — email shape; Indian mobile for join; branch fields.
+
+Still a public URL (same class of exposure as a Google Form “anyone can submit” link). That is expected for a membership application.
+
+## Request shapes
+
+### `join`
+
+Every key is always sent so Sheet columns stay stable. Inactive branch fields are `""`.
+
+```json
+{
+  "form": "join",
+  "name": "",
+  "email": "",
+  "phone": "",
+  "dob": "YYYY-MM-DD",
+  "gender": "",
+  "address": "",
+  "social": "",
+  "organizationType": "student | professional",
+  "organization": "",
+  "rotaractStatus": "new | experienced",
+  "why": "",
+  "clubName": "",
+  "journey": "",
+  "hobbies": "",
+  "contribute": [],
+  "contributeOther": "",
+  "website": "",
+  "t": 0
+}
+```
+
+| Field | Notes |
+|-------|-------|
+| `gender`, `social` | Optional |
+| `address` | Area / locality only |
+| `organization` | College or company, depending on `organizationType` |
+| `why` | Required when `rotaractStatus` is `new` |
+| `clubName`, `journey` | Required when `rotaractStatus` is `experienced` |
+| `contribute` | Checkbox labels; flattened to one cell |
+| `contributeOther` | Required only when `contribute` contains `"Other"` |
+
+Textarea newlines (`why`, `journey`, `hobbies`) are preserved in Sheet cells.
+
+### `newsletter`
+
+```json
+{ "form": "newsletter", "email": "", "website": "", "t": 0 }
+```
+
+### `contact` (storage only; no UI on the site)
+
+```json
+{ "form": "contact", "name": "", "email": "", "phone": "", "message": "", "website": "", "t": 0 }
+```
+
+## Limits / gotchas
+
+- Gmail/Apps Script daily email quotas — fine for club join volume; not for mass mail.
+- Web App “Anyone” means the URL is public — responses must never include private club data.
+- Trust the JSON `{ ok, status }`, not the transport HTTP code.
+- Re-running `setupSpreadsheet` rewrites header row 1 but does not move existing data. Archive the Join sheet first if columns changed after you already collected rows.

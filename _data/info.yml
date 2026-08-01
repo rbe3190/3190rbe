@@ -8,6 +8,7 @@ site_social:
   instagram: https://www.instagram.com/rotaractblreast/
   twitter: https://twitter.com/rotaractblreast
   linkedin: https://www.linkedin.com/company/rotaractblreast/
+  youtube: https://www.youtube.com/@rotaractblreast
 
 nav:
   - title: Home
@@ -59,7 +60,7 @@ welcomeSection:
 
 coreValues:
   - title: UNITE
-    brief: We are a family — no one gets left behind or forgotten.
+    brief: We are a family - no one gets left behind or forgotten.
     image: /images/site/about.jpg
     target: /join
   - title: RISE

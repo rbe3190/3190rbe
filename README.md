@@ -11,7 +11,7 @@ Official website of [Rotaract Bangalore East](https://rotaractblreast.org) — a
 - News, events, causes, and team managed in Sanity Studio at `/admin`
 - Static HTML at deploy time (fast CDN delivery; no server runtime for pages)
 - Pagefind site search, RSS (`/rss.xml`), and sitemap
-- Join / contact / subscribe forms via Google Forms
+- Join form and newsletter → Google Apps Script + Sheets (`PUBLIC_FORMS_API_URL`), both confirming inline with no redirect; contact is details-only (no on-site contact form)
 - Brand kit and club info from lightweight YAML + static assets
 
 ## Quick start

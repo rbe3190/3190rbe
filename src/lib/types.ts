@@ -9,6 +9,7 @@ export type SiteSettings = {
     instagram?: string;
     twitter?: string;
     linkedin?: string;
+    youtube?: string;
   };
   coreValues: Array<{ title: string; brief: string; image: string; target: string }>;
   areasOfFocus: Array<{ title: string; icon?: string; description: string }>;

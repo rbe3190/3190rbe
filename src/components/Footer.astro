@@ -79,6 +79,19 @@ const social = settings.siteSocial;
               </a>
             )
           }
+          {
+            social.youtube && (
+              <a
+                class="touch-target inline-flex items-center justify-center hover:text-primary-container"
+                href={social.youtube}
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+              >
+                <SocialIcon network="youtube" />
+              </a>
+            )
+          }
         </div>
       </div>
       <div class="col-span-1 lg:col-span-2">
@@ -112,7 +125,7 @@ const social = settings.siteSocial;
               >{settings.phone}</a
             >
           </li>
-          <li><a href="/contact/" class="hover:text-primary-container">Contact form →</a></li>
+          <li><a href="/contact/" class="hover:text-primary-container">Contact →</a></li>
         </ul>
       </div>
     </div>

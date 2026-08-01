@@ -81,10 +81,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) =>
-        !page.includes("/admin") &&
-        !page.includes("/thankyou") &&
-        !page.includes("/search"),
+      filter: (page) => !page.includes("/admin") && !page.includes("/search"),
     }),
   ],
   redirects: {
