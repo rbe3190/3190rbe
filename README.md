@@ -87,10 +87,11 @@ Rebuilds happen when:
 Build command and publish directory are defined in `netlify.toml`:
 
 ```text
-npm ci && npm run build
+npm run build
 → publish: dist
 ```
 
+Netlify installs dependencies itself (`npm ci` when `package-lock.json` is present) before that command.
 Public Sanity project settings can live in `netlify.toml` `[build.environment]` (they are not secrets). Keep `SANITY_API_WRITE_TOKEN` out of Netlify — it is only for local maintenance scripts.
 
 Redirects should stay minimal (legacy hosts, `/teamadmin` → `/admin/`, `/feed.xml` → `/rss.xml`). Do not add forced trailing-slash redirects; they can loop on Netlify.

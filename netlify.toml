@@ -1,5 +1,7 @@
 [build]
-  command = "npm ci && npm run build"
+  # Netlify already runs `npm ci` (from package-lock.json) in its dependency phase
+  # with cache — do not repeat it here.
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]

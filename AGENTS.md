@@ -48,10 +48,10 @@ Jekyll, Decap, and Git Gateway are **gone**. Do not reintroduce them.
 ## Build & deploy
 
 ```text
-npm ci && npm run build   →   publish dist
+npm run build   →   publish dist
 ```
 
-Defined in `netlify.toml`. Node 20.
+Defined in `netlify.toml`. Netlify’s dependency phase already runs `npm ci` (cached) from `package-lock.json` — do not put `npm ci` in the build command. Node 20.
 
 ### Rebuild triggers (both needed)
 
