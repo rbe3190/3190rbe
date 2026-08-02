@@ -119,16 +119,45 @@
   var teamMoreBtn = document.getElementById("team-show-more");
   if (teamMoreBtn) {
     teamMoreBtn.addEventListener("click", function () {
-      var expanded = teamMoreBtn.getAttribute("aria-expanded") === "true";
+      var expand = teamMoreBtn.getAttribute("aria-expanded") !== "true";
       var moreCards = document.querySelectorAll("[data-team-more]");
       moreCards.forEach(function (card) {
-        card.classList.toggle("hidden", expanded);
+        card.hidden = !expand;
       });
-      teamMoreBtn.setAttribute("aria-expanded", expanded ? "false" : "true");
+      teamMoreBtn.setAttribute("aria-expanded", expand ? "true" : "false");
       var total = teamMoreBtn.getAttribute("data-team-total") || "";
-      teamMoreBtn.textContent = expanded
-        ? "Show all " + total + " members"
-        : "Show less";
+      teamMoreBtn.textContent = expand
+        ? "Show fewer"
+        : "Show all " + total + " members";
+      if (!expand) {
+        var section = document.getElementById("team");
+        if (section) section.scrollIntoView({ block: "start" });
+      }
+    });
+  }
+
+  // Touch / coarse pointers: tap a team card to reveal socials (desktop keeps CSS hover).
+  var teamGrid = document.getElementById("team-grid");
+  if (teamGrid) {
+    var fineHover = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    function closeOpenTeamCards(except) {
+      teamGrid.querySelectorAll(".team-card.is-open").forEach(function (card) {
+        if (card !== except) card.classList.remove("is-open");
+      });
+    }
+
+    teamGrid.addEventListener("click", function (event) {
+      if (fineHover.matches) return;
+
+      var card = event.target.closest(".team-card");
+      if (!card || !teamGrid.contains(card)) return;
+      if (!card.querySelector(".team-reveal")) return;
+      // Let social / profile links navigate without toggling the card.
+      if (event.target.closest("a")) return;
+
+      var opened = card.classList.toggle("is-open");
+      if (opened) closeOpenTeamCards(card);
     });
   }
 
