@@ -2,13 +2,33 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
+# Generative / answer-engine crawlers (GEO) — public pages only.
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
 
-Sitemap: https://rotaractblreast.org/sitemap-index.xml
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://rotaractblreast.org/sitemap.xml

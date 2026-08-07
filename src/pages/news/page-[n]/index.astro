@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 
 const { page, totalPages, slice } = Astro.props;
 ---
-<BaseLayout title={`News - page ${page}`} description="News and updates from Rotaract Bangalore East.">
+<BaseLayout title={`News - page ${page}`} description="News and updates from Rotaract Bangalore East." noindex={true}>
   <PageHero
     title="News & Updates"
     eyebrow="Stories from Easterners"

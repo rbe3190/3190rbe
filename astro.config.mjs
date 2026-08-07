@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { loadEnv } from "vite";
 import { pagefindDevPlugin } from "./scripts/pagefind-dev-plugin.mjs";
 import { rbeAdminShell } from "./scripts/rbe-admin-shell.mjs";
+import { singleSitemap } from "./scripts/single-sitemap.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const env = loadEnv(process.env.NODE_ENV ?? "development", process.cwd(), "");
@@ -81,8 +82,22 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes("/admin") && !page.includes("/search"),
+      filter: (page) => {
+        if (page.includes("/admin") || page.includes("/search")) return false;
+        // Paginated list clones (page-2+) dilute crawl budget; page 1 hubs stay.
+        if (/\/page-\d+\/?$/.test(page)) return false;
+        // Thin news day archives (/news/YYYY/MM/DD/) — keep real posts under them.
+        if (/\/news\/\d{4}\/\d{2}\/\d{2}\/?$/.test(page)) return false;
+        return true;
+      },
+      serialize: (item) => {
+        // Build-time lastmod helps crawlers recheck after publishes / daily rebuilds.
+        item.lastmod = new Date();
+        return item;
+      },
     }),
+    // Collapse Astro's sitemap-index.xml + sitemap-0.xml into a single sitemap.xml.
+    singleSitemap(),
   ],
   redirects: {
     "/teamadmin": "/admin/",

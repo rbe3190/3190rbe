@@ -24,7 +24,7 @@
 - Email: info@rotaractblreast.org
 
 ## Feeds
-- Sitemap: https://rotaractblreast.org/sitemap-index.xml
+- Sitemap: https://rotaractblreast.org/sitemap.xml
 - RSS: https://rotaractblreast.org/rss.xml
 - Legacy feed URL (301): https://rotaractblreast.org/feed.xml
 
